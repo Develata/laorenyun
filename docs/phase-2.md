@@ -28,10 +28,10 @@ bootstrap先持久固定ID，通过plugin来源上下文启动首轮，没有hum
 | 第二轮/播放 | 原生纯文字第二轮，无音频/rawASR；显式子女speaker。强制autoplay拒绝后出现播放按钮，录音被禁用，手动播放与再听通过 |
 | 老人profile | 无fixture按钮/route（404）、UUID、系统提示词和工作区权限chip；既有会话不自动朗读。真实录音/FFmpeg后缺腾讯配置，原件仍在，重新识别明确失败；2原件+2派生物全部hash正确，没有新增转写 |
 | 重启 | 2条转写、2个media ID/hash在容器restart前后相同；实际读取文件验证SHA-256；原件与WAV分开 |
-| Compose | build/up/health/restart/stop实际执行；UID/GID10001、目录0700、DB0600，named volume→/app/data，宿主127.0.0.1:3082（测试覆盖端口），容器0.0.0.0:3080。无认证Web401、带cookie跨站POST403；health不调云 |
+| Compose | build/up/health/restart/stop实际执行（最终SIGTERM退出0、无OOM）；UID/GID10001、目录0700、DB0600，named volume→/app/data，宿主127.0.0.1:3082（测试覆盖端口），容器0.0.0.0:3080。无认证Web401、带cookie跨站POST403；health不调云 |
 | 三种模型协议 | openai-responses/openai-completions/anthropic-messages分别用无效测试key配置，启动healthy；模型请求由fixture接管，**仅配置验收，非实网**。公开pi-ai路由/凭据引用，无第二套provider框架 |
 | FFmpeg/音频 | WebM/Opus→WAV实际属性检测，坏输入/超时保留原件测试通过。两个合成MP3拼接由Chromium解码为2.0909秒；不是腾讯音质或全部浏览器证明 |
-| 打包/文档 | frozen锁1572 registry版本/integrity不变；175本地Markdown目标有效；格式、脚本语法与git diff检查通过；SDK37项许可无缺项 |
+| 打包/文档 | frozen锁1572 registry版本/integrity不变；180本地Markdown目标有效；格式、脚本语法与git diff检查通过；SDK37项许可无缺项 |
 
 浏览器脚本：[主链](../scripts/smoke-phase2.mjs)、[第二轮](../scripts/smoke-phase2-followup.mjs)、[老人/失败](../scripts/smoke-phase2-elder.mjs)。主链要求**独立空测试卷**、dev+probes+SPEECH_FIXTURE、127.0.0.1:3082；从私密`/tmp/laorenyun-phase2-host-private.log`读取原生启动链接，不打印token。`PLAYWRIGHT_CHROMIUM_EXECUTABLE`可指定已有Chromium，默认使用Playwright安装路径。副脚本沿用主链在`/tmp/laorenyun-phase2-browser`留下的私密状态。截图/录音/浏览器凭据不入Git。
 
