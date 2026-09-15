@@ -1,6 +1,6 @@
 # 部署、安全与数据运维
 
-Owner：发行、环境与隐私边界。当前为 Phase 2 已实现、实网验收待完成，实测回执见 [phase-2](phase-2.md)。业务存储由[插件](https://github.com/Develata/dsh-laorenyun/blob/main/docs/deployment-integration.md)拥有。
+Owner：发行、环境与隐私边界。当前为 Phase 2 已实现，真实模型/腾讯容器调用通过，实体麦克风与真人恢复验收待完成，实测回执见 [phase-2](phase-2.md)。业务存储由[插件](https://github.com/Develata/dsh-laorenyun/blob/main/docs/deployment-integration.md)拥有。
 
 ## 构建与启动
 
@@ -54,8 +54,10 @@ bind mount 是管理员选项：预建该 UID/GID 可写的受控目录；不匹
 | `DSH_TELEMETRY_DISABLED` | 固定 true |
 | `LAORENYUN_LLM_PROTOCOL/MODEL/BASE_URL/API_KEY` | 配置原生 llm-pi-ai 的 laorenyun-model 路由；API_KEY通过原生apiKeyEnv解析，三种协议选一 |
 | `TENCENTCLOUD_SECRET_ID/SECRET_KEY/APP_ID` | 腾讯Host凭据；Flash需AppID；当前接口不需region |
-| `TENCENT_ASR_ENGINE/TIMEOUT_MS` | 默认16k_zh_en / 90000；普通极速版免费包需显式选16k_zh，大模型额度独立；没有自动多引擎回退 |
+| `TENCENT_ASR_ENGINE/TIMEOUT_MS` | 默认16k_zh / 90000，匹配普通极速版免费包；可显式选16k_zh_en等引擎，大模型额度独立；没有自动多引擎回退 |
 | `TENCENT_TTS_VOICE/SPEED/VOLUME/TIMEOUT_MS` | 默认101001 / -0.5 / 0 / 60000；固定MP3 |
+
+`LAORENYUN_ASR_ENGINE`、`LAORENYUN_TTS_VOICE`不是生产配置键，不会覆盖上述默认值；管理员应使用`TENCENT_ASR_ENGINE`、`TENCENT_TTS_VOICE`。不修改私密配置来隐式迁移旧命名。
 
 启用云 provider 时缺失凭据会明确报错，不能落到无效默认值。云调用需要界面告知：腾讯处理音频/朗读文本，LLM 处理访谈文字；文字输入也可能离开本机。本项目不宣称云端 zero retention。导出含完整私人历史，交付他人前提示其范围。录音/照片是资料而不是系统指令。
 

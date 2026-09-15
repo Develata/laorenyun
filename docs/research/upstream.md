@@ -73,11 +73,11 @@
 
 Flash `asr.cloud.tencent.com/asr/flash/v1/<appid>`与云API3.0签名/参数/错误码不同；host用Node https/crypto窄适配，签名采用接口指定HMAC-SHA1，不手写密码算法。普通SDK不支持它不是引入Python的理由。官方JS repo `30d9634cdf8081cfbaeb51558f88905b49c9a345`为浏览器实时识别，未作为Node Flash依赖。
 
-Flash支持wav/pcm/ogg-opus/speex/silk/mp3/m4a/aac/amr，未列WebM；因此保留原件并由Host转换WAV。推荐Flash页面明确列出的16k_zh_en大模型1.0，其页面列中英粤及包括安徽在内的方言，不把其他接口的31方言/2.0引擎能力移植过来。word_info=2提供词时间/标点，字段缺失退为段级。speaker_diarization=0，filter_dirty/modal/punc=0，convert_num_mode=0。准确率/目标口音仍unresolved。
+Flash支持wav/pcm/ogg-opus/speex/silk/mp3/m4a/aac/amr，未列WebM；因此保留原件并由Host转换WAV。可选Flash页面明确列出的16k_zh_en大模型1.0，其页面列中英粤及包括安徽在内的方言，不把其他接口的31方言/2.0引擎能力移植过来。word_info=2提供词时间/标点，字段缺失退为段级。speaker_diarization=0，filter_dirty/modal/punc=0，convert_num_mode=0。准确率/目标口音仍unresolved。
 
 对比普通CreateRecTask：官方[固定SDK源码](https://github.com/TencentCloud/tencentcloud-sdk-nodejs/blob/302b36cc91481d7851fbb070066dd31b04aedcec/src/services/asr/v20190614/asr_client.ts)描述直传≤5MB、URL≤5h/1GB、异步最长3小时、结果24h；适合批量归档，但本产品录完后等待体验不如Flash的设计目标。SentenceRecognition≤60s/3MB太短。普通文件/实时V2/Flash不是可以只改域名互换的协议。P0只实现Flash，不自动多provider回退。
 
-Flash官方宣称常见30分钟录音可10秒内识别；这是供应商典型时效，非端到端保证。[计费概述](https://cloud.tencent.com/document/product/1093/35686)区分普通/大模型1.0资源与后付费；免费并发不等于永久免费识别，不把普通免费额度套给大模型。个人单路使用不需买额外并发，质量优先选16k_zh_en，16k_zh留作成本/质量实测对照。没有真实账户调用/计费测量，不作价格/效果承诺。
+Flash官方宣称常见30分钟录音可10秒内识别；这是供应商典型时效，非端到端保证。[计费概述](https://cloud.tencent.com/document/product/1093/35686)区分普通/大模型1.0资源与后付费；免费并发不等于永久免费识别，不把普通免费额度套给大模型。Phase 2.5演示默认已改为普通16k_zh：同账号实测普通引擎成功，大模型引擎4004，参见ADR-0006及Phase2报告。大模型仍可选，不自动切换；没有真人口音对照或最终账单测量，不作价格/效果承诺。
 
 [TextToVoice](https://cloud.tencent.com/document/api/1073/37995) / [SDK类型](https://github.com/TencentCloud/tencentcloud-sdk-nodejs/blob/302b36cc91481d7851fbb070066dd31b04aedcec/src/services/tts/v20190823/tts_models.ts)：云API3.0、2019-08-23、tts.tencentcloudapi.com；中文150字/英文500字母、wav/mp3/pcm。选官方TTS分包4.1.237/common4.1.220。根SDK4.1.313和产品分包版本不同；common浮动星号通过lock锁定。SDK基础request支持signal，便利方法不额外露options，不应假设可直接传入。
 

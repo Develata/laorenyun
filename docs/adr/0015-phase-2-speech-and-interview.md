@@ -12,10 +12,12 @@ Host集中FFmpeg，固定输入/输出及音频容器/协议白名单，原件�
 
 原生reference只在编辑/提交间串行化SourceId；接纳后清理text，在DSH可扩展source对象中保留`laorenyunSourceId`。SQLite仍是来源关联权威；旧日志不改写，旧气泡通过公开renderer隐藏标记。应用不修改DSH核心。
 
-采访SKILL.md紧凑核心由agent-scoped system section预载；五份参考由只读白名单工具渐进加载。无需开启任意文件工具。初始化是持久的plugin上下文，不是user/rpc人类回答；先记录bootstrap ID，公开inbox/log核对后驱动首轮。
+采访SKILL.md紧凑核心通过固定DSH实际读取的`agent.cordis.yml`注册，由agent-scoped system section预载；五份参考由只读白名单工具渐进加载。无需开启任意文件工具。初始化是持久的plugin上下文，不是user/rpc人类回答；先记录bootstrap ID，公开inbox/log核对后驱动首轮。
 
 ## 不作的保证
 
 领域receipt与DSHflush没有跨库原子性；只能按ID对账，不能自动新ID重发。SDK/模型类别支持不等于凭据/账号实测。云时延、普通话/地区口音准确率、真人麦克风与移动HTTPS都需各自验收。
 
 [实现及失败窗口](https://github.com/Develata/dsh-laorenyun/blob/main/docs/phase-2.md)；[实际证据](../phase-2.md)。
+
+Phase 2.5实证修正：原发行误将技能写入未读取的cordis.yml，真实模型首轮暴露错误；现将唯一技能条目放回agent.cordis.yml并移除Phase1 persona。架构不变，修复的是装配入口。真实system/message已确认技能文本，R2实体麦克风及真人R3仍待验。
