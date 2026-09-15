@@ -1,6 +1,6 @@
 # Phase 2 发行与验收
 
-日期：2026-09-15。状态：**实现和离线/容器门禁已交付；真实云、实体麦克风与口音验收未完成，不能宣布Phase2全部通过或Phase3就绪。** 已读取用户补齐的本机.env；腾讯三个字段格式通过，实网请求已执行但被账号/资源条件拒绝，详见下方补测记录。模型凭据仍未配置，不以fixture替代真实采访。
+日期：2026-09-15。状态：**实现和离线/容器门禁已交付；真实云、实体麦克风与口音验收未完成，不能宣布Phase2全部通过或Phase3就绪。** 真实TTS已成功；Flash仍受AppID配置和ASR资源额度阻塞，详见下方补测记录。模型凭据仍未配置，不以fixture替代真实采访。
 
 实现契约由[插件Phase2](https://github.com/Develata/dsh-laorenyun/blob/main/docs/phase-2.md)拥有。产品/发行取舍见[ADR-0015](adr/0015-phase-2-speech-and-interview.md)。
 
@@ -51,7 +51,7 @@ bootstrap先持久固定ID，通过plugin来源上下文启动首轮，没有hum
 
 ## 尚未关闭的验收
 
-- 真实腾讯Flash/TTS：请求已到达腾讯，但Flash返回AppID不一致，TTS返回资源包耗尽，尚无成功音频/转写结果；引擎16k_zh_en与voice101001/-0.5/0的真实延迟、音质未验收。
+- 真实腾讯Flash/TTS：本机生产TTS provider成功，voice101001/-0.5/0生成28080字节MP3，耗时2753ms；Flash在当前.env下返回4002，临时使用官方查询得到的AppID后返回4004资源包耗尽。尚无成功转写，也未完成容器内真实语音全链或人工音质验收。
 - 真实LLM：三个配置路径可启动；尚无付费模型在Docker里完成真实采访回答，不能评价提问质量。
 - 实体麦克风、普通话/地区口音、Safari/手机HTTPS：当前只有Chromium受控设备。未提交私人录音，不报告准确率或方言覆盖。
 - 原件与规范化音频的精确时间对齐未证明；ASR时间目前属于规范化坐标。Phase3引用不得声称已有精确原件逐词定位。
@@ -60,10 +60,23 @@ bootstrap先持久固定ID，通过plugin来源上下文启动首轮，没有hum
 
 所有临时验证容器最终停止；隔离测试卷保留用于复核（仅合成素材），未执行volume prune。Agent未改写普通项目`.env`；用户自行补充的私密配置不入Git。
 
-## 用户补齐凭据后的实网检查
+## 首次补齐凭据后的实网检查（历史记录）
 
 三个标准腾讯字段均非空、无重复项，SecretId/AppId格式符合客户端要求；`.env`权限0600。没有记录任何密钥或账号数值，也未修改用户配置。
 
 - 本机生产TencentTtsProvider调用失败；使用同一官方SDK的最小TextToVoice请求进一步确认错误为 `UnsupportedOperation.PkgExhausted`。按照[腾讯错误码说明](https://cloud.tencent.cn/api/error-center?product=tts)，含义是资源包余量已用尽。没有成功合成音频，不报告音质/成功时延。
 - Flash生产provider用一秒合成静音WAV做鉴权/协议探针，HTTP200但业务code4002；脱敏message明确要求检查输入AppID与实际访问AppID是否一致。不是有效语音准确率测试，也没有成功转写。应核对[API密钥管理页](https://console.cloud.tencent.com/cam/capi)的账号AppID，见[Flash官方定义](https://cloud.tencent.cn/document/product/1093/52097)。
-- 两个条件均未解决，因此未继续消耗云调用、未启动Docker真实云全链，也未开通付费或购买资源。现有离线/容器证据不受影响；Phase2实网门禁仍未通过。
+- 当时两个条件均未解决，因此停止重复调用，未启动Docker真实云全链，也未开通付费或购买资源。后续状态以下方补测为准。
+
+## 领取TTS资源包后的补测
+
+同日，读取用户更新后的私密配置，未修改.env。实际字段名为 `TENCENTCLOUD_APP_ID`；无同名重复项或进程环境覆盖。
+
+- **TTS成功**：生产TencentTtsProvider / TextToVoice，voice101001、speed -0.5、volume 0，固定非私人首问合成为28080字节MP3，单次请求2753ms。该结果证明此音色配置可调用，不代表三个资源包或全部音色均验收。
+- **规范化成功**：同一合成MP3经生产FFmpeg模块转换，ffprobe确认 `pcm_s16le`、16000Hz、单声道、7.020秒；MP3和WAV分别保留在本机临时私密目录。
+- **当前配置Flash失败**：相同WAV、engine16k_zh_en，HTTP200/code4002，响应明确为AppID不一致。
+- **只读身份比对**：调用官方CAM [GetUserAppId](https://cloud.tencent.com/document/api/598/70416)，返回AppId与.env值不相等，Uin与OwnerUin也不相等（子账号密钥）。仅输出比对布尔值，未记录账号数值；官方返回AppId存于本机0600临时文件供用户核对。
+- **临时替换AppID后的Flash失败**：只在测试进程中使用CAM返回AppId，生产签名/请求保持不变，错误转为HTTP200/code4004，message为resource pack exhausted。按[Flash错误码](https://cloud.tencent.cn/document/product/1093/52097)，这是资源包耗尽；仍需可用于该ASR接口的额度。没有成功转写，不能报告准确率或识别成功延迟。
+- 未修改密钥/权限、未开通后付费、未购买资源、未启动新的容器。模型凭据仍空；真人麦克风/地区口音及Docker真实两轮采访门禁继续待验。
+
+实际命令：`node --env-file=…/.env --input-type=module` 调用生产TTS/Flash与官方SDK只读CAM接口；`ffprobe -v error -show_entries stream=codec_name,sample_rate,channels:format=duration -of json` 检查合成派生WAV。临时诊断包装只输出状态码/脱敏消息，不输出签名URL、密钥或原始账号响应。此次仅更新证据文档，没有变更生产代码，不重复执行既有构建/离线套件。
