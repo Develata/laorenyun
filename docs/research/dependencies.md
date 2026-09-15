@@ -42,3 +42,8 @@ Owner：本文件拥有拟引入依赖的取舍、成本和观察版本。审计
 - SQLite 同步调用只在唯一 worker；没有 native npm binding/ORM 安装成本。图/河流/语音包仍未安装。
 - 实际运行 npm 闭包、Web 打包依赖许可证与 native sharp-libvips 条款见 [THIRD_PARTY_NOTICES](../../THIRD_PARTY_NOTICES.md)。冻结锁原 registry 1572 项未改版本/integrity，镜像 npm 实际闭包为 514 个不同 package/version。
 - Playwright 使用上游已有开发依赖和本机已有 Chromium，不进入运行镜像。
+
+## Phase 2 新增运行依赖
+
+- Tencent TTS：`tencentcloud-sdk-nodejs-tts@4.1.237` + common@4.1.220，官方维护，Apache-2.0，冻结 lock。窄分包复用 Cloud API 3.0 签名/请求，避免整个腾讯 SDK；ASR Flash 不适用此协议，使用 Node fetch/crypto。SDK运行闭包37个package/version，完整LICENSE/NOTICE随插件lib/third-party分发；不进入浏览器。
+- FFmpeg：复用 Debian bookworm 包进行 WebM/Opus→PCM WAV。默认 Debian 构建含 GPL 功能，不能称为纯 LGPL；仅本地构建，不发布 registry 镜像，固定7:5.1.9-0+deb12u1，实际buildconf含--enable-gpl，Debian版权文件随镜像；对应源材料义务仍须在二进制发布前完成。相比自研解码/重采样，成熟实现显著减少兼容与安全成本。

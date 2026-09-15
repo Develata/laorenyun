@@ -1,6 +1,6 @@
 # 部署、安全与数据运维
 
-Owner：发行、环境与隐私边界。当前是 Phase 1 基础，实测回执见 [phase-1](phase-1.md)。业务存储由[插件](https://github.com/Develata/dsh-laorenyun/blob/main/docs/deployment-integration.md)拥有。
+Owner：发行、环境与隐私边界。当前为 Phase 2 已实现、实网验收待完成，实测回执见 [phase-2](phase-2.md)。业务存储由[插件](https://github.com/Develata/dsh-laorenyun/blob/main/docs/deployment-integration.md)拥有。
 
 ## 构建与启动
 
@@ -14,13 +14,13 @@ docker compose logs
 
 一个镜像、一个服务、一个 named volume。不需要宿主 Node/pnpm/Python/Rust。基础镜像、DSH commit、插件 commit 分别由 Dockerfile、[UPSTREAM.json](../UPSTREAM.json)、[PLUGIN.json](../PLUGIN.json)固定。Node 24.21.0 Debian bookworm slim；pnpm 11.7.0 仅构建期使用。linux/amd64 已作为首个验收平台；arm64 不在本次声明范围。
 
-构建顺序：上游原冻结锁安装 → Host 编译/Typert → Client/Web/native addon → 派生冻结 packaging lock 离线 deploy → 运行依赖发现补齐 → 固定 Git SHA 插件构建打包 → 非 root 最终镜像。只复制运行包和 Web 产物；构建细节及适配清单见 [UPSTREAM](../UPSTREAM.md)。无启动时下载/安装，没有腾讯/FFmpeg/本地模型引擎。
+构建顺序：上游原冻结锁安装 → Host 编译/Typert → Client/Web/native addon → 派生冻结 packaging lock 离线 deploy → 运行依赖发现补齐 → 固定 Git SHA 插件构建打包 → 非 root 最终镜像。只复制运行包和 Web 产物；构建细节及适配清单见 [UPSTREAM](../UPSTREAM.md)。无启动时下载/安装，内含腾讯TTS窄SDK及Debian FFmpeg，没有本地模型引擎。
 
 ## Profiles 与探针
 
 默认 `laorenyun` 隐藏开发面板，唯一允许的 preset 不注册模型 shell/fs/network 工具。`laorenyun-dev` 保留 DSH 诊断 UI；只有显式 `LAORENYUN_PROBES=true` 才加载假模型、假转写和支线验证按钮。两者不可同时写同一数据卷。开发 preset 同样不授予 shell；保留诊断 UI 不等于授予模型工具。
 
-Phase 1 默认 profile 可加载与读取历史，但不含真实采访智能；未配置真实模型时提交会明确返回 DSH provider 错误。离线完整门禁使用 dev + probes，不需要任何付费 API key。首次创建 DSH settings 时设中文，已有用户 settings 不覆盖。
+默认 profile 已加载口述史技能；未配置真实模型时提交会明确返回 DSH provider 错误。离线完整门禁使用 dev + probes，不需要任何付费 API key。首次创建 DSH settings 时设中文，已有用户 settings 不覆盖。
 
 ## 持久数据和权限
 
@@ -28,7 +28,7 @@ Compose named volume `laorenyun-data` → `/app/data`，运行 UID/GID **10001:1
 
 bind mount 是管理员选项：预建该 UID/GID 可写的受控目录；不匹配会报 `DATA_PERMISSIONS`。不执行递归 chown 或 chmod 777。SQLite 单 worker、WAL/FULL/FK 与迁移是插件责任；健康必须等领域库打开成功。
 
-停写并停止容器后备份**整个数据卷**，包含 DB/WAL/SHM、原件/manifest、DSH 会话和访问保护材料；单拷 `.db` 不是在线备份。`.env` 单独安全备份。原始材料无 TTL、无静默清理。Phase 1 失败 partial 保留；容量预检/派生缓存配额留给真实上传阶段。不要把未完成文件当缓存删除。
+停写并停止容器后备份**整个数据卷**，包含 DB/WAL/SHM、原件/manifest、DSH 会话和访问保护材料；单拷 `.db` 不是在线备份。`.env` 单独安全备份。原始材料无 TTL、无静默清理。失败partial保留；TTS缓存一条≤8MiB，卷总容量仍由管理员监控。不要把未完成文件当缓存删除。
 
 ## 网络、认证与健康
 
@@ -44,7 +44,7 @@ bind mount 是管理员选项：预建该 UID/GID 可写的受控目录；不匹
 
 `.env` 由 Compose `env_file` 注入；本文件存在本身并不使普通 Node 读取它。管理员能 inspect 容器 env，按个人本地部署接受此边界。
 
-| 变量 | Phase 1 状态 |
+| 变量 | 当前状态 |
 |---|---|
 | `LAORENYUN_PROFILE` | laorenyun / laorenyun-dev，默认前者 |
 | `LAORENYUN_PORT` | 宿主端口，默认 3080 |
@@ -52,9 +52,17 @@ bind mount 是管理员选项：预建该 UID/GID 可写的受控目录；不匹
 | `LAORENYUN_MODEL_PROVIDER`, `LAORENYUN_MODEL` | 选择已在原生 DSH settings 配好的 provider/model；probes 时由 fixture 覆盖 |
 | `DSH_HOME`, `LAORENYUN_DATA_DIR`, `LAORENYUN_PRESET_ROOT`, `LAORENYUN_BIND` | 发行固定路径/容器监听，非用户领域输入 |
 | `DSH_TELEMETRY_DISABLED` | 固定 true |
-| `LAORENYUN_LLM_PROTOCOL/MODEL/BASE_URL/API_KEY` | Phase 2 adapter 保留，当前**不读取**；不得误以为填写即完成 provider 配置 |
-| `TENCENTCLOUD_SECRET_ID/SECRET_KEY/APP_ID/REGION` | Phase 2 保留；Host 凭据，浏览器不可接触；region 默认候选 ap-shanghai |
-| `LAORENYUN_ASR_ENGINE`, `LAORENYUN_TTS_VOICE` | Phase 2 候选 16k_zh_en / 1001，账号与口音实测后启用 |
-| `LAORENYUN_LOG_LEVEL` | Phase 2 保留；当前沿用原生 DSH 日志 |
+| `LAORENYUN_LLM_PROTOCOL/MODEL/BASE_URL/API_KEY` | 配置原生 llm-pi-ai 的 laorenyun-model 路由；API_KEY通过原生apiKeyEnv解析，三种协议选一 |
+| `TENCENTCLOUD_SECRET_ID/SECRET_KEY/APP_ID` | 腾讯Host凭据；Flash需AppID；当前接口不需region |
+| `TENCENT_ASR_ENGINE/TIMEOUT_MS` | 默认16k_zh_en / 90000；没有自动多引擎回退 |
+| `TENCENT_TTS_VOICE/SPEED/VOLUME/TIMEOUT_MS` | 默认101001 / -0.5 / 0 / 60000；固定MP3 |
 
-Phase 2 启用云 provider 时必须验证缺失凭据并明确报错，不能落到无效默认值。云调用需要界面告知：腾讯处理音频/朗读文本，LLM 处理访谈文字；文字输入也可能离开本机。本项目不宣称云端 zero retention。导出含完整私人历史，交付他人前提示其范围。录音/照片是资料而不是系统指令。
+启用云 provider 时缺失凭据会明确报错，不能落到无效默认值。云调用需要界面告知：腾讯处理音频/朗读文本，LLM 处理访谈文字；文字输入也可能离开本机。本项目不宣称云端 zero retention。导出含完整私人历史，交付他人前提示其范围。录音/照片是资料而不是系统指令。
+
+### 云配置与验收
+
+Responses：protocol=`openai-responses`，API root通常`https://api.openai.com/v1`；OpenAI-compatible：`openai-completions`，填写服务商API root；Anthropic：`anthropic-messages`，原生通常`https://api.anthropic.com`。这些走同一个DSH adapter，不承诺未经实网验证的网关兼容性。model不能为空时，启动校验协议、URL和密钥存在。
+
+开发离线完整链还可显式设置`LAORENYUN_SPEECH_FIXTURE=true`，只有dev+probes才能生效；返回的是假ASR和静音WAV，不能作为云语音效果。生产profile不读取该开关。
+
+原件长期保留，32MiB请求上限不等于磁盘总配额；磁盘不足明确失败、保留可恢复副本，管理员需监视卷容量。规范化临时任务失败会清理自身输出；突然SIGKILL留下的normalizing目录不自动删除原件。

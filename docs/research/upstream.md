@@ -98,3 +98,11 @@ Flash官方宣称常见30分钟录音可10秒内识别；这是供应商典型�
 - [D3 curves](https://d3js.org/d3-shape/curve)、[SVG弧长](https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/getPointAtLength)：曲线生成与弧长定位分开；选择是工程判断，非对性能的现成证明。
 - [SQLite适用场景](https://www.sqlite.org/whentouse.html)：嵌入式本地存储；[Node24 sqlite](https://nodejs.org/download/release/v24.21.0/docs/api/sqlite.html)：同步与RC状态。
 - [Settles survey](https://burrsettles.com/pub/settles.activelearning.pdf)：不确定性/覆盖启发，不提供老人云加权评分的正确性证明。
+
+## Phase 2 实施核验（2026-09-15）
+
+复核上述Flash52097、SDK总览52554、TextToVoice37995及固定DSH源：Flash仍用专用HTTPS/HMAC-SHA1路径，TTS官方分包公开request支持AbortSignal。实际实现为Node fetch/crypto与锁定TTS/common；没有引入Python。Flash固定签名fixture由独立HMAC计算交叉验证，尚无真实腾讯账号调用。
+
+固定DSH `llm-pi-ai/src/config.ts`支持apiKeyEnv、三种api类别、timeoutMs与streamIdleTimeoutMs；发行路由设90秒请求/30秒idle/最多一次重试。三种配置各自真实容器启动healthy，模型响应测试仍只用明确fixture，不能视作协议实网互通。
+
+公开SessionBinding.eventSource的append真人事件可用于准备自动朗读；基线replace/prepend不触发。原生input state不是可靠的提交中通知，浏览器实测推动此修正。原生source可保留显式扩展Source ID，模型正文无需UUID标记。证据与限制见[Phase2](../phase-2.md)。

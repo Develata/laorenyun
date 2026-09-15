@@ -19,3 +19,4 @@ Owner：本目录固定跨阶段决定；产品行为见各专题，接口形状
 - [ADR-0014 实际原生关联与冻结打包](0014-phase-1-native-binding-and-packaging.md)
 
 ADR-0013 的 G1–G3 实施证据见 [Phase 1](../phase-1.md)。详细证据见[research](../research/upstream.md)，不在每份ADR复制源码矩阵。
+- [ADR-0015 Phase 2 语音、来源与采访接入](0015-phase-2-speech-and-interview.md)

@@ -4,7 +4,7 @@
 
 面向约 60–80 岁使用者的 AI 口述史与持续生长的第一人称自传系统。自然讲述 → 保留原始录音 → 可修改的识别草稿 → 时间记忆图 → 可溯源自传。文字输入始终可用。
 
-**当前状态：Phase 1 可执行基础；有固定 DSH、插件、SQLite 和 Compose，尚无真实语音或完整采访功能。** 本仓库是完整应用与 DeepSeek Harness 发行层；[dsh-laorenyun](https://github.com/Develata/dsh-laorenyun) 拥有业务插件。原创内容采用 [MIT](LICENSE)，第三方内容分别遵守[各自许可](THIRD_PARTY_NOTICES.md)。
+**当前状态：Phase 2 语音与采访已实现，真实云验收待完成；验收证据及未完成的实网门槛见 [Phase 2](docs/phase-2.md)。** 本仓库是完整应用与 DeepSeek Harness 发行层；[dsh-laorenyun](https://github.com/Develata/dsh-laorenyun) 拥有业务插件。原创内容采用 [MIT](LICENSE)，第三方内容分别遵守[各自许可](THIRD_PARTY_NOTICES.md)。
 
 ## 文档入口 / Context Control Plane
 
@@ -28,8 +28,8 @@
 
 ```bash
 cp .env.example .env
-# Phase 1 默认不开启测试探针，也不调用腾讯
+# 配置模型与腾讯凭据；保持开发探针关闭
 docker compose up --build -d
 ```
 
-启动后从 `docker compose logs` 获取 DSH 原生访问链接（包含秘密，勿分享）。默认地址只发布到本机 `127.0.0.1:3080`。开发验证在 `.env` 设置 `LAORENYUN_PROFILE=laorenyun-dev` 和 `LAORENYUN_PROBES=true`，使用固定假 ASR / 模型回执。实际验收见 [Phase 1](docs/phase-1.md)，边界与手机 HTTPS 条件见[部署](docs/10-deployment.md)。不要求使用者安装 Node、pnpm、Python、Rust 或 DSH。
+启动后从 `docker compose logs` 获取 DSH 原生访问链接（包含秘密，勿分享）。默认地址只发布到本机 `127.0.0.1:3080`。开发验证在 `.env` 设置 `LAORENYUN_PROFILE=laorenyun-dev` 和 `LAORENYUN_PROBES=true`，使用固定假 ASR / 模型回执。实际验收见 [Phase 2](docs/phase-2.md)，边界与手机 HTTPS 条件见[部署](docs/10-deployment.md)。不要求使用者安装 Node、pnpm、Python、Rust 或 DSH。

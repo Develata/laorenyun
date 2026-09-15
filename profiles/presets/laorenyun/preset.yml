@@ -1,3 +1,3 @@
 name: 老人云采访
-description: Phase 1 最小采访上下文，无模型工具。
+description: 中文口述史采访，仅可读取打包的采访规范。
 order: 1

@@ -13,6 +13,7 @@ FROM dsh-build AS licenses-build
 COPY scripts/collect-licenses.mjs /build/scripts/collect-licenses.mjs
 RUN node /build/scripts/collect-licenses.mjs
 FROM dsh-build AS plugin-build
+RUN sed -i 's|http://deb.debian.org|https://deb.debian.org|g' /etc/apt/sources.list.d/debian.sources && apt-get -o Acquire::Retries=2 -o Acquire::https::Timeout=20 update && apt-get -o Acquire::Retries=2 -o Acquire::https::Timeout=20 install -y --no-install-recommends ffmpeg=7:5.1.9-0+deb12u1 && rm -rf /var/lib/apt/lists/*
 COPY PLUGIN.json /build/PLUGIN.json
 COPY scripts/fetch-plugin.mjs /build/scripts/fetch-plugin.mjs
 RUN node /build/scripts/fetch-plugin.mjs
@@ -20,6 +21,8 @@ WORKDIR /build/plugin
 RUN --mount=type=cache,id=laorenyun-pnpm,target=/root/.local/share/pnpm/store pnpm install --frozen-lockfile --ignore-scripts && pnpm check && pnpm pack --pack-destination /build/package
 RUN mkdir -p /opt/dsh-laorenyun && tar -xzf /build/package/dsh-laorenyun-0.1.0.tgz -C /opt/dsh-laorenyun --strip-components=1 && ln -s /app/data/dsh/profiles/node_modules /opt/dsh-laorenyun/node_modules
 FROM node:24.21.0-bookworm-slim@sha256:2fe369e969550cde8e867afc3fe370b260140cab4a23d467074295b42163d553 AS dsh-runtime
+COPY --from=dsh-build /etc/ssl/certs/ /etc/ssl/certs/
+RUN sed -i 's|http://deb.debian.org|https://deb.debian.org|g' /etc/apt/sources.list.d/debian.sources && apt-get -o Acquire::Retries=2 -o Acquire::https::Timeout=20 update && apt-get -o Acquire::Retries=2 -o Acquire::https::Timeout=20 install -y --no-install-recommends ffmpeg=7:5.1.9-0+deb12u1 ca-certificates && rm -rf /var/lib/apt/lists/*
 RUN groupadd --gid 10001 laorenyun && useradd --uid 10001 --gid 10001 --no-create-home --home-dir /app/data laorenyun && mkdir -p /app/data && chown 10001:10001 /app/data && chmod 700 /app/data
 COPY --from=dsh-build /opt/dsh/ /opt/dsh/
 COPY --from=dsh-build /build/upstream/deepseek-harness/packages/util/time/package.json /opt/dsh/node_modules/@deepseek-ai/dsh-util-time/

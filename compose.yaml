@@ -1,6 +1,6 @@
 services:
   laorenyun:
-    image: laorenyun:phase1
+    image: laorenyun:phase2
     build: .
     env_file: .env
     environment:

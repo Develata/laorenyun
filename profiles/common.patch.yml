@@ -13,8 +13,17 @@
 - id: agent-default-model
   config:
     provider: !!js >-
-      process.env.LAORENYUN_PROBES === 'true' ? 'laorenyun-fixture' : (process.env.LAORENYUN_MODEL_PROVIDER || 'deepseek-official')
+      process.env.LAORENYUN_PROBES === 'true' ? 'laorenyun-fixture' : (process.env.LAORENYUN_LLM_MODEL ? 'laorenyun-model' : (process.env.LAORENYUN_MODEL_PROVIDER || 'deepseek-official'))
     model: !!js >-
-      process.env.LAORENYUN_PROBES === 'true' ? 'fixture' : (process.env.LAORENYUN_MODEL || 'deepseek-flash')
+      process.env.LAORENYUN_PROBES === 'true' ? 'fixture' : (process.env.LAORENYUN_LLM_MODEL || process.env.LAORENYUN_MODEL || 'deepseek-flash')
 - id: session-title-llm
   disabled: true
+- id: llm-pi-ai
+  config:
+    providers: !!js >-
+      process.env.LAORENYUN_LLM_MODEL ? { 'laorenyun-model': { apiKeyEnv: 'LAORENYUN_LLM_API_KEY', api: process.env.LAORENYUN_LLM_PROTOCOL || 'openai-responses', baseURL: process.env.LAORENYUN_LLM_BASE_URL || 'https://api.openai.com/v1', timeoutMs:90000, streamIdleTimeoutMs:30000, models: [{id:process.env.LAORENYUN_LLM_MODEL,contextWindow:128000,maxTokens:1024}], retryPolicy:{mode:'normal',maxRetries:1} } } : {}
+- id: skill-filesystem
+  config:
+    includeDefaultRoots: false
+    customSkillDirs: [/opt/dsh-laorenyun/skills]
+    watch: false

@@ -32,3 +32,9 @@ Build-only new plugin tools: TypeScript 6.0.3 (Apache-2.0), esbuild 0.28.2 (MIT)
 `PerryLink/dsh-talk` is **Apache-2.0**, not MIT. No source has been copied. If adapted later, its copyright/license and applicable NOTICE remain, and modified files must identify changes; new MIT code may coexist without relicensing upstream code. `aeonfun/soul.md` is MIT, `OpenClaw` observed MIT; neither runtime or prompt files are incorporated. Tencent speech-go Apache-2.0 is a protocol reference only; speech-js snapshot without identified root license is not approved for copying.
 
 See [dependency audit](docs/research/dependencies.md) for versions, sources, alternatives and costs, and [upstream evidence](docs/research/upstream.md). Before any release, generate the inventory from **actual artifacts**, retain full license texts and required source offers/materials, audit assets separately, and reconcile this index. The local image inventory above is actual evidence; publishing redistributable binary images still requires the stated corresponding-source work.
+
+## Phase 2 新增
+
+腾讯TTS分包及common：Apache-2.0；实际依赖完整许可由插件构建产物`lib/third-party/`随镜像保留。Flash原创协议代码不复制腾讯SDK源码。
+
+音频转换采用Debian bookworm的FFmpeg发行包，其配置包含GPL组件，不声明整个FFmpeg为LGPL。镜像保留`/usr/share/doc/*/copyright`；实际固定FFmpeg 7:5.1.9-0+deb12u1，buildconf含--enable-gpl（没有--enable-nonfree）；OS包与配置清单见licenses/phase-2。此阶段只做本地Compose构建，不发布registry二进制。发布前须补齐FFmpeg、其链接库及此前libvips/Debian组件适用的对应源码/构建材料与交付方式。原创MIT不覆盖这些组件。
