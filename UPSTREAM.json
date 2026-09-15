@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/deepseek-ai/deepseek-harness",
+  "version": "0.1.6-alpha.1",
+  "commit": "0d1f50007f9bca3f52b06e1c3074fa14d5fb0720",
+  "path": "upstream/deepseek-harness",
+  "sourceFiles": 11239,
+  "corePatches": []
+}
