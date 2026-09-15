@@ -54,7 +54,7 @@ bind mount 是管理员选项：预建该 UID/GID 可写的受控目录；不匹
 | `DSH_TELEMETRY_DISABLED` | 固定 true |
 | `LAORENYUN_LLM_PROTOCOL/MODEL/BASE_URL/API_KEY` | 配置原生 llm-pi-ai 的 laorenyun-model 路由；API_KEY通过原生apiKeyEnv解析，三种协议选一 |
 | `TENCENTCLOUD_SECRET_ID/SECRET_KEY/APP_ID` | 腾讯Host凭据；Flash需AppID；当前接口不需region |
-| `TENCENT_ASR_ENGINE/TIMEOUT_MS` | 默认16k_zh_en / 90000；没有自动多引擎回退 |
+| `TENCENT_ASR_ENGINE/TIMEOUT_MS` | 默认16k_zh_en / 90000；普通极速版免费包需显式选16k_zh，大模型额度独立；没有自动多引擎回退 |
 | `TENCENT_TTS_VOICE/SPEED/VOLUME/TIMEOUT_MS` | 默认101001 / -0.5 / 0 / 60000；固定MP3 |
 
 启用云 provider 时缺失凭据会明确报错，不能落到无效默认值。云调用需要界面告知：腾讯处理音频/朗读文本，LLM 处理访谈文字；文字输入也可能离开本机。本项目不宣称云端 zero retention。导出含完整私人历史，交付他人前提示其范围。录音/照片是资料而不是系统指令。
