@@ -2,9 +2,20 @@
 
 Original Laorenyun documentation/code: Copyright (c) 2026 Develata, MIT, see [LICENSE](LICENSE).
 
-**Phase 0 status:** this repository contains original documentation and license text only; it does not yet vendor DeepSeek Harness, copy dsh-talk/persona code, ship a Docker image, install runtime dependencies, or distribute fonts, model weights, images or speech samples. Research references are not a license grant for future copying. This file is the distribution policy and audit index, not a completed notice inventory for a future image.
+**Phase 1 status:** this repository preserves the exact DSH source snapshot and builds a local Docker runtime. Original MIT does not relicense upstream code or binaries. The image is built locally; no container registry release is part of this phase.
 
-## Required treatment when packaging
+## Actual image inventory
+
+- [runtime-packages.json](licenses/runtime-packages.json): 514 unique DSH runtime npm package/version pairs, generated from the built linux/amd64 image; it excludes bundled Web modules and Debian base packages, which have separate notices below. No Claude Agent SDK, Codex binary, TypeScript compiler, esbuild or tsx occurs in the runtime package store.
+- `/opt/laorenyun/licenses/build-closure/` preserves full license/notice files from the selected build closure, including React 18.3.1, React DOM and KaTeX bundled into Web JS. Its build-closure.json is intentionally a superset, not an assertion all listed build tools ship as runtime dependencies.
+- DSH's LICENSE/THIRD_PARTY_NOTICES and native-system LICENSE are copied separately into the image; vendor license texts also remain in the unchanged source and installed package directories. Debian copyright files remain under `/usr/share/doc`; Node 24.21.0's complete LICENSE is [preserved](licenses/node/LICENSE), sha256 `5888dbb9a1d2b18f2c3e6c5f6af1b39de658372b402a0577b002777f14c62ace`.
+- `@img/sharp-libvips-linux-x64@1.3.2` is present as a DSH image-processing dependency. Its binary is **LGPL-3.0-or-later**, not the Apache license of its packaging scripts. Its component versions, notices, LGPL/GPL texts and unmodified v1.3.2 build scripts are in [licenses/sharp-libvips](licenses/sharp-libvips). It contains additional libraries under LGPL/MPL/permissive terms. The shared library remains replaceable, and this distribution imposes no restriction on reverse engineering to debug modifications.
+- Before publishing binary images, provide corresponding source/build materials for the LGPL/MPL components and Debian base as applicable alongside the image, using the exact version/source URLs in the preserved build scripts and upstream archives. Merely publishing this notice is not a completed source offer. Phase 1 publishes source repositories, not a binary image release.
+- Laorenyun adds no fonts, icons, real speech, model weights, dsh-talk code, Tencent SDK, D3, FFmpeg or persona code. Placeholder media is clearly synthetic test content. Existing DSH Web assets retain upstream obligations.
+
+Build-only new plugin tools: TypeScript 6.0.3 (Apache-2.0), esbuild 0.28.2 (MIT), Prettier 3.6.2 (MIT); pnpm 11.7.0 (MIT). They are frozen in package metadata/locks, not required on the user's host.
+
+## Future component treatment
 
 | Component | Verified license / obligation |
 |---|---|
@@ -14,10 +25,10 @@ Original Laorenyun documentation/code: Copyright (c) 2026 Develata, MIT, see [LI
 | Tencent official TTS SDK / common | Apache-2.0. Include license, copyright and any supplied NOTICE; indicate modifications if copied/changed. Cloud service terms are separate. |
 | d3-shape / d3-path | ISC; include actual installed package copyright/permission notices. |
 | FFmpeg | Default LGPL-2.1-or-later, subject to actual configuration and linked dependencies. Record exact source archive hash, configure flags, libraries and license; distribute required notices and corresponding source/build materials by a compliant method. No `--enable-nonfree`; GPL options require a separate explicit distribution review. Separate subprocess use does not waive binary distribution obligations. |
-| Existing DSH UI icons/libraries | Preserve their actual upstream/transitive notices. No new bundled fonts/images/audio/weights in Phase 0. |
+| Existing DSH UI icons/libraries | Preserve their actual upstream/transitive notices. No new Laorenyun fonts/images/audio/weights. |
 
 ## Referenced but not incorporated
 
 `PerryLink/dsh-talk` is **Apache-2.0**, not MIT. No source has been copied. If adapted later, its copyright/license and applicable NOTICE remain, and modified files must identify changes; new MIT code may coexist without relicensing upstream code. `aeonfun/soul.md` is MIT, `OpenClaw` observed MIT; neither runtime or prompt files are incorporated. Tencent speech-go Apache-2.0 is a protocol reference only; speech-js snapshot without identified root license is not approved for copying.
 
-See [dependency audit](docs/research/dependencies.md) for versions, sources, alternatives and costs, and [upstream evidence](docs/research/upstream.md). Before any release, generate the inventory from **actual artifacts**, retain full license texts and required source offers/materials, audit assets separately, and reconcile this index. This is an engineering license audit, not a claim that an unbuilt image already complies.
+See [dependency audit](docs/research/dependencies.md) for versions, sources, alternatives and costs, and [upstream evidence](docs/research/upstream.md). Before any release, generate the inventory from **actual artifacts**, retain full license texts and required source offers/materials, audit assets separately, and reconcile this index. The local image inventory above is actual evidence; publishing redistributable binary images still requires the stated corresponding-source work.

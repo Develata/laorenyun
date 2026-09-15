@@ -16,4 +16,6 @@ Owner：本目录固定跨阶段决定；产品行为见各专题，接口形状
 - [ADR-0012 保留浏览器原件并集中转换音频](0012-audio-normalization.md)
 - [ADR-0013 公开接入面的验证门槛](0013-dsh-integration-seams.md)
 
-首次实施优先核验ADR-0013的G1–G3。详细证据见[research](../research/upstream.md)，不在每份ADR复制源码矩阵。
+- [ADR-0014 实际原生关联与冻结打包](0014-phase-1-native-binding-and-packaging.md)
+
+ADR-0013 的 G1–G3 实施证据见 [Phase 1](../phase-1.md)。详细证据见[research](../research/upstream.md)，不在每份ADR复制源码矩阵。

@@ -1,0 +1,34 @@
+services:
+  laorenyun:
+    image: laorenyun:phase1
+    build: .
+    env_file: .env
+    environment:
+      DSH_HOME: /app/data/dsh
+      DSH_TELEMETRY_DISABLED: "true"
+      LAORENYUN_DATA_DIR: /app/data
+      LAORENYUN_BIND: 0.0.0.0
+      LAORENYUN_PRESET_ROOT: /opt/laorenyun/profiles/presets
+    user: "10001:10001"
+    init: true
+    ports:
+      - "127.0.0.1:${LAORENYUN_PORT:-3080}:3080"
+    volumes:
+      - laorenyun-data:/app/data
+    healthcheck:
+      test: ["CMD", "node", "/opt/laorenyun/scripts/healthcheck.mjs"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 20s
+    restart: unless-stopped
+    stop_grace_period: 30s
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+volumes:
+  laorenyun-data:

@@ -1,0 +1,6 @@
+- id: persona
+  name: "@deepseek-ai/dsh-persona"
+  config:
+    prefix: 老人云 Phase 1 集成验证助手。当前仅验证持久性与交互。
+    complete: true
+    includeRuntimeContext: false

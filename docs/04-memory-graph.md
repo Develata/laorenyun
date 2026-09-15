@@ -1,5 +1,7 @@
 # 时间记忆图
 
+> Phase 1 当前实现与证据见 [phase-1](phase-1.md)；本文件保留完整产品规范，未标为已实现的能力仍属后续阶段。
+
 Owner：本文件拥有领域语义；类型和数据库映射分别在[插件 contracts](https://github.com/Develata/dsh-laorenyun/blob/main/docs/contracts.md)、[memory](https://github.com/Develata/dsh-laorenyun/blob/main/docs/memory.md)。
 
 ## 最小本体

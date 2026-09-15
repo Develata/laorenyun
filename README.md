@@ -4,7 +4,7 @@
 
 面向约 60–80 岁使用者的 AI 口述史与持续生长的第一人称自传系统。自然讲述 → 保留原始录音 → 可修改的识别草稿 → 时间记忆图 → 可溯源自传。文字输入始终可用。
 
-**当前状态：Phase 0 架构与文档阶段；没有可运行产品、镜像或语音功能。** 本仓库是完整应用与 DeepSeek Harness 发行层；[dsh-laorenyun](https://github.com/Develata/dsh-laorenyun) 拥有业务插件。原创内容采用 [MIT](LICENSE)，第三方内容分别遵守[各自许可](THIRD_PARTY_NOTICES.md)。
+**当前状态：Phase 1 可执行基础；有固定 DSH、插件、SQLite 和 Compose，尚无真实语音或完整采访功能。** 本仓库是完整应用与 DeepSeek Harness 发行层；[dsh-laorenyun](https://github.com/Develata/dsh-laorenyun) 拥有业务插件。原创内容采用 [MIT](LICENSE)，第三方内容分别遵守[各自许可](THIRD_PARTY_NOTICES.md)。
 
 ## 文档入口 / Context Control Plane
 
@@ -22,14 +22,14 @@
 | 外部事实与选型 | [证据账本](docs/research/upstream.md) → [依赖审计](docs/research/dependencies.md) → [ADR](docs/adr/README.md) |
 | 具体类型、插件适配 | [插件契约](https://github.com/Develata/dsh-laorenyun/blob/main/docs/contracts.md) |
 
-## 最终部署契约（尚未交付）
+## 启动基础应用
 
-未来 Release 应提供镜像、Compose 和 `.env.example`，使用者只需 Docker：
+使用者只需 Docker Desktop / Docker Engine 与 Compose：
 
 ```bash
 cp .env.example .env
-# 填写云服务和模型配置
-docker compose up -d
+# Phase 1 默认不开启测试探针，也不调用腾讯
+docker compose up --build -d
 ```
 
-当前请勿把以上命令当成可运行安装指南。具体网络边界、启动链接与手机 HTTPS 条件见[部署设计](docs/10-deployment.md)。不要求使用者安装 Node、pnpm、Python、Rust 或 DSH。
+启动后从 `docker compose logs` 获取 DSH 原生访问链接（包含秘密，勿分享）。默认地址只发布到本机 `127.0.0.1:3080`。开发验证在 `.env` 设置 `LAORENYUN_PROFILE=laorenyun-dev` 和 `LAORENYUN_PROBES=true`，使用固定假 ASR / 模型回执。实际验收见 [Phase 1](docs/phase-1.md)，边界与手机 HTTPS 条件见[部署](docs/10-deployment.md)。不要求使用者安装 Node、pnpm、Python、Rust 或 DSH。

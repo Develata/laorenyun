@@ -1,5 +1,7 @@
 # 语音到草稿与朗读
 
+> Phase 1 当前实现与证据见 [phase-1](phase-1.md)；本文件保留完整产品规范，未标为已实现的能力仍属后续阶段。
+
 Owner：本文件拥有交互与失败语义；[插件 speech](https://github.com/Develata/dsh-laorenyun/blob/main/docs/speech.md) 拥有腾讯映射、具体预算与恢复操作。外部 API 证据见[账本](research/upstream.md)。
 
 ## 端到端顺序

@@ -1,0 +1,20 @@
+- id: webserver
+  config:
+    host: !!js process.env.LAORENYUN_BIND || '127.0.0.1'
+    port: 3080
+- id: agent-presets
+  config:
+    default: laorenyun
+    roots:
+      - path: !!js process.env.LAORENYUN_PRESET_ROOT
+        trust: system
+    includeShippedRoot: false
+    includeUserRoot: false
+- id: agent-default-model
+  config:
+    provider: !!js >-
+      process.env.LAORENYUN_PROBES === 'true' ? 'laorenyun-fixture' : (process.env.LAORENYUN_MODEL_PROVIDER || 'deepseek-official')
+    model: !!js >-
+      process.env.LAORENYUN_PROBES === 'true' ? 'fixture' : (process.env.LAORENYUN_MODEL || 'deepseek-flash')
+- id: session-title-llm
+  disabled: true

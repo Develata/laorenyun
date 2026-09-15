@@ -1,5 +1,7 @@
 # 采访行为、上下文与主支线
 
+> Phase 1 当前实现与证据见 [phase-1](phase-1.md)；本文件保留完整产品规范，未标为已实现的能力仍属后续阶段。
+
 Owner：本文件拥有行为和生命周期语义；[插件 interview](https://github.com/Develata/dsh-laorenyun/blob/main/docs/interview.md) 拥有 DSH 接入方式。
 
 ## 采访规范

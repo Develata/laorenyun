@@ -1,5 +1,7 @@
 # 出处、文字修订与完整性
 
+> Phase 1 当前实现与证据见 [phase-1](phase-1.md)；本文件保留完整产品规范，未标为已实现的能力仍属后续阶段。
+
 Owner：本文件拥有来源和修订语义。类型在[插件 contracts](https://github.com/Develata/dsh-laorenyun/blob/main/docs/contracts.md)，文件提交与事务在[插件 memory](https://github.com/Develata/dsh-laorenyun/blob/main/docs/memory.md)。
 
 ## 可追溯链

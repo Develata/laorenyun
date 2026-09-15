@@ -34,3 +34,11 @@ Owner：本文件拥有拟引入依赖的取舍、成本和观察版本。审计
 ## 资产与服务
 
 图标先用DSH既有原语并保留其依赖notices；Phase0无新增图标包。字体先用系统字体栈，不分发字体文件。未复制图片、纹理、示例真人音频或模型权重；以后每个下载资产单独记录来源、许可和再分发权，代码许可证不覆盖模型/资产。腾讯云服务的计费、隐私、数据处理和使用条款独立于SDK Apache许可；TTS生成音频也不能自动宣称MIT资产。不得把真人访谈作为公开测试fixture。
+
+## Phase 1 实际增量
+
+- 运行新增通用依赖：无。node:sqlite、worker_threads、crypto、fs 属 Node；DSH/Cordis/React 沿用 pin，领域不依赖腾讯/ORM。
+- 构建工具 TypeScript 6.0.3（Apache-2.0）、esbuild 0.28.2（MIT）、Prettier 3.6.2（MIT）沿用成熟编译/格式化能力；各自精确锁定，仅开发/构建依赖，较手写模块打包与声明生成维护成本低。pnpm 11.7.0 与 DSH 一致。没有新增通用运行框架。
+- SQLite 同步调用只在唯一 worker；没有 native npm binding/ORM 安装成本。图/河流/语音包仍未安装。
+- 实际运行 npm 闭包、Web 打包依赖许可证与 native sharp-libvips 条款见 [THIRD_PARTY_NOTICES](../../THIRD_PARTY_NOTICES.md)。冻结锁原 registry 1572 项未改版本/integrity，镜像 npm 实际闭包为 514 个不同 package/version。
+- Playwright 使用上游已有开发依赖和本机已有 Chromium，不进入运行镜像。

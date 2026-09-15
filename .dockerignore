@@ -1,0 +1,13 @@
+.git
+.env
+.env.*
+!.env.example
+**/node_modules
+**/lib
+**/dist
+**/*.tsbuildinfo
+**/.codegraph
+**/.git
+**/data
+**/output
+**/*.log

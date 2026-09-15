@@ -1,5 +1,7 @@
 # 验证策略
 
+> Phase 1 当前实现与证据见 [phase-1](phase-1.md)；本文件保留完整产品规范，未标为已实现的能力仍属后续阶段。
+
 Owner：本文件拥有验收层次；[插件 testing](https://github.com/Develata/dsh-laorenyun/blob/main/docs/testing.md) 列模块/接口测试，避免重复用例。
 
 ## 分层证据

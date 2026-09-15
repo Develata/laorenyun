@@ -1,5 +1,7 @@
 # 系统架构与不变量
 
+> Phase 1 当前实现与证据见 [phase-1](phase-1.md)；本文件保留完整产品规范，未标为已实现的能力仍属后续阶段。
+
 Owner：本文件拥有模块/权威边界和全局不变量。具体类型唯一 owner 是[插件 contracts](https://github.com/Develata/dsh-laorenyun/blob/main/docs/contracts.md)。
 
 ```mermaid

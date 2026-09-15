@@ -1,5 +1,7 @@
 # Web 交互、状态与记忆河流
 
+> Phase 1 当前实现与证据见 [phase-1](phase-1.md)；本文件保留完整产品规范，未标为已实现的能力仍属后续阶段。
+
 Owner：本文件拥有页面行为/视觉验收；[插件 UI](https://github.com/Develata/dsh-laorenyun/blob/main/docs/ui.md) 拥有 slot 和 client 适配。
 
 ## 页面

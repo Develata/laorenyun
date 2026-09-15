@@ -1,5 +1,7 @@
 # 上游证据账本
 
+> Phase 0 的版本研究保留为基线；Phase 1 实测修正（原生 rpcId 归属、父会话冷恢复、pnpm 注入和发现链接）见 [ADR-0014](../adr/0014-phase-1-native-binding-and-packaging.md) 与 [UPSTREAM](../../UPSTREAM.md)。pin 未升级。
+
 检索日期：**2026-09-15**。源码证据优先于 README 宣称；“已核验”指静态源码/文档，不表示已构建运行。下列完整 commit 固定本次观察；正文设计不得使用浮动 main 作为兼容承诺。
 
 ## 固定观察版本
