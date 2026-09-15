@@ -1,6 +1,6 @@
 # Phase 2 发行与验收
 
-日期：2026-09-15。状态：**实现和离线/容器门禁已交付；真实云、实体麦克风与口音验收未完成，不能宣布Phase2全部通过或Phase3就绪。** 已读取用户指定的本机.env，仅TENCENT字段有SecretId形状的值；标准SecretId/SecretKey/AppId与模型字段未补齐，实网未调用，不以fixture替代结果。
+日期：2026-09-15。状态：**实现和离线/容器门禁已交付；真实云、实体麦克风与口音验收未完成，不能宣布Phase2全部通过或Phase3就绪。** 已读取用户补齐的本机.env；腾讯三个字段格式通过，实网请求已执行但被账号/资源条件拒绝，详见下方补测记录。模型凭据仍未配置，不以fixture替代真实采访。
 
 实现契约由[插件Phase2](https://github.com/Develata/dsh-laorenyun/blob/main/docs/phase-2.md)拥有。产品/发行取舍见[ADR-0015](adr/0015-phase-2-speech-and-interview.md)。
 
@@ -51,7 +51,7 @@ bootstrap先持久固定ID，通过plugin来源上下文启动首轮，没有hum
 
 ## 尚未关闭的验收
 
-- 真实腾讯Flash/TTS：签名/SDK已实现并有离线测试，但账号权限、引擎16k_zh_en、voice101001/-0.5/0、真实延迟与音质均未实测。
+- 真实腾讯Flash/TTS：请求已到达腾讯，但Flash返回AppID不一致，TTS返回资源包耗尽，尚无成功音频/转写结果；引擎16k_zh_en与voice101001/-0.5/0的真实延迟、音质未验收。
 - 真实LLM：三个配置路径可启动；尚无付费模型在Docker里完成真实采访回答，不能评价提问质量。
 - 实体麦克风、普通话/地区口音、Safari/手机HTTPS：当前只有Chromium受控设备。未提交私人录音，不报告准确率或方言覆盖。
 - 原件与规范化音频的精确时间对齐未证明；ASR时间目前属于规范化坐标。Phase3引用不得声称已有精确原件逐词定位。
@@ -59,3 +59,11 @@ bootstrap先持久固定ID，通过plugin来源上下文启动首轮，没有hum
 后续应先提供私密凭据路径及自愿录音样本，完成真实两轮采访/朗读/重启验收，再宣布进入Phase3。已有实现可以开展代码审阅，但实网门槛不能跳过。
 
 所有临时验证容器最终停止；隔离测试卷保留用于复核（仅合成素材），未执行volume prune。Agent未改写普通项目`.env`；用户自行补充的私密配置不入Git。
+
+## 用户补齐凭据后的实网检查
+
+三个标准腾讯字段均非空、无重复项，SecretId/AppId格式符合客户端要求；`.env`权限0600。没有记录任何密钥或账号数值，也未修改用户配置。
+
+- 本机生产TencentTtsProvider调用失败；使用同一官方SDK的最小TextToVoice请求进一步确认错误为 `UnsupportedOperation.PkgExhausted`。按照[腾讯错误码说明](https://cloud.tencent.cn/api/error-center?product=tts)，含义是资源包余量已用尽。没有成功合成音频，不报告音质/成功时延。
+- Flash生产provider用一秒合成静音WAV做鉴权/协议探针，HTTP200但业务code4002；脱敏message明确要求检查输入AppID与实际访问AppID是否一致。不是有效语音准确率测试，也没有成功转写。应核对[API密钥管理页](https://console.cloud.tencent.com/cam/capi)的账号AppID，见[Flash官方定义](https://cloud.tencent.cn/document/product/1093/52097)。
+- 两个条件均未解决，因此未继续消耗云调用、未启动Docker真实云全链，也未开通付费或购买资源。现有离线/容器证据不受影响；Phase2实网门禁仍未通过。
