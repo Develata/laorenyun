@@ -15,3 +15,5 @@ apt-get source --download-only ffmpeg=7:5.1.9-0+deb12u1
 补齐了npm tarball未附独立LICENSE的SDK/UI组件原文（pi、xterm、AWS等），来源/commit/hash在supplemental.json。`revisionFromPackage=false`表示取到的许可证来自固定仓库快照，而不是证明发布包的对应源码版本；二进制分发仍禁止。data-uri-to-buffer完整MIT在README内；node-addon-system由native-system许可证覆盖；libvips单独保留。包递归清单包括fast-uri内benchmark元数据，不是额外安装运行依赖。
 
 FFmpeg二进制SHA256：`0dafc1360bb07743f76abeb1e4ae16b0aaa1331e9041a0e8d6a8524111dc0cbb`；copyright SHA256：`7447a836ec8522b699ba022d5de6c9ab39cd1682054facf550ce84589f161e2a`。x264源`2:0.164.3095+gitbaee400-3`，x265二进制`3.5-2+b1`对应源`3.5-2`；完整链接闭包见OS索引。
+
+SBOM使用已安装Docker Scout1.24.0生成SPDX2.3（1126 package records，包含工具识别的嵌套元数据，不等于535项人工运行索引）。不手写SBOM。SBOM作为独立release附件，不打进被索引镜像，避免递归/误称全部源材料已交付。

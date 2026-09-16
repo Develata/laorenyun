@@ -46,3 +46,7 @@ See [dependency audit](docs/research/dependencies.md) for versions, sources, alt
 ## Phase 4
 
 没有新增运行依赖、远程字体或图像资产。SVG固定路径与静态导出模板为本项目原创。调研过的d3-shape/d3-path未安装、未随镜像分发。DSH/Tencent/FFmpeg已有许可义务不变；未发布公共registry镜像。
+
+## v0.1.0源码发行审计
+
+最终实际闭包索引、缺失许可补充与FFmpeg来源信息见[release](licenses/release/README.md)。Docker Scout生成SPDX2.3作为本机镜像证据（不证明许可证合规）；公共镜像仍未发布。源代码发布与对应源码交付义务分开，未把未完成二进制义务称已完成。
