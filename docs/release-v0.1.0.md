@@ -19,7 +19,9 @@ Owner：本文件是最终发行事实边界。Phase1–4历史报告保留，�
 4. schema/发行标签/当前文档陈旧：当前schema5，镜像0.1.0，历史报告不重写。
 5. 空卷demo依赖未创建的DSH profile link：改为不依赖DSH运行模块的独立fixture CLI，包外孤立启动已验证。
 6. 不可能的部分凭据/协议/timeout/老人fixture配置提前拒绝。空模型+空腾讯允许本地health-only启动，不启用fake云服务。
-7. 无CI/可复现demo：每仓一个无云密钥CI，独立空卷合成种子与5–8分钟演示。
+7. 浏览器发现Renderer顺序可偏离Planner：发布正文按验证后的章节nodeRefs顺序组装，反序模型输出回归通过。
+8. 首次真实CI/干净clone暴露上游`.cmd eol=crlf`检出与原LF Git blob比较不一致；校验器只还原该上游声明的换行变换，仍逐文件比对固定blob，不修改上游。
+9. 无CI/可复现demo：每仓一个无云密钥CI，独立空卷合成种子与5–8分钟演示。
 
 ## 本机回归与规模
 

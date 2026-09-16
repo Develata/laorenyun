@@ -23,3 +23,7 @@ DSH 源码修改：**0**；agent loop 修改：**0**。原始 LICENSE、THIRD_PA
 先记录新 pin 与 release notes，在隔离分支导入该 commit 的 blob 快照，保留 Laorenyun 根文件；重新生成原始文件清单和派生 packaging lock，验证 registry integrity 与来源。然后依次运行插件分面编译/测试、原生 composer/branch 浏览器测试、真实 Compose 重启。遇到扩展面变更只适配插件/发行包装层；需要源码补丁时先加入 UPSTREAM.json 的 corePatches 和对应 ADR/回归测试。
 
 不得以“更新 alpha”顺便升级课程演示 pin。版本 0.1.6-alpha.1 的公开类型也不承诺稳定，尤其 reference codec、pre-step、session/subagent 目录和构建装配顺序。
+
+## 干净clone换行
+
+固定上游.gitattributes声明`*.cmd text eol=crlf`，Git blob为LF。verify-upstream只对.cmd还原CRLF→LF检出变换再比对固定SHA，保留原字节其他部分与执行位校验。不会把正常checkout当源码补丁，也不改上游树。该差异由v0.1.0首次真实Actions复现。

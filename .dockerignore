@@ -11,3 +11,6 @@
 **/data
 **/output
 **/*.log
+
+# Release SBOM indexes the image; do not recursively package itself.
+licenses/release/sbom*.json
