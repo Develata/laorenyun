@@ -2,7 +2,7 @@
 
 Original Laorenyun documentation/code: Copyright (c) 2026 Develata, MIT, see [LICENSE](LICENSE).
 
-**Phase 1 status:** this repository preserves the exact DSH source snapshot and builds a local Docker runtime. Original MIT does not relicense upstream code or binaries. The image is built locally; no container registry release is part of this phase.
+**Current source-release status (v0.1.0):** this repository preserves the exact DSH source snapshot and builds a local Docker runtime. Original MIT does not relicense upstream code or binaries. The image is built locally; no container registry release is published; corresponding-source delivery remains a prerequisite.
 
 ## Actual image inventory
 
@@ -11,7 +11,7 @@ Original Laorenyun documentation/code: Copyright (c) 2026 Develata, MIT, see [LI
 - DSH's LICENSE/THIRD_PARTY_NOTICES and native-system LICENSE are copied separately into the image; vendor license texts also remain in the unchanged source and installed package directories. Debian copyright files remain under `/usr/share/doc`; Node 24.21.0's complete LICENSE is [preserved](licenses/node/LICENSE), sha256 `5888dbb9a1d2b18f2c3e6c5f6af1b39de658372b402a0577b002777f14c62ace`.
 - `@img/sharp-libvips-linux-x64@1.3.2` is present as a DSH image-processing dependency. Its binary is **LGPL-3.0-or-later**, not the Apache license of its packaging scripts. Its component versions, notices, LGPL/GPL texts and unmodified v1.3.2 build scripts are in [licenses/sharp-libvips](licenses/sharp-libvips). It contains additional libraries under LGPL/MPL/permissive terms. The shared library remains replaceable, and this distribution imposes no restriction on reverse engineering to debug modifications.
 - Before publishing binary images, provide corresponding source/build materials for the LGPL/MPL components and Debian base as applicable alongside the image, using the exact version/source URLs in the preserved build scripts and upstream archives. Merely publishing this notice is not a completed source offer. Phase 1 publishes source repositories, not a binary image release.
-- Laorenyun adds no fonts, icons, real speech, model weights, dsh-talk code, Tencent SDK, D3, FFmpeg or persona code. Placeholder media is clearly synthetic test content. Existing DSH Web assets retain upstream obligations.
+- Original Phase1 had no speech dependencies; current image includes Tencent TTS and FFmpeg as detailed below. No added fonts/icons/model weights/dsh-talk/D3 source. Demo media is explicitly synthetic. Existing DSH Web assets retain upstream obligations.
 
 Build-only new plugin tools: TypeScript 6.0.3 (Apache-2.0), esbuild 0.28.2 (MIT), Prettier 3.6.2 (MIT); pnpm 11.7.0 (MIT). They are frozen in package metadata/locks, not required on the user's host.
 

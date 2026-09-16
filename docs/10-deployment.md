@@ -1,6 +1,6 @@
 # 部署、安全与数据运维
 
-Owner：发行、环境与隐私边界。当前为 Phase 2 已实现，真实模型/腾讯容器调用通过，实体麦克风与真人恢复验收待完成，实测回执见 [phase-2](phase-2.md)。业务存储由[插件](https://github.com/Develata/dsh-laorenyun/blob/main/docs/deployment-integration.md)拥有。
+Owner：发行、环境与隐私边界。当前为 v0.1.0 已实现，真实模型/腾讯容器调用通过，实体麦克风与真人恢复验收待完成，实测回执见 [phase-2](phase-2.md)。业务存储由[插件](https://github.com/Develata/dsh-laorenyun/blob/main/docs/deployment-integration.md)拥有。
 
 ## 构建与启动
 
@@ -24,7 +24,7 @@ docker compose logs
 
 ## 持久数据和权限
 
-Compose named volume `laorenyun-data` → `/app/data`，运行 UID/GID **10001:10001**，镜像预设该目录 owner/0700，启动 umask 077。DSH_HOME=`/app/data/dsh`，领域库=`/app/data/laorenyun.db`，原件=`/app/data/audio`。源文件/manifest 为 0600，不把大二进制写进 SQLite。未来 images/persona/exports 按实际实现创建。
+Compose named volume `laorenyun-data` → `/app/data`，运行 UID/GID **10001:10001**，镜像预设该目录 owner/0700，启动 umask 077。DSH_HOME=`/app/data/dsh`，领域库=`/app/data/laorenyun.db`，原件=`/app/data/audio`。源文件/manifest 为 0600，不把大二进制写进 SQLite。exports已实现，Persona由DB管理，images仍未实现。
 
 bind mount 是管理员选项：预建该 UID/GID 可写的受控目录；不匹配会报 `DATA_PERMISSIONS`。不执行递归 chown 或 chmod 777。SQLite 单 worker、WAL/FULL/FK 与迁移是插件责任；健康必须等领域库打开成功。
 
@@ -75,4 +75,12 @@ schema4启动事务迁移，不重置旧库。升级前停机备份整个数据�
 
 ## Phase 4
 
-一个服务/worker/卷不变，默认镜像标签为laorenyun:phase4。exports在同一私有data卷下，派生任务DB为权威；下载含私密人生材料，不公开分享。生成不要求新增环境变量，复用已配置DSH模型；health不调用云端。实际镜像/权限/恢复证据见[Phase4](phase-4.md)。
+一个服务/worker/卷不变，Phase4历史标签为laorenyun:phase4；当前课程源码构建标签为laorenyun:0.1.0。exports在同一私有data卷下，派生任务DB为权威；下载含私密人生材料，不公开分享。生成不要求新增环境变量，复用已配置DSH模型；health不调用云端。实际镜像/权限/恢复证据见[Phase4](phase-4.md)。
+
+## v0.1.0配置与删除边界
+
+部分云凭据、非法协议/超时、老人profile启用fixture会启动失败；所有云凭据为空可本地health-only启动，调用时明确失败，不自动使用假provider。正常采访须填写.env.example的模型和腾讯字段。
+
+彻底移除本地安装数据是破坏性管理员操作：先停Compose，确认项目名，用`docker volume ls`及`docker volume inspect <精确卷名>`确认目标，备份整个卷和.env；确认永久删除后才使用`docker volume rm <精确卷名>`。不使用通配符，不对其它项目执行prune。当前导出不含音频，不可替代卷备份。
+
+手机须HTTPS origin（localhost之外），配置精确trustedHosts并保留DSH访问保护；不把key存浏览器，也不关闭安全上下文检查。没有新增反向代理服务。最终已测范围见[发行状态](release-v0.1.0.md)。

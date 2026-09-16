@@ -1,3 +1,4 @@
+import { validateConfig } from "./config.mjs";
 import {
   mkdir,
   access,
@@ -13,32 +14,7 @@ import { join } from "node:path";
 import { execFileSync, spawn } from "node:child_process";
 process.umask(0o077);
 const root = "/app/data";
-const profile = process.env.LAORENYUN_PROFILE || "laorenyun";
-if (!["laorenyun", "laorenyun-dev"].includes(profile))
-  throw new Error("PROFILE_CONFIG: expected laorenyun or laorenyun-dev");
-if (profile !== "laorenyun-dev" && process.env.LAORENYUN_PROBES === "true")
-  throw new Error("PROFILE_CONFIG: probes require laorenyun-dev");
-if (process.env.LAORENYUN_LLM_MODEL) {
-  if (
-    !["openai-responses", "openai-completions", "anthropic-messages"].includes(
-      process.env.LAORENYUN_LLM_PROTOCOL || "openai-responses",
-    )
-  )
-    throw new Error("MODEL_CONFIG: unsupported protocol");
-  const endpoint = new URL(
-    process.env.LAORENYUN_LLM_BASE_URL || "https://api.openai.com/v1",
-  );
-  if (
-    endpoint.protocol !== "https:" &&
-    !(
-      endpoint.protocol === "http:" &&
-      ["localhost", "127.0.0.1"].includes(endpoint.hostname)
-    )
-  )
-    throw new Error("MODEL_CONFIG: HTTPS required for cloud endpoint");
-  if (!process.env.LAORENYUN_LLM_API_KEY)
-    throw new Error("MODEL_CONFIG: LAORENYUN_LLM_API_KEY required");
-}
+const { profile } = validateConfig(process.env);
 process.env.DSH_HOME = join(root, "dsh");
 process.env.LAORENYUN_DATA_DIR = root;
 process.env.LAORENYUN_PROFILE = profile;

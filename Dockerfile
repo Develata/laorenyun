@@ -40,7 +40,7 @@ COPY upstream/deepseek-harness/native/system/LICENSE /opt/laorenyun/licenses/nat
 COPY --from=licenses-build /opt/build-licenses/ /opt/laorenyun/licenses/build-closure/
 COPY licenses/ /opt/laorenyun/licenses/
 COPY profiles/ /opt/laorenyun/profiles/
-COPY scripts/entrypoint.mjs scripts/healthcheck.mjs /opt/laorenyun/scripts/
+COPY scripts/config.mjs scripts/entrypoint.mjs scripts/healthcheck.mjs /opt/laorenyun/scripts/
 COPY UPSTREAM.json PLUGIN.json LICENSE THIRD_PARTY_NOTICES.md /opt/laorenyun/
 ENV DSH_TELEMETRY_DISABLED=true LAORENYUN_BIND=0.0.0.0
 WORKDIR /app/data
