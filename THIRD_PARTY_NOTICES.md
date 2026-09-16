@@ -38,3 +38,7 @@ See [dependency audit](docs/research/dependencies.md) for versions, sources, alt
 腾讯TTS分包及common：Apache-2.0；实际依赖完整许可由插件构建产物`lib/third-party/`随镜像保留。Flash原创协议代码不复制腾讯SDK源码。
 
 音频转换采用Debian bookworm的FFmpeg发行包，其配置包含GPL组件，不声明整个FFmpeg为LGPL。镜像保留`/usr/share/doc/*/copyright`；实际固定FFmpeg 7:5.1.9-0+deb12u1，buildconf含--enable-gpl（没有--enable-nonfree）；OS包与配置清单见licenses/phase-2。此阶段只做本地Compose构建，不发布registry二进制。发布前须补齐FFmpeg、其链接库及此前libvips/Debian组件适用的对应源码/构建材料与交付方式。原创MIT不覆盖这些组件。
+
+## Phase 3 增量
+
+未新增运行框架或模型权重。内部模型、子会话、压缩均复用上述固定MIT许可DSH组件；SQLite仍为Node内建。没有引入图数据库、向量库或第三方语料；提交的中文测试均为人工合成案例。

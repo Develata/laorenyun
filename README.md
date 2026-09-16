@@ -4,7 +4,7 @@
 
 面向约 60–80 岁使用者的 AI 口述史与持续生长的第一人称自传系统。自然讲述 → 保留原始录音 → 可修改的识别草稿 → 时间记忆图 → 可溯源自传。文字输入始终可用。
 
-**当前状态：Phase 2 语音与采访已实现，真实模型与腾讯容器调用已验证，实体麦克风及真人恢复验收待完成；证据和剩余门槛见 [Phase 2](docs/phase-2.md)。** 本仓库是完整应用与 DeepSeek Harness 发行层；[dsh-laorenyun](https://github.com/Develata/dsh-laorenyun) 拥有业务插件。原创内容采用 [MIT](LICENSE)，第三方内容分别遵守[各自许可](THIRD_PARTY_NOTICES.md)。
+**当前状态：Phase 3 记忆智能与主支线已实现，容器验收见 [Phase 3](docs/phase-3.md)。Phase 2 实体麦克风及真人恢复仍待验收，见 [Phase 2](docs/phase-2.md)。** 本仓库是完整应用与 DeepSeek Harness 发行层；[dsh-laorenyun](https://github.com/Develata/dsh-laorenyun) 拥有业务插件。原创内容采用 [MIT](LICENSE)，第三方内容分别遵守[各自许可](THIRD_PARTY_NOTICES.md)。
 
 ## 文档入口 / Context Control Plane
 

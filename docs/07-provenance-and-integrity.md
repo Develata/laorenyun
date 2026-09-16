@@ -1,8 +1,8 @@
-> Phase 2 实际接入与验证状态见 [phase-2](phase-2.md) 和 [ADR-0015](adr/0015-phase-2-speech-and-interview.md)。完整产品规范仍含未来阶段，不能视为全数已实现。
+> Phase 3 实现/验证见 [phase-3](phase-3.md) 与 [ADR-0016](adr/0016-phase-3-memory-and-branch-admission.md)；Phase 2 两项真人硬件门禁仍 pending。
 
 # 出处、文字修订与完整性
 
-> Phase 1 当前实现与证据见 [phase-1](phase-1.md)；本文件保留完整产品规范，未标为已实现的能力仍属后续阶段。
+> 当前数据/API见插件实现契约；节点纠正界面及派生产物属于后续阶段。
 
 Owner：本文件拥有来源和修订语义。类型在[插件 contracts](https://github.com/Develata/dsh-laorenyun/blob/main/docs/contracts.md)，文件提交与事务在[插件 memory](https://github.com/Develata/dsh-laorenyun/blob/main/docs/memory.md)。
 
@@ -35,3 +35,5 @@ recording start 固定该录音的 speaker 快照；中途换人应结束本段�
 ## 删除与容量
 
 P0 不提供物理删原件工具。草稿删除/节点撤回只改变引用状态，保留审计；未来永久删除必须明确范围、影响与备份策略并由使用者确认。原件不可静默清理不等于可无限接收：磁盘不足拒绝新录制/上传并保留已接收片段。源数据无自动 TTL；派生缓存、临时文件、日志有独立界限，见[部署](10-deployment.md)。
+
+Phase 3中TranscriptSegment ID本身是不可变文字版本，未另建同义revision表。来源引文必须来自本次接纳的校订稿；模型比较只可引用固定输入白名单中的节点/Conflict revision。澄清追加两端修订和resolution来源，不改写旧JSON。

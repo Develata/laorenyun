@@ -68,3 +68,7 @@ Responses：protocol=`openai-responses`，API root通常`https://api.openai.com/
 开发离线完整链还可显式设置`LAORENYUN_SPEECH_FIXTURE=true`，只有dev+probes才能生效；返回的是假ASR和静音WAV，不能作为云语音效果。生产profile不读取该开关。
 
 原件长期保留，32MiB请求上限不等于磁盘总配额；磁盘不足明确失败、保留可恢复副本，管理员需监视卷容量。规范化临时任务失败会清理自身输出；突然SIGKILL留下的normalizing目录不自动删除原件。
+
+## Phase 3 数据升级
+
+schema4启动事务迁移，不重置旧库。升级前停机备份整个数据卷；保留旧镜像和卷备份，不能用schema3程序写schema4库。Compose仍单服务、非root与本地绑定，真实验证使用独立测试卷和3083端口，用户.env不改写。抽取任务使用DSH已配置模型，不增加密钥；健康检查仍仅本地DB。

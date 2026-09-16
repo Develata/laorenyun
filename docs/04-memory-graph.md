@@ -1,6 +1,8 @@
+> Phase 3 实现/验证见 [phase-3](phase-3.md) 与 [ADR-0016](adr/0016-phase-3-memory-and-branch-admission.md)；Phase 2 两项真人硬件门禁仍 pending。
+
 # 时间记忆图
 
-> Phase 1 当前实现与证据见 [phase-1](phase-1.md)；本文件保留完整产品规范，未标为已实现的能力仍属后续阶段。
+> 当前数据/API见插件实现契约；节点纠正界面及派生产物属于后续阶段。
 
 Owner：本文件拥有领域语义；类型和数据库映射分别在[插件 contracts](https://github.com/Develata/dsh-laorenyun/blob/main/docs/contracts.md)、[memory](https://github.com/Develata/dsh-laorenyun/blob/main/docs/memory.md)。
 

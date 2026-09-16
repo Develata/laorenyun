@@ -8,7 +8,7 @@ Main默认按时间推进，工具按需检索，不全档注入。支线仅在�
 
 ## 替代、代价与失败边界
 
-一个上下文做所有支线会污染主线；大群Agent无隔离收益。DSH已有continuable子会话可复用，但sendMessage产生模型作者消息，不能冒充用户；真人回答走原生child session prompt。continuable不支持outputSchema，memo以受schema约束的finish_branch工具完成，超时保存partial memo。
+一个上下文做所有支线会污染主线；大群Agent无隔离收益。DSH已有continuable子会话可复用，但sendMessage产生模型作者消息，不能冒充用户；真人回答走原生child session prompt。continuable不支持outputSchema，memo在Phase3采用应用拥有的内部结构调用完成（修订证据见[ADR0016](0016-phase-3-memory-and-branch-admission.md)），超时保存partial memo。
 
 第五答与关闭、crash恢复/重投递必须验收；五答仅限branch，Main没有回合数强制结束。调用interrupt返回不等于runner已完全停止。
 
