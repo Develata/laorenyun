@@ -17,10 +17,11 @@ jobs:
         with:
           node-version: '24.21.0'
       - run: node scripts/verify-upstream.mjs
-      - run: node scripts/verify-packaging-lock.mjs
+      # packaging-lock verification runs inside build-dsh.sh after frozen install.
       - run: node scripts/verify-release.mjs
       - run: node --test scripts/config.test.mjs
       - run: git diff --check
+      - run: cp .env.example .env
       - name: Build pinned source image
         run: docker compose build > /tmp/build.log 2>&1 || { tail -80 /tmp/build.log; exit 1; }
       - name: Cloud-independent production readiness
