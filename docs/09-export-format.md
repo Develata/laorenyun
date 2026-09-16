@@ -29,3 +29,11 @@ JSON 媒体引用为相对逻辑路径与 hash；未包含文件有 `included=fa
 导出以领域 revision 建立稳定 manifest，分批读取版本化记录；SQLite 短读事务拿版本清单，媒体不可变且导出期间固定引用，不长事务等待模型/打包。先写私有 staging，验证全部 refs/文件 hash，再原子发布；取消/空间不足保留上一版本。
 
 UI Markdown复用DSH renderer；静态HTML直接从已校验BiographySection结构渲染标题/段落/出处锚点，文本转义，不再解析任意Markdown，也不自造通用Markdown解析器。Markdown 和 HTML 不执行源文本 HTML/脚本；只允许安全 URL 协议，HTML 输出转义或复用已审计 sanitizer，CSP 禁远端连接。导出默认是私密下载，不自动分享/上传。界面说明可能包含第三方姓名、照片和敏感经历；公开传播由使用者另行决定。密钥、DSH 系统提示、隐藏思考、内部绝对路径不得进入导出。
+
+## Phase 4 交付边界
+
+Planner使用固定manifest并覆盖每个可用节点恰好一次；开放Conflict双方暂不写入，并明确说明省略。Renderer采用原话编排：完整keySentence必须原样存在于支持证言，软件添加代述/不确定说明；Persona只能选择有证据的有限转场。此版本优先防止新增事实，未实现自由文学改写。人物/事实不依赖风格快照。
+
+schema5复用一个derived_generations生命周期，显式创建、持久输入hash、progress、candidates、模型计量、active指针。至多一个派生任务；5分钟总期限/60秒单调用/一次格式修复，导出120秒。重启中的任务标failed并保留候选；用户显式重试建立新generation，之前published不动。
+
+自传最多200当前节点、1000历史修订；超过边界显式失败，不静默截断。导出固定绑定自传manifest，包括关联历史证言/修订和冲突，而非声称包含后来新增采访。文件私有staging、fsync、hash复核、rename后才切换DB发布指针；中断遗留不自动清理。媒体均included=false，不提供ZIP/导入或完整备份承诺。验证与原声定位限制见[Phase 4](phase-4.md)。

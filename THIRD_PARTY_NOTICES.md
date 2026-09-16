@@ -42,3 +42,7 @@ See [dependency audit](docs/research/dependencies.md) for versions, sources, alt
 ## Phase 3 增量
 
 未新增运行框架或模型权重。内部模型、子会话、压缩均复用上述固定MIT许可DSH组件；SQLite仍为Node内建。没有引入图数据库、向量库或第三方语料；提交的中文测试均为人工合成案例。
+
+## Phase 4
+
+没有新增运行依赖、远程字体或图像资产。SVG固定路径与静态导出模板为本项目原创。调研过的d3-shape/d3-path未安装、未随镜像分发。DSH/Tencent/FFmpeg已有许可义务不变；未发布公共registry镜像。

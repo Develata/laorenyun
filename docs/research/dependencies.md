@@ -47,3 +47,9 @@ Owner：本文件拥有拟引入依赖的取舍、成本和观察版本。审计
 
 - Tencent TTS：`tencentcloud-sdk-nodejs-tts@4.1.237` + common@4.1.220，官方维护，Apache-2.0，冻结 lock。窄分包复用 Cloud API 3.0 签名/请求，避免整个腾讯 SDK；ASR Flash 不适用此协议，使用 Node fetch/crypto。SDK运行闭包37个package/version，完整LICENSE/NOTICE随插件lib/third-party分发；不进入浏览器。
 - FFmpeg：复用 Debian bookworm 包进行 WebM/Opus→PCM WAV。默认 Debian 构建含 GPL 功能，不能称为纯 LGPL；仅本地构建，不发布 registry 镜像，固定7:5.1.9-0+deb12u1，实际buildconf含--enable-gpl，Debian版权文件随镜像；对应源材料义务仍须在二进制发布前完成。相比自研解码/重采样，成熟实现显著减少兼容与安全成本。
+
+## Phase 4 原生SVG替代
+
+2026-09-16核对 d3-shape 3.2.0（ISC，registry最后更新2023-04-12，依赖d3-path ^3.1.0）及官方曲线/许可；@types/d3-shape 3.2.0为MIT。该包是成熟稳定模块，无需引入完整D3。当前环境安装被自动审批拒绝；实际改用一个固定SVG三次曲线和浏览器原生getTotalLength/getPointAtLength，不手写曲线算法。已有官方API足够，无新增运行成本或许可组件。将来需要自由河道布局时再评估d3-shape。
+
+参考：[D3曲线](https://d3js.org/d3-shape/curve)、[许可](https://github.com/d3/d3-shape/blob/main/LICENSE)、[SVG弧长定位](https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/getPointAtLength)。静态HTML直接转义结构化内容，没有Markdown解析或HTML执行依赖。

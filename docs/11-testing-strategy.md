@@ -36,3 +36,7 @@ Owner：本文件拥有验收层次；[插件 testing](https://github.com/Devela
 当前实网与恢复证据统一见[Phase2报告](phase-2.md#phase-25真实云与恢复补验2026-09-15)。后续profile变更须检查实际被DSH读取的agent.cordis.yml及会话system/message包含口述史技能；只有fixture回答正确不能证明preset加载。R1真实模型/腾讯容器调用与程序输入恢复已测，R2实体麦克风及真人两轮后的R3必须人协助，不用合成文件关闭。
 
 Phase 3 确定性/真实模型证据由[phase-3](phase-3.md)汇总；schema-only Phase2 fixture迁移、worker冷恢复、引文校验、CAS、图约束、冲突、五答支线及拒谈调度均必须回归。普通CI不得默认触发真实付费模型。
+
+## Phase 4 已执行范围
+
+[发行报告](phase-4.md)区分42项自动检查、真实模型、Chromium尺寸/缩放、原生纠正、离线文件和实际restart。Phase2实体硬件仍pending，原件↔归一化逐字时序、Safari/手机HTTPS尚未验证；不得扩大通过声明。

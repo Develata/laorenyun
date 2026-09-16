@@ -72,3 +72,7 @@ Responses：protocol=`openai-responses`，API root通常`https://api.openai.com/
 ## Phase 3 数据升级
 
 schema4启动事务迁移，不重置旧库。升级前停机备份整个数据卷；保留旧镜像和卷备份，不能用schema3程序写schema4库。Compose仍单服务、非root与本地绑定，真实验证使用独立测试卷和3083端口，用户.env不改写。抽取任务使用DSH已配置模型，不增加密钥；健康检查仍仅本地DB。
+
+## Phase 4
+
+一个服务/worker/卷不变，默认镜像标签为laorenyun:phase4。exports在同一私有data卷下，派生任务DB为权威；下载含私密人生材料，不公开分享。生成不要求新增环境变量，复用已配置DSH模型；health不调用云端。实际镜像/权限/恢复证据见[Phase4](phase-4.md)。

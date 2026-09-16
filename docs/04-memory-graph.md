@@ -2,7 +2,7 @@
 
 # 时间记忆图
 
-> 当前数据/API见插件实现契约；节点纠正界面及派生产物属于后续阶段。
+> 当前数据/API见插件实现契约；节点纠正界面与派生产物已在Phase4交付，实际证据见phase-4.md。
 
 Owner：本文件拥有领域语义；类型和数据库映射分别在[插件 contracts](https://github.com/Develata/dsh-laorenyun/blob/main/docs/contracts.md)、[memory](https://github.com/Develata/dsh-laorenyun/blob/main/docs/memory.md)。
 
@@ -40,3 +40,5 @@ INVOLVES 用 node_people/node_places 关系表；SUPPORTED_BY/REFERENCES 用显�
 ## 检索
 
 timeline.search/get_node/get_period/get_neighbors/get_sources/get_conflicts/get_unresolved/get_drifting_memories 只读；返回 key_sentence 和分页，然后按 ID 深读。限定区间、数量、文本长度、邻接深度（P0=1），参数化 SQL，无模型 SQL 或路径。区间 overlap + 索引、名称匹配足以支撑单人生规模；P0 不引入 embeddings/vector DB，FTS5 只在中文查询评测证明必要时增加。
+
+Phase 4 明确纠正入口绑定sourceId与所选node revision。完整新证言经同一抽取/校验/CAS后可追加同ID新revision；以旧/新revision及新来源记录resolved correction Conflict，不删除旧证言。没有显式纠正绑定的普通采访矛盾仍按Phase3建立独立主张/open Conflict，不能借UI直接改JSON。

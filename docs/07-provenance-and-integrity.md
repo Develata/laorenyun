@@ -2,7 +2,7 @@
 
 # 出处、文字修订与完整性
 
-> 当前数据/API见插件实现契约；节点纠正界面及派生产物属于后续阶段。
+> 当前数据/API见插件实现契约；节点纠正界面与派生产物已在Phase4交付，实际证据见phase-4.md。
 
 Owner：本文件拥有来源和修订语义。类型在[插件 contracts](https://github.com/Develata/dsh-laorenyun/blob/main/docs/contracts.md)，文件提交与事务在[插件 memory](https://github.com/Develata/dsh-laorenyun/blob/main/docs/memory.md)。
 
@@ -37,3 +37,5 @@ recording start 固定该录音的 speaker 快照；中途换人应结束本段�
 P0 不提供物理删原件工具。草稿删除/节点撤回只改变引用状态，保留审计；未来永久删除必须明确范围、影响与备份策略并由使用者确认。原件不可静默清理不等于可无限接收：磁盘不足拒绝新录制/上传并保留已接收片段。源数据无自动 TTL；派生缓存、临时文件、日志有独立界限，见[部署](10-deployment.md)。
 
 Phase 3中TranscriptSegment ID本身是不可变文字版本，未另建同义revision表。来源引文必须来自本次接纳的校订稿；模型比较只可引用固定输入白名单中的节点/Conflict revision。澄清追加两端修订和resolution来源，不改写旧JSON。
+
+Phase 4 纠正绑定与Source创建同一SQLite事务；取消或未原生发送不改图。原始版本、实体链接和证据保留，当前指针仅在提案验证后推进。自传Section绑定固定node revisions和source transcript IDs；完整事实句必须来自支持证言，家人代述由代码添加归属限定，开放Conflict不静默选边。

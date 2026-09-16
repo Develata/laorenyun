@@ -22,3 +22,5 @@ ADR-0013 的 G1–G3 实施证据见 [Phase 1](../phase-1.md)。详细证据见[
 - [ADR-0015 Phase 2 语音、来源与采访接入](0015-phase-2-speech-and-interview.md)
 
 - [ADR-0016 应用拥有抽取与支线收尾](0016-phase-3-memory-and-branch-admission.md)
+
+- [0017 Phase 4：长河投影与派生产物](0017-phase-4-derived-generations.md)
