@@ -1,6 +1,6 @@
 services:
   laorenyun:
-    image: laorenyun:0.2.0-rc.1
+    image: laorenyun:0.2.0-rc.2
     build: .
     env_file: .env
     environment:

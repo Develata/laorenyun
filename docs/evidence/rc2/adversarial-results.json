@@ -1,0 +1,336 @@
+[
+  {
+    "name": "year",
+    "expected": false,
+    "accepted": false,
+    "issues": [
+      "UNSUPPORTED_TEMPORAL_CLAIM",
+      "INCOMPLETE_ATOMIC_REVIEW",
+      "UNSUPPORTED_TEMPORAL_SCOPE",
+      "ATOMIC_REVIEW_PROBLEM"
+    ],
+    "review": {
+      "complete": false,
+      "claims": [
+        {
+          "span": "1976年",
+          "claim": "事件发生在1976年",
+          "kind": "temporal",
+          "status": "unsupported",
+          "supportedBy": []
+        },
+        {
+          "span": "我在河边玩",
+          "claim": "我在河边玩",
+          "kind": "factual",
+          "status": "compatible_paraphrase",
+          "supportedBy": [
+            "F001"
+          ]
+        }
+      ],
+      "problems": [
+        "文本将事实中的未定时间擅自具体化为1976年"
+      ]
+    },
+    "evidence": {
+      "model": "gpt-5.6-luna",
+      "latencyMs": 3825,
+      "repairs": 0
+    }
+  },
+  {
+    "name": "person",
+    "expected": false,
+    "accepted": false,
+    "issues": [
+      "UNSUPPORTED_FACTUAL_CLAIM"
+    ],
+    "review": {
+      "complete": true,
+      "claims": [
+        {
+          "span": "小时候，我和王老师在河边玩。",
+          "claim": "我小时候在河边玩。",
+          "kind": "factual",
+          "status": "compatible_paraphrase",
+          "supportedBy": [
+            "F001"
+          ]
+        },
+        {
+          "span": "小时候，我和王老师在河边玩。",
+          "claim": "我小时候和王老师一起在河边玩。",
+          "kind": "factual",
+          "status": "unsupported",
+          "supportedBy": []
+        }
+      ],
+      "problems": []
+    },
+    "evidence": {
+      "model": "gpt-5.6-luna",
+      "latencyMs": 28874,
+      "repairs": 1
+    }
+  },
+  {
+    "name": "motivation",
+    "expected": false,
+    "accepted": false,
+    "issues": [
+      "UNSUPPORTED_CAUSAL_CLAIM",
+      "UNSUPPORTED_MENTAL_STATE_CLAIM"
+    ],
+    "review": {
+      "complete": true,
+      "claims": [
+        {
+          "span": "小时候",
+          "claim": "事件发生在传主小时候。",
+          "kind": "temporal",
+          "status": "supported",
+          "supportedBy": [
+            "F001"
+          ]
+        },
+        {
+          "span": "去河边玩",
+          "claim": "传主在河边玩。",
+          "kind": "factual",
+          "status": "compatible_paraphrase",
+          "supportedBy": [
+            "F001"
+          ]
+        },
+        {
+          "span": "为了忘掉烦恼",
+          "claim": "传主去河边玩的目的是忘掉烦恼。",
+          "kind": "causal",
+          "status": "unsupported",
+          "supportedBy": []
+        },
+        {
+          "span": "为了忘掉烦恼",
+          "claim": "传主当时有烦恼并试图忘掉这些烦恼。",
+          "kind": "mental_state",
+          "status": "unsupported",
+          "supportedBy": []
+        }
+      ],
+      "problems": []
+    },
+    "evidence": {
+      "model": "gpt-5.6-luna",
+      "latencyMs": 18622,
+      "repairs": 1
+    }
+  },
+  {
+    "name": "weather",
+    "expected": false,
+    "accepted": false,
+    "issues": [
+      "UNSUPPORTED_FACTUAL_CLAIM"
+    ],
+    "review": {
+      "complete": true,
+      "claims": [
+        {
+          "span": "小时候，我在晴天到河边玩",
+          "claim": "我小时候到河边玩",
+          "kind": "factual",
+          "status": "compatible_paraphrase",
+          "supportedBy": [
+            "F001"
+          ]
+        },
+        {
+          "span": "在晴天",
+          "claim": "当时天气晴朗",
+          "kind": "factual",
+          "status": "unsupported",
+          "supportedBy": []
+        }
+      ],
+      "problems": []
+    },
+    "evidence": {
+      "model": "gpt-5.6-luna",
+      "latencyMs": 6871,
+      "repairs": 0
+    }
+  },
+  {
+    "name": "cause",
+    "expected": false,
+    "accepted": false,
+    "issues": [
+      "UNSUPPORTED_FACTUAL_CLAIM",
+      "UNSUPPORTED_CAUSAL_CLAIM"
+    ],
+    "review": {
+      "complete": true,
+      "claims": [
+        {
+          "span": "因为家里穷",
+          "claim": "说话者家里贫穷",
+          "kind": "factual",
+          "status": "unsupported",
+          "supportedBy": []
+        },
+        {
+          "span": "小时候我才去河边玩",
+          "claim": "说话者小时候在河边玩",
+          "kind": "factual",
+          "status": "compatible_paraphrase",
+          "supportedBy": [
+            "F001"
+          ]
+        },
+        {
+          "span": "因为家里穷，小时候我才去河边玩",
+          "claim": "说话者因为家里贫穷而在小时候去河边玩",
+          "kind": "causal",
+          "status": "unsupported",
+          "supportedBy": []
+        }
+      ],
+      "problems": []
+    },
+    "evidence": {
+      "model": "gpt-5.6-luna",
+      "latencyMs": 9087,
+      "repairs": 0
+    }
+  },
+  {
+    "name": "attribution",
+    "expected": false,
+    "accepted": false,
+    "issues": [
+      "MISSING_ATTRIBUTION",
+      "UNSUPPORTED_MENTAL_STATE_CLAIM"
+    ],
+    "review": {
+      "complete": true,
+      "claims": [
+        {
+          "span": "我记得",
+          "claim": "叙述者记得家里用煤油灯照明。",
+          "kind": "mental_state",
+          "status": "unsupported",
+          "supportedBy": [
+            "F001"
+          ]
+        },
+        {
+          "span": "家里用煤油灯照明",
+          "claim": "家里用煤油灯照明。",
+          "kind": "factual",
+          "status": "compatible_paraphrase",
+          "supportedBy": [
+            "F001"
+          ]
+        }
+      ],
+      "problems": []
+    },
+    "evidence": {
+      "model": "gpt-5.6-luna",
+      "latencyMs": 10351,
+      "repairs": 0
+    }
+  },
+  {
+    "name": "child_age",
+    "expected": false,
+    "accepted": false,
+    "issues": [
+      "MISSING_ATTRIBUTION",
+      "UNSUPPORTED_TEMPORAL_SCOPE",
+      "CONTRADICTED_CLAIM",
+      "UNSUPPORTED_TEMPORAL_CLAIM"
+    ],
+    "review": {
+      "complete": true,
+      "claims": [
+        {
+          "span": "小时候的我说",
+          "claim": "叙述者小时候曾说过这句话。",
+          "kind": "attribution",
+          "status": "contradicted",
+          "supportedBy": [
+            "F001"
+          ]
+        },
+        {
+          "span": "小时候的我",
+          "claim": "说话者是传主小时候的自己。",
+          "kind": "identity",
+          "status": "contradicted",
+          "supportedBy": [
+            "F001"
+          ]
+        },
+        {
+          "span": "小时候",
+          "claim": "相关陈述发生在传主小时候。",
+          "kind": "temporal",
+          "status": "unsupported",
+          "supportedBy": [
+            "F001"
+          ]
+        },
+        {
+          "span": "家里用煤油灯照明",
+          "claim": "家里用煤油灯照明。",
+          "kind": "factual",
+          "status": "compatible_paraphrase",
+          "supportedBy": [
+            "F001"
+          ]
+        }
+      ],
+      "problems": []
+    },
+    "evidence": {
+      "model": "gpt-5.6-luna",
+      "latencyMs": 14304,
+      "repairs": 0
+    }
+  },
+  {
+    "name": "glue",
+    "expected": true,
+    "accepted": true,
+    "issues": [],
+    "review": {
+      "complete": true,
+      "claims": [
+        {
+          "span": "小时候，我在河边玩",
+          "claim": "说话者小时候在河边玩",
+          "kind": "factual",
+          "status": "supported",
+          "supportedBy": [
+            "F001"
+          ]
+        },
+        {
+          "span": "说起小时候",
+          "claim": "引出关于小时候的话题",
+          "kind": "narrative_glue",
+          "status": "nonfactual",
+          "supportedBy": []
+        }
+      ],
+      "problems": []
+    },
+    "evidence": {
+      "model": "gpt-5.6-luna",
+      "latencyMs": 7930,
+      "repairs": 0
+    }
+  }
+]
