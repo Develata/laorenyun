@@ -1,0 +1,1104 @@
+[
+  {
+    "id": "597a4d7e-c5d9-4a27-8bb4-9438c71539a4",
+    "route": {
+      "provider": "laorenyun-model",
+      "model": "gpt-5.6-luna"
+    },
+    "state": "published",
+    "evidence": [
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 12961,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 12961,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 6768,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 6768,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 6955,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 6955,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 5470,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 5470,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 9797,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 9797,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 4848,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 4848,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 4899,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 4899,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 7522,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 7522,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 9568,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 9568,
+            "outcome": "success"
+          }
+        ]
+      }
+    ],
+    "narrativePlan": {
+      "chapters": [
+        {
+          "id": "chapter-1",
+          "title": "村里的日子",
+          "titleMode": "thematic",
+          "titleFactRefs": [],
+          "paragraphs": [
+            {
+              "brief": "交代传主自述的出生地、家庭排行，以及村邻往来的日常情景。",
+              "factRefs": [
+                "F009",
+                "F003",
+                "F002"
+              ]
+            },
+            {
+              "brief": "写童年在村边河里摸鱼，并交代传主子女对家里过去使用煤油灯照明的回忆，明确这一信息的来源。",
+              "factRefs": [
+                "F006",
+                "F008"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chapter-2",
+          "title": "修理铺以前和以后",
+          "titleMode": "thematic",
+          "titleFactRefs": [],
+          "paragraphs": [
+            {
+              "brief": "保留传主关于学会修自行车时间的大致说法，并写明1983年在村里开修理铺的经历，不补足未确定的时间顺序。",
+              "factRefs": [
+                "F007",
+                "F004"
+              ]
+            }
+          ]
+        }
+      ],
+      "omissions": [
+        {
+          "factRef": "F001",
+          "reason": "ambiguous_attribution"
+        },
+        {
+          "factRef": "F005",
+          "reason": "open_conflict"
+        },
+        {
+          "factRef": "F010",
+          "reason": "open_conflict"
+        }
+      ]
+    },
+    "narrativeOmissions": [
+      {
+        "factRef": "F001",
+        "reason": "ambiguous_attribution"
+      },
+      {
+        "factRef": "F005",
+        "reason": "open_conflict"
+      },
+      {
+        "factRef": "F010",
+        "reason": "open_conflict"
+      }
+    ],
+    "atomicReviews": [
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": 0,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "sentenceId": "S1",
+              "span": "我1952年出生在安徽一个村子。",
+              "claim": "说话者于1952年出生在安徽的一个村子。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F009"
+              ]
+            },
+            {
+              "sentenceId": "S2",
+              "span": "家里有四个孩子，我排行第二。",
+              "claim": "说话者家里有四个孩子，且排行第二。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F003"
+              ]
+            },
+            {
+              "sentenceId": "S3",
+              "span": "邻居们彼此熟悉，吃过饭就在门口聊天。",
+              "claim": "邻居们彼此熟悉，饭后会在门口聊天。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F002"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": 1,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "sentenceId": "S1",
+              "span": "小时候我常到村边的河里摸小鱼。",
+              "claim": "传主小时候常到村边的河里摸小鱼。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F006"
+              ]
+            },
+            {
+              "sentenceId": "S2",
+              "span": "我的子女提到，家里过去用煤油灯照明。",
+              "claim": "传主的子女提到家里过去用煤油灯照明。",
+              "kind": "attribution",
+              "status": "supported",
+              "supportedBy": [
+                "F008"
+              ]
+            },
+            {
+              "sentenceId": "S2",
+              "span": "我的子女提到，家里过去用煤油灯照明。",
+              "claim": "家里过去用煤油灯照明。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F008"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": -1,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "sentenceId": "S1",
+              "span": "村里的日子",
+              "claim": "“村里的日子”是一个关于乡村生活的主题标题。",
+              "kind": "narrative_glue",
+              "status": "nonfactual",
+              "supportedBy": []
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-2",
+        "paragraphIndex": 0,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "sentenceId": "S1",
+              "span": "1983年，我在村里开了修理铺。",
+              "claim": "1983年在村里开了修理铺。",
+              "kind": "factual",
+              "status": "compatible_paraphrase",
+              "supportedBy": [
+                "F004"
+              ]
+            },
+            {
+              "sentenceId": "S2",
+              "span": "学会修自行车，大概是在开修理铺以前。",
+              "claim": "学会修自行车这一事件大概发生在开修理铺以前。",
+              "kind": "temporal",
+              "status": "compatible_paraphrase",
+              "supportedBy": [
+                "F007"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-2",
+        "paragraphIndex": -1,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "sentenceId": "S1",
+              "span": "修理铺以前和以后",
+              "claim": "以修理铺开设前后的经历为主题",
+              "kind": "narrative_glue",
+              "status": "nonfactual",
+              "supportedBy": []
+            }
+          ],
+          "problems": []
+        }
+      }
+    ]
+  },
+  {
+    "id": "41719c09-4888-4919-957f-05e92391787e",
+    "route": {
+      "provider": "laorenyun-model",
+      "model": "gpt-5.6-luna"
+    },
+    "state": "published",
+    "evidence": [
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 13665,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 13665,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 4288,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 4287,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 8121,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 8121,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 7738,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 7737,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 13898,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 13898,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 3578,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 3578,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 4681,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 4681,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 5175,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 5175,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 5309,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 5309,
+            "outcome": "success"
+          }
+        ]
+      }
+    ],
+    "narrativePlan": {
+      "chapters": [
+        {
+          "id": "chapter-1",
+          "title": "村里的日子",
+          "titleMode": "thematic",
+          "titleFactRefs": [],
+          "paragraphs": [
+            {
+              "brief": "交代出生地、家庭排行和童年生活片段。",
+              "factRefs": [
+                "F009",
+                "F003",
+                "F006"
+              ]
+            },
+            {
+              "brief": "记录居住环境与照明方式，并明确煤油灯信息来自子女回忆。",
+              "factRefs": [
+                "F002",
+                "F008"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chapter-2",
+          "title": "修理铺以前以后",
+          "titleMode": "thematic",
+          "titleFactRefs": [],
+          "paragraphs": [
+            {
+              "brief": "说明学习修自行车的大致时段，并记录后来开修理铺的年份。",
+              "factRefs": [
+                "F007",
+                "F004"
+              ]
+            }
+          ]
+        }
+      ],
+      "omissions": [
+        {
+          "factRef": "F001",
+          "reason": "ambiguous_attribution"
+        },
+        {
+          "factRef": "F005",
+          "reason": "open_conflict"
+        },
+        {
+          "factRef": "F010",
+          "reason": "open_conflict"
+        }
+      ]
+    },
+    "narrativeOmissions": [
+      {
+        "factRef": "F001",
+        "reason": "ambiguous_attribution"
+      },
+      {
+        "factRef": "F005",
+        "reason": "open_conflict"
+      },
+      {
+        "factRef": "F010",
+        "reason": "open_conflict"
+      }
+    ],
+    "atomicReviews": [
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": 0,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "sentenceId": "S1",
+              "span": "我1952年出生在安徽一个村子。",
+              "claim": "我于1952年出生在安徽的一个村子里。",
+              "kind": "temporal",
+              "status": "supported",
+              "supportedBy": [
+                "F009"
+              ]
+            },
+            {
+              "sentenceId": "S2",
+              "span": "家里有四个孩子，我排行第二。",
+              "claim": "家里有四个孩子，我排行第二。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F003"
+              ]
+            },
+            {
+              "sentenceId": "S3",
+              "span": "小时候我常到村边的河里摸小鱼。",
+              "claim": "小时候我常到村边的河里摸小鱼。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F006"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": 1,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "sentenceId": "S1",
+              "span": "那时候啊，邻居们彼此熟悉，吃过饭就在门口聊天。",
+              "claim": "邻居们彼此熟悉。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F002"
+              ]
+            },
+            {
+              "sentenceId": "S1",
+              "span": "那时候啊，邻居们彼此熟悉，吃过饭就在门口聊天。",
+              "claim": "邻居们吃过饭后在门口聊天。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F002"
+              ]
+            },
+            {
+              "sentenceId": "S2",
+              "span": "我的子女回忆，家里过去用煤油灯照明。",
+              "claim": "传主的子女回忆了相关家庭往事。",
+              "kind": "attribution",
+              "status": "supported",
+              "supportedBy": [
+                "F008"
+              ]
+            },
+            {
+              "sentenceId": "S2",
+              "span": "我的子女回忆，家里过去用煤油灯照明。",
+              "claim": "过去家里用煤油灯照明。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F008"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": -1,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "sentenceId": "S1",
+              "span": "村里的日子",
+              "claim": "“村里的日子”是关于乡村生活的主题概括",
+              "kind": "narrative_glue",
+              "status": "nonfactual",
+              "supportedBy": []
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-2",
+        "paragraphIndex": 0,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "sentenceId": "S1",
+              "span": "我大概是在开修理铺以前学会修自行车。",
+              "claim": "我大概是在开修理铺以前学会修自行车。",
+              "kind": "temporal",
+              "status": "compatible_paraphrase",
+              "supportedBy": [
+                "F007"
+              ]
+            },
+            {
+              "sentenceId": "S2",
+              "span": "1983年，我在村里开了修理铺。",
+              "claim": "1983年我在村里开了修理铺。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F004"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-2",
+        "paragraphIndex": -1,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "sentenceId": "S1",
+              "span": "修理铺以前以后",
+              "claim": "标题以修理铺及其前后时期为主题",
+              "kind": "narrative_glue",
+              "status": "nonfactual",
+              "supportedBy": []
+            }
+          ],
+          "problems": []
+        }
+      }
+    ]
+  },
+  {
+    "id": "dd22f8e4-c0dc-4510-8d79-5ee66d4cc6ca",
+    "route": {
+      "provider": "laorenyun-model",
+      "model": "gpt-5.6-luna"
+    },
+    "state": "published",
+    "evidence": [
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 21970,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 21970,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 4422,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 4422,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 6401,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 6401,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 5691,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 5691,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 13497,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 13497,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 3439,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 3439,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 4632,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 4632,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 8371,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 8371,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 12015,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 12015,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 10358,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 10358,
+            "outcome": "success"
+          }
+        ]
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 4981,
+        "repairs": 0,
+        "attempts": [
+          {
+            "attempt": 1,
+            "latencyMs": 4981,
+            "outcome": "success"
+          }
+        ]
+      }
+    ],
+    "narrativePlan": {
+      "chapters": [
+        {
+          "id": "chapter-1",
+          "title": "我1952年出生在安徽一个村子",
+          "titleMode": "factual",
+          "titleFactRefs": [
+            "F009"
+          ],
+          "paragraphs": [
+            {
+              "brief": "交代出生地与家庭情况，保持传主自述的口吻和未明确的时间范围。",
+              "factRefs": [
+                "F009",
+                "F003"
+              ]
+            },
+            {
+              "brief": "写村庄日常生活与童年经历；明确煤油灯一事来自传主子女的回忆，不将其误作传主本人童年证言。",
+              "factRefs": [
+                "F002",
+                "F006",
+                "F008"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chapter-2",
+          "title": "后来我开了修理铺",
+          "titleMode": "factual",
+          "titleFactRefs": [
+            "F004"
+          ],
+          "paragraphs": [
+            {
+              "brief": "把学会修自行车与开修理铺放在同一段，保留“开铺以前”这一大概关系，不补写具体年份或因果。",
+              "factRefs": [
+                "F007",
+                "F004"
+              ]
+            }
+          ]
+        }
+      ],
+      "omissions": [
+        {
+          "factRef": "F001",
+          "reason": "ambiguous_attribution"
+        },
+        {
+          "factRef": "F005",
+          "reason": "open_conflict"
+        },
+        {
+          "factRef": "F010",
+          "reason": "open_conflict"
+        }
+      ]
+    },
+    "narrativeOmissions": [
+      {
+        "factRef": "F001",
+        "reason": "ambiguous_attribution"
+      },
+      {
+        "factRef": "F005",
+        "reason": "open_conflict"
+      },
+      {
+        "factRef": "F010",
+        "reason": "open_conflict"
+      }
+    ],
+    "atomicReviews": [
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": 0,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "sentenceId": "S1",
+              "span": "我1952年出生在安徽一个村子。",
+              "claim": "传主1952年出生在安徽一个村子。",
+              "kind": "identity",
+              "status": "supported",
+              "supportedBy": [
+                "F009"
+              ]
+            },
+            {
+              "sentenceId": "S2",
+              "span": "家里有四个孩子，我排行第二。",
+              "claim": "传主家里有四个孩子。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F003"
+              ]
+            },
+            {
+              "sentenceId": "S2",
+              "span": "家里有四个孩子，我排行第二。",
+              "claim": "传主在四个孩子中排行第二。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F003"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": 1,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "sentenceId": "S1",
+              "span": "那时候啊，邻居们彼此熟悉，吃过饭就在门口聊天。",
+              "claim": "邻居们彼此熟悉，饭后在门口聊天。",
+              "kind": "factual",
+              "status": "compatible_paraphrase",
+              "supportedBy": [
+                "F002"
+              ]
+            },
+            {
+              "sentenceId": "S2",
+              "span": "小时候我常到村边的河里摸小鱼。",
+              "claim": "传主小时候常到村边的河里摸小鱼。",
+              "kind": "factual",
+              "status": "compatible_paraphrase",
+              "supportedBy": [
+                "F006"
+              ]
+            },
+            {
+              "sentenceId": "S3",
+              "span": "我的子女回忆说，家里过去用煤油灯照明。",
+              "claim": "传主的子女回忆并转述了家里过去用煤油灯照明这一事实。",
+              "kind": "attribution",
+              "status": "supported",
+              "supportedBy": [
+                "F008"
+              ]
+            },
+            {
+              "sentenceId": "S3",
+              "span": "我的子女回忆说，家里过去用煤油灯照明。",
+              "claim": "家里过去用煤油灯照明。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F008"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": -1,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "sentenceId": "S1",
+              "span": "我1952年出生在安徽一个村子",
+              "claim": "我1952年出生在安徽一个村子。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F009"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-2",
+        "paragraphIndex": 0,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "sentenceId": "S1",
+              "span": "1983年，我在村里开了修理铺。",
+              "claim": "1983年我在村里开了修理铺。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F004"
+              ]
+            },
+            {
+              "sentenceId": "S2",
+              "span": "学会修自行车，大概是在开修理铺以前。",
+              "claim": "学会修自行车大概发生在开修理铺以前。",
+              "kind": "temporal",
+              "status": "supported",
+              "supportedBy": [
+                "F007"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-2",
+        "paragraphIndex": -1,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "sentenceId": "S1",
+              "span": "后来我开了修理铺",
+              "claim": "我开了修理铺。",
+              "kind": "factual",
+              "status": "compatible_paraphrase",
+              "supportedBy": [
+                "F004"
+              ]
+            },
+            {
+              "sentenceId": "S1",
+              "span": "后来我开了修理铺",
+              "claim": "开修理铺发生在此前未明确说明的某一事件之后。",
+              "kind": "temporal",
+              "status": "unsupported",
+              "supportedBy": []
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-2",
+        "paragraphIndex": -1,
+        "attempt": 1,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "sentenceId": "S1",
+              "span": "修理铺",
+              "claim": "“修理铺”作为主题标题指向修理铺这一主题。",
+              "kind": "narrative_glue",
+              "status": "nonfactual",
+              "supportedBy": []
+            }
+          ],
+          "problems": []
+        }
+      }
+    ]
+  }
+]

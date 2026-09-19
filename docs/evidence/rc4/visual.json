@@ -1,0 +1,14 @@
+{
+  "geometry": {
+    "length": 1212.52587890625,
+    "relativeError": 0.000001636919551795124
+  },
+  "errors": [],
+  "responsive": [
+    360,
+    768,
+    1440
+  ],
+  "zoom": "CSS 200%; not physical browser certification",
+  "archive": "5210c486-65f6-4381-89db-ac69fa924a4c"
+}

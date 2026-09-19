@@ -1,0 +1,490 @@
+{
+  "g": {
+    "id": "597a4d7e-c5d9-4a27-8bb4-9438c71539a4",
+    "kind": "biography",
+    "state": "published",
+    "createdAt": 1789839955334,
+    "progress": "published",
+    "stale": false,
+    "sampleCount": 11
+  },
+  "view": {
+    "id": "597a4d7e-c5d9-4a27-8bb4-9438c71539a4",
+    "kind": "biography",
+    "state": "published",
+    "result": {
+      "id": "597a4d7e-c5d9-4a27-8bb4-9438c71539a4",
+      "narrativeVersion": 2,
+      "facts": [
+        {
+          "id": "F001",
+          "claim": "1962年父亲帮家里干活。",
+          "nodeRef": "216246cf-b6f0-408a-aef1-39e587c3d3de@1",
+          "certainty": "stated",
+          "time": {
+            "start": 23544,
+            "end": 23555,
+            "precision": "year",
+            "certainty": "stated",
+            "originalText": "1962年"
+          },
+          "sourceRefs": [
+            "0c031795-51d1-41c5-9b61-dc61fbca61e4"
+          ],
+          "testimony": [
+            {
+              "text": "1962年父亲帮家里干活。",
+              "speaker": "child"
+            }
+          ],
+          "sourceMode": "nonself",
+          "narrativePolicy": "optional_ambiguous",
+          "attribution": {
+            "required": true,
+            "speakerRoles": [
+              "child"
+            ],
+            "sourceLabels": [
+              "传主的子女；不是传主小时候，也不表示证言发生于童年"
+            ]
+          },
+          "temporalPolicy": {
+            "explicitCalendarAllowed": true,
+            "uncertaintyMustRemain": false
+          },
+          "conflictPolicy": "none",
+          "conflictIds": [],
+          "clarifications": []
+        },
+        {
+          "id": "F002",
+          "claim": "那时候啊，邻居们彼此熟悉，吃过饭就在门口聊天。",
+          "nodeRef": "3cf7db34-7ff5-4b22-8ea7-70162f2bff51@1",
+          "certainty": "stated",
+          "time": null,
+          "sourceRefs": [
+            "4e41cde3-347c-415e-b0b2-93cecd14059b"
+          ],
+          "testimony": [
+            {
+              "text": "那时候啊，邻居们彼此熟悉，吃过饭就在门口聊天。",
+              "speaker": "self"
+            }
+          ],
+          "sourceMode": "self",
+          "narrativePolicy": "required",
+          "attribution": {
+            "required": false,
+            "speakerRoles": [],
+            "sourceLabels": []
+          },
+          "temporalPolicy": {
+            "explicitCalendarAllowed": false,
+            "uncertaintyMustRemain": false
+          },
+          "conflictPolicy": "none",
+          "conflictIds": [],
+          "clarifications": []
+        },
+        {
+          "id": "F003",
+          "claim": "那时候啊，家里有四个孩子，我排行第二。",
+          "nodeRef": "47589eb8-67e1-4167-809d-6ba2548ec881@1",
+          "certainty": "stated",
+          "time": null,
+          "sourceRefs": [
+            "61a63845-7714-4eea-a9f8-15398aa3f22c"
+          ],
+          "testimony": [
+            {
+              "text": "那时候啊，家里有四个孩子，我排行第二。",
+              "speaker": "self"
+            }
+          ],
+          "sourceMode": "self",
+          "narrativePolicy": "required",
+          "attribution": {
+            "required": false,
+            "speakerRoles": [],
+            "sourceLabels": []
+          },
+          "temporalPolicy": {
+            "explicitCalendarAllowed": false,
+            "uncertaintyMustRemain": false
+          },
+          "conflictPolicy": "none",
+          "conflictIds": [],
+          "clarifications": []
+        },
+        {
+          "id": "F004",
+          "claim": "1983年我在村里开了修理铺。",
+          "nodeRef": "55a84f54-cea0-4798-aefb-68f48f0050ad@2",
+          "certainty": "stated",
+          "time": {
+            "start": 23796,
+            "end": 23807,
+            "precision": "year",
+            "certainty": "stated",
+            "originalText": "1983年"
+          },
+          "sourceRefs": [
+            "b56a81df-d488-470f-baf0-2f603caaeaa2"
+          ],
+          "historyRefs": [
+            "56a09431-24ac-441b-9744-6445a39080a6",
+            "b56a81df-d488-470f-baf0-2f603caaeaa2"
+          ],
+          "testimony": [
+            {
+              "text": "1983年我在村里开了修理铺。",
+              "speaker": "self"
+            }
+          ],
+          "sourceMode": "self",
+          "narrativePolicy": "required",
+          "attribution": {
+            "required": false,
+            "speakerRoles": [],
+            "sourceLabels": []
+          },
+          "temporalPolicy": {
+            "explicitCalendarAllowed": true,
+            "uncertaintyMustRemain": false
+          },
+          "conflictPolicy": "resolved",
+          "conflictIds": [
+            "f7f1b472-8b1c-47ac-b742-5a75bb33e795"
+          ],
+          "clarifications": [
+            {
+              "transcriptId": "b56a81df-d488-470f-baf0-2f603caaeaa2",
+              "text": "1983年我在村里开了修理铺。"
+            }
+          ]
+        },
+        {
+          "id": "F005",
+          "claim": "1977年我进入合肥一中。",
+          "nodeRef": "5e17beb6-6f15-43fa-a163-162811095205@1",
+          "certainty": "stated",
+          "time": {
+            "start": 23724,
+            "end": 23735,
+            "precision": "year",
+            "certainty": "stated",
+            "originalText": "1977年"
+          },
+          "sourceRefs": [
+            "043e12e4-5469-487a-800a-c418306d28cf"
+          ],
+          "testimony": [
+            {
+              "text": "1977年我进入合肥一中。",
+              "speaker": "self"
+            }
+          ],
+          "sourceMode": "self",
+          "narrativePolicy": "excluded",
+          "attribution": {
+            "required": false,
+            "speakerRoles": [],
+            "sourceLabels": []
+          },
+          "temporalPolicy": {
+            "explicitCalendarAllowed": true,
+            "uncertaintyMustRemain": false
+          },
+          "conflictPolicy": "open",
+          "conflictIds": [
+            "d15a7abe-8923-41c9-a761-e994ec856b51"
+          ],
+          "clarifications": []
+        },
+        {
+          "id": "F006",
+          "claim": "小时候我常到村边的河里摸小鱼。",
+          "nodeRef": "8ae6e8c6-a142-40b8-a2f9-160fa28611b7@1",
+          "certainty": "stated",
+          "time": null,
+          "sourceRefs": [
+            "9848c3e0-9d8b-4603-ba5d-d4e54cf18193"
+          ],
+          "testimony": [
+            {
+              "text": "小时候我常到村边的河里摸小鱼。",
+              "speaker": "self"
+            }
+          ],
+          "sourceMode": "self",
+          "narrativePolicy": "required",
+          "attribution": {
+            "required": false,
+            "speakerRoles": [],
+            "sourceLabels": []
+          },
+          "temporalPolicy": {
+            "explicitCalendarAllowed": false,
+            "uncertaintyMustRemain": false
+          },
+          "conflictPolicy": "none",
+          "conflictIds": [],
+          "clarifications": []
+        },
+        {
+          "id": "F007",
+          "claim": "学会修自行车，大概是在开修理铺以前。",
+          "nodeRef": "8cfdab64-2735-43f1-ad5a-73cef7190482@1",
+          "certainty": "inferred",
+          "time": null,
+          "sourceRefs": [
+            "7892d00d-2afc-4a8d-a54a-cbc6c75ffb9e"
+          ],
+          "testimony": [
+            {
+              "text": "学会修自行车，大概是在开修理铺以前。",
+              "speaker": "self"
+            }
+          ],
+          "sourceMode": "self",
+          "narrativePolicy": "required",
+          "attribution": {
+            "required": false,
+            "speakerRoles": [],
+            "sourceLabels": []
+          },
+          "temporalPolicy": {
+            "explicitCalendarAllowed": false,
+            "uncertaintyMustRemain": true
+          },
+          "conflictPolicy": "none",
+          "conflictIds": [],
+          "clarifications": []
+        },
+        {
+          "id": "F008",
+          "claim": "家里过去用煤油灯照明。",
+          "nodeRef": "922e7922-8111-4733-b877-a2892ac84684@1",
+          "certainty": "stated",
+          "time": null,
+          "sourceRefs": [
+            "e16c7cc0-3a58-4895-9d3f-36b45a8d41f5"
+          ],
+          "testimony": [
+            {
+              "text": "家里过去用煤油灯照明。",
+              "speaker": "child"
+            }
+          ],
+          "sourceMode": "nonself",
+          "narrativePolicy": "requires_attribution",
+          "attribution": {
+            "required": true,
+            "speakerRoles": [
+              "child"
+            ],
+            "sourceLabels": [
+              "传主的子女；不是传主小时候，也不表示证言发生于童年"
+            ]
+          },
+          "temporalPolicy": {
+            "explicitCalendarAllowed": false,
+            "uncertaintyMustRemain": false
+          },
+          "conflictPolicy": "none",
+          "conflictIds": [],
+          "clarifications": []
+        },
+        {
+          "id": "F009",
+          "claim": "我1952年出生在安徽一个村子。",
+          "nodeRef": "b86b2379-9ecc-4685-9d83-551059595c1b@1",
+          "certainty": "stated",
+          "time": {
+            "start": 23424,
+            "end": 23435,
+            "precision": "year",
+            "certainty": "stated",
+            "originalText": "1952年"
+          },
+          "sourceRefs": [
+            "2479a271-7044-4908-9996-afdb1ad8da99"
+          ],
+          "testimony": [
+            {
+              "text": "我1952年出生在安徽一个村子。",
+              "speaker": "self"
+            }
+          ],
+          "sourceMode": "self",
+          "narrativePolicy": "required",
+          "attribution": {
+            "required": false,
+            "speakerRoles": [],
+            "sourceLabels": []
+          },
+          "temporalPolicy": {
+            "explicitCalendarAllowed": true,
+            "uncertaintyMustRemain": false
+          },
+          "conflictPolicy": "none",
+          "conflictIds": [],
+          "clarifications": []
+        },
+        {
+          "id": "F010",
+          "claim": "1977年我进入合肥六中。",
+          "nodeRef": "e592dec9-c789-4b82-8466-6b07dce56a0a@1",
+          "certainty": "stated",
+          "time": {
+            "start": 23724,
+            "end": 23735,
+            "precision": "year",
+            "certainty": "stated",
+            "originalText": "1977年"
+          },
+          "sourceRefs": [
+            "2f6a01df-9722-4bbf-8954-b8c6718fbe0f"
+          ],
+          "testimony": [
+            {
+              "text": "1977年我进入合肥六中。",
+              "speaker": "self"
+            }
+          ],
+          "sourceMode": "self",
+          "narrativePolicy": "excluded",
+          "attribution": {
+            "required": false,
+            "speakerRoles": [],
+            "sourceLabels": []
+          },
+          "temporalPolicy": {
+            "explicitCalendarAllowed": true,
+            "uncertaintyMustRemain": false
+          },
+          "conflictPolicy": "open",
+          "conflictIds": [
+            "d15a7abe-8923-41c9-a761-e994ec856b51"
+          ],
+          "clarifications": []
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-chapter-1",
+          "chapterId": "chapter-1",
+          "title": "村里的日子",
+          "text": "我1952年出生在安徽一个村子。家里有四个孩子，我排行第二。邻居们彼此熟悉，吃过饭就在门口聊天。\n\n小时候我常到村边的河里摸小鱼。我的子女提到，家里过去用煤油灯照明。",
+          "nodeRefs": [
+            "3cf7db34-7ff5-4b22-8ea7-70162f2bff51@1",
+            "47589eb8-67e1-4167-809d-6ba2548ec881@1",
+            "8ae6e8c6-a142-40b8-a2f9-160fa28611b7@1",
+            "922e7922-8111-4733-b877-a2892ac84684@1",
+            "b86b2379-9ecc-4685-9d83-551059595c1b@1"
+          ],
+          "sourceRefs": [
+            "2479a271-7044-4908-9996-afdb1ad8da99",
+            "4e41cde3-347c-415e-b0b2-93cecd14059b",
+            "61a63845-7714-4eea-a9f8-15398aa3f22c",
+            "9848c3e0-9d8b-4603-ba5d-d4e54cf18193",
+            "e16c7cc0-3a58-4895-9d3f-36b45a8d41f5"
+          ],
+          "status": "validated",
+          "paragraphs": [
+            {
+              "text": "我1952年出生在安徽一个村子。家里有四个孩子，我排行第二。邻居们彼此熟悉，吃过饭就在门口聊天。",
+              "factRefs": [
+                "F009",
+                "F003",
+                "F002"
+              ],
+              "attributions": []
+            },
+            {
+              "text": "小时候我常到村边的河里摸小鱼。我的子女提到，家里过去用煤油灯照明。",
+              "factRefs": [
+                "F006",
+                "F008"
+              ],
+              "attributions": [
+                {
+                  "factRef": "F008",
+                  "surface": "我的子女提到"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "section-chapter-2",
+          "chapterId": "chapter-2",
+          "title": "修理铺以前和以后",
+          "text": "1983年，我在村里开了修理铺。学会修自行车，大概是在开修理铺以前。",
+          "nodeRefs": [
+            "55a84f54-cea0-4798-aefb-68f48f0050ad@2",
+            "8cfdab64-2735-43f1-ad5a-73cef7190482@1"
+          ],
+          "sourceRefs": [
+            "7892d00d-2afc-4a8d-a54a-cbc6c75ffb9e",
+            "b56a81df-d488-470f-baf0-2f603caaeaa2"
+          ],
+          "status": "validated",
+          "paragraphs": [
+            {
+              "text": "1983年，我在村里开了修理铺。学会修自行车，大概是在开修理铺以前。",
+              "factRefs": [
+                "F007",
+                "F004"
+              ],
+              "attributions": []
+            }
+          ]
+        }
+      ],
+      "chapters": [
+        {
+          "id": "chapter-1",
+          "title": "村里的日子",
+          "nodeRefs": [
+            "3cf7db34-7ff5-4b22-8ea7-70162f2bff51@1",
+            "47589eb8-67e1-4167-809d-6ba2548ec881@1",
+            "8ae6e8c6-a142-40b8-a2f9-160fa28611b7@1",
+            "922e7922-8111-4733-b877-a2892ac84684@1",
+            "b86b2379-9ecc-4685-9d83-551059595c1b@1"
+          ]
+        },
+        {
+          "id": "chapter-2",
+          "title": "修理铺以前和以后",
+          "nodeRefs": [
+            "55a84f54-cea0-4798-aefb-68f48f0050ad@2",
+            "8cfdab64-2735-43f1-ad5a-73cef7190482@1"
+          ]
+        }
+      ],
+      "personaId": null,
+      "omittedConflicts": [
+        "d15a7abe-8923-41c9-a761-e994ec856b51"
+      ],
+      "omissions": [
+        {
+          "factRef": "F001",
+          "reason": "ambiguous_attribution"
+        },
+        {
+          "factRef": "F005",
+          "reason": "open_conflict"
+        },
+        {
+          "factRef": "F010",
+          "reason": "open_conflict"
+        }
+      ]
+    },
+    "progress": "published",
+    "sampleCount": 11,
+    "stale": false
+  },
+  "latencyMs": 69639
+}

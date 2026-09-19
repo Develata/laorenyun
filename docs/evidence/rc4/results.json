@@ -1,0 +1,98 @@
+[
+  {
+    "run": 1,
+    "id": "597a4d7e-c5d9-4a27-8bb4-9438c71539a4",
+    "state": "published",
+    "latencyMs": 69640,
+    "chapters": 2,
+    "paragraphs": 3,
+    "facts": 10,
+    "used": [
+      "F002",
+      "F003",
+      "F004",
+      "F006",
+      "F007",
+      "F008",
+      "F009"
+    ],
+    "omissions": [
+      {
+        "factRef": "F001",
+        "reason": "ambiguous_attribution"
+      },
+      {
+        "factRef": "F005",
+        "reason": "open_conflict"
+      },
+      {
+        "factRef": "F010",
+        "reason": "open_conflict"
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "id": "41719c09-4888-4919-957f-05e92391787e",
+    "state": "published",
+    "latencyMs": 68084,
+    "chapters": 2,
+    "paragraphs": 3,
+    "facts": 10,
+    "used": [
+      "F002",
+      "F003",
+      "F004",
+      "F006",
+      "F007",
+      "F008",
+      "F009"
+    ],
+    "omissions": [
+      {
+        "factRef": "F001",
+        "reason": "ambiguous_attribution"
+      },
+      {
+        "factRef": "F005",
+        "reason": "open_conflict"
+      },
+      {
+        "factRef": "F010",
+        "reason": "open_conflict"
+      }
+    ]
+  },
+  {
+    "run": 3,
+    "id": "dd22f8e4-c0dc-4510-8d79-5ee66d4cc6ca",
+    "state": "published",
+    "latencyMs": 99166,
+    "chapters": 2,
+    "paragraphs": 3,
+    "facts": 10,
+    "used": [
+      "F002",
+      "F003",
+      "F004",
+      "F006",
+      "F007",
+      "F008",
+      "F009"
+    ],
+    "omissions": [
+      {
+        "factRef": "F001",
+        "reason": "ambiguous_attribution"
+      },
+      {
+        "factRef": "F005",
+        "reason": "open_conflict"
+      },
+      {
+        "factRef": "F010",
+        "reason": "open_conflict"
+      }
+    ]
+  }
+]
