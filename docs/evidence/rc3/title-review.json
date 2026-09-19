@@ -1,0 +1,52 @@
+[
+  {
+    "title": "把手艺做成日子",
+    "expected": false,
+    "accepted": false,
+    "review": {
+      "complete": true,
+      "claims": [
+        {
+          "span": "把手艺做成日子",
+          "claim": "传主把手艺变成了谋生的日子或生活方式",
+          "kind": "causal",
+          "status": "unsupported",
+          "supportedBy": [
+            "F001"
+          ]
+        }
+      ],
+      "problems": []
+    },
+    "evidence": {
+      "model": "gpt-5.6-luna",
+      "latencyMs": 10051,
+      "repairs": 0
+    }
+  },
+  {
+    "title": "修理铺",
+    "expected": true,
+    "accepted": true,
+    "review": {
+      "complete": true,
+      "claims": [
+        {
+          "span": "修理铺",
+          "claim": "文本涉及修理铺这一主题",
+          "kind": "factual",
+          "status": "compatible_paraphrase",
+          "supportedBy": [
+            "F001"
+          ]
+        }
+      ],
+      "problems": []
+    },
+    "evidence": {
+      "model": "gpt-5.6-luna",
+      "latencyMs": 17533,
+      "repairs": 0
+    }
+  }
+]

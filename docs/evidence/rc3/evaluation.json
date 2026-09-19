@@ -1,0 +1,622 @@
+[
+  {
+    "run": 1,
+    "id": "72fa6d0f-68bc-416f-a605-956cf493917c",
+    "state": "published",
+    "model": "gpt-5.6-luna",
+    "protocol": "openai-responses",
+    "graphRevision": 11,
+    "persona": false,
+    "chapters": 2,
+    "paragraphs": 2,
+    "facts": 10,
+    "used": [
+      "F002",
+      "F003",
+      "F004",
+      "F006",
+      "F007",
+      "F008",
+      "F009"
+    ],
+    "omissions": [
+      {
+        "factRef": "F001",
+        "reason": "ambiguous_attribution"
+      },
+      {
+        "factRef": "F005",
+        "reason": "open_conflict"
+      },
+      {
+        "factRef": "F010",
+        "reason": "open_conflict"
+      }
+    ],
+    "paragraphRepairs": 0,
+    "titleRepairs": 0,
+    "formatRepairs": 0,
+    "modelCalls": 7,
+    "writerCalls": 2,
+    "atomicReviews": 4,
+    "reviewReports": [
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": 0,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "span": "我1952年出生在安徽一个村子",
+              "claim": "说话者于1952年出生在安徽的一个村子",
+              "kind": "temporal",
+              "status": "supported",
+              "supportedBy": [
+                "F009"
+              ]
+            },
+            {
+              "span": "家里有四个孩子，我排行第二",
+              "claim": "说话者家里有四个孩子，且说话者排行第二",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F003"
+              ]
+            },
+            {
+              "span": "小时候我常到村边的河里摸小鱼",
+              "claim": "说话者小时候常到村边的河里摸小鱼",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F006"
+              ]
+            },
+            {
+              "span": "邻居们彼此熟悉，吃过饭就在门口聊天",
+              "claim": "邻居们彼此熟悉，吃过饭就在门口聊天",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F002"
+              ]
+            },
+            {
+              "span": "据我的子女回忆",
+              "claim": "关于家里过去使用煤油灯照明的说法来源于说话者的子女回忆",
+              "kind": "attribution",
+              "status": "supported",
+              "supportedBy": [
+                "F008"
+              ]
+            },
+            {
+              "span": "家里过去用煤油灯照明",
+              "claim": "家里过去用煤油灯照明",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F008"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": -1,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "span": "村里的日子",
+              "claim": "概括村庄生活这一主题",
+              "kind": "narrative_glue",
+              "status": "nonfactual",
+              "supportedBy": []
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-2",
+        "paragraphIndex": 0,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "span": "我学会修自行车",
+              "claim": "我学会了修自行车",
+              "kind": "factual",
+              "status": "compatible_paraphrase",
+              "supportedBy": [
+                "F007"
+              ]
+            },
+            {
+              "span": "大概是在开修理铺以前",
+              "claim": "学会修自行车大概发生在开修理铺以前",
+              "kind": "temporal",
+              "status": "supported",
+              "supportedBy": [
+                "F007"
+              ]
+            },
+            {
+              "span": "1983年",
+              "claim": "开修理铺发生在1983年",
+              "kind": "temporal",
+              "status": "supported",
+              "supportedBy": [
+                "F004"
+              ]
+            },
+            {
+              "span": "我在村里开了修理铺",
+              "claim": "我在村里开了修理铺",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F004"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-2",
+        "paragraphIndex": -1,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "span": "修理铺以前和以后",
+              "claim": "以修理铺开设前后为主题进行概括",
+              "kind": "narrative_glue",
+              "status": "nonfactual",
+              "supportedBy": []
+            }
+          ],
+          "problems": []
+        }
+      }
+    ],
+    "latencyMs": 65013,
+    "diagnostics": [],
+    "plan": {
+      "chapters": [
+        {
+          "id": "chapter-1",
+          "title": "村里的日子",
+          "titleMode": "thematic",
+          "titleFactRefs": [],
+          "paragraphs": [
+            {
+              "brief": "交代出生地、家庭成员、邻里往来、童年活动和家中照明情况，并区分传主自述与子女回忆。",
+              "factRefs": [
+                "F009",
+                "F003",
+                "F002",
+                "F006",
+                "F008"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chapter-2",
+          "title": "修理铺以前和以后",
+          "titleMode": "thematic",
+          "titleFactRefs": [],
+          "paragraphs": [
+            {
+              "brief": "写学会修自行车与后来开修理铺之间的时间关系，保留原有的不确定性。",
+              "factRefs": [
+                "F007",
+                "F004"
+              ]
+            }
+          ]
+        }
+      ],
+      "omissions": [
+        {
+          "factRef": "F001",
+          "reason": "ambiguous_attribution"
+        },
+        {
+          "factRef": "F005",
+          "reason": "open_conflict"
+        },
+        {
+          "factRef": "F010",
+          "reason": "open_conflict"
+        }
+      ]
+    },
+    "nodeRefs": [
+      "216246cf-b6f0-408a-aef1-39e587c3d3de@1",
+      "3cf7db34-7ff5-4b22-8ea7-70162f2bff51@1",
+      "47589eb8-67e1-4167-809d-6ba2548ec881@1",
+      "55a84f54-cea0-4798-aefb-68f48f0050ad@2",
+      "5e17beb6-6f15-43fa-a163-162811095205@1",
+      "8ae6e8c6-a142-40b8-a2f9-160fa28611b7@1",
+      "8cfdab64-2735-43f1-ad5a-73cef7190482@1",
+      "922e7922-8111-4733-b877-a2892ac84684@1",
+      "b86b2379-9ecc-4685-9d83-551059595c1b@1",
+      "e592dec9-c789-4b82-8466-6b07dce56a0a@1"
+    ],
+    "sourceRefs": [
+      "043e12e4-5469-487a-800a-c418306d28cf",
+      "0c031795-51d1-41c5-9b61-dc61fbca61e4",
+      "2479a271-7044-4908-9996-afdb1ad8da99",
+      "2f6a01df-9722-4bbf-8954-b8c6718fbe0f",
+      "4e41cde3-347c-415e-b0b2-93cecd14059b",
+      "61a63845-7714-4eea-a9f8-15398aa3f22c",
+      "7892d00d-2afc-4a8d-a54a-cbc6c75ffb9e",
+      "9848c3e0-9d8b-4603-ba5d-d4e54cf18193",
+      "b56a81df-d488-470f-baf0-2f603caaeaa2",
+      "e16c7cc0-3a58-4895-9d3f-36b45a8d41f5"
+    ],
+    "factUniverseSha256": "76e9bac1bded340dbaf33c5d6a7d84f32c507ffdcadb961e5342d61b5fed0cb3"
+  },
+  {
+    "run": 2,
+    "id": "9828fa01-215e-47a0-9ba1-a580e447ecc7",
+    "state": "published",
+    "model": "gpt-5.6-luna",
+    "protocol": "openai-responses",
+    "graphRevision": 11,
+    "persona": true,
+    "chapters": 2,
+    "paragraphs": 3,
+    "facts": 10,
+    "used": [
+      "F002",
+      "F003",
+      "F004",
+      "F006",
+      "F007",
+      "F008",
+      "F009"
+    ],
+    "omissions": [
+      {
+        "factRef": "F001",
+        "reason": "ambiguous_attribution"
+      },
+      {
+        "factRef": "F005",
+        "reason": "open_conflict"
+      },
+      {
+        "factRef": "F010",
+        "reason": "open_conflict"
+      }
+    ],
+    "paragraphRepairs": 0,
+    "titleRepairs": 0,
+    "formatRepairs": 0,
+    "modelCalls": 9,
+    "writerCalls": 3,
+    "atomicReviews": 5,
+    "reviewReports": [
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": 0,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "span": "我1952年出生在安徽一个村子",
+              "claim": "说话者1952年出生在安徽一个村子",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F009"
+              ]
+            },
+            {
+              "span": "家里有四个孩子",
+              "claim": "说话者家里有四个孩子",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F003"
+              ]
+            },
+            {
+              "span": "我排行第二",
+              "claim": "说话者排行第二",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F003"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": 1,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "span": "那时候啊，邻居们彼此熟悉，吃过饭就在门口聊天。",
+              "claim": "邻居们彼此熟悉，吃过饭就在门口聊天。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F002"
+              ]
+            },
+            {
+              "span": "小时候我常到村边的河里摸小鱼。",
+              "claim": "传主小时候常到村边的河里摸小鱼。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F006"
+              ]
+            },
+            {
+              "span": "我的子女记得",
+              "claim": "这段关于家里过去用煤油灯照明的说法来源于传主的子女记忆。",
+              "kind": "attribution",
+              "status": "supported",
+              "supportedBy": [
+                "F008"
+              ]
+            },
+            {
+              "span": "家里过去用煤油灯照明。",
+              "claim": "家里过去用煤油灯照明。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F008"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": -1,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "span": "村里的日子",
+              "claim": "这是一个关于村里生活的主题标题",
+              "kind": "narrative_glue",
+              "status": "nonfactual",
+              "supportedBy": []
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-2",
+        "paragraphIndex": 0,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "span": "1983年，我在村里开了修理铺",
+              "claim": "我于1983年在村里开了修理铺",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F004"
+              ]
+            },
+            {
+              "span": "学会修自行车，大概是在开修理铺以前",
+              "claim": "我大概在开修理铺以前学会了修自行车",
+              "kind": "temporal",
+              "status": "supported",
+              "supportedBy": [
+                "F007"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-2",
+        "paragraphIndex": -1,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "span": "修理铺以前和以后",
+              "claim": "以修理铺开设前后为主题进行概括",
+              "kind": "narrative_glue",
+              "status": "nonfactual",
+              "supportedBy": []
+            }
+          ],
+          "problems": []
+        }
+      }
+    ],
+    "latencyMs": 110332,
+    "diagnostics": [],
+    "plan": {
+      "chapters": [
+        {
+          "id": "chapter-1",
+          "title": "村里的日子",
+          "titleMode": "thematic",
+          "titleFactRefs": [],
+          "paragraphs": [
+            {
+              "brief": "交代出生地和家庭成员情况。",
+              "factRefs": [
+                "F009",
+                "F003"
+              ]
+            },
+            {
+              "brief": "写村里的邻里往来、童年活动和家中照明；其中煤油灯的情况注明来自传主子女的回忆。",
+              "factRefs": [
+                "F002",
+                "F006",
+                "F008"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chapter-2",
+          "title": "修理铺以前和以后",
+          "titleMode": "thematic",
+          "titleFactRefs": [],
+          "paragraphs": [
+            {
+              "brief": "写学会修自行车与开修理铺的经历，保留“ 大概 ”所表示的不确定性。",
+              "factRefs": [
+                "F007",
+                "F004"
+              ]
+            }
+          ]
+        }
+      ],
+      "omissions": [
+        {
+          "factRef": "F001",
+          "reason": "ambiguous_attribution"
+        },
+        {
+          "factRef": "F005",
+          "reason": "open_conflict"
+        },
+        {
+          "factRef": "F010",
+          "reason": "open_conflict"
+        }
+      ]
+    },
+    "nodeRefs": [
+      "216246cf-b6f0-408a-aef1-39e587c3d3de@1",
+      "3cf7db34-7ff5-4b22-8ea7-70162f2bff51@1",
+      "47589eb8-67e1-4167-809d-6ba2548ec881@1",
+      "55a84f54-cea0-4798-aefb-68f48f0050ad@2",
+      "5e17beb6-6f15-43fa-a163-162811095205@1",
+      "8ae6e8c6-a142-40b8-a2f9-160fa28611b7@1",
+      "8cfdab64-2735-43f1-ad5a-73cef7190482@1",
+      "922e7922-8111-4733-b877-a2892ac84684@1",
+      "b86b2379-9ecc-4685-9d83-551059595c1b@1",
+      "e592dec9-c789-4b82-8466-6b07dce56a0a@1"
+    ],
+    "sourceRefs": [
+      "043e12e4-5469-487a-800a-c418306d28cf",
+      "0c031795-51d1-41c5-9b61-dc61fbca61e4",
+      "2479a271-7044-4908-9996-afdb1ad8da99",
+      "2f6a01df-9722-4bbf-8954-b8c6718fbe0f",
+      "4e41cde3-347c-415e-b0b2-93cecd14059b",
+      "61a63845-7714-4eea-a9f8-15398aa3f22c",
+      "7892d00d-2afc-4a8d-a54a-cbc6c75ffb9e",
+      "9848c3e0-9d8b-4603-ba5d-d4e54cf18193",
+      "b56a81df-d488-470f-baf0-2f603caaeaa2",
+      "e16c7cc0-3a58-4895-9d3f-36b45a8d41f5"
+    ],
+    "factUniverseSha256": "76e9bac1bded340dbaf33c5d6a7d84f32c507ffdcadb961e5342d61b5fed0cb3"
+  },
+  {
+    "run": 3,
+    "id": "484c15c0-cad8-4f2b-9419-1f29e1ef73ac",
+    "state": "failed",
+    "model": "gpt-5.6-luna",
+    "protocol": "openai-responses",
+    "latencyMs": 87720,
+    "error": "MODEL_TIMEOUT",
+    "validationReason": "NARRATIVE_VALIDATION:NARRATIVE_VALIDATION: review span absent",
+    "plan": {
+      "chapters": [
+        {
+          "id": "chapter-1",
+          "title": "村里的日子",
+          "titleMode": "thematic",
+          "titleFactRefs": [],
+          "paragraphs": [
+            {
+              "brief": "交代出生地、家庭排行、邻里相处和童年生活，并说明关于煤油灯的记忆来自传主子女。",
+              "factRefs": [
+                "F009",
+                "F003",
+                "F002",
+                "F008",
+                "F006"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chapter-2",
+          "title": "后来开了修理铺",
+          "titleMode": "thematic",
+          "titleFactRefs": [],
+          "paragraphs": [
+            {
+              "brief": "讲述学会修自行车的大致时间关系，以及1983年在村里开修理铺的经历。",
+              "factRefs": [
+                "F007",
+                "F004"
+              ]
+            }
+          ]
+        }
+      ],
+      "omissions": [
+        {
+          "factRef": "F001",
+          "reason": "ambiguous_attribution"
+        },
+        {
+          "factRef": "F005",
+          "reason": "open_conflict"
+        },
+        {
+          "factRef": "F010",
+          "reason": "open_conflict"
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 15376,
+        "repairs": 0
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "latencyMs": 10785,
+        "repairs": 0
+      }
+    ],
+    "diagnostics": [],
+    "reviewReports": []
+  }
+]

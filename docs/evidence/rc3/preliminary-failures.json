@@ -1,0 +1,373 @@
+[
+  {
+    "id": "9f0aae99-b56b-44bc-a93e-b9e8c1d20eb7",
+    "error": "NARRATIVE_VALIDATION",
+    "validationReason": "NARRATIVE_VALIDATION:NARRATIVE_VALIDATION: review span absent",
+    "diagnostics": [
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": 1,
+        "attempt": 0,
+        "claimKind": "attribution",
+        "status": "unsupported",
+        "factRefs": [
+          "F007"
+        ],
+        "reasonCode": "MISSING_ATTRIBUTION"
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": -1,
+        "attempt": 0,
+        "claimKind": "title",
+        "status": "unsupported",
+        "factRefs": [],
+        "reasonCode": "UNSUPPORTED_TITLE"
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": -1,
+        "attempt": 1,
+        "claimKind": "title",
+        "status": "unsupported",
+        "factRefs": [],
+        "reasonCode": "UNSUPPORTED_TITLE"
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": -1,
+        "attempt": 1,
+        "claimKind": "title",
+        "status": "supported",
+        "factRefs": [
+          "F006"
+        ],
+        "reasonCode": "VALIDATED_HEADING_FALLBACK"
+      }
+    ],
+    "reviews": [
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": 0,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "span": "我1952年出生在安徽一个村子",
+              "claim": "说话者1952年出生在安徽的一个村子里。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F006"
+              ]
+            },
+            {
+              "span": "家里有四个孩子",
+              "claim": "说话者家里有四个孩子。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F001"
+              ]
+            },
+            {
+              "span": "我排行第二",
+              "claim": "说话者在家中排行第二。",
+              "kind": "identity",
+              "status": "supported",
+              "supportedBy": [
+                "F001"
+              ]
+            },
+            {
+              "span": "小时候，我常到村边的河里摸小鱼",
+              "claim": "说话者小时候常到村边的河里摸小鱼。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F008"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": 1,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "span": "我的子女提到",
+              "claim": "传主的子女提到家里过去用煤油灯照明。",
+              "kind": "attribution",
+              "status": "supported",
+              "supportedBy": [
+                "F007"
+              ]
+            },
+            {
+              "span": "家里过去用煤油灯照明",
+              "claim": "家里过去用煤油灯照明。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F007"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": 1,
+        "attempt": 1,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "span": "传主的子女提到",
+              "claim": "传主的子女是这句话的证言来源。",
+              "kind": "attribution",
+              "status": "supported",
+              "supportedBy": [
+                "F007"
+              ]
+            },
+            {
+              "span": "家里过去用煤油灯照明",
+              "claim": "家里过去用煤油灯照明。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F007"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": -1,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "span": "我是在村子里长大的",
+              "claim": "传主在村子里长大",
+              "kind": "factual",
+              "status": "compatible_paraphrase",
+              "supportedBy": [
+                "F006",
+                "F008"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": -1,
+        "attempt": 1,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "span": "村边摸鱼",
+              "claim": "传主小时候常到村边的河里摸小鱼",
+              "kind": "factual",
+              "status": "compatible_paraphrase",
+              "supportedBy": [
+                "F008"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      }
+    ]
+  },
+  {
+    "id": "2b9b0c4b-d425-43f9-b83c-65c295a9995a",
+    "error": "NARRATIVE_VALIDATION",
+    "validationReason": "NARRATIVE_VALIDATION:NARRATIVE_VALIDATION: review claim semantics",
+    "diagnostics": [
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": 1,
+        "attempt": 0,
+        "claimKind": "attribution",
+        "status": "unsupported",
+        "factRefs": [
+          "F008"
+        ],
+        "reasonCode": "MISSING_ATTRIBUTION"
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": -1,
+        "attempt": 0,
+        "claimKind": "title",
+        "status": "unsupported",
+        "factRefs": [],
+        "reasonCode": "UNSUPPORTED_TITLE"
+      }
+    ],
+    "reviews": [
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": 0,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "span": "我1952年出生在安徽一个村子",
+              "claim": "我于1952年出生在安徽一个村子",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F009"
+              ]
+            },
+            {
+              "span": "家里有四个孩子",
+              "claim": "家里有四个孩子",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F003"
+              ]
+            },
+            {
+              "span": "我排行第二",
+              "claim": "我在家中排行第二",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F003"
+              ]
+            },
+            {
+              "span": "小时候，我常到村边的河里摸小鱼",
+              "claim": "我小时候常到村边的河里摸小鱼",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F006"
+              ]
+            },
+            {
+              "span": "邻居们彼此熟悉",
+              "claim": "邻居们彼此熟悉",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F002"
+              ]
+            },
+            {
+              "span": "吃过饭就在门口聊天",
+              "claim": "邻居们吃过饭就在门口聊天",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F002"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": 1,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "span": "传主的子女提到",
+              "claim": "传主的子女提及了相关情况。",
+              "kind": "attribution",
+              "status": "supported",
+              "supportedBy": [
+                "F008"
+              ]
+            },
+            {
+              "span": "家里过去用煤油灯照明",
+              "claim": "家里过去用煤油灯照明。",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F008"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": 1,
+        "attempt": 1,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "span": "传主的子女提到",
+              "claim": "传主的子女是“家里过去用煤油灯照明”这一说法的证言来源",
+              "kind": "attribution",
+              "status": "supported",
+              "supportedBy": [
+                "F008"
+              ]
+            },
+            {
+              "span": "家里过去用煤油灯照明",
+              "claim": "家里过去用煤油灯照明",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F008"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      },
+      {
+        "chapterId": "chapter-1",
+        "paragraphIndex": -1,
+        "attempt": 0,
+        "report": {
+          "complete": true,
+          "claims": [
+            {
+              "span": "村里的日子",
+              "claim": "文本主题涉及传主在村庄中的生活经历",
+              "kind": "factual",
+              "status": "supported",
+              "supportedBy": [
+                "F002",
+                "F003",
+                "F006",
+                "F008",
+                "F009"
+              ]
+            }
+          ],
+          "problems": []
+        }
+      }
+    ]
+  }
+]
