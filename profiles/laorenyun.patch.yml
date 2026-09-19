@@ -10,9 +10,9 @@
 - id: ui-settings-plugins
   disabled: true
 - id: ui-settings-models
-  disabled: true
+  disabled: false
 - id: ui-settings-general
-  disabled: true
+  disabled: false
 - id: ui-agent-preset
   disabled: true
 - id: ui-model-selection
@@ -52,4 +52,7 @@
 - id: file-reference-local
   disabled: true
 - id: session-stats
+  disabled: true
+
+- id: ui-settings-unarchive-sessions
   disabled: true

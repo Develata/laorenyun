@@ -19,7 +19,7 @@ COPY scripts/fetch-plugin.mjs /build/scripts/fetch-plugin.mjs
 RUN node /build/scripts/fetch-plugin.mjs
 WORKDIR /build/plugin
 RUN --mount=type=cache,id=laorenyun-pnpm,target=/root/.local/share/pnpm/store pnpm install --frozen-lockfile --ignore-scripts && pnpm check && pnpm pack --pack-destination /build/package
-RUN mkdir -p /opt/dsh-laorenyun && tar -xzf /build/package/dsh-laorenyun-0.1.0.tgz -C /opt/dsh-laorenyun --strip-components=1 && ln -s /app/data/dsh/profiles/node_modules /opt/dsh-laorenyun/node_modules
+RUN mkdir -p /opt/dsh-laorenyun && tar -xzf /build/package/dsh-laorenyun-0.2.0-rc.1.tgz -C /opt/dsh-laorenyun --strip-components=1 && ln -s /app/data/dsh/profiles/node_modules /opt/dsh-laorenyun/node_modules
 FROM node:24.21.0-bookworm-slim@sha256:2fe369e969550cde8e867afc3fe370b260140cab4a23d467074295b42163d553 AS dsh-runtime
 COPY --from=dsh-build /etc/ssl/certs/ /etc/ssl/certs/
 RUN sed -i 's|http://deb.debian.org|https://deb.debian.org|g' /etc/apt/sources.list.d/debian.sources && apt-get -o Acquire::Retries=2 -o Acquire::https::Timeout=20 update && apt-get -o Acquire::Retries=2 -o Acquire::https::Timeout=20 install -y --no-install-recommends ffmpeg=7:5.1.9-0+deb12u1 ca-certificates && rm -rf /var/lib/apt/lists/*

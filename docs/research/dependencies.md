@@ -53,3 +53,7 @@ Owner：本文件拥有拟引入依赖的取舍、成本和观察版本。审计
 2026-09-16核对 d3-shape 3.2.0（ISC，registry最后更新2023-04-12，依赖d3-path ^3.1.0）及官方曲线/许可；@types/d3-shape 3.2.0为MIT。该包是成熟稳定模块，无需引入完整D3。当前环境安装被自动审批拒绝；实际改用一个固定SVG三次曲线和浏览器原生getTotalLength/getPointAtLength，不手写曲线算法。已有官方API足够，无新增运行成本或许可组件。将来需要自由河道布局时再评估d3-shape。
 
 参考：[D3曲线](https://d3js.org/d3-shape/curve)、[许可](https://github.com/d3/d3-shape/blob/main/LICENSE)、[SVG弧长定位](https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/getPointAtLength)。静态HTML直接转义结构化内容，没有Markdown解析或HTML执行依赖。
+
+## v0.2 变更
+
+插件增加七个固定 DSH 0.1.6-alpha.1 开发类型包：client-ui-sidebar、client-ui-sidebar-right、client-ui-settings、client-ui-settings-general、workspace、settings、client-ui-workspace。能力已存在于锁定 DSH，MIT 许可由原发行 notices 覆盖；选择公开 API 以避免复制壳或修改上游。模型设置沿用发行已有 ui-settings-models。没有新运行框架/D3/字体资产；实际河道由原创固定 cubic 构造和浏览器实测弧长完成。

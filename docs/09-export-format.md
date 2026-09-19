@@ -4,7 +4,9 @@ Owner：本文件拥有生成与交换语义；ExportService 等类型在[插件
 
 ## 生成分层
 
-`Memory Graph 固定版本 → Biography Planner → Narrative Renderer (+ 可选 Persona) → validated BiographySection → autobiography.md`。
+`Memory Graph 固定版本 → Fact Manifest → Narrative Planner → Writer (+ 可选 Persona) → 独立事实审校/有界修复 → validated BiographySection → autobiography.md`。
+
+v0.2 由 FactAtom 约束事实宇宙，模型自由改写、合并多个事实成段；章名与段落均参与审校。未知日期只保留为 null，不自动写入“年份不详”；家人证言自然归属。独立模型审校不是历史真实性证明，仍需人工阅读；确定性验证保证引用/界限/来源存在。具体改变见 ADR0018。
 
 Planner 选择年代/主题、排序和节点版本，不产生新事实。Renderer 默认第一人称、保留本人朴素说法，不过度文学化；每段带使用的节点/字段/source refs。子女代述必须保留“据家人回忆”等出处限定，不能冒充本人亲历。只有说话者明确说过的内心活动可以写；因果与具体日期受各自 certainty 限制。
 
@@ -30,7 +32,7 @@ JSON 媒体引用为相对逻辑路径与 hash；未包含文件有 `included=fa
 
 UI Markdown复用DSH renderer；静态HTML直接从已校验BiographySection结构渲染标题/段落/出处锚点，文本转义，不再解析任意Markdown，也不自造通用Markdown解析器。Markdown 和 HTML 不执行源文本 HTML/脚本；只允许安全 URL 协议，HTML 输出转义或复用已审计 sanitizer，CSP 禁远端连接。导出默认是私密下载，不自动分享/上传。界面说明可能包含第三方姓名、照片和敏感经历；公开传播由使用者另行决定。密钥、DSH 系统提示、隐藏思考、内部绝对路径不得进入导出。
 
-## Phase 4 交付边界
+## Phase 4 历史交付边界（新生成由 ADR0018 替代）
 
 Planner使用固定manifest并覆盖每个可用节点恰好一次；开放Conflict双方暂不写入，并明确说明省略。Renderer采用原话编排：完整keySentence必须原样存在于支持证言，软件添加代述/不确定说明；Persona只能选择有证据的有限转场。此版本优先防止新增事实，未实现自由文学改写。人物/事实不依赖风格快照。
 

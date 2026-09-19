@@ -84,3 +84,11 @@ schema4启动事务迁移，不重置旧库。升级前停机备份整个数据�
 彻底移除本地安装数据是破坏性管理员操作：先停Compose，确认项目名，用`docker volume ls`及`docker volume inspect <精确卷名>`确认目标，备份整个卷和.env；确认永久删除后才使用`docker volume rm <精确卷名>`。不使用通配符，不对其它项目执行prune。当前导出不含音频，不可替代卷备份。
 
 手机须HTTPS origin（localhost之外），配置精确trustedHosts并保留DSH访问保护；不把key存浏览器，也不关闭安全上下文检查。没有新增反向代理服务。最终已测范围见[发行状态](release-v0.1.0.md)。
+
+## v0.2 工作线
+
+Compose 镜像为本地构建 `laorenyun:0.2.0-rc.1`，PLUGIN.json 固定完整提交，不使用 main/tag 下载。v0.1 镜像/tag 不覆盖。新人物档案由 DSH Workspace 管理；旧库/媒体原地映射默认档案，新档案目录位于 `/app/data/archives/<workspace-id>`，均在同一个持久卷内。切勿在迁移中删除原目录。
+
+本机设置入口恢复显示/AI模型/语音服务；原生 DSH credentials/settings 持有 Web 配置，`.env` 仍可用于无界面部署。Web Tencent 设置覆盖相应 env 基础值，空白秘密字段表示不改。模型默认选择作用于新采访，已有采访保留原模型。远程连接受原生 Host 设置写权限约束，不放宽访问保护。
+
+真实验收脚本 `smoke-v02.mjs` 必须显式允许真实模型调用；`smoke-v02-experience.mjs` 要求指定含多年代的隔离合成档案，测试筛选/布局/设置，不自动写入真人档案。参数与证据见 [v0.2](v0.2-redesign.md)。

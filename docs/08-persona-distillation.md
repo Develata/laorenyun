@@ -32,3 +32,7 @@ metadata 保存 schemaVersion、snapshot ID、createdAt、input manifest/hash、
 实际快照以SQLite derived_generations中的不可变JSON为唯一权威，不另写可编辑VOICE.md目录；目录示例为未来投影，不能作为第二套源。最近最多80段本人已提交文字，每段模型输入最多1200字，固定ID/清单hash、模型route/prompt版本和计量；五类风格必须有逐字引文或unknown。未将心理/政治/未来推测纳入schema，不能声称用小样本鉴定人格。
 
 仅可选快照作为自传renderer的数据风格槽；不改变采访system prompt、工具或权限。当前保守renderer只采用有引文支持的有限转场；完整事实原句不改写。[Phase 4](phase-4.md)列出真实模型观察和未证实项。
+
+## v0.2 展示与使用
+
+结果位于“我的自传”，用常用表达/叙事习惯/句子与节奏/称呼/情绪表达呈现，并可展开真实引文。成功创建后默认用于下一次自传，用户可关闭。新 Writer 可自由调整语言；Persona 仅传观察说明，事实性引用示例不混入事实宇宙。源不足只列 unknown，不生成空引用观察。历史 Phase4 renderer 的有限转场限制不再约束 narrative-v2。

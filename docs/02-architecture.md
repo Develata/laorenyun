@@ -66,3 +66,9 @@ Client → Host Remote → application services → domain contracts；Tencent�
 单 Host 单 writer，操作串行到领域事务；两个浏览器仅一个持有采访写租约，其他只读。任务表承担本进程可恢复工作，不建设消息队列。外部请求一律 signal + 总截止时间 + 有限重试；进程停止后未终结操作以 interrupted/recoverable 恢复，不自动重发不确定的云识别请求。
 
 领域版本与 DSH session 格式独立。迁移前停写并备份整个数据根；`PRAGMA user_version` 单调增加，SQL 事务迁移失败回滚；遇到未来版本拒绝写入。回退程序不等于回退数据，恢复匹配快照后才回退。原件增长与生成缓存回收见 [部署](10-deployment.md)。
+
+## v0.2 人物档案与采访
+
+DSH Workspace 是人物档案，Session 是一次采访。相同 Workspace 的采访共享领域图/原声/表达画像/自传；不同 Workspace 使用独立领域目录与 SQLite 连接，由同一个有界 worker 拥有。默认 v0.1 singleton 原地映射到默认档案；标记原子发布，原生成员重复附着幂等。具体迁移和公开 seam 见 [ADR0018](adr/0018-v02-archives-and-narrative.md)。
+
+异步任务按原生 Session membership/父支线身份固定档案，浏览器当前选中档案不是写入权威。文字与语音都经 acceptHuman→Transcript→extract 操作；媒体为空不跳过记忆抽取。新采访重置短会话，不重置人生图。最多32人物档案，不引入另一套 Workspace 注册表。
