@@ -10,19 +10,19 @@ v0.2 由 FactAtom 约束事实宇宙，模型自由改写、合并多个事实�
 
 Planner 选择年代/主题、排序和节点版本，不产生新事实。Renderer 默认第一人称、保留本人朴素说法，不过度文学化；每段带使用的节点/字段/source refs。子女代述必须保留“据家人回忆”等出处限定，不能冒充本人亲历。只有说话者明确说过的内心活动可以写；因果与具体日期受各自 certainty 限制。
 
-每节对 planner 清单校验事实/引用、未知值和冲突；不能仅凭“引用 ID 存在”认定语义正确，真实验收含人工逐段对照。开放冲突并列标明不同记忆，或省略争议细节并说明，不能为了流畅任选一版。模型一次修复仍失败则保留未发布候选，不替换上次可用自传。
+每节对 planner 清单校验事实/引用、未知值和冲突；不能仅凭“引用 ID 存在”认定语义正确，真实验收含人工逐段对照。开放冲突从普通正文排除，省略理由保留在生成元数据，不自动写数据库状态提示；不能为了流畅任选一版。模型一次修复仍失败则保留未发布候选，不替换上次可用自传。
 
-输入 node revision / source revision / graph revision / optional persona snapshot / prompt/model 固定并写 manifest。生成总截止5分钟、单节60秒、最多20节；超出分次整理，不能在后台无限生成。每节最多一次修复且不重置预算，失败/取消保留已生成候选，上一发布版本继续可用。P0导出任务总120秒，超时返回可恢复失败；不在一个HTTP请求里无限等待。每次发布原子切换生成版本；同次重试以 generation ID 去重。录音、转写、记忆不依赖自传反向更新。
+输入 node revision / source revision / graph revision / optional persona snapshot / prompt/model 固定并写 manifest。生成总截止5分钟；模型每次实际尝试有独立60秒窗口，仍服从外层总截止。每次最多一次格式修复，每段最多一次语义修复；通过段落不重写，不能在后台无限生成。超出输入/章节边界明确失败，不静默截断，失败/取消保留已生成候选，上一发布版本继续可用。P0导出任务总120秒，超时返回可恢复失败；不在一个HTTP请求里无限等待。每次发布原子切换生成版本；同次重试以 generation ID 去重。录音、转写、记忆不依赖自传反向更新。
 
 ## P0 文件
 
-- `autobiography.md`：UTF-8，第一人称正文、稳定章节/段落 ID、可读脚注；文件自身说明派生时间/版本，缺出处显示未核实。
+- `autobiography.md`：UTF-8，第一人称正文、稳定章节/段落 ID、实际使用的出处脚注；文件自身说明派生时间/版本。
 - `index.html`：基本自传、节点摘要和来源文字、可点击内部锚点；离线可打开，CSS 内嵌，无远程脚本/CDN/字体。P0 不要求离线互动河流或打包全部音频。
 - `memories.json`：`format=laorenyun.memories`、`schemaVersion=1`、exportId/generatedAt/graphRevision、media metadata、speaker snapshots、sources、transcript revisions、nodes/revisions、edges、conflicts、branch memos、biography manifest。按稳定 ID 排序；未知保持 null，不能序列化为推测值。
 
 JSON 媒体引用为相对逻辑路径与 hash；未包含文件有 `included=false`，不能给出失效的 Host 私有 URL 冒充可携带音频。P0 导出不是全备份，也未承诺导入恢复。
 
-## P1 portable ZIP
+## 未实现的 portable ZIP 设想
 
 包含以上三文件及 `audio/`、`images/`，manifest 列文件 bytes/hash、路径、是否原件和版本；可新增 richer HTML 离线河流/出处导航。内部路径无绝对路径、`..`、符号链接；使用成熟 ZIP 流式库，选择时再审计许可证；不为 Phase 0 增加包。
 
@@ -39,3 +39,7 @@ Planner使用固定manifest并覆盖每个可用节点恰好一次；开放Confl
 schema5复用一个derived_generations生命周期，显式创建、持久输入hash、progress、candidates、模型计量、active指针。至多一个派生任务；5分钟总期限/60秒单调用/一次格式修复，导出120秒。重启中的任务标failed并保留候选；用户显式重试建立新generation，之前published不动。
 
 自传最多200当前节点、1000历史修订；超过边界显式失败，不静默截断。导出固定绑定自传manifest，包括关联历史证言/修订和冲突，而非声称包含后来新增采访。文件私有staging、fsync、hash复核、rename后才切换DB发布指针；中断遗留不自动清理。媒体均included=false，不提供ZIP/导入或完整备份承诺。验证与原声定位限制见[Phase 4](phase-4.md)。
+
+## 当前阅读与历史支持的分离
+
+纠正后的事实只以支持当前说法的证言作为 active support；旧矛盾证言仍在节点/冲突历史及 memories.json 中，不作为新段落的支持脚注。Markdown/HTML 只列已发布段落使用的来源，省略元数据不混入正文。Web、Markdown、HTML 复用纯 display-title 规则消除与首句重复的标题，存储生成内容不变。

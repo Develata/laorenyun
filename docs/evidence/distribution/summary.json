@@ -1,0 +1,16 @@
+{
+  "imageId": "sha256:1de03d5dd9321be9572e743beb09764e48d628534f6f7edf2519301a8ac9ef7d",
+  "osPackages": 290,
+  "sourcePackages": 206,
+  "runtimeNpmMetadata": 535,
+  "buildClosureSuperset": 1020,
+  "nativeComponents": 28,
+  "publicationAllowed": false,
+  "bundleSha256": "c6539884ec92d1a8527d25c5a8328e153826dae990df4637b6ba8c3617dc09d4",
+  "bundleBytes": 11263591,
+  "materialFiles": 1355,
+  "manifestSha256": "f74dbb64fe36a9f4b1236dc69145602ff55573d3ac588d995ec87494b3860288",
+  "unresolved": 1503,
+  "localDirectory": "artifacts/distribution-complete-audit",
+  "scope": "incomplete audit bundle; not approved corresponding-source delivery"
+}

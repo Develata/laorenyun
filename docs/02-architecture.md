@@ -1,8 +1,6 @@
-> Phase 2 实际接入与验证状态见 [phase-2](phase-2.md) 和 [ADR-0015](adr/0015-phase-2-speech-and-interview.md)。完整产品规范仍含未来阶段，不能视为全数已实现。
-
 # 系统架构与不变量
 
-> Phase 1 当前实现与证据见 [phase-1](phase-1.md)；本文件保留完整产品规范，未标为已实现的能力仍属后续阶段。
+> 当前产品边界见 [v0.2.0](release-v0.2.0.md)。本文件描述现行约束；标为历史的段落保留早期语境，硬件与质量承诺以实际证据为准。
 
 Owner：本文件拥有模块/权威边界和全局不变量。具体类型唯一 owner 是[插件 contracts](https://github.com/Develata/dsh-laorenyun/blob/main/docs/contracts.md)。
 
@@ -40,7 +38,7 @@ DSH session 和领域 DB 不是分布式原子事务。桥接操作必须有 dur
 
 Client → Host Remote → application services → domain contracts；Tencent、SQLite、filesystem、DSH adapter 实现 contracts。domain 不 import Tencent/React/DSH runtime。一个插件包内按上述模块分目录即可，不为每个接口创建 npm 包。
 
-发行层以后保存 `upstream/deepseek-harness/` 精确源码快照（或等效固定源码归档），保留上游 LICENSE/NOTICES，原创 `distribution/`、`profiles/`、`deploy/` 与其分离。插件以精确版本 tarball + 完整性 hash 安装；开发相邻 checkout 不是发行依赖。不要求 GitHub fork 关系，不用浮动 git dependency。升级逐项回归窄适配层，详见 [ADR-0001](adr/0001-deepseek-harness-foundation.md)。Phase 0 尚不引入整棵上游树。
+发行层保存 `upstream/deepseek-harness/` 精确源码快照（或等效固定源码归档），保留上游 LICENSE/NOTICES，原创 `distribution/`、`profiles/`、`deploy/` 与其分离。插件以精确版本 tarball + 完整性 hash 安装；开发相邻 checkout 不是发行依赖。不要求 GitHub fork 关系，不用浮动 git dependency。升级逐项回归窄适配层，详见 [ADR-0001](adr/0001-deepseek-harness-foundation.md)。Phase 0 当时尚未引入整棵上游树；现由 UPSTREAM.json 与文件清单验证固定快照。
 
 ## 必须保持的不变量
 

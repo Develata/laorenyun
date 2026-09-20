@@ -1,8 +1,6 @@
-> Phase 2 实际接入与验证状态见 [phase-2](phase-2.md) 和 [ADR-0015](adr/0015-phase-2-speech-and-interview.md)。完整产品规范仍含未来阶段，不能视为全数已实现。
-
 # 语音到草稿与朗读
 
-> Phase 1 当前实现与证据见 [phase-1](phase-1.md)；本文件保留完整产品规范，未标为已实现的能力仍属后续阶段。
+> 当前产品边界见 [v0.2.0](release-v0.2.0.md)。本文件描述现行约束；标为历史的段落保留早期语境，硬件与质量承诺以实际证据为准。
 
 Owner：本文件拥有交互与失败语义；[插件 speech](https://github.com/Develata/dsh-laorenyun/blob/main/docs/speech.md) 拥有腾讯映射、具体预算与恢复操作。外部 API 证据见[账本](research/upstream.md)。
 

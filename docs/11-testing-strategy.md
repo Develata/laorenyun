@@ -1,8 +1,6 @@
-> Phase 2 实际接入与验证状态见 [phase-2](phase-2.md) 和 [ADR-0015](adr/0015-phase-2-speech-and-interview.md)。完整产品规范仍含未来阶段，不能视为全数已实现。
-
 # 验证策略
 
-> Phase 1 当前实现与证据见 [phase-1](phase-1.md)；本文件保留完整产品规范，未标为已实现的能力仍属后续阶段。
+> 当前产品边界见 [v0.2.0](release-v0.2.0.md)。本文件描述现行约束；标为历史的段落保留早期语境，硬件与质量承诺以实际证据为准。
 
 Owner：本文件拥有验收层次；[插件 testing](https://github.com/Develata/dsh-laorenyun/blob/main/docs/testing.md) 列模块/接口测试，避免重复用例。
 
@@ -41,4 +39,8 @@ Phase 3 确定性/真实模型证据由[phase-3](phase-3.md)汇总；schema-only
 
 [发行报告](phase-4.md)区分42项自动检查、真实模型、Chromium尺寸/缩放、原生纠正、离线文件和实际restart。Phase2实体硬件仍pending，原件↔归一化逐字时序、Safari/手机HTTPS尚未验证；不得扩大通过声明。
 
-最终课程验收采用500节点/1051修订规模；实际计量与CI由[发行状态](release-v0.1.0.md)拥有。上述10000节点指标仍未测，不把目标当结果。
+v0.1 课程验收采用500节点/1051修订规模，保留于[历史发行](release-v0.1.0.md)。当前 v0.2 RC6 使用1000节点、700有日期/300漂流、2102关系、50 BranchMemo 进行有界投影验证，计量见[v0.2证据](v0.2-redesign.md)。上述10000节点目标仍未测。
+
+## 分发工程检查
+
+普通 Distribution CI 运行上游/发行校验、配置与发布脚本确定性测试、Docker 构建及本地健康/重启，不持有 registry 写权限。标签流程另运行真实 Chromium 的无云冷启动/文字来源持久化和实际镜像源码材料门禁；缺材料应失败并跳过 publish。具体流程与失败状态由[发布操作](12-release.md)拥有。
