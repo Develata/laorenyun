@@ -23,3 +23,13 @@ test("reset refuses foreign container attachments", () => {
     Config: { Labels: { "com.docker.compose.project": "laorenyun-demo" } },
   });
 });
+
+test("demo private state is excluded from Docker context", async () => {
+  const { readFile } = await import("node:fs/promises");
+  const ignored = await readFile(
+    new URL("../../.dockerignore", import.meta.url),
+    "utf8",
+  );
+  for (const entry of ["demo/.env", "demo/.private/", "demo/output/"])
+    assert.ok(ignored.split("\n").includes(entry));
+});
