@@ -1,0 +1,11 @@
+{
+  "plugin": "3222353e4bfd3ad202ba98575739f75ef4d5eaea",
+  "tag": "laorenyun:0.2.0-rc.5",
+  "image": "sha256:7875e61c04c6842dad6eaa17fb1ee12e60a5a30676d811ddaf4194a35a3a63a3",
+  "health": "healthy",
+  "user": "10001:10001",
+  "unauthorizedHttp": 401,
+  "project": "laorenyun-rc5",
+  "port": 3098,
+  "restartVerified": true
+}

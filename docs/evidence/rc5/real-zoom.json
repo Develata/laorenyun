@@ -1,0 +1,7 @@
+{
+  "method": "Chromium chrome.tabs.setZoom(2), CSS zoom unchanged",
+  "innerWidth": 720,
+  "devicePixelRatio": 2,
+  "cssZoom": "1",
+  "overflow": false
+}

@@ -1,0 +1,30 @@
+{
+  "harness": "production Journey component, synthetic in-memory display data, no Host mutation",
+  "results": [
+    {
+      "count": 0,
+      "collapsed": 0,
+      "expanded": 0
+    },
+    {
+      "count": 1,
+      "collapsed": 300,
+      "expanded": 300
+    },
+    {
+      "count": 2,
+      "collapsed": 400,
+      "expanded": 400
+    },
+    {
+      "count": 3,
+      "collapsed": 300,
+      "expanded": 440
+    },
+    {
+      "count": 30,
+      "collapsed": 300,
+      "expanded": 940
+    }
+  ]
+}

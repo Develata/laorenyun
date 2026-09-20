@@ -1,0 +1,19 @@
+{
+  "navResult": {
+    "navRight": 210,
+    "canvasLeft": 228,
+    "noOverlay": true
+  },
+  "grove": {
+    "collapsed": 400.059322730109,
+    "expanded": 400.059322730109,
+    "restored": true
+  },
+  "leafBounds": {
+    "left": 151.2266845703125,
+    "right": 265.1328430175781,
+    "viewport": 360
+  },
+  "reducedMotion": "none",
+  "keyboardSelection": true
+}
