@@ -1,0 +1,14 @@
+{
+  "fixture": "rc6",
+  "nodes": 1000,
+  "anchored": 700,
+  "drifting": 300,
+  "edges": 2102,
+  "branchMemos": 50,
+  "visible": 500,
+  "visibleRelations": 2,
+  "queryMs": 33.56904199999997,
+  "projectionMs": 15.499333999999976,
+  "detailMs": 0.8024369999999976,
+  "bytes": 142888
+}

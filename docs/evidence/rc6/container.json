@@ -1,0 +1,10 @@
+{
+  "image": "sha256:1d69501247dba0370fdccb7a6139362e753d3eb7869fe62663a2140c5d74fc36",
+  "tag": "laorenyun:0.2.0-rc.6",
+  "health": "healthy",
+  "user": "10001:10001",
+  "unauthorizedHttp": 401,
+  "port": "127.0.0.1:3099",
+  "plugin": "bc91d78b39fe0db38e6315d50733f24cdfcca92b",
+  "project": "laorenyun-rc6"
+}

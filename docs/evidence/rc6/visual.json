@@ -1,0 +1,19 @@
+{
+  "transitions": [
+    "23760",
+    "23400"
+  ],
+  "driftingReturn": true,
+  "sidebarSvg": true,
+  "personaCollapsed": true,
+  "correctionCancelled": true,
+  "correctionWithoutRelations": true,
+  "sizes": [
+    1440,
+    768,
+    360
+  ],
+  "keyboard": true,
+  "reducedMotion": true,
+  "pageErrors": 0
+}
