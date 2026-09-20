@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "reviewStatus": "incomplete",
+  "components": [
+    {
+      "id": "deb:ffmpeg@7:5.1.9-0+deb12u1",
+      "license": "GPL-2.0-or-later",
+      "sourceIdentity": "Debian ffmpeg 7:5.1.9-0+deb12u1 (3.0 quilt)",
+      "delivery": "source",
+      "review": "Matched exact source/version and Checksums-Sha256 from Debian HTTPS dsc. Separate linked libraries remain unreviewed; no whole-image approval.",
+      "notices": [
+        "debian-notices/ffmpeg/copyright"
+      ],
+      "sources": [
+        "sources/ffmpeg_5.1.9-0+deb12u1.dsc",
+        "sources/ffmpeg_5.1.9.orig.tar.xz",
+        "sources/ffmpeg_5.1.9.orig.tar.xz.asc",
+        "sources/ffmpeg_5.1.9-0+deb12u1.debian.tar.xz"
+      ],
+      "buildMaterial": [
+        "sources/ffmpeg_5.1.9-0+deb12u1.debian.tar.xz",
+        "ffmpeg-buildconf.txt",
+        "ffmpeg-links.txt"
+      ]
+    }
+  ],
+  "downloads": [
+    {
+      "url": "https://deb.debian.org/debian/pool/main/f/ffmpeg/ffmpeg_5.1.9-0+deb12u1.dsc",
+      "path": "sources/ffmpeg_5.1.9-0+deb12u1.dsc",
+      "sha256": "055f82fca9a92f1d47216be2c2488d09373c7ca154806fbc36b0127c191d5104"
+    },
+    {
+      "url": "https://deb.debian.org/debian/pool/main/f/ffmpeg/ffmpeg_5.1.9.orig.tar.xz",
+      "path": "sources/ffmpeg_5.1.9.orig.tar.xz",
+      "sha256": "d9b593bb2ba93d4b50f74177e0cdcd41747e708596367deed0c30348a71dd176"
+    },
+    {
+      "url": "https://deb.debian.org/debian/pool/main/f/ffmpeg/ffmpeg_5.1.9.orig.tar.xz.asc",
+      "path": "sources/ffmpeg_5.1.9.orig.tar.xz.asc",
+      "sha256": "443e6cdfe1560aab22f90ec40a967866ee04d5bbea32bc32625bd6e514d589f4"
+    },
+    {
+      "url": "https://deb.debian.org/debian/pool/main/f/ffmpeg/ffmpeg_5.1.9-0+deb12u1.debian.tar.xz",
+      "path": "sources/ffmpeg_5.1.9-0+deb12u1.debian.tar.xz",
+      "sha256": "71b20472ecd2764bc98e3229d34c0f7c8dcfe4a6cbacc23fd5604c23bac04632"
+    },
+    {
+      "url": "https://codeload.github.com/lovell/sharp-libvips/tar.gz/4da6d14c0d59866adfb9d8cf52bcaa53846dc4f6",
+      "path": "sources/sharp-libvips-4da6d14c0d59866adfb9d8cf52bcaa53846dc4f6.tar.gz",
+      "sha256": "4f438a108427ed9054c62c134c559af10522815ea42892a9ca31f655d97fc806"
+    }
+  ],
+  "blockers": [
+    "FFmpeg source package is bundled; exact source artifacts for the remaining installed Debian source packages and linked closure are not yet delivered.",
+    "Complete sharp-libvips v1.3.2 build recipe is bundled; component source archives, vendored Rust dependencies, resolved patches and their match to shipped binaries remain incomplete.",
+    "Runtime and bundled Web license inventory needs per-component source-or-notice disposition; existing historical license index is not that approval."
+  ]
+}

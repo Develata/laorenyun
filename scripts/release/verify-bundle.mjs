@@ -1,0 +1,18 @@
+import {readFileSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
+import {resolve} from 'node:path';
+import assert from 'node:assert/strict';
+import {sourceProblems} from './contracts.mjs';
+const [directory, imageId] = process.argv.slice(2), out=resolve(directory);
+const read=f=>JSON.parse(readFileSync(resolve(out,f)));
+const m=read('container-source-manifest.json'),inventory=read('inventory.json');
+assert.equal(m.imageId,imageId,'source bundle image mismatch');
+const lock=JSON.parse(readFileSync(new URL('../../licenses/container/sources.lock.json',import.meta.url)));
+assert.equal(m.reviewStatus,lock.reviewStatus,'source review authority mismatch');
+assert.deepEqual(m.components,lock.components,'source disposition mismatch');
+for(const d of lock.downloads)assert.equal(m.files[d.path],d.sha256,'locked material hash mismatch');
+const p=sourceProblems(inventory,m,new Set(Object.keys(m.files ?? {})));
+execFileSync('python3',[new URL('./archive.py',import.meta.url).pathname,resolve(out,'container-sources.tar.gz'),resolve(out,'container-source-manifest.json')],{timeout:300000,stdio:'inherit'});
+if(p.length)throw Error(`SOURCE_GATE_CLOSED: ${p.length} unresolved entries; ${p.slice(0,5).join(', ')}; full list in source-gate.json`);
+assert.equal(m.publicationAllowed,true);
+console.log('Distribution source gate passed');
