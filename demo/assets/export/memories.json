@@ -1,0 +1,2340 @@
+{
+  "format": "laorenyun.memories",
+  "schemaVersion": 1,
+  "exportId": "52ae23f6-8d38-4921-be14-b94c0941fb57",
+  "generatedAt": "2026-09-20T18:18:37.137Z",
+  "graphRevision": 18,
+  "includedMedia": false,
+  "speakers": [
+    {
+      "role": "self",
+      "authority": "explicit-user"
+    },
+    {
+      "role": "child",
+      "authority": "explicit-user"
+    }
+  ],
+  "media": [],
+  "sources": [
+    {
+      "id": "07013d2b-95ae-4bae-85e1-125586d9c68c",
+      "sessionId": "synthetic-demo-周远山",
+      "mediaId": null,
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "status": "submitted",
+      "createdAt": 1789928316592
+    },
+    {
+      "id": "1ec7b8dd-e1ed-4cd3-a824-8427e093150b",
+      "sessionId": "synthetic-demo-周远山",
+      "mediaId": null,
+      "rawAsr": "",
+      "speaker": {
+        "role": "child",
+        "authority": "explicit-user"
+      },
+      "status": "submitted",
+      "createdAt": 1789928316772
+    },
+    {
+      "id": "2877aa72-a463-46df-9988-01f0daf8343b",
+      "sessionId": "synthetic-demo-周远山",
+      "mediaId": null,
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "status": "submitted",
+      "createdAt": 1789928316563
+    },
+    {
+      "id": "361b42b9-e63d-4a40-9641-8f237f8f22e6",
+      "sessionId": "synthetic-demo-周远山",
+      "mediaId": null,
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "status": "submitted",
+      "createdAt": 1789928316703
+    },
+    {
+      "id": "54df3c43-bfa6-4559-94a8-4514d9963417",
+      "sessionId": "synthetic-demo-周远山",
+      "mediaId": null,
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "status": "submitted",
+      "createdAt": 1789928316806
+    },
+    {
+      "id": "580b1830-9cff-4aa3-8c37-5aab66ddd84d",
+      "sessionId": "synthetic-demo-周远山",
+      "mediaId": null,
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "status": "submitted",
+      "createdAt": 1789928316508
+    },
+    {
+      "id": "5fdb8b2b-e821-46e7-9771-2166f0b83706",
+      "sessionId": "synthetic-branch",
+      "mediaId": null,
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "status": "submitted",
+      "createdAt": 1789928316856
+    },
+    {
+      "id": "755f9488-ed4f-40ee-962b-e0d7c86deda6",
+      "sessionId": "synthetic-demo-周远山",
+      "mediaId": null,
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "status": "submitted",
+      "createdAt": 1789928316620
+    },
+    {
+      "id": "80891063-ffc1-46a2-9858-a19ba890abd2",
+      "sessionId": "synthetic-demo-周远山",
+      "mediaId": null,
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "status": "submitted",
+      "createdAt": 1789928316423
+    },
+    {
+      "id": "a138842d-888a-48b9-af14-721aa461f4b9",
+      "sessionId": "synthetic-demo-周远山",
+      "mediaId": null,
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "status": "submitted",
+      "createdAt": 1789928316480
+    },
+    {
+      "id": "a26e3565-f1f3-4ac9-85bc-5987efe158b6",
+      "sessionId": "synthetic-demo-周远山",
+      "mediaId": null,
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "status": "submitted",
+      "createdAt": 1789928316674
+    },
+    {
+      "id": "aee65fcf-69c1-4dc6-8c64-cc6003b7422c",
+      "sessionId": "synthetic-demo-周远山",
+      "mediaId": null,
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "status": "submitted",
+      "createdAt": 1789928316395
+    },
+    {
+      "id": "b11f5857-9cc1-4b87-906c-f7e53b04e4e6",
+      "sessionId": "synthetic-demo-周远山",
+      "mediaId": null,
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "status": "submitted",
+      "createdAt": 1789928316451
+    },
+    {
+      "id": "b1cfd152-e855-4f18-8b98-7ab9dca7f984",
+      "sessionId": "synthetic-demo-周远山",
+      "mediaId": null,
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "status": "submitted",
+      "createdAt": 1789928316337
+    },
+    {
+      "id": "b9b06474-0205-4d78-9f8f-aa7810e1dc9d",
+      "sessionId": "synthetic-demo-周远山",
+      "mediaId": null,
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "status": "submitted",
+      "createdAt": 1789928316647
+    },
+    {
+      "id": "c6e9dcb5-52fe-4e3d-900e-2a2926e86110",
+      "sessionId": "synthetic-demo-周远山",
+      "mediaId": null,
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "status": "submitted",
+      "createdAt": 1789928316535
+    },
+    {
+      "id": "ce1956f1-5f94-4022-baf7-da6c0e7f03cb",
+      "sessionId": "synthetic-branch",
+      "mediaId": null,
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "status": "submitted",
+      "createdAt": 1789928316883
+    },
+    {
+      "id": "e38cb2d3-1ce8-4dc2-9073-96e5934847f2",
+      "sessionId": "synthetic-demo-周远山",
+      "mediaId": null,
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "status": "submitted",
+      "createdAt": 1789928316739
+    }
+  ],
+  "transcriptRevisions": [
+    {
+      "id": "01ae11c9-bc1a-4cdd-a69f-aeb999ff6460",
+      "sourceId": "aee65fcf-69c1-4dc6-8c64-cc6003b7422c",
+      "sessionId": "synthetic-demo-周远山",
+      "messageId": "905d4f2b-7d94-4f1a-b148-dd48abbecec0",
+      "requestId": "f3bce2be-8be2-4466-9e6c-25cedf1e8b3f",
+      "text": "1960年，我开始读小学。",
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "createdAt": 1789928316395,
+      "correction": false
+    },
+    {
+      "id": "1517ece3-6eb0-4a2a-bd53-f1e760331d86",
+      "sourceId": "5fdb8b2b-e821-46e7-9771-2166f0b83706",
+      "sessionId": "synthetic-branch",
+      "messageId": "20f40c6a-641a-4c55-b393-8b8d76736372",
+      "requestId": "b5454678-e1cd-4113-9b99-1ee4706c3a89",
+      "text": "王老师常说，先把字写端正。",
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "createdAt": 1789928316856,
+      "correction": false
+    },
+    {
+      "id": "1dce3f9c-e36a-40d3-8ea1-b942b5637f25",
+      "sourceId": "a26e3565-f1f3-4ac9-85bc-5987efe158b6",
+      "sessionId": "synthetic-demo-周远山",
+      "messageId": "55dcdc2d-0c06-46fd-bd02-ef67731ff49a",
+      "requestId": "042ab8eb-484c-462f-be89-e0ee423a7514",
+      "text": "那时候啊，1982年，我在村里工作。",
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "createdAt": 1789928316674,
+      "correction": false
+    },
+    {
+      "id": "260a40e3-41af-4608-aba1-719986fde94e",
+      "sourceId": "80891063-ffc1-46a2-9858-a19ba890abd2",
+      "sessionId": "synthetic-demo-周远山",
+      "messageId": "dd86e44f-e18c-4148-bd99-58e02acf11f8",
+      "requestId": "e8a7d3ec-f39f-4e29-82f5-c22e862255fe",
+      "text": "1960年，我每天在窗前练字。",
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "createdAt": 1789928316423,
+      "correction": false
+    },
+    {
+      "id": "2ed01807-0934-41c9-bf7c-de49afe07981",
+      "sourceId": "a138842d-888a-48b9-af14-721aa461f4b9",
+      "sessionId": "synthetic-demo-周远山",
+      "messageId": "d86c41c9-eb2b-4a35-b520-d417b9300b14",
+      "requestId": "f4b55006-e53f-47e8-942a-509dd6386e11",
+      "text": "1960年，老师教我把字写端正。",
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "createdAt": 1789928316480,
+      "correction": false
+    },
+    {
+      "id": "39739106-2c7f-4806-ae81-cc6a9a9495d6",
+      "sourceId": "ce1956f1-5f94-4022-baf7-da6c0e7f03cb",
+      "sessionId": "synthetic-branch",
+      "messageId": "0a431395-883a-4665-9fc5-e9c21859b840",
+      "requestId": "c9c0ce39-297e-4bb4-ac53-af76e9dc1e29",
+      "text": "王老师让我每天留一页练习。",
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "createdAt": 1789928316883,
+      "correction": false
+    },
+    {
+      "id": "46c6236f-5351-4008-8cf8-651a5d07fad2",
+      "sourceId": "755f9488-ed4f-40ee-962b-e0d7c86deda6",
+      "sessionId": "synthetic-demo-周远山",
+      "messageId": "63eb447d-aee6-4e2f-a94d-6a1f742cebed",
+      "requestId": "d25fb18a-1c4d-466f-b9cf-5ff6806cc88f",
+      "text": "1977年，我进入合肥一中。",
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "createdAt": 1789928316620,
+      "correction": false
+    },
+    {
+      "id": "4f5bb2ef-e876-4357-b45e-d528f020b725",
+      "sourceId": "361b42b9-e63d-4a40-9641-8f237f8f22e6",
+      "sessionId": "synthetic-demo-周远山",
+      "messageId": "e4777ca8-14f4-48ac-ba9b-191729b2287c",
+      "requestId": "3add1200-d05d-41ed-8545-d5bec7237b06",
+      "text": "那时候啊，1983年，我在村里工作。",
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "createdAt": 1789928316710,
+      "correction": false
+    },
+    {
+      "id": "5e8097e1-c0bf-4562-823a-e363f3fe4e72",
+      "sourceId": "c6e9dcb5-52fe-4e3d-900e-2a2926e86110",
+      "sessionId": "synthetic-demo-周远山",
+      "messageId": "3022280e-aa9e-41be-b74e-75467bd0706b",
+      "requestId": "1b9be283-ec83-4f67-a645-97511585d8e9",
+      "text": "1985年，我把修理工具搬到家门口。",
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "createdAt": 1789928316535,
+      "correction": false
+    },
+    {
+      "id": "6dc62773-4408-46f7-a901-438bc6607f20",
+      "sourceId": "b1cfd152-e855-4f18-8b98-7ab9dca7f984",
+      "sessionId": "synthetic-demo-周远山",
+      "messageId": "b7448946-8613-4ad7-9f12-e4bc24ff1849",
+      "requestId": "f4ffef87-5435-4a2e-9fea-0e8c83667d34",
+      "text": "那时候啊，1952年，我在村里出生。",
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "createdAt": 1789928316337,
+      "correction": false
+    },
+    {
+      "id": "78b46012-79ef-424c-b7ae-a7a4b083227b",
+      "sourceId": "07013d2b-95ae-4bae-85e1-125586d9c68c",
+      "sessionId": "synthetic-demo-周远山",
+      "messageId": "27d75b85-726f-4c63-bf6a-044631cd2f39",
+      "requestId": "ebc53b7a-3067-431b-8522-7eb95e5572f3",
+      "text": "1995年，我和家人一起在院里种了一棵树。",
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "createdAt": 1789928316592,
+      "correction": false
+    },
+    {
+      "id": "80527e33-1af2-4a79-be49-2dd177572747",
+      "sourceId": "580b1830-9cff-4aa3-8c37-5aab66ddd84d",
+      "sessionId": "synthetic-demo-周远山",
+      "messageId": "a216d419-7a02-4e4c-8d3a-cfae42a3833b",
+      "requestId": "9a4df591-5ea0-4971-b144-da3cb491189a",
+      "text": "1972年，我开始在村里学习修自行车。",
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "createdAt": 1789928316508,
+      "correction": false
+    },
+    {
+      "id": "a0cf3526-799e-4ab7-8a5c-efa2b5d40a53",
+      "sourceId": "1ec7b8dd-e1ed-4cd3-a824-8427e093150b",
+      "sessionId": "synthetic-demo-周远山",
+      "messageId": "0113ddb2-6f7c-46e2-bdd9-0913279ce12e",
+      "requestId": "d6f84594-6227-4af9-9fdf-a26c858d541a",
+      "text": "家里过去用煤油灯照明。",
+      "rawAsr": "",
+      "speaker": {
+        "role": "child",
+        "authority": "explicit-user"
+      },
+      "createdAt": 1789928316772,
+      "correction": false
+    },
+    {
+      "id": "bea9bbc5-d784-4700-8904-d36455ddf994",
+      "sourceId": "54df3c43-bfa6-4559-94a8-4514d9963417",
+      "sessionId": "synthetic-demo-周远山",
+      "messageId": "699f7d3c-af5f-4d59-8154-fb8376c8f0b7",
+      "requestId": "394555bd-2c5d-445f-b678-d8940706535a",
+      "text": "那时候啊，1992年，我在家门口种花。",
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "createdAt": 1789928316806,
+      "correction": false
+    },
+    {
+      "id": "c5216a13-0e2d-42a5-a36e-1021f25c9d65",
+      "sourceId": "e38cb2d3-1ce8-4dc2-9073-96e5934847f2",
+      "sessionId": "synthetic-demo-周远山",
+      "messageId": "927c7ba2-c33a-4e61-8827-82b8699802a9",
+      "requestId": "c03f5d49-a095-406f-9caa-4d2d791abb6b",
+      "text": "小时候有一次我掉进河里，具体哪一年记不得了。",
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "createdAt": 1789928316739,
+      "correction": false
+    },
+    {
+      "id": "c6bc4462-4395-4a82-8c14-2d6db7bc776a",
+      "sourceId": "b11f5857-9cc1-4b87-906c-f7e53b04e4e6",
+      "sessionId": "synthetic-demo-周远山",
+      "messageId": "f081c936-dd17-46d1-8970-8bbf831b4099",
+      "requestId": "e8d5af4d-de09-4e4d-9447-61b93f77fa87",
+      "text": "1960年，我用旧报纸练习横和竖。",
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "createdAt": 1789928316451,
+      "correction": false
+    },
+    {
+      "id": "e5590c09-3d54-4986-959f-1f1465c576d5",
+      "sourceId": "2877aa72-a463-46df-9988-01f0daf8343b",
+      "sessionId": "synthetic-demo-周远山",
+      "messageId": "3b1d4a4b-8277-4dec-bb8e-19c07c27b59a",
+      "requestId": "d3d0b6af-c025-4476-9c5a-62e573c358bc",
+      "text": "1985年，因为工具搬到家门口，我在那里接修自行车。",
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "createdAt": 1789928316563,
+      "correction": false
+    },
+    {
+      "id": "e6aebf4f-9fe2-4155-93e7-f1d1a69a2c80",
+      "sourceId": "b9b06474-0205-4d78-9f8f-aa7810e1dc9d",
+      "sessionId": "synthetic-demo-周远山",
+      "messageId": "5bcc2c49-b839-4db6-bd61-c3dea5fd0c81",
+      "requestId": "a0953bb6-0c39-422d-8700-947007a4e2f2",
+      "text": "1977年，我进入合肥六中。",
+      "rawAsr": "",
+      "speaker": {
+        "role": "self",
+        "authority": "explicit-user"
+      },
+      "createdAt": 1789928316647,
+      "correction": false
+    }
+  ],
+  "memoryNodes": [
+    {
+      "id": "0c6b2d81-8f18-4c33-b602-4ca4a727e7c7",
+      "revision": 1,
+      "keySentence": "小时候有一次我掉进河里，具体哪一年记不得了。",
+      "time": {
+        "start": null,
+        "end": null,
+        "precision": "unknown",
+        "certainty": "stated",
+        "originalText": ""
+      },
+      "placement": "drifting",
+      "transcriptId": "c5216a13-0e2d-42a5-a36e-1021f25c9d65",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "c5216a13-0e2d-42a5-a36e-1021f25c9d65",
+          "text": "小时候有一次我掉进河里，具体哪一年记不得了。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "21be7237-bfe3-47c7-a95e-6553cc4d432d",
+      "revision": 1,
+      "keySentence": "1985年，因为工具搬到家门口，我在那里接修自行车。",
+      "time": {
+        "start": 23820,
+        "end": 23831,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1985年"
+      },
+      "placement": "anchored",
+      "transcriptId": "e5590c09-3d54-4986-959f-1f1465c576d5",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "e5590c09-3d54-4986-959f-1f1465c576d5",
+          "text": "1985年，因为工具搬到家门口，我在那里接修自行车。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "31638c86-d1e7-4914-9365-e47af8695921",
+      "revision": 1,
+      "keySentence": "1960年，老师教我把字写端正。",
+      "time": {
+        "start": 23520,
+        "end": 23531,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1960年"
+      },
+      "placement": "anchored",
+      "transcriptId": "2ed01807-0934-41c9-bf7c-de49afe07981",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "2ed01807-0934-41c9-bf7c-de49afe07981",
+          "text": "1960年，老师教我把字写端正。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "33436d80-9e1a-43a3-9ed4-4f323789a4a9",
+      "revision": 1,
+      "keySentence": "1960年，我每天在窗前练字。",
+      "time": {
+        "start": 23520,
+        "end": 23531,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1960年"
+      },
+      "placement": "anchored",
+      "transcriptId": "260a40e3-41af-4608-aba1-719986fde94e",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "260a40e3-41af-4608-aba1-719986fde94e",
+          "text": "1960年，我每天在窗前练字。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "526281b6-82ee-495c-8be4-19f09c60edbd",
+      "revision": 1,
+      "keySentence": "1972年，我开始在村里学习修自行车。",
+      "time": {
+        "start": 23664,
+        "end": 23675,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1972年"
+      },
+      "placement": "anchored",
+      "transcriptId": "80527e33-1af2-4a79-be49-2dd177572747",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "80527e33-1af2-4a79-be49-2dd177572747",
+          "text": "1972年，我开始在村里学习修自行车。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "58e2c15a-6a2d-4f7a-bf62-6b6ddc945915",
+      "revision": 1,
+      "keySentence": "王老师让我每天留一页练习。",
+      "time": {
+        "start": null,
+        "end": null,
+        "precision": "unknown",
+        "certainty": "stated",
+        "originalText": ""
+      },
+      "placement": "drifting",
+      "transcriptId": "39739106-2c7f-4806-ae81-cc6a9a9495d6",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "39739106-2c7f-4806-ae81-cc6a9a9495d6",
+          "text": "王老师让我每天留一页练习。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "599a795e-3615-4726-9eef-d027ca1c9ee5",
+      "revision": 1,
+      "keySentence": "1977年，我进入合肥一中。",
+      "time": {
+        "start": 23724,
+        "end": 23735,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1977年"
+      },
+      "placement": "anchored",
+      "transcriptId": "46c6236f-5351-4008-8cf8-651a5d07fad2",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "46c6236f-5351-4008-8cf8-651a5d07fad2",
+          "text": "1977年，我进入合肥一中。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "65b923d6-823b-4c5a-8932-6c51e5ebd81f",
+      "revision": 2,
+      "keySentence": "那时候啊，1983年，我在村里工作。",
+      "time": {
+        "start": 23796,
+        "end": 23807,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1983年"
+      },
+      "placement": "anchored",
+      "transcriptId": "4f5bb2ef-e876-4357-b45e-d528f020b725",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "1dce3f9c-e36a-40d3-8ea1-b942b5637f25",
+          "text": "那时候啊，1982年，我在村里工作。",
+          "field": "claim"
+        },
+        {
+          "transcriptId": "4f5bb2ef-e876-4357-b45e-d528f020b725",
+          "text": "那时候啊，1983年，我在村里工作。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "712fcad2-4309-4f1b-b9b7-6e232aea60b6",
+      "revision": 1,
+      "keySentence": "1977年，我进入合肥六中。",
+      "time": {
+        "start": 23724,
+        "end": 23735,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1977年"
+      },
+      "placement": "anchored",
+      "transcriptId": "e6aebf4f-9fe2-4155-93e7-f1d1a69a2c80",
+      "basis": "stated",
+      "status": "disputed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "e6aebf4f-9fe2-4155-93e7-f1d1a69a2c80",
+          "text": "1977年，我进入合肥六中。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "8bc67357-42c1-4aea-85e1-b667e7052b19",
+      "revision": 1,
+      "keySentence": "1960年，我开始读小学。",
+      "time": {
+        "start": 23520,
+        "end": 23531,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1960年"
+      },
+      "placement": "anchored",
+      "transcriptId": "01ae11c9-bc1a-4cdd-a69f-aeb999ff6460",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "01ae11c9-bc1a-4cdd-a69f-aeb999ff6460",
+          "text": "1960年，我开始读小学。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "97eedf84-a111-4d2e-9aa4-1a375f545a41",
+      "revision": 1,
+      "keySentence": "1985年，我把修理工具搬到家门口。",
+      "time": {
+        "start": 23820,
+        "end": 23831,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1985年"
+      },
+      "placement": "anchored",
+      "transcriptId": "5e8097e1-c0bf-4562-823a-e363f3fe4e72",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "5e8097e1-c0bf-4562-823a-e363f3fe4e72",
+          "text": "1985年，我把修理工具搬到家门口。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "9aa92937-29c1-41fc-b7ad-0f9802608c02",
+      "revision": 1,
+      "keySentence": "那时候啊，1952年，我在村里出生。",
+      "time": {
+        "start": 23424,
+        "end": 23435,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1952年"
+      },
+      "placement": "anchored",
+      "transcriptId": "6dc62773-4408-46f7-a901-438bc6607f20",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "6dc62773-4408-46f7-a901-438bc6607f20",
+          "text": "那时候啊，1952年，我在村里出生。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "a22e8c4c-f25f-4bad-807f-490b30889c89",
+      "revision": 1,
+      "keySentence": "王老师常说，先把字写端正。",
+      "time": {
+        "start": null,
+        "end": null,
+        "precision": "unknown",
+        "certainty": "stated",
+        "originalText": ""
+      },
+      "placement": "drifting",
+      "transcriptId": "1517ece3-6eb0-4a2a-bd53-f1e760331d86",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "1517ece3-6eb0-4a2a-bd53-f1e760331d86",
+          "text": "王老师常说，先把字写端正。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "a68c4227-4681-40b3-9c85-99c005f219bc",
+      "revision": 1,
+      "keySentence": "那时候啊，1992年，我在家门口种花。",
+      "time": {
+        "start": 23904,
+        "end": 23915,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1992年"
+      },
+      "placement": "anchored",
+      "transcriptId": "bea9bbc5-d784-4700-8904-d36455ddf994",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "bea9bbc5-d784-4700-8904-d36455ddf994",
+          "text": "那时候啊，1992年，我在家门口种花。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "cb743430-336b-4d94-95d9-12785c7b566d",
+      "revision": 1,
+      "keySentence": "1995年，我和家人一起在院里种了一棵树。",
+      "time": {
+        "start": 23940,
+        "end": 23951,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1995年"
+      },
+      "placement": "anchored",
+      "transcriptId": "78b46012-79ef-424c-b7ae-a7a4b083227b",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "78b46012-79ef-424c-b7ae-a7a4b083227b",
+          "text": "1995年，我和家人一起在院里种了一棵树。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "e4497c36-956d-4a79-8a34-7a468365a609",
+      "revision": 1,
+      "keySentence": "1960年，我用旧报纸练习横和竖。",
+      "time": {
+        "start": 23520,
+        "end": 23531,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1960年"
+      },
+      "placement": "anchored",
+      "transcriptId": "c6bc4462-4395-4a82-8c14-2d6db7bc776a",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "c6bc4462-4395-4a82-8c14-2d6db7bc776a",
+          "text": "1960年，我用旧报纸练习横和竖。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "ebbfa7cc-7c54-49a5-ae14-96ce22a0c7c1",
+      "revision": 1,
+      "keySentence": "家里过去用煤油灯照明。",
+      "time": {
+        "start": null,
+        "end": null,
+        "precision": "unknown",
+        "certainty": "stated",
+        "originalText": ""
+      },
+      "placement": "drifting",
+      "transcriptId": "a0cf3526-799e-4ab7-8a5c-efa2b5d40a53",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "a0cf3526-799e-4ab7-8a5c-efa2b5d40a53",
+          "text": "家里过去用煤油灯照明。",
+          "field": "claim"
+        }
+      ]
+    }
+  ],
+  "memoryRevisions": [
+    {
+      "id": "0c6b2d81-8f18-4c33-b602-4ca4a727e7c7",
+      "revision": 1,
+      "keySentence": "小时候有一次我掉进河里，具体哪一年记不得了。",
+      "time": {
+        "start": null,
+        "end": null,
+        "precision": "unknown",
+        "certainty": "stated",
+        "originalText": ""
+      },
+      "placement": "drifting",
+      "transcriptId": "c5216a13-0e2d-42a5-a36e-1021f25c9d65",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "c5216a13-0e2d-42a5-a36e-1021f25c9d65",
+          "text": "小时候有一次我掉进河里，具体哪一年记不得了。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "21be7237-bfe3-47c7-a95e-6553cc4d432d",
+      "revision": 1,
+      "keySentence": "1985年，因为工具搬到家门口，我在那里接修自行车。",
+      "time": {
+        "start": 23820,
+        "end": 23831,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1985年"
+      },
+      "placement": "anchored",
+      "transcriptId": "e5590c09-3d54-4986-959f-1f1465c576d5",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "e5590c09-3d54-4986-959f-1f1465c576d5",
+          "text": "1985年，因为工具搬到家门口，我在那里接修自行车。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "31638c86-d1e7-4914-9365-e47af8695921",
+      "revision": 1,
+      "keySentence": "1960年，老师教我把字写端正。",
+      "time": {
+        "start": 23520,
+        "end": 23531,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1960年"
+      },
+      "placement": "anchored",
+      "transcriptId": "2ed01807-0934-41c9-bf7c-de49afe07981",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "2ed01807-0934-41c9-bf7c-de49afe07981",
+          "text": "1960年，老师教我把字写端正。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "33436d80-9e1a-43a3-9ed4-4f323789a4a9",
+      "revision": 1,
+      "keySentence": "1960年，我每天在窗前练字。",
+      "time": {
+        "start": 23520,
+        "end": 23531,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1960年"
+      },
+      "placement": "anchored",
+      "transcriptId": "260a40e3-41af-4608-aba1-719986fde94e",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "260a40e3-41af-4608-aba1-719986fde94e",
+          "text": "1960年，我每天在窗前练字。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "526281b6-82ee-495c-8be4-19f09c60edbd",
+      "revision": 1,
+      "keySentence": "1972年，我开始在村里学习修自行车。",
+      "time": {
+        "start": 23664,
+        "end": 23675,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1972年"
+      },
+      "placement": "anchored",
+      "transcriptId": "80527e33-1af2-4a79-be49-2dd177572747",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "80527e33-1af2-4a79-be49-2dd177572747",
+          "text": "1972年，我开始在村里学习修自行车。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "58e2c15a-6a2d-4f7a-bf62-6b6ddc945915",
+      "revision": 1,
+      "keySentence": "王老师让我每天留一页练习。",
+      "time": {
+        "start": null,
+        "end": null,
+        "precision": "unknown",
+        "certainty": "stated",
+        "originalText": ""
+      },
+      "placement": "drifting",
+      "transcriptId": "39739106-2c7f-4806-ae81-cc6a9a9495d6",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "39739106-2c7f-4806-ae81-cc6a9a9495d6",
+          "text": "王老师让我每天留一页练习。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "599a795e-3615-4726-9eef-d027ca1c9ee5",
+      "revision": 1,
+      "keySentence": "1977年，我进入合肥一中。",
+      "time": {
+        "start": 23724,
+        "end": 23735,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1977年"
+      },
+      "placement": "anchored",
+      "transcriptId": "46c6236f-5351-4008-8cf8-651a5d07fad2",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "46c6236f-5351-4008-8cf8-651a5d07fad2",
+          "text": "1977年，我进入合肥一中。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "65b923d6-823b-4c5a-8932-6c51e5ebd81f",
+      "revision": 1,
+      "keySentence": "那时候啊，1982年，我在村里工作。",
+      "time": {
+        "start": 23784,
+        "end": 23795,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1982年"
+      },
+      "placement": "anchored",
+      "transcriptId": "1dce3f9c-e36a-40d3-8ea1-b942b5637f25",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "1dce3f9c-e36a-40d3-8ea1-b942b5637f25",
+          "text": "那时候啊，1982年，我在村里工作。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "65b923d6-823b-4c5a-8932-6c51e5ebd81f",
+      "revision": 2,
+      "keySentence": "那时候啊，1983年，我在村里工作。",
+      "time": {
+        "start": 23796,
+        "end": 23807,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1983年"
+      },
+      "placement": "anchored",
+      "transcriptId": "4f5bb2ef-e876-4357-b45e-d528f020b725",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "1dce3f9c-e36a-40d3-8ea1-b942b5637f25",
+          "text": "那时候啊，1982年，我在村里工作。",
+          "field": "claim"
+        },
+        {
+          "transcriptId": "4f5bb2ef-e876-4357-b45e-d528f020b725",
+          "text": "那时候啊，1983年，我在村里工作。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "712fcad2-4309-4f1b-b9b7-6e232aea60b6",
+      "revision": 1,
+      "keySentence": "1977年，我进入合肥六中。",
+      "time": {
+        "start": 23724,
+        "end": 23735,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1977年"
+      },
+      "placement": "anchored",
+      "transcriptId": "e6aebf4f-9fe2-4155-93e7-f1d1a69a2c80",
+      "basis": "stated",
+      "status": "disputed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "e6aebf4f-9fe2-4155-93e7-f1d1a69a2c80",
+          "text": "1977年，我进入合肥六中。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "8bc67357-42c1-4aea-85e1-b667e7052b19",
+      "revision": 1,
+      "keySentence": "1960年，我开始读小学。",
+      "time": {
+        "start": 23520,
+        "end": 23531,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1960年"
+      },
+      "placement": "anchored",
+      "transcriptId": "01ae11c9-bc1a-4cdd-a69f-aeb999ff6460",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "01ae11c9-bc1a-4cdd-a69f-aeb999ff6460",
+          "text": "1960年，我开始读小学。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "97eedf84-a111-4d2e-9aa4-1a375f545a41",
+      "revision": 1,
+      "keySentence": "1985年，我把修理工具搬到家门口。",
+      "time": {
+        "start": 23820,
+        "end": 23831,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1985年"
+      },
+      "placement": "anchored",
+      "transcriptId": "5e8097e1-c0bf-4562-823a-e363f3fe4e72",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "5e8097e1-c0bf-4562-823a-e363f3fe4e72",
+          "text": "1985年，我把修理工具搬到家门口。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "9aa92937-29c1-41fc-b7ad-0f9802608c02",
+      "revision": 1,
+      "keySentence": "那时候啊，1952年，我在村里出生。",
+      "time": {
+        "start": 23424,
+        "end": 23435,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1952年"
+      },
+      "placement": "anchored",
+      "transcriptId": "6dc62773-4408-46f7-a901-438bc6607f20",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "6dc62773-4408-46f7-a901-438bc6607f20",
+          "text": "那时候啊，1952年，我在村里出生。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "a22e8c4c-f25f-4bad-807f-490b30889c89",
+      "revision": 1,
+      "keySentence": "王老师常说，先把字写端正。",
+      "time": {
+        "start": null,
+        "end": null,
+        "precision": "unknown",
+        "certainty": "stated",
+        "originalText": ""
+      },
+      "placement": "drifting",
+      "transcriptId": "1517ece3-6eb0-4a2a-bd53-f1e760331d86",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "1517ece3-6eb0-4a2a-bd53-f1e760331d86",
+          "text": "王老师常说，先把字写端正。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "a68c4227-4681-40b3-9c85-99c005f219bc",
+      "revision": 1,
+      "keySentence": "那时候啊，1992年，我在家门口种花。",
+      "time": {
+        "start": 23904,
+        "end": 23915,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1992年"
+      },
+      "placement": "anchored",
+      "transcriptId": "bea9bbc5-d784-4700-8904-d36455ddf994",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "bea9bbc5-d784-4700-8904-d36455ddf994",
+          "text": "那时候啊，1992年，我在家门口种花。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "cb743430-336b-4d94-95d9-12785c7b566d",
+      "revision": 1,
+      "keySentence": "1995年，我和家人一起在院里种了一棵树。",
+      "time": {
+        "start": 23940,
+        "end": 23951,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1995年"
+      },
+      "placement": "anchored",
+      "transcriptId": "78b46012-79ef-424c-b7ae-a7a4b083227b",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "78b46012-79ef-424c-b7ae-a7a4b083227b",
+          "text": "1995年，我和家人一起在院里种了一棵树。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "e4497c36-956d-4a79-8a34-7a468365a609",
+      "revision": 1,
+      "keySentence": "1960年，我用旧报纸练习横和竖。",
+      "time": {
+        "start": 23520,
+        "end": 23531,
+        "precision": "year",
+        "certainty": "stated",
+        "originalText": "1960年"
+      },
+      "placement": "anchored",
+      "transcriptId": "c6bc4462-4395-4a82-8c14-2d6db7bc776a",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "c6bc4462-4395-4a82-8c14-2d6db7bc776a",
+          "text": "1960年，我用旧报纸练习横和竖。",
+          "field": "claim"
+        }
+      ]
+    },
+    {
+      "id": "ebbfa7cc-7c54-49a5-ae14-96ce22a0c7c1",
+      "revision": 1,
+      "keySentence": "家里过去用煤油灯照明。",
+      "time": {
+        "start": null,
+        "end": null,
+        "precision": "unknown",
+        "certainty": "stated",
+        "originalText": ""
+      },
+      "placement": "drifting",
+      "transcriptId": "a0cf3526-799e-4ab7-8a5c-efa2b5d40a53",
+      "basis": "stated",
+      "status": "confirmed",
+      "people": [],
+      "places": [],
+      "evidence": [
+        {
+          "transcriptId": "a0cf3526-799e-4ab7-8a5c-efa2b5d40a53",
+          "text": "家里过去用煤油灯照明。",
+          "field": "claim"
+        }
+      ]
+    }
+  ],
+  "people": [],
+  "places": [],
+  "edges": [
+    {
+      "id": "255aa410-613a-4ec1-9ec8-6ea851a904d1",
+      "from_id": "33436d80-9e1a-43a3-9ed4-4f323789a4a9",
+      "to_id": "8bc67357-42c1-4aea-85e1-b667e7052b19",
+      "kind": "ELABORATES",
+      "json": "{\"evidence\":[{\"transcriptId\":\"260a40e3-41af-4608-aba1-719986fde94e\",\"text\":\"1960年，我每天在窗前练字。\",\"field\":\"claim\"}],\"basis\":\"inferred\"}"
+    },
+    {
+      "id": "33755170-9780-4e0b-8340-e7a8616bed98",
+      "from_id": "65b923d6-823b-4c5a-8932-6c51e5ebd81f",
+      "to_id": "a68c4227-4681-40b3-9c85-99c005f219bc",
+      "kind": "RELATES_TO",
+      "json": "{\"evidence\":[{\"transcriptId\":\"bea9bbc5-d784-4700-8904-d36455ddf994\",\"text\":\"那时候啊，1992年，我在家门口种花。\",\"field\":\"claim\"}],\"basis\":\"inferred\"}"
+    },
+    {
+      "id": "82365011-7d91-442b-b626-44dd7bcf6265",
+      "from_id": "21be7237-bfe3-47c7-a95e-6553cc4d432d",
+      "to_id": "97eedf84-a111-4d2e-9aa4-1a375f545a41",
+      "kind": "CAUSES",
+      "json": "{\"evidence\":[{\"transcriptId\":\"e5590c09-3d54-4986-959f-1f1465c576d5\",\"text\":\"1985年，因为工具搬到家门口，我在那里接修自行车。\",\"field\":\"claim\"}],\"basis\":\"stated\"}"
+    },
+    {
+      "id": "9e7cdb16-98e5-42bd-98c4-00ccc19045b9",
+      "from_id": "e4497c36-956d-4a79-8a34-7a468365a609",
+      "to_id": "33436d80-9e1a-43a3-9ed4-4f323789a4a9",
+      "kind": "ELABORATES",
+      "json": "{\"evidence\":[{\"transcriptId\":\"c6bc4462-4395-4a82-8c14-2d6db7bc776a\",\"text\":\"1960年，我用旧报纸练习横和竖。\",\"field\":\"claim\"}],\"basis\":\"inferred\"}"
+    },
+    {
+      "id": "9f1a3e9e-12c7-4555-a111-9bf9902cc6f5",
+      "from_id": "31638c86-d1e7-4914-9365-e47af8695921",
+      "to_id": "8bc67357-42c1-4aea-85e1-b667e7052b19",
+      "kind": "ELABORATES",
+      "json": "{\"evidence\":[{\"transcriptId\":\"2ed01807-0934-41c9-bf7c-de49afe07981\",\"text\":\"1960年，老师教我把字写端正。\",\"field\":\"claim\"}],\"basis\":\"inferred\"}"
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "41b0e096-02a2-4d47-90c9-e2880cadf3e7",
+      "left": {
+        "id": "65b923d6-823b-4c5a-8932-6c51e5ebd81f",
+        "revision": 1
+      },
+      "right": {
+        "id": "65b923d6-823b-4c5a-8932-6c51e5ebd81f",
+        "revision": 2
+      },
+      "status": "resolved",
+      "explanation": "使用者针对所选记忆提交明确更正；原证言保留。",
+      "resolution": {
+        "transcriptId": "4f5bb2ef-e876-4357-b45e-d528f020b725",
+        "text": "那时候啊，1983年，我在村里工作。",
+        "selectedNodeId": "65b923d6-823b-4c5a-8932-6c51e5ebd81f",
+        "at": 1789928316731
+      }
+    },
+    {
+      "id": "d9c8dfe0-593c-4412-920d-ad11e9b099fa",
+      "left": {
+        "id": "599a795e-3615-4726-9eef-d027ca1c9ee5",
+        "revision": 1
+      },
+      "right": {
+        "id": "712fcad2-4309-4f1b-b9b7-6e232aea60b6",
+        "revision": 1
+      },
+      "status": "open",
+      "explanation": "合成案例的同一入学事件"
+    }
+  ],
+  "branchMemos": [
+    {
+      "title": "老师的故事（合成演示）",
+      "key_sentence": "王老师常说，先把字写端正。",
+      "summary": "王老师常说，先把字写端正。",
+      "source_turns": [
+        "1517ece3-6eb0-4a2a-bd53-f1e760331d86",
+        "39739106-2c7f-4806-ae81-cc6a9a9495d6"
+      ],
+      "related_memory_nodes": [
+        "a22e8c4c-f25f-4bad-807f-490b30889c89",
+        "58e2c15a-6a2d-4f7a-bf62-6b6ddc945915"
+      ],
+      "new_memory_candidates": [],
+      "people": [],
+      "places": [],
+      "time": null,
+      "unresolved_questions": [],
+      "suggested_return_bridge": "我们接着聊求学的经历。",
+      "status": "complete",
+      "input_revision": 2
+    }
+  ],
+  "biographyManifest": {
+    "id": "af12e3e6-a400-4808-80a2-011a22dbe81e",
+    "graphRevision": 18,
+    "parentGenerationId": "af12e3e6-a400-4808-80a2-011a22dbe81e",
+    "personaId": "41a2eed7-34cb-4482-9d40-1456f2678151",
+    "generation": {
+      "createdAt": 1789928316972,
+      "inputHash": "dfadf85fbb1d953450184c2931b44c0fb4e4856562aaed7f2e6576fb73e53786",
+      "model": "synthetic-offline-v1",
+      "provider": "explicit-demo-fixture",
+      "promptVersion": "narrative-v2"
+    },
+    "narrativeVersion": 2,
+    "facts": [
+      {
+        "id": "F001",
+        "claim": "小时候有一次我掉进河里，具体哪一年记不得了。",
+        "nodeRef": "0c6b2d81-8f18-4c33-b602-4ca4a727e7c7@1",
+        "certainty": "stated",
+        "time": null,
+        "sourceRefs": [
+          "c5216a13-0e2d-42a5-a36e-1021f25c9d65"
+        ],
+        "testimony": [
+          {
+            "text": "小时候有一次我掉进河里，具体哪一年记不得了。",
+            "speaker": "self"
+          }
+        ],
+        "sourceMode": "self",
+        "narrativePolicy": "required",
+        "attribution": {
+          "required": false,
+          "speakerRoles": [],
+          "sourceLabels": []
+        },
+        "temporalPolicy": {
+          "explicitCalendarAllowed": false,
+          "uncertaintyMustRemain": false
+        },
+        "conflictPolicy": "none",
+        "conflictIds": [],
+        "clarifications": []
+      },
+      {
+        "id": "F002",
+        "claim": "1985年，因为工具搬到家门口，我在那里接修自行车。",
+        "nodeRef": "21be7237-bfe3-47c7-a95e-6553cc4d432d@1",
+        "certainty": "stated",
+        "time": {
+          "start": 23820,
+          "end": 23831,
+          "precision": "year",
+          "certainty": "stated",
+          "originalText": "1985年"
+        },
+        "sourceRefs": [
+          "e5590c09-3d54-4986-959f-1f1465c576d5"
+        ],
+        "testimony": [
+          {
+            "text": "1985年，因为工具搬到家门口，我在那里接修自行车。",
+            "speaker": "self"
+          }
+        ],
+        "sourceMode": "self",
+        "narrativePolicy": "required",
+        "attribution": {
+          "required": false,
+          "speakerRoles": [],
+          "sourceLabels": []
+        },
+        "temporalPolicy": {
+          "explicitCalendarAllowed": true,
+          "uncertaintyMustRemain": false
+        },
+        "conflictPolicy": "none",
+        "conflictIds": [],
+        "clarifications": []
+      },
+      {
+        "id": "F003",
+        "claim": "1960年，老师教我把字写端正。",
+        "nodeRef": "31638c86-d1e7-4914-9365-e47af8695921@1",
+        "certainty": "stated",
+        "time": {
+          "start": 23520,
+          "end": 23531,
+          "precision": "year",
+          "certainty": "stated",
+          "originalText": "1960年"
+        },
+        "sourceRefs": [
+          "2ed01807-0934-41c9-bf7c-de49afe07981"
+        ],
+        "testimony": [
+          {
+            "text": "1960年，老师教我把字写端正。",
+            "speaker": "self"
+          }
+        ],
+        "sourceMode": "self",
+        "narrativePolicy": "required",
+        "attribution": {
+          "required": false,
+          "speakerRoles": [],
+          "sourceLabels": []
+        },
+        "temporalPolicy": {
+          "explicitCalendarAllowed": true,
+          "uncertaintyMustRemain": false
+        },
+        "conflictPolicy": "none",
+        "conflictIds": [],
+        "clarifications": []
+      },
+      {
+        "id": "F004",
+        "claim": "1960年，我每天在窗前练字。",
+        "nodeRef": "33436d80-9e1a-43a3-9ed4-4f323789a4a9@1",
+        "certainty": "stated",
+        "time": {
+          "start": 23520,
+          "end": 23531,
+          "precision": "year",
+          "certainty": "stated",
+          "originalText": "1960年"
+        },
+        "sourceRefs": [
+          "260a40e3-41af-4608-aba1-719986fde94e"
+        ],
+        "testimony": [
+          {
+            "text": "1960年，我每天在窗前练字。",
+            "speaker": "self"
+          }
+        ],
+        "sourceMode": "self",
+        "narrativePolicy": "required",
+        "attribution": {
+          "required": false,
+          "speakerRoles": [],
+          "sourceLabels": []
+        },
+        "temporalPolicy": {
+          "explicitCalendarAllowed": true,
+          "uncertaintyMustRemain": false
+        },
+        "conflictPolicy": "none",
+        "conflictIds": [],
+        "clarifications": []
+      },
+      {
+        "id": "F005",
+        "claim": "1972年，我开始在村里学习修自行车。",
+        "nodeRef": "526281b6-82ee-495c-8be4-19f09c60edbd@1",
+        "certainty": "stated",
+        "time": {
+          "start": 23664,
+          "end": 23675,
+          "precision": "year",
+          "certainty": "stated",
+          "originalText": "1972年"
+        },
+        "sourceRefs": [
+          "80527e33-1af2-4a79-be49-2dd177572747"
+        ],
+        "testimony": [
+          {
+            "text": "1972年，我开始在村里学习修自行车。",
+            "speaker": "self"
+          }
+        ],
+        "sourceMode": "self",
+        "narrativePolicy": "required",
+        "attribution": {
+          "required": false,
+          "speakerRoles": [],
+          "sourceLabels": []
+        },
+        "temporalPolicy": {
+          "explicitCalendarAllowed": true,
+          "uncertaintyMustRemain": false
+        },
+        "conflictPolicy": "none",
+        "conflictIds": [],
+        "clarifications": []
+      },
+      {
+        "id": "F006",
+        "claim": "王老师让我每天留一页练习。",
+        "nodeRef": "58e2c15a-6a2d-4f7a-bf62-6b6ddc945915@1",
+        "certainty": "stated",
+        "time": null,
+        "sourceRefs": [
+          "39739106-2c7f-4806-ae81-cc6a9a9495d6"
+        ],
+        "testimony": [
+          {
+            "text": "王老师让我每天留一页练习。",
+            "speaker": "self"
+          }
+        ],
+        "sourceMode": "self",
+        "narrativePolicy": "required",
+        "attribution": {
+          "required": false,
+          "speakerRoles": [],
+          "sourceLabels": []
+        },
+        "temporalPolicy": {
+          "explicitCalendarAllowed": false,
+          "uncertaintyMustRemain": false
+        },
+        "conflictPolicy": "none",
+        "conflictIds": [],
+        "clarifications": []
+      },
+      {
+        "id": "F007",
+        "claim": "1977年，我进入合肥一中。",
+        "nodeRef": "599a795e-3615-4726-9eef-d027ca1c9ee5@1",
+        "certainty": "stated",
+        "time": {
+          "start": 23724,
+          "end": 23735,
+          "precision": "year",
+          "certainty": "stated",
+          "originalText": "1977年"
+        },
+        "sourceRefs": [
+          "46c6236f-5351-4008-8cf8-651a5d07fad2"
+        ],
+        "testimony": [
+          {
+            "text": "1977年，我进入合肥一中。",
+            "speaker": "self"
+          }
+        ],
+        "sourceMode": "self",
+        "narrativePolicy": "excluded",
+        "attribution": {
+          "required": false,
+          "speakerRoles": [],
+          "sourceLabels": []
+        },
+        "temporalPolicy": {
+          "explicitCalendarAllowed": true,
+          "uncertaintyMustRemain": false
+        },
+        "conflictPolicy": "open",
+        "conflictIds": [
+          "d9c8dfe0-593c-4412-920d-ad11e9b099fa"
+        ],
+        "clarifications": []
+      },
+      {
+        "id": "F008",
+        "claim": "那时候啊，1983年，我在村里工作。",
+        "nodeRef": "65b923d6-823b-4c5a-8932-6c51e5ebd81f@2",
+        "certainty": "stated",
+        "time": {
+          "start": 23796,
+          "end": 23807,
+          "precision": "year",
+          "certainty": "stated",
+          "originalText": "1983年"
+        },
+        "sourceRefs": [
+          "4f5bb2ef-e876-4357-b45e-d528f020b725"
+        ],
+        "historyRefs": [
+          "1dce3f9c-e36a-40d3-8ea1-b942b5637f25",
+          "4f5bb2ef-e876-4357-b45e-d528f020b725"
+        ],
+        "testimony": [
+          {
+            "text": "那时候啊，1983年，我在村里工作。",
+            "speaker": "self"
+          }
+        ],
+        "sourceMode": "self",
+        "narrativePolicy": "required",
+        "attribution": {
+          "required": false,
+          "speakerRoles": [],
+          "sourceLabels": []
+        },
+        "temporalPolicy": {
+          "explicitCalendarAllowed": true,
+          "uncertaintyMustRemain": false
+        },
+        "conflictPolicy": "resolved",
+        "conflictIds": [
+          "41b0e096-02a2-4d47-90c9-e2880cadf3e7"
+        ],
+        "clarifications": [
+          {
+            "transcriptId": "4f5bb2ef-e876-4357-b45e-d528f020b725",
+            "text": "那时候啊，1983年，我在村里工作。"
+          }
+        ]
+      },
+      {
+        "id": "F009",
+        "claim": "1977年，我进入合肥六中。",
+        "nodeRef": "712fcad2-4309-4f1b-b9b7-6e232aea60b6@1",
+        "certainty": "stated",
+        "time": {
+          "start": 23724,
+          "end": 23735,
+          "precision": "year",
+          "certainty": "stated",
+          "originalText": "1977年"
+        },
+        "sourceRefs": [
+          "e6aebf4f-9fe2-4155-93e7-f1d1a69a2c80"
+        ],
+        "testimony": [
+          {
+            "text": "1977年，我进入合肥六中。",
+            "speaker": "self"
+          }
+        ],
+        "sourceMode": "self",
+        "narrativePolicy": "excluded",
+        "attribution": {
+          "required": false,
+          "speakerRoles": [],
+          "sourceLabels": []
+        },
+        "temporalPolicy": {
+          "explicitCalendarAllowed": true,
+          "uncertaintyMustRemain": false
+        },
+        "conflictPolicy": "open",
+        "conflictIds": [
+          "d9c8dfe0-593c-4412-920d-ad11e9b099fa"
+        ],
+        "clarifications": []
+      },
+      {
+        "id": "F010",
+        "claim": "1960年，我开始读小学。",
+        "nodeRef": "8bc67357-42c1-4aea-85e1-b667e7052b19@1",
+        "certainty": "stated",
+        "time": {
+          "start": 23520,
+          "end": 23531,
+          "precision": "year",
+          "certainty": "stated",
+          "originalText": "1960年"
+        },
+        "sourceRefs": [
+          "01ae11c9-bc1a-4cdd-a69f-aeb999ff6460"
+        ],
+        "testimony": [
+          {
+            "text": "1960年，我开始读小学。",
+            "speaker": "self"
+          }
+        ],
+        "sourceMode": "self",
+        "narrativePolicy": "required",
+        "attribution": {
+          "required": false,
+          "speakerRoles": [],
+          "sourceLabels": []
+        },
+        "temporalPolicy": {
+          "explicitCalendarAllowed": true,
+          "uncertaintyMustRemain": false
+        },
+        "conflictPolicy": "none",
+        "conflictIds": [],
+        "clarifications": []
+      },
+      {
+        "id": "F011",
+        "claim": "1985年，我把修理工具搬到家门口。",
+        "nodeRef": "97eedf84-a111-4d2e-9aa4-1a375f545a41@1",
+        "certainty": "stated",
+        "time": {
+          "start": 23820,
+          "end": 23831,
+          "precision": "year",
+          "certainty": "stated",
+          "originalText": "1985年"
+        },
+        "sourceRefs": [
+          "5e8097e1-c0bf-4562-823a-e363f3fe4e72"
+        ],
+        "testimony": [
+          {
+            "text": "1985年，我把修理工具搬到家门口。",
+            "speaker": "self"
+          }
+        ],
+        "sourceMode": "self",
+        "narrativePolicy": "required",
+        "attribution": {
+          "required": false,
+          "speakerRoles": [],
+          "sourceLabels": []
+        },
+        "temporalPolicy": {
+          "explicitCalendarAllowed": true,
+          "uncertaintyMustRemain": false
+        },
+        "conflictPolicy": "none",
+        "conflictIds": [],
+        "clarifications": []
+      },
+      {
+        "id": "F012",
+        "claim": "那时候啊，1952年，我在村里出生。",
+        "nodeRef": "9aa92937-29c1-41fc-b7ad-0f9802608c02@1",
+        "certainty": "stated",
+        "time": {
+          "start": 23424,
+          "end": 23435,
+          "precision": "year",
+          "certainty": "stated",
+          "originalText": "1952年"
+        },
+        "sourceRefs": [
+          "6dc62773-4408-46f7-a901-438bc6607f20"
+        ],
+        "testimony": [
+          {
+            "text": "那时候啊，1952年，我在村里出生。",
+            "speaker": "self"
+          }
+        ],
+        "sourceMode": "self",
+        "narrativePolicy": "required",
+        "attribution": {
+          "required": false,
+          "speakerRoles": [],
+          "sourceLabels": []
+        },
+        "temporalPolicy": {
+          "explicitCalendarAllowed": true,
+          "uncertaintyMustRemain": false
+        },
+        "conflictPolicy": "none",
+        "conflictIds": [],
+        "clarifications": []
+      },
+      {
+        "id": "F013",
+        "claim": "王老师常说，先把字写端正。",
+        "nodeRef": "a22e8c4c-f25f-4bad-807f-490b30889c89@1",
+        "certainty": "stated",
+        "time": null,
+        "sourceRefs": [
+          "1517ece3-6eb0-4a2a-bd53-f1e760331d86"
+        ],
+        "testimony": [
+          {
+            "text": "王老师常说，先把字写端正。",
+            "speaker": "self"
+          }
+        ],
+        "sourceMode": "self",
+        "narrativePolicy": "required",
+        "attribution": {
+          "required": false,
+          "speakerRoles": [],
+          "sourceLabels": []
+        },
+        "temporalPolicy": {
+          "explicitCalendarAllowed": false,
+          "uncertaintyMustRemain": false
+        },
+        "conflictPolicy": "none",
+        "conflictIds": [],
+        "clarifications": []
+      },
+      {
+        "id": "F014",
+        "claim": "那时候啊，1992年，我在家门口种花。",
+        "nodeRef": "a68c4227-4681-40b3-9c85-99c005f219bc@1",
+        "certainty": "stated",
+        "time": {
+          "start": 23904,
+          "end": 23915,
+          "precision": "year",
+          "certainty": "stated",
+          "originalText": "1992年"
+        },
+        "sourceRefs": [
+          "bea9bbc5-d784-4700-8904-d36455ddf994"
+        ],
+        "testimony": [
+          {
+            "text": "那时候啊，1992年，我在家门口种花。",
+            "speaker": "self"
+          }
+        ],
+        "sourceMode": "self",
+        "narrativePolicy": "required",
+        "attribution": {
+          "required": false,
+          "speakerRoles": [],
+          "sourceLabels": []
+        },
+        "temporalPolicy": {
+          "explicitCalendarAllowed": true,
+          "uncertaintyMustRemain": false
+        },
+        "conflictPolicy": "none",
+        "conflictIds": [],
+        "clarifications": []
+      },
+      {
+        "id": "F015",
+        "claim": "1995年，我和家人一起在院里种了一棵树。",
+        "nodeRef": "cb743430-336b-4d94-95d9-12785c7b566d@1",
+        "certainty": "stated",
+        "time": {
+          "start": 23940,
+          "end": 23951,
+          "precision": "year",
+          "certainty": "stated",
+          "originalText": "1995年"
+        },
+        "sourceRefs": [
+          "78b46012-79ef-424c-b7ae-a7a4b083227b"
+        ],
+        "testimony": [
+          {
+            "text": "1995年，我和家人一起在院里种了一棵树。",
+            "speaker": "self"
+          }
+        ],
+        "sourceMode": "self",
+        "narrativePolicy": "required",
+        "attribution": {
+          "required": false,
+          "speakerRoles": [],
+          "sourceLabels": []
+        },
+        "temporalPolicy": {
+          "explicitCalendarAllowed": true,
+          "uncertaintyMustRemain": false
+        },
+        "conflictPolicy": "none",
+        "conflictIds": [],
+        "clarifications": []
+      },
+      {
+        "id": "F016",
+        "claim": "1960年，我用旧报纸练习横和竖。",
+        "nodeRef": "e4497c36-956d-4a79-8a34-7a468365a609@1",
+        "certainty": "stated",
+        "time": {
+          "start": 23520,
+          "end": 23531,
+          "precision": "year",
+          "certainty": "stated",
+          "originalText": "1960年"
+        },
+        "sourceRefs": [
+          "c6bc4462-4395-4a82-8c14-2d6db7bc776a"
+        ],
+        "testimony": [
+          {
+            "text": "1960年，我用旧报纸练习横和竖。",
+            "speaker": "self"
+          }
+        ],
+        "sourceMode": "self",
+        "narrativePolicy": "required",
+        "attribution": {
+          "required": false,
+          "speakerRoles": [],
+          "sourceLabels": []
+        },
+        "temporalPolicy": {
+          "explicitCalendarAllowed": true,
+          "uncertaintyMustRemain": false
+        },
+        "conflictPolicy": "none",
+        "conflictIds": [],
+        "clarifications": []
+      },
+      {
+        "id": "F017",
+        "claim": "家里过去用煤油灯照明。",
+        "nodeRef": "ebbfa7cc-7c54-49a5-ae14-96ce22a0c7c1@1",
+        "certainty": "stated",
+        "time": null,
+        "sourceRefs": [
+          "a0cf3526-799e-4ab7-8a5c-efa2b5d40a53"
+        ],
+        "testimony": [
+          {
+            "text": "家里过去用煤油灯照明。",
+            "speaker": "child"
+          }
+        ],
+        "sourceMode": "nonself",
+        "narrativePolicy": "requires_attribution",
+        "attribution": {
+          "required": true,
+          "speakerRoles": [
+            "child"
+          ],
+          "sourceLabels": [
+            "传主的子女；不是传主小时候，也不表示证言发生于童年"
+          ]
+        },
+        "temporalPolicy": {
+          "explicitCalendarAllowed": false,
+          "uncertaintyMustRemain": false
+        },
+        "conflictPolicy": "none",
+        "conflictIds": [],
+        "clarifications": []
+      }
+    ],
+    "omissions": [
+      {
+        "factRef": "F007",
+        "reason": "open_conflict"
+      },
+      {
+        "factRef": "F009",
+        "reason": "open_conflict"
+      }
+    ],
+    "omittedConflicts": [
+      "d9c8dfe0-593c-4412-920d-ad11e9b099fa"
+    ],
+    "chapters": [
+      {
+        "id": "chapter-1",
+        "title": "童年与老师",
+        "nodeRefs": [
+          "0c6b2d81-8f18-4c33-b602-4ca4a727e7c7@1",
+          "31638c86-d1e7-4914-9365-e47af8695921@1",
+          "33436d80-9e1a-43a3-9ed4-4f323789a4a9@1",
+          "58e2c15a-6a2d-4f7a-bf62-6b6ddc945915@1",
+          "8bc67357-42c1-4aea-85e1-b667e7052b19@1",
+          "9aa92937-29c1-41fc-b7ad-0f9802608c02@1",
+          "a22e8c4c-f25f-4bad-807f-490b30889c89@1",
+          "e4497c36-956d-4a79-8a34-7a468365a609@1",
+          "ebbfa7cc-7c54-49a5-ae14-96ce22a0c7c1@1"
+        ]
+      },
+      {
+        "id": "chapter-2",
+        "title": "学手艺和工作",
+        "nodeRefs": [
+          "21be7237-bfe3-47c7-a95e-6553cc4d432d@1",
+          "526281b6-82ee-495c-8be4-19f09c60edbd@1",
+          "65b923d6-823b-4c5a-8932-6c51e5ebd81f@2",
+          "97eedf84-a111-4d2e-9aa4-1a375f545a41@1"
+        ]
+      },
+      {
+        "id": "chapter-3",
+        "title": "家门口的生活",
+        "nodeRefs": [
+          "a68c4227-4681-40b3-9c85-99c005f219bc@1",
+          "cb743430-336b-4d94-95d9-12785c7b566d@1"
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "id": "section-chapter-1",
+        "chapterId": "chapter-1",
+        "title": "童年与老师",
+        "text": "那时候啊，1952年，我在村里出生。1960年，老师教我把字写端正。1960年，我开始读小学。\n\n1960年，我每天在窗前练字。1960年，我用旧报纸练习横和竖。我的子女回忆说，家里过去用煤油灯照明。\n\n王老师常说，先把字写端正。王老师让我每天留一页练习。小时候有一次我掉进河里，具体哪一年记不得了。",
+        "nodeRefs": [
+          "0c6b2d81-8f18-4c33-b602-4ca4a727e7c7@1",
+          "31638c86-d1e7-4914-9365-e47af8695921@1",
+          "33436d80-9e1a-43a3-9ed4-4f323789a4a9@1",
+          "58e2c15a-6a2d-4f7a-bf62-6b6ddc945915@1",
+          "8bc67357-42c1-4aea-85e1-b667e7052b19@1",
+          "9aa92937-29c1-41fc-b7ad-0f9802608c02@1",
+          "a22e8c4c-f25f-4bad-807f-490b30889c89@1",
+          "e4497c36-956d-4a79-8a34-7a468365a609@1",
+          "ebbfa7cc-7c54-49a5-ae14-96ce22a0c7c1@1"
+        ],
+        "sourceRefs": [
+          "01ae11c9-bc1a-4cdd-a69f-aeb999ff6460",
+          "1517ece3-6eb0-4a2a-bd53-f1e760331d86",
+          "260a40e3-41af-4608-aba1-719986fde94e",
+          "2ed01807-0934-41c9-bf7c-de49afe07981",
+          "39739106-2c7f-4806-ae81-cc6a9a9495d6",
+          "6dc62773-4408-46f7-a901-438bc6607f20",
+          "a0cf3526-799e-4ab7-8a5c-efa2b5d40a53",
+          "c5216a13-0e2d-42a5-a36e-1021f25c9d65",
+          "c6bc4462-4395-4a82-8c14-2d6db7bc776a"
+        ],
+        "status": "validated",
+        "paragraphs": [
+          {
+            "text": "那时候啊，1952年，我在村里出生。1960年，老师教我把字写端正。1960年，我开始读小学。",
+            "factRefs": [
+              "F012",
+              "F003",
+              "F010"
+            ],
+            "attributions": []
+          },
+          {
+            "text": "1960年，我每天在窗前练字。1960年，我用旧报纸练习横和竖。我的子女回忆说，家里过去用煤油灯照明。",
+            "factRefs": [
+              "F004",
+              "F016",
+              "F017"
+            ],
+            "attributions": [
+              {
+                "factRef": "F017",
+                "surface": "我的子女回忆说"
+              }
+            ]
+          },
+          {
+            "text": "王老师常说，先把字写端正。王老师让我每天留一页练习。小时候有一次我掉进河里，具体哪一年记不得了。",
+            "factRefs": [
+              "F013",
+              "F006",
+              "F001"
+            ],
+            "attributions": []
+          }
+        ]
+      },
+      {
+        "id": "section-chapter-2",
+        "chapterId": "chapter-2",
+        "title": "学手艺和工作",
+        "text": "1972年，我开始在村里学习修自行车。那时候啊，1983年，我在村里工作。1985年，我把修理工具搬到家门口。\n\n1985年，因为工具搬到家门口，我在那里接修自行车。",
+        "nodeRefs": [
+          "21be7237-bfe3-47c7-a95e-6553cc4d432d@1",
+          "526281b6-82ee-495c-8be4-19f09c60edbd@1",
+          "65b923d6-823b-4c5a-8932-6c51e5ebd81f@2",
+          "97eedf84-a111-4d2e-9aa4-1a375f545a41@1"
+        ],
+        "sourceRefs": [
+          "4f5bb2ef-e876-4357-b45e-d528f020b725",
+          "5e8097e1-c0bf-4562-823a-e363f3fe4e72",
+          "80527e33-1af2-4a79-be49-2dd177572747",
+          "e5590c09-3d54-4986-959f-1f1465c576d5"
+        ],
+        "status": "validated",
+        "paragraphs": [
+          {
+            "text": "1972年，我开始在村里学习修自行车。那时候啊，1983年，我在村里工作。1985年，我把修理工具搬到家门口。",
+            "factRefs": [
+              "F005",
+              "F008",
+              "F011"
+            ],
+            "attributions": []
+          },
+          {
+            "text": "1985年，因为工具搬到家门口，我在那里接修自行车。",
+            "factRefs": [
+              "F002"
+            ],
+            "attributions": []
+          }
+        ]
+      },
+      {
+        "id": "section-chapter-3",
+        "chapterId": "chapter-3",
+        "title": "家门口的生活",
+        "text": "那时候啊，1992年，我在家门口种花。1995年，我和家人一起在院里种了一棵树。",
+        "nodeRefs": [
+          "a68c4227-4681-40b3-9c85-99c005f219bc@1",
+          "cb743430-336b-4d94-95d9-12785c7b566d@1"
+        ],
+        "sourceRefs": [
+          "78b46012-79ef-424c-b7ae-a7a4b083227b",
+          "bea9bbc5-d784-4700-8904-d36455ddf994"
+        ],
+        "status": "validated",
+        "paragraphs": [
+          {
+            "text": "那时候啊，1992年，我在家门口种花。1995年，我和家人一起在院里种了一棵树。",
+            "factRefs": [
+              "F014",
+              "F015"
+            ],
+            "attributions": []
+          }
+        ]
+      }
+    ]
+  },
+  "persona": {
+    "id": "41a2eed7-34cb-4482-9d40-1456f2678151",
+    "inputHash": "e7108f5a6fa4973a293dbbd8d20312a961400c68e31c7538fc2f3afa8262d2cc",
+    "transcriptIds": [
+      "6dc62773-4408-46f7-a901-438bc6607f20",
+      "01ae11c9-bc1a-4cdd-a69f-aeb999ff6460",
+      "260a40e3-41af-4608-aba1-719986fde94e",
+      "c6bc4462-4395-4a82-8c14-2d6db7bc776a",
+      "2ed01807-0934-41c9-bf7c-de49afe07981",
+      "80527e33-1af2-4a79-be49-2dd177572747",
+      "5e8097e1-c0bf-4562-823a-e363f3fe4e72",
+      "e5590c09-3d54-4986-959f-1f1465c576d5",
+      "78b46012-79ef-424c-b7ae-a7a4b083227b",
+      "46c6236f-5351-4008-8cf8-651a5d07fad2",
+      "e6aebf4f-9fe2-4155-93e7-f1d1a69a2c80",
+      "1dce3f9c-e36a-40d3-8ea1-b942b5637f25",
+      "4f5bb2ef-e876-4357-b45e-d528f020b725",
+      "c5216a13-0e2d-42a5-a36e-1021f25c9d65",
+      "bea9bbc5-d784-4700-8904-d36455ddf994",
+      "1517ece3-6eb0-4a2a-bd53-f1e760331d86",
+      "39739106-2c7f-4806-ae81-cc6a9a9495d6"
+    ],
+    "observations": [
+      {
+        "category": "lexical",
+        "observation": "在这些合成讲述中使用那时候啊作为转场",
+        "examples": [
+          {
+            "transcriptId": "6dc62773-4408-46f7-a901-438bc6607f20",
+            "quote": "那时候啊"
+          }
+        ]
+      }
+    ],
+    "unknown": [
+      "rhythm",
+      "ordering",
+      "address",
+      "emotion"
+    ]
+  },
+  "personaMetadata": {
+    "createdAt": 1789928316935,
+    "inputHash": "e7108f5a6fa4973a293dbbd8d20312a961400c68e31c7538fc2f3afa8262d2cc",
+    "model": "synthetic-offline-v1",
+    "provider": "explicit-demo-fixture",
+    "promptVersion": "phase4-v1"
+  }
+}

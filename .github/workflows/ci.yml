@@ -19,7 +19,8 @@ jobs:
       - run: node scripts/verify-upstream.mjs
       # packaging-lock verification runs inside build-dsh.sh after frozen install.
       - run: node scripts/verify-release.mjs
-      - run: node --test scripts/config.test.mjs scripts/release/*.test.mjs
+      - run: node --test scripts/config.test.mjs scripts/release/*.test.mjs demo/scripts/*.test.mjs
+      - run: node demo/scripts/scan.mjs
       - run: git diff --check
       - run: cp .env.example .env
       - name: Build pinned source image

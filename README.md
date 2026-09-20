@@ -32,6 +32,10 @@ docker compose up --build -d --wait
 
 手机访问需要 HTTPS 和正常访问保护，见 [部署说明](docs/10-deployment.md)。
 
+## 课程演示
+
+[合成演示包](demo/README.md)提供独立卷、一键重置、预置自传和离线导出；[七分钟讲稿](docs/demo.md)与[HTTPS 私人备用部署](docs/demo-public.md)说明现场回退。演示材料均为虚构，不冒充实时模型结果。
+
 ## 适合哪些场景
 
 - 和家中长辈一起保存童年、工作、家庭与故乡的故事。
