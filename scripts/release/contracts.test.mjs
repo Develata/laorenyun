@@ -4,7 +4,7 @@ import {readFileSync,mkdtempSync,writeFileSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {execFileSync} from 'node:child_process';
-import {releaseVersion,verifyInputs,immutableIdentity,releaseCompose,sourceProblems,sha256} from './contracts.mjs';
+import {releaseVersion,verifyInputs,immutableIdentity,releaseCompose,sourceProblems,sha256,stableLinks} from './contracts.mjs';
 const sha='a'.repeat(40),digest='sha256:'+'a'.repeat(64);
 const input={tag:'v0.2.0',commit:sha,tagCommit:sha,pin:{repository:'https://github.com/Develata/dsh-laorenyun',commit:sha,version:'0.2.0'},pluginTagCommit:sha,pluginPackage:{name:'dsh-laorenyun',version:'0.2.0'},upstream:{version:'0.1.6-alpha.1',commit:'0d1f50007f9bca3f52b06e1c3074fa14d5fb0720'}};
 test('stable/prerelease input, mismatched versions and immutable commits',()=>{
@@ -52,4 +52,10 @@ test('workflow permission boundary, immutable source checkout and no publish reb
  assert.ok(before.includes('refs/tags/${{ inputs.tag || github.ref_name }}'));
  for(const [,ref] of workflow.matchAll(/uses: ([^\n]+)/g))assert.match(ref,/@[a-f0-9]{40}$/);
  const publisher=readFileSync(new URL('./publish.mjs',import.meta.url),'utf8');assert.ok(!publisher.includes('--clobber'));assert.ok(!publisher.includes(':latest'));assert.ok(publisher.includes('verify-bundle.mjs'));
+});
+
+test('linked-library material is independent of process address randomization',()=>{
+ const a='libavcodec.so.59 => /lib/libavcodec.so.59 (0x0123)\n/lib/ld-linux.so.2 (0xabcd)\n';
+ const b='libavcodec.so.59 => /lib/libavcodec.so.59 (0x4567)\n/lib/ld-linux.so.2 (0x5678)\n';
+ assert.equal(stableLinks(a),stableLinks(b));assert.ok(stableLinks(a).includes('/lib/libavcodec.so.59'));assert.notEqual(stableLinks(a),stableLinks(b.replace('59','60')));
 });

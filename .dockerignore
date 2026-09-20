@@ -14,3 +14,6 @@
 
 # Release SBOM indexes the image; do not recursively package itself.
 licenses/release/sbom*.json
+
+# Release validation artifacts may contain private local browser diagnostics.
+artifacts/

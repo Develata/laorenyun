@@ -63,3 +63,6 @@ export function sourceProblems(inventory, manifest, files) {
   if (manifest.reviewStatus !== 'complete') problems.push('SOURCE_REVIEW_INCOMPLETE');
   return [...new Set(problems)].sort();
 }
+
+// ldd virtual addresses describe a process instance, not the binary/source identity.
+export const stableLinks = text => text.replace(/\s+\(0x[0-9a-fA-F]+\)/g, '');
