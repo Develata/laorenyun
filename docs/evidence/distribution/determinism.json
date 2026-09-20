@@ -1,0 +1,12 @@
+{
+  "imageId": "sha256:1de03d5dd9321be9572e743beb09764e48d628534f6f7edf2519301a8ac9ef7d",
+  "sameImageIndependentCollections": 2,
+  "archiveBytesEqual": true,
+  "manifestBytesEqual": true,
+  "bundleSha256": "063def124607664faf02a9e5ed4d59c8d6f4f6e989647b518ab3aa90cc3c3538",
+  "bundleBytes": 11262749,
+  "manifestSha256": "3d356be6890f7c8548a00c3998913491d990a225a01acfe118c12626d56cfcf3",
+  "publicationAllowed": false,
+  "change": "Remove only ldd process virtual addresses; retain library identities and paths",
+  "scope": "same fixed image and material inputs; not a claim that image builds reproduce bit-for-bit"
+}

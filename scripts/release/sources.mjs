@@ -5,7 +5,7 @@ import {resolve,join,relative} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import {createReadStream} from 'node:fs';
-import {sourceProblems,sha256} from './contracts.mjs';
+import {sourceProblems,sha256,stableLinks} from './contracts.mjs';
 const root=resolve(fileURLToPath(new URL('../..',import.meta.url)));
 const [image,output,sourceRoot=root]=process.argv.slice(2), out=resolve(output), source=resolve(sourceRoot);
 mkdirSync(out,{recursive:true});const stage=join(out,'materials');mkdirSync(stage,{recursive:true});
@@ -24,7 +24,7 @@ for(const [path,name]of [['/opt/laorenyun/licenses','notices'],['/usr/share/doc'
 }
 for(const f of ['Dockerfile','UPSTREAM.json','PLUGIN.json','THIRD_PARTY_NOTICES.md'])copyFileSync(join(source,f),join(stage,f));
 writeFileSync(join(stage,'ffmpeg-buildconf.txt'),run('docker',['run','--rm','--network','none','--entrypoint','sh',image,'-c','ffmpeg -buildconf 2>&1']));
-writeFileSync(join(stage,'ffmpeg-links.txt'),run('docker',['run','--rm','--network','none','--entrypoint','ldd',image,'/usr/bin/ffmpeg']));
+writeFileSync(join(stage,'ffmpeg-links.txt'),stableLinks(run('docker',['run','--rm','--network','none','--entrypoint','ldd',image,'/usr/bin/ffmpeg'])));
 writeFileSync(join(stage,'native-versions.json'),JSON.stringify(nativeVersions,null,2)+'\n');
 const lock=JSON.parse(readFileSync(join(root,'licenses/container/sources.lock.json')));
 // Downloads must already have a reviewed exact hash; no floating URL is accepted as evidence.

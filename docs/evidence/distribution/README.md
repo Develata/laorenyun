@@ -58,3 +58,7 @@ YAML使用已有js-yaml解析；没有安装新产品依赖。真实tag/pin校�
 应用基础设施由[PR 1](https://github.com/Develata/laorenyun/pull/1)经两项Distribution CI通过合入，插件文档由[PR 1](https://github.com/Develata/dsh-laorenyun/pull/1)与[PR 2](https://github.com/Develata/dsh-laorenyun/pull/2)正常合入。未使用admin bypass、未直接push main、未移动tag。
 
 README参考StickyMD的产品首屏、少量badge、单主图与折叠深读；参考dsh-learning-helper用可观察的用户流程解释能力和区分演示/真实验收。未参考learning-helper的上游README作为产品文案模板。RC6图片复用，无新增假截图。
+
+## 最后材料稳定性复核
+
+复核本地/远端材料时发现ldd输出含ASLR虚拟地址，可能使同镜像审计包漂移。仅在报告中去掉地址，库名/路径不变；新增确定性测试，最终配置+release测试11/11。对同一固定镜像两次独立获取和收集后，tar.gz与manifest均由cmp确认逐字节相同，见[回执](determinism.json)。这是材料包的同输入稳定性，不是镜像可重复构建证明；两次source gate仍不允许发布。先前远端dry-run回执保持原样，未为此重复构建或付费云测试。
