@@ -1,0 +1,9 @@
+{
+  "tool": "Docker Scout v1.24.0",
+  "format": "SPDX-2.3",
+  "packages": 1126,
+  "sha256": "69e5a45aef33974c4fc06ffc47e2a3a46f2a6967c8c163ae3009bff3c1671c49",
+  "bytes": 7726607,
+  "imageId": "sha256:1de03d5dd9321be9572e743beb09764e48d628534f6f7edf2519301a8ac9ef7d",
+  "scope": "Local auxiliary inventory only; not corresponding-source completeness or publication authorization"
+}

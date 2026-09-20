@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "imageId": "sha256:9c0e0e9a3775ae6cb7961734d861760085871f0b5be94e5d17786cd4b6f73863",
+  "plugin": "9caf4b1796ff265573bee04424c0bcb966a15f58",
+  "dsh": "0d1f50007f9bca3f52b06e1c3074fa14d5fb0720",
+  "coldBoot": true,
+  "uid": 10001,
+  "gid": 10001,
+  "localhost": true,
+  "access401": true,
+  "persistentVolume": true,
+  "restart": true,
+  "elderlyShell": true,
+  "nativeTypedSource": true,
+  "mediaIdNull": true,
+  "cloudCalls": 0,
+  "cloudExtractionClaimed": false,
+  "upstreamModifications": 0
+}

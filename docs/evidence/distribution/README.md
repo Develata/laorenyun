@@ -40,3 +40,21 @@ API 实际 check-runs：应用 `distribution`、插件 `check`，app ID 15368，
 插件 `pnpm check` 82/82、`pnpm format:check`、`git diff --check` 通过。应用配置4项+release契约/归档/权限6项共10/10；上游11239文件零修改、1572项包装锁、发行版本/链接校验及diff检查通过。隔离工作副本没有上游node_modules，包装锁校验通过NODE_PATH复用本机固定依赖；Docker仍用自己的冻结安装，不依赖此路径。
 
 YAML使用已有js-yaml解析；没有安装新产品依赖。真实tag/pin校验、GitHub CI、dry run结果在随后远端回执中记录，未运行项目不提前声称通过。
+
+## 辅助 SBOM 与 registry 只读探测
+
+已安装 Docker Scout v1.24.0 生成 SPDX-2.3（1126 package records，含工具识别的嵌套元数据）；[回执](sbom.json)记录hash，不据此放行源码义务。没有为CI添加大型扫描工具或新的写权限。
+
+匿名只读 `docker buildx imagetools inspect --raw ghcr.io/develata/laorenyun:0.2.1` 返回 token endpoint 403；未发生push，不把认证失败当tag不存在，也不声称匿名pull可用。
+
+新审计/浏览器临时文件位于gitignored artifacts；同时从Docker build context排除，防止本地诊断进入上下文。
+
+## 远端实际执行
+
+[手动 dry run 35525639258](https://github.com/Develata/laorenyun/actions/runs/35525639258) 使用 main 上的工作流验证原始 v0.2.0，`dry_run=true`、`allow_backfill=false`。输入、release tests、Buildx单次构建、真实Chromium新卷/文字/重启、实际清单和材料打包均 success；source gate failure；publish skipped。没有保存/上传待发布image artifact，没有登录/push GHCR。
+
+[运行摘要](dry-run.json) 区分工作流commit与被构建的历史tag commit；[远端容器验收](remote-acceptance.json)记录实际镜像ID。该流程整体为failure，属于预期拒绝，不称镜像发行PASS。完整失败条目和不完整材料包可在运行的distribution-audit artifact中下载（保留7天）；本地副本和hash另行保留。
+
+应用基础设施由[PR 1](https://github.com/Develata/laorenyun/pull/1)经两项Distribution CI通过合入，插件文档由[PR 1](https://github.com/Develata/dsh-laorenyun/pull/1)与[PR 2](https://github.com/Develata/dsh-laorenyun/pull/2)正常合入。未使用admin bypass、未直接push main、未移动tag。
+
+README参考StickyMD的产品首屏、少量badge、单主图与折叠深读；参考dsh-learning-helper用可观察的用户流程解释能力和区分演示/真实验收。未参考learning-helper的上游README作为产品文案模板。RC6图片复用，无新增假截图。
