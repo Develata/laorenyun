@@ -1,0 +1,25 @@
+{
+  "imageTag": "laorenyun:0.2.0",
+  "imageId": "sha256:f5bce63d9c22e5a2ded681b17e558a889b21589e895ce7e0dd002a40a0d58dd5",
+  "project": "laorenyun-v020-fresh",
+  "health": "healthy",
+  "user": "10001:10001",
+  "capDrop": [
+    "ALL"
+  ],
+  "securityOpt": [
+    "no-new-privileges:true"
+  ],
+  "ports": {
+    "3080/tcp": [
+      {
+        "HostIp": "127.0.0.1",
+        "HostPort": "3102"
+      }
+    ]
+  },
+  "volume": "laorenyun-v020-fresh_laorenyun-data",
+  "imageCredentialEnvAbsent": true,
+  "publicImage": "NOT PUBLISHED",
+  "buildContext": "tracked baseline archive plus reviewed release metadata; .env.example only; Docker ignore excludes env and dependency caches"
+}

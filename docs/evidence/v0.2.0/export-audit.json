@@ -1,0 +1,13 @@
+{
+  "files": {
+    "index.html": "699cc4ffa880396e4e34a9fa101d33c323a7d2404fdaf5044832c3705b7e1a6b",
+    "autobiography.md": "a4ff1d08be087735ee8a4e39b424aaa5879b66c0c442962dcd33cbc4deb9233e",
+    "memories.json": "fc00a249ef52685d6e4baafb9a1cc1cdce6396104cec32cd937ddf503b0b63d9"
+  },
+  "usedFootnotes": 7,
+  "unusedFootnotes": 0,
+  "brokenInternalLinks": 0,
+  "superseded1982AbsentFromReading": true,
+  "archive1982and1983": true,
+  "secretAndPrivatePathScan": "passed"
+}

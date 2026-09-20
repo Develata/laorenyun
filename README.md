@@ -4,7 +4,7 @@
 
 老人云是面向约60–80岁使用者的AI口述史与动态自传系统。可以说话或输入文字，AI以采访者身份追问，把原声、转写、时间记忆与出处保存在本地，形成可纠正、可回听、可导出的个人自传。AI抽取表示“证言中有这句话”，不代表独立历史核实。
 
-**v0.2.0-rc.6 候选**：人物档案隔离、独立长河与自传阅读、原生设置、自由叙事与独立事实审校。**三本真实稀疏自传均发布；RC5视觉保持，RC6已加固规模查询、投影刷新、年代导航和阅读层级，等待作者最终授权。** 当前验收见 [v0.2](docs/v0.2-redesign.md)。[v0.1.0课程发行](docs/release-v0.1.0.md)与tag保持不变；实体麦克风R2和真人采访恢复R3仍待作者验收。没有公开预构建镜像，使用本地Docker构建。
+**v0.2.0 源码发行**：冻结已验收 RC6，实现人物档案、多次采访共享记忆、Path-of-Trees 人生长河、自然自传与原子事实审校。发行边界见 [v0.2.0](docs/release-v0.2.0.md)，历史验收见 [v0.2](docs/v0.2-redesign.md)。v0.1.0 与 RC2–RC6 历史保持不变。R2 physical microphone: PENDING；R3 physical-human recovery: PENDING。支持本地 Docker 构建；FFmpeg 二进制分发对应源码交付尚未完成，因此不发布公共镜像。
 
 ## 能做什么
 
@@ -38,7 +38,7 @@ cp .env.example .env
 docker compose up --build -d
 ```
 
-在本机私密终端运行`docker compose logs`，从`dsh web:`打开原生访问链接；**链接含秘密，不分享、不录进演示视频**。宿主默认只监听`127.0.0.1:3080`。使用者无需Node、pnpm、Python或Rust。镜像名`laorenyun:0.1.0`，linux/amd64；未承诺ARM64或逐字节相同构建。
+在本机私密终端运行`docker compose logs`，从`dsh web:`打开原生访问链接；**链接含秘密，不分享、不录进演示视频**。宿主默认只监听`127.0.0.1:3080`。使用者无需Node、pnpm、Python或Rust。镜像名`laorenyun:0.2.0`，linux/amd64；未承诺ARM64或逐字节相同构建。
 
 `.env.example`分组说明三种模型协议和腾讯配置。演示默认`16k_zh`已匹配普通Flash免费包；`16k_zh_en`等大模型引擎额度独立，不自动切换。模型/腾讯完全未配置可启动本地健康界面，但不能完成云端采访；部分配置错误启动即明确失败。
 
@@ -57,7 +57,7 @@ DSH由[UPSTREAM.json](UPSTREAM.json)固定，插件由[PLUGIN.json](PLUGIN.json)
 
 原始档案在本地；腾讯处理音频/朗读文本，模型供应商处理采访与整理所需文字。不是离线AI，也不承诺供应商零留存。导出可能包含亲友姓名、经历和来源，分享前自行检查。
 
-没有账号、付款、原生App、声音克隆、全双工通话、心理画像、照片采访、ZIP或导入恢复。人物画像只影响表达，不能增加事实。实体硬件、Safari/手机测试范围及单次生成容量上限见[发行状态](docs/release-v0.1.0.md)。
+没有账号、付款、原生App、声音克隆、全双工通话、心理画像、照片采访、ZIP或导入恢复。人物画像只影响表达，不能增加事实。实体硬件、Safari/手机测试范围及单次生成容量上限见[发行状态](docs/release-v0.2.0.md)。
 
 原创[MIT](LICENSE)；第三方分别遵守[各自许可](THIRD_PARTY_NOTICES.md)。FFmpeg含GPL组件；对应源码交付尚未全部完成，因此不发布公共二进制镜像。
 
@@ -66,7 +66,7 @@ DSH由[UPSTREAM.json](UPSTREAM.json)固定，插件由[PLUGIN.json](PLUGIN.json)
 先读[AGENTS](AGENTS.md)、[架构不变量](docs/02-architecture.md)，再按任务加载：
 
 - 规范：[采访](docs/03-interview-agent.md)、[记忆图](docs/04-memory-graph.md)、[语音](docs/05-speech-pipeline.md)、[界面](docs/06-ui-ux.md)、[出处](docs/07-provenance-and-integrity.md)、[人物表达](docs/08-persona-distillation.md)、[自传/导出](docs/09-export-format.md)。
-- 证据：[Phase1](docs/phase-1.md)、[Phase2](docs/phase-2.md)、[Phase3](docs/phase-3.md)、[Phase4](docs/phase-4.md)、[最终发行](docs/release-v0.1.0.md)。历史状态不反推当前未测门禁。
+- 证据：[Phase1](docs/phase-1.md)、[Phase2](docs/phase-2.md)、[Phase3](docs/phase-3.md)、[Phase4](docs/phase-4.md)、[当前发行](docs/release-v0.2.0.md)。历史状态不反推当前未测门禁。
 - 研究/决定：[ADR索引](docs/adr/README.md)、[依赖审计](docs/research/dependencies.md)、[测试](docs/11-testing-strategy.md)。
 
 CI只跑离线检查与本地容器健康，不需要云密钥。开发诊断使用`laorenyun-dev`，正常quick start保持`laorenyun`。
