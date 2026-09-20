@@ -17,3 +17,8 @@ licenses/release/sbom*.json
 
 # Release validation artifacts may contain private local browser diagnostics.
 artifacts/
+
+# Demo credentials and local browser/auth diagnostics never enter build context.
+demo/.env
+demo/.private/
+demo/output/

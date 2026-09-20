@@ -30,3 +30,9 @@ README 是产品入口；下表链接唯一语义 owner。规范说明现行约�
 - [分支保护与分发门禁审计](evidence/distribution/README.md)
 
 R2 实体麦克风与 R3 真人采访后恢复仍独立待验证；不能由源码发行或 CI 通过推导为完成。
+
+## 可复现课程演示
+
+- [合成数据与生命周期](../demo/README.md)
+- [七分钟演示](demo.md)
+- [HTTPS 私人公网备用](demo-public.md)
