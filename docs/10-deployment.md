@@ -1,6 +1,6 @@
 # 部署、安全与数据运维
 
-Owner：发行、环境与隐私边界。当前为 v0.1.0 已实现，真实模型/腾讯容器调用通过，实体麦克风与真人恢复验收待完成，实测回执见 [phase-2](phase-2.md)。业务存储由[插件](https://github.com/Develata/dsh-laorenyun/blob/main/docs/deployment-integration.md)拥有。
+Owner：发行、环境与隐私边界。当前产品为 v0.2.0，真实模型/腾讯容器调用通过，实体麦克风与真人恢复验收待完成，实测回执见 [phase-2](phase-2.md)。业务存储由[插件](https://github.com/Develata/dsh-laorenyun/blob/main/docs/deployment-integration.md)拥有。
 
 ## 构建与启动
 
@@ -75,20 +75,24 @@ schema4启动事务迁移，不重置旧库。升级前停机备份整个数据�
 
 ## Phase 4
 
-一个服务/worker/卷不变，Phase4历史标签为laorenyun:phase4；当前课程源码构建标签为laorenyun:0.1.0。exports在同一私有data卷下，派生任务DB为权威；下载含私密人生材料，不公开分享。生成不要求新增环境变量，复用已配置DSH模型；health不调用云端。实际镜像/权限/恢复证据见[Phase4](phase-4.md)。
+一个服务/worker/卷不变，Phase4历史标签为laorenyun:phase4；该阶段后续课程源码标签为laorenyun:0.1.0（历史）。exports在同一私有data卷下，派生任务DB为权威；下载含私密人生材料，不公开分享。生成不要求新增环境变量，复用已配置DSH模型；health不调用云端。实际镜像/权限/恢复证据见[Phase4](phase-4.md)。
 
-## v0.1.0配置与删除边界
+## 配置与删除边界
 
-部分云凭据、非法协议/超时、老人profile启用fixture会启动失败；所有云凭据为空可本地health-only启动，调用时明确失败，不自动使用假provider。正常采访须填写.env.example的模型和腾讯字段。
+部分云凭据、非法协议/超时、老人profile启用fixture会启动失败；所有云凭据为空可本地health-only启动，调用时明确失败，不自动使用假provider。正常采访须通过 Web 设置或 .env 配置模型和相应腾讯字段。
 
 彻底移除本地安装数据是破坏性管理员操作：先停Compose，确认项目名，用`docker volume ls`及`docker volume inspect <精确卷名>`确认目标，备份整个卷和.env；确认永久删除后才使用`docker volume rm <精确卷名>`。不使用通配符，不对其它项目执行prune。当前导出不含音频，不可替代卷备份。
 
-手机须HTTPS origin（localhost之外），配置精确trustedHosts并保留DSH访问保护；不把key存浏览器，也不关闭安全上下文检查。没有新增反向代理服务。最终已测范围见[发行状态](release-v0.1.0.md)。
+手机须HTTPS origin（localhost之外），配置精确trustedHosts并保留DSH访问保护；不把key存浏览器，也不关闭安全上下文检查。没有新增反向代理服务。已测范围与硬件缺口见[发行状态](release-v0.2.0.md)。
 
-## v0.2 工作线
+## 人物档案与 Web 设置
 
-Compose 镜像为本地构建 `laorenyun:0.2.0-rc.1`，PLUGIN.json 固定完整提交，不使用 main/tag 下载。v0.1 镜像/tag 不覆盖。新人物档案由 DSH Workspace 管理；旧库/媒体原地映射默认档案，新档案目录位于 `/app/data/archives/<workspace-id>`，均在同一个持久卷内。切勿在迁移中删除原目录。
+Compose 镜像为本地构建 `laorenyun:0.2.0`，PLUGIN.json 固定完整提交，不使用 main/tag 下载。v0.1 镜像/tag 不覆盖。新人物档案由 DSH Workspace 管理；旧库/媒体原地映射默认档案，新档案目录位于 `/app/data/archives/<workspace-id>`，均在同一个持久卷内。切勿在迁移中删除原目录。
 
 本机设置入口恢复显示/AI模型/语音服务；原生 DSH credentials/settings 持有 Web 配置，`.env` 仍可用于无界面部署。Web Tencent 设置覆盖相应 env 基础值，空白秘密字段表示不改。模型默认选择作用于新采访，已有采访保留原模型。远程连接受原生 Host 设置写权限约束，不放宽访问保护。
 
 真实验收脚本 `smoke-v02.mjs` 必须显式允许真实模型调用；`smoke-v02-experience.mjs` 要求指定含多年代的隔离合成档案，测试筛选/布局/设置，不自动写入真人档案。参数与证据见 [v0.2](v0.2-redesign.md)。
+
+## 容器分发状态
+
+当前仍以本地源码构建部署。公共 GHCR 镜像尚未发布，源材料门禁未通过；标签流水线、digest Compose 与未来升级流程由[发布操作](12-release.md)拥有。不得把源码构建成功或本地镜像存在解释为二进制分发已经获准。

@@ -15,4 +15,4 @@ for(const p of packages.values()) {
  if(existsSync(supplemental))p.coveringLicense=supplemental;
  if(p.name==='data-uri-to-buffer')p.coveringLicense=supplemental.replace('/LICENSE','/README.md');
 }
-console.log(JSON.stringify({format:'laorenyun.license-index',version:1,notSBOM:true,redistribution:'source-only; binary corresponding-source delivery incomplete',packages:[...packages.values()].sort((a,b)=>(a.name+a.version).localeCompare(b.name+b.version)),buildClosure:build,os},null,2));
+console.log(JSON.stringify({format:'laorenyun.license-index',version:1,notSBOM:true,redistribution:'inventory only; publication decided by scripts/release/verify-bundle.mjs',packages:[...packages.values()].sort((a,b)=>(a.name+a.version).localeCompare(b.name+b.version)),buildClosure:build,os},null,2));

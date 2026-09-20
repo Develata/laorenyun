@@ -1,6 +1,6 @@
 # Laorenyun — 发行层与文档入口
 
-始终中文交流。当前处于 v0.1.0 课程发行维护阶段：业务归插件库，发行归本库。下一阶段功能需要对应任务授权；不顺带扩大后续阶段范围。
+始终中文交流。当前产品为 v0.2.0，发布与分发状态见 docs/12-release.md：业务归插件库，发行归本库。下一阶段功能需要对应任务授权；不顺带扩大后续阶段范围。
 
 ## 读取与权威
 
@@ -15,4 +15,4 @@
 
 常规局部变更自主完成；架构边界改变须更新原 owner 与 ADR。保留任务外工作。未经用户明确授权不得 push、发布或大量删除。默认单 Agent；文档不设置强制委派流程。
 
-有 `.codegraph/` 时，理解或定位代码先用 CodeGraph；Markdown/字符串用 rg。变更后执行匹配验证、检查 diff；最终写 `验证：...`，分别报告文档变更、代码实现、运行和发布。发行修改运行 upstream/packaging-lock 校验、受影响的构建与 Compose smoke；证据见 docs/phase-1.md。
+有 `.codegraph/` 时，理解或定位代码先用 CodeGraph；Markdown/字符串用 rg。变更后执行匹配验证、检查 diff；最终写 `验证：...`，分别报告文档变更、代码实现、运行和发布。发行修改运行 upstream/packaging-lock/release 校验、受影响的构建与 Compose smoke。main 有无 bypass 的历史与 CI 保护；获授权发布时也必须走短分支、CI、PR。当前发布操作见 docs/12-release.md；历史阶段证据保持原样。

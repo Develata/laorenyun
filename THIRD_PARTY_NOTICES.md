@@ -2,20 +2,28 @@
 
 Original Laorenyun documentation/code: Copyright (c) 2026 Develata, MIT, see [LICENSE](LICENSE).
 
-**Current source-release status (v0.1.0):** this repository preserves the exact DSH source snapshot and builds a local Docker runtime. Original MIT does not relicense upstream code or binaries. The image is built locally; no container registry release is published; corresponding-source delivery remains a prerequisite.
+## Current distribution status
 
-## Actual image inventory
+The current published product is **v0.2.0 (source release)**. Local Docker builds are supported; no public registry image has been published. Binary publication is fail-closed on actual-image corresponding-source delivery, including Debian FFmpeg and linked components, sharp/libvips and applicable native/Web dependencies. The current audit bundle is incomplete, so **GHCR publication remains disabled**.
+
+[Release operations](docs/12-release.md) owns the live policy and workflow; [distribution audit](docs/evidence/distribution/README.md) records the latest measurements. `scripts/license-inventory.mjs` remains the artifact inventory owner. `licenses/container/sources.lock.json` records reviewed source/notice dispositions and exact source hashes, not another runtime package list. An SBOM or list of download URLs is not accompanying corresponding source.
+
+## Historical release audits
+
+The sections below retain evidence from their original phases. Version counts and source-only statements describe those observations; they do not substitute for a fresh image audit.
+
+### Phase 1 actual image inventory
 
 - [runtime-packages.json](licenses/runtime-packages.json): 514 unique DSH runtime npm package/version pairs, generated from the built linux/amd64 image; it excludes bundled Web modules and Debian base packages, which have separate notices below. No Claude Agent SDK, Codex binary, TypeScript compiler, esbuild or tsx occurs in the runtime package store.
 - `/opt/laorenyun/licenses/build-closure/` preserves full license/notice files from the selected build closure, including React 18.3.1, React DOM and KaTeX bundled into Web JS. Its build-closure.json is intentionally a superset, not an assertion all listed build tools ship as runtime dependencies.
 - DSH's LICENSE/THIRD_PARTY_NOTICES and native-system LICENSE are copied separately into the image; vendor license texts also remain in the unchanged source and installed package directories. Debian copyright files remain under `/usr/share/doc`; Node 24.21.0's complete LICENSE is [preserved](licenses/node/LICENSE), sha256 `5888dbb9a1d2b18f2c3e6c5f6af1b39de658372b402a0577b002777f14c62ace`.
 - `@img/sharp-libvips-linux-x64@1.3.2` is present as a DSH image-processing dependency. Its binary is **LGPL-3.0-or-later**, not the Apache license of its packaging scripts. Its component versions, notices, LGPL/GPL texts and unmodified v1.3.2 build scripts are in [licenses/sharp-libvips](licenses/sharp-libvips). It contains additional libraries under LGPL/MPL/permissive terms. The shared library remains replaceable, and this distribution imposes no restriction on reverse engineering to debug modifications.
-- Before publishing binary images, provide corresponding source/build materials for the LGPL/MPL components and Debian base as applicable alongside the image, using the exact version/source URLs in the preserved build scripts and upstream archives. Merely publishing this notice is not a completed source offer. Phase 1 publishes source repositories, not a binary image release.
+- Before publishing binary images, provide corresponding source/build materials for the LGPL/MPL components and Debian base as applicable alongside the image, using the exact version/source URLs in the preserved build scripts and upstream archives. Merely publishing this notice is not a completed source offer. Phase 1 published source repositories, not a binary image release.
 - Original Phase1 had no speech dependencies; current image includes Tencent TTS and FFmpeg as detailed below. No added fonts/icons/model weights/dsh-talk/D3 source. Demo media is explicitly synthetic. Existing DSH Web assets retain upstream obligations.
 
 Build-only new plugin tools: TypeScript 6.0.3 (Apache-2.0), esbuild 0.28.2 (MIT), Prettier 3.6.2 (MIT); pnpm 11.7.0 (MIT). They are frozen in package metadata/locks, not required on the user's host.
 
-## Future component treatment
+## Component obligations
 
 | Component | Verified license / obligation |
 |---|---|
