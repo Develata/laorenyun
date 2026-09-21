@@ -83,3 +83,11 @@ test('Debian source filenames permit version tildes but no traversal or URL esca
  assert.ok(sourcePathPattern.test('sources/dbus_1.14.10-1~deb12u1.debian.tar.xz'));
  for(const path of ['sources/..','sources/../a','sources/a/b','sources/%2fetc','/sources/a','sources/a?b'])assert.ok(!sourcePathPattern.test(path));
 });
+
+test('source lock covers recorded Debian materials with valid unique identities',()=>{
+ const lock=JSON.parse(readFileSync(new URL('../../licenses/container/sources.lock.json',import.meta.url)));
+ const index=JSON.parse(readFileSync(new URL('../../licenses/container/debian-source-identities.json',import.meta.url)));
+ const paths=new Set(lock.downloads.map(x=>x.path));assert.equal(paths.size,lock.downloads.length);
+ for(const d of lock.downloads){assert.ok(sourcePathPattern.test(d.path));assert.match(d.sha256,/^[a-f0-9]{64}$/);assert.ok(!d.url.includes('/debian/pool/updates/'));}
+ for(const c of index.packages){assert.ok(c.sourcePackage&&c.sourceVersion);assert.ok(c.files.length);for(const f of c.files)assert.ok(paths.has(f));}
+});

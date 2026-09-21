@@ -314,17 +314,17 @@
       "sha256": "58761e6731656727c8463e9019df879c8dccaabc07bd47a1abc8846aecae0b2a"
     },
     {
-      "url": "https://deb.debian.org/debian/pool/updates/main/a/aom/aom_3.6.0-1+deb12u3.dsc",
+      "url": "https://deb.debian.org/debian-security/pool/updates/main/a/aom/aom_3.6.0-1+deb12u3.dsc",
       "path": "sources/aom_3.6.0-1+deb12u3.dsc",
       "sha256": "8d11a3b529c65d55f11cf85244e2826d2e249e8dc7f4c484cb13370313a3b235"
     },
     {
-      "url": "https://deb.debian.org/debian/pool/updates/main/a/aom/aom_3.6.0.orig.tar.gz",
+      "url": "https://deb.debian.org/debian-security/pool/updates/main/a/aom/aom_3.6.0.orig.tar.gz",
       "path": "sources/aom_3.6.0.orig.tar.gz",
       "sha256": "2ba213822cb1528b5558d6727125654e14d1b2d7505bd1fc8afa36c2e9e9f94a"
     },
     {
-      "url": "https://deb.debian.org/debian/pool/updates/main/a/aom/aom_3.6.0-1+deb12u3.debian.tar.xz",
+      "url": "https://deb.debian.org/debian-security/pool/updates/main/a/aom/aom_3.6.0-1+deb12u3.debian.tar.xz",
       "path": "sources/aom_3.6.0-1+deb12u3.debian.tar.xz",
       "sha256": "79ae3cf9a422308fce165b018866307e4b5592dfe7d34774e4f7ab8899f52011"
     },
@@ -439,12 +439,12 @@
       "sha256": "d68c6eba11d70e14319e24ef1451880a03023b2b75364646adb117086db36039"
     },
     {
-      "url": "https://deb.debian.org/debian/pool/updates/main/c/ca-certificates/ca-certificates_20250419~deb12u1.dsc",
+      "url": "https://deb.debian.org/debian-security/pool/updates/main/c/ca-certificates/ca-certificates_20250419~deb12u1.dsc",
       "path": "sources/ca-certificates_20250419~deb12u1.dsc",
       "sha256": "72339e810ef8237a4c346540b52baf49607172cc849c2680328a608ce0f6a34b"
     },
     {
-      "url": "https://deb.debian.org/debian/pool/updates/main/c/ca-certificates/ca-certificates_20250419~deb12u1.tar.xz",
+      "url": "https://deb.debian.org/debian-security/pool/updates/main/c/ca-certificates/ca-certificates_20250419~deb12u1.tar.xz",
       "path": "sources/ca-certificates_20250419~deb12u1.tar.xz",
       "sha256": "b2a431cbab9a0ece921cffacbe238dc27a3e382ad4a1806dc8968c5eff30471d"
     },
@@ -724,17 +724,17 @@
       "sha256": "dac77dc13f8f3bb2c541d631faf75216fc6640a359143a4545129ee096bc35ff"
     },
     {
-      "url": "https://deb.debian.org/debian/pool/updates/main/e/expat/expat_2.5.0-1+deb12u3.dsc",
+      "url": "https://deb.debian.org/debian-security/pool/updates/main/e/expat/expat_2.5.0-1+deb12u3.dsc",
       "path": "sources/expat_2.5.0-1+deb12u3.dsc",
       "sha256": "67388db2780dbb8f10cd2d5ace402b655272649dc345825fdc50612007af78d9"
     },
     {
-      "url": "https://deb.debian.org/debian/pool/updates/main/e/expat/expat_2.5.0.orig.tar.gz",
+      "url": "https://deb.debian.org/debian-security/pool/updates/main/e/expat/expat_2.5.0.orig.tar.gz",
       "path": "sources/expat_2.5.0.orig.tar.gz",
       "sha256": "ab00ee05c7067fd10a35c5d2a4922ebba746ddd50ff83b79c828da17bbdf1757"
     },
     {
-      "url": "https://deb.debian.org/debian/pool/updates/main/e/expat/expat_2.5.0-1+deb12u3.debian.tar.xz",
+      "url": "https://deb.debian.org/debian-security/pool/updates/main/e/expat/expat_2.5.0-1+deb12u3.debian.tar.xz",
       "path": "sources/expat_2.5.0-1+deb12u3.debian.tar.xz",
       "sha256": "1d3fe684581e73766f03c6486dc5e0c068b915da4ae8e778e820495cd9ae44b7"
     },
@@ -1284,17 +1284,17 @@
       "sha256": "b5676df41934c3c95447a66f766ac8f536cf9fa88063c93b0201e6b4fd25aff6"
     },
     {
-      "url": "https://deb.debian.org/debian/pool/updates/main/liba/libass/libass_0.17.1-1+deb12u1.dsc",
+      "url": "https://deb.debian.org/debian-security/pool/updates/main/liba/libass/libass_0.17.1-1+deb12u1.dsc",
       "path": "sources/libass_0.17.1-1+deb12u1.dsc",
       "sha256": "5c4c02e00f3ab9c65ed2934752921c9d47013632a0ca7f56007693616a7d52d4"
     },
     {
-      "url": "https://deb.debian.org/debian/pool/updates/main/liba/libass/libass_0.17.1.orig.tar.gz",
+      "url": "https://deb.debian.org/debian-security/pool/updates/main/liba/libass/libass_0.17.1.orig.tar.gz",
       "path": "sources/libass_0.17.1.orig.tar.gz",
       "sha256": "d653be97198a0543c69111122173c41a99e0b91426f9e17f06a858982c2fb03d"
     },
     {
-      "url": "https://deb.debian.org/debian/pool/updates/main/liba/libass/libass_0.17.1-1+deb12u1.debian.tar.xz",
+      "url": "https://deb.debian.org/debian-security/pool/updates/main/liba/libass/libass_0.17.1-1+deb12u1.debian.tar.xz",
       "path": "sources/libass_0.17.1-1+deb12u1.debian.tar.xz",
       "sha256": "5aba1f03fd7c0340fb53f32c6b81f9c80549dc3b1a8098b0a19e582ef3618cff"
     },
@@ -1829,17 +1829,17 @@
       "sha256": "ab14906eda9fddf14cbb1e589b9ba7439c22e233dc3c5e3cf9356c9625565a82"
     },
     {
-      "url": "https://deb.debian.org/debian/pool/updates/main/libr/librabbitmq/librabbitmq_0.11.0-1+deb12u3.dsc",
+      "url": "https://deb.debian.org/debian-security/pool/updates/main/libr/librabbitmq/librabbitmq_0.11.0-1+deb12u3.dsc",
       "path": "sources/librabbitmq_0.11.0-1+deb12u3.dsc",
       "sha256": "83dbd730a8fedc5944a8bc35ca19ecfc25fbc891b698ed3b21c6a71f9e507ee5"
     },
     {
-      "url": "https://deb.debian.org/debian/pool/updates/main/libr/librabbitmq/librabbitmq_0.11.0.orig.tar.gz",
+      "url": "https://deb.debian.org/debian-security/pool/updates/main/libr/librabbitmq/librabbitmq_0.11.0.orig.tar.gz",
       "path": "sources/librabbitmq_0.11.0.orig.tar.gz",
       "sha256": "437d45e0e35c18cf3e59bcfe5dfe37566547eb121e69fca64b98f5d2c1c2d424"
     },
     {
-      "url": "https://deb.debian.org/debian/pool/updates/main/libr/librabbitmq/librabbitmq_0.11.0-1+deb12u3.debian.tar.xz",
+      "url": "https://deb.debian.org/debian-security/pool/updates/main/libr/librabbitmq/librabbitmq_0.11.0-1+deb12u3.debian.tar.xz",
       "path": "sources/librabbitmq_0.11.0-1+deb12u3.debian.tar.xz",
       "sha256": "16935f6cc2cf6e6e6040e5f678e1efe301d2bb44707cf88b24ad3784df2345ec"
     },
