@@ -21,7 +21,8 @@
         "sources/ffmpeg_5.1.9-0+deb12u1.debian.tar.xz",
         "ffmpeg-buildconf.txt",
         "ffmpeg-links.txt"
-      ]
+      ],
+      "combination": "corresponding-source"
     }
   ],
   "downloads": [
@@ -49,11 +50,66 @@
       "url": "https://codeload.github.com/lovell/sharp-libvips/tar.gz/4da6d14c0d59866adfb9d8cf52bcaa53846dc4f6",
       "path": "sources/sharp-libvips-4da6d14c0d59866adfb9d8cf52bcaa53846dc4f6.tar.gz",
       "sha256": "4f438a108427ed9054c62c134c559af10522815ea42892a9ca31f655d97fc806"
+    },
+    {
+      "url": "https://download.gnome.org/sources/glib/2.89/glib-2.89.1.tar.xz",
+      "path": "sources/glib-2.89.1.tar.xz",
+      "sha256": "74447129c31afe141810f995626e8b99ab677413dae76ee3cf5a9cc6e75a486e"
+    },
+    {
+      "url": "https://github.com/libexif/libexif/releases/download/v0.6.26/libexif-0.6.26.tar.xz",
+      "path": "sources/libexif-0.6.26.tar.xz",
+      "sha256": "4a055ed6575e61ca46c3172be3c753cc16c9becd0f99ec71d58dd0e471476c0c"
+    },
+    {
+      "url": "https://github.com/strukturag/libheif/releases/download/v1.23.1/libheif-1.23.1.tar.gz",
+      "path": "sources/libheif-1.23.1.tar.gz",
+      "sha256": "0de0327f60fcd47de90d5654c6fe152232738d60d84fe084ec3e0f35e03b166a"
+    },
+    {
+      "url": "https://github.com/fribidi/fribidi/releases/download/v1.0.16/fribidi-1.0.16.tar.xz",
+      "path": "sources/fribidi-1.0.16.tar.xz",
+      "sha256": "1b1cde5b235d40479e91be2f0e88a309e3214c8ab470ec8a2744d82a5a9ea05c"
+    },
+    {
+      "url": "https://download.gnome.org/sources/pango/1.58/pango-1.58.0.tar.xz",
+      "path": "sources/pango-1.58.0.tar.xz",
+      "sha256": "bc5bad6213ad4886a47d1e80292fd850b64159b50db67917a43d9ea80ee2298a"
+    },
+    {
+      "url": "https://download.gnome.org/sources/librsvg/2.62/librsvg-2.62.90.tar.xz",
+      "path": "sources/librsvg-2.62.90.tar.xz",
+      "sha256": "5d108758255c225590d862d94f2591ee1f8cc976dc7b25b06eaba74f21850f08"
+    },
+    {
+      "url": "https://codeload.github.com/frida/proxy-libintl/tar.gz/refs/tags/0.5",
+      "path": "sources/proxy-libintl-0.5.tar.gz",
+      "sha256": "f7a1cbd7579baaf575c66f9d99fb6295e9b0684a28b095967cfda17857595303"
+    },
+    {
+      "url": "https://gist.githubusercontent.com/kleisauke/284d685efa00908da99ea6afbaaf39ae/raw/bdad5489a61c217850631571caf57f5db6ea8b2c/glib-without-gregex.patch",
+      "path": "sources/glib-without-gregex.patch",
+      "sha256": "b1f2930a11292e529de137c7eb723850e0cc0969b1a2b0358196389312acd272"
+    },
+    {
+      "url": "https://gist.githubusercontent.com/lovell/313a6901e9db1bf285f2a1f1180499e4/raw/3988223c7dfa4d22745d9392034b0117abef1446/libvips-cpp-soversion.patch",
+      "path": "sources/libvips-cpp-soversion.patch",
+      "sha256": "256b7d6f8c973bb53b20cff5171c7117d6b35d3aa4e72d22cb906f4fe1e2c890"
+    },
+    {
+      "url": "https://github.com/libvips/libvips/releases/download/v8.18.3/vips-8.18.3.tar.xz",
+      "path": "sources/vips-8.18.3.tar.xz",
+      "sha256": "f41285b61bfb495605494f074ca341f7791a1d406e2f157dcea606ef1ae1b146"
+    },
+    {
+      "url": "https://cairographics.org/releases/cairo-1.18.4.tar.xz",
+      "path": "sources/cairo-1.18.4.tar.xz",
+      "sha256": "445ed8208a6e4823de1226a74ca319d3600e83f6369f99b14265006599c32ccb"
     }
   ],
   "blockers": [
-    "FFmpeg source package is bundled; exact source artifacts for the remaining installed Debian source packages and linked closure are not yet delivered.",
-    "Complete sharp-libvips v1.3.2 build recipe is bundled; component source archives, vendored Rust dependencies, resolved patches and their match to shipped binaries remain incomplete.",
-    "Runtime and bundled Web license inventory needs per-component source-or-notice disposition; existing historical license index is not that approval."
+    "Exact installed Debian copyright/license and combination dispositions remain required; permissive independent packages need notices, not blanket corresponding source. Copyleft source packages and relevant combined-code closure still require delivery.",
+    "libvips combined native library: component source and fixed patches are being delivered; matching the built librsvg Cargo.lock/vendor closure and build-time mutable patches remains unresolved. Permissive code incorporated in this combined library is not automatically exempt.",
+    "Actual bundled DSH/Web and globally installed Corepack/Yarn inputs need build-to-artifact attribution. buildClosure is a candidate/notice superset, not the distributed closure. Unknown coverage remains fail-closed."
   ]
 }

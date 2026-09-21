@@ -1,0 +1,14 @@
+{
+  "imageId": "sha256:0c716892011895bc02a1c78ffeb647b00dc7e70e742e5d444376ca16c705ab0c",
+  "osBinaries": 290,
+  "osSourceIdentities": 206,
+  "npmIdentities": 671,
+  "nativeComponents": 28,
+  "buildCandidatesNotAssertedDistributed": 1020,
+  "publicationAllowed": false,
+  "unresolvedCount": 906,
+  "lockedDownloads": 16,
+  "materialFiles": 1367,
+  "sourceBundleSha256": "a9b14644a1f83793c67d49bb65214fa33e422799b166e04afa26d13c30a6e3bd",
+  "manifestSha256": "e0d7592f465906ec1bf8f885d081552cd8dc1c7a305ba7bd9fe169f670b45531"
+}

@@ -52,14 +52,16 @@ immutable inputs → deterministic checks
 
 ## 容器源码交付门禁
 
-[锁文件](../licenses/container/sources.lock.json) 是审查入口；[实际清单脚本](../scripts/license-inventory.mjs) 是包身份清单 owner，不再手写第二份运行包列表。每次从被测试镜像取 Debian binary/source package/version、npm 包、Web构建闭包及 sharp `versions.json`，记录 image ID 和 inventory SHA256。
+[锁文件](../licenses/container/sources.lock.json) 是审查入口；[实际清单脚本](../scripts/license-inventory.mjs) 是包身份清单 owner，不再手写第二份运行包列表。每次从被测试镜像取 Debian binary/source package/version、npm 包（含全局工具）、构建候选清单及 sharp `versions.json`，记录 image ID 和 inventory SHA256。
 
-项目采用保守交付政策：
+门禁以实际分发内容和许可证义务为边界：
 
-- 所有实际安装 Debian source package 都提供精确 `.dsc`、orig 和 Debian patches（不自行猜测 System Library 豁免）；源码包中的 debian/ 构建规则及对应版本记录一并交付。
-- sharp/libvips 原生闭包逐项提供实际版本源码、应用的补丁、构建脚本/平台配置；包含构建所需的 vendored Rust 等材料。只保存一个 libvips homepage 或少量脚本不够。
-- npm/打包 Web 闭包逐项审核 license、源码身份及 source/notice-only disposition。含 GPL/LGPL/MPL 或未知条款不能只提供 notice。
-- downloads 仅接受 HTTPS、预审 SHA256、固定安全路径；未知组件或新增版本没有 disposition 就失败。
+- 实际安装的 Debian、npm/Node 全局包、原生库均属分发内容；按实际 copyright/许可证逐项审核。独立 MIT/BSD/Apache 等组件交付必要 notices，不因 `deb:`/`vips:` 前缀强制源码。未知或自定义条款不自动豁免。
+- `buildClosure` 只是构建安装清单及通知材料的超集，不是分发清单。仅用于构建且未进入镜像或输出的工具不要求对应源码；打包进 DSH/Web/Corepack/Yarn 的代码仍须由实际产物证据识别。缺少此归属证据时，门禁报告 `BUNDLED_CLOSURE_UNREVIEWED`，不会把未知当不存在。
+- GPL/LGPL/MPL 等适用组件继续交付相应范围的源码、修改及构建材料。LGPL 组合库还须满足可修改/重链接条件；MPL 按 covered files 范围审核。独立容器包的简单聚合不自动扩展为整个镜像 copyleft。
+- permissive 代码若构成需要交付的组合库源码，不因自身许可证宽松而从该库构建闭包删除。`combination: corresponding-source` 明确要求源码；独立组件记录 `independent`。不是要求交付所有通用编译工具。
+- 许可证 `OR` 可选择允许的分支，notice-only 必须记录明确的 `licenseChoice`；`AND` 同时满足两侧。未识别条款、例外或选择不能自动放行。
+- downloads 仅接受 HTTPS、预审 SHA256、固定安全路径；新增组件/版本没有 disposition、缺失 notices 或需要的源码材料仍失败。
 
 `container-source-manifest.json` 记录 image ID、inventory hash、每项 identity/license/review、sources/buildMaterial/notices 和逐文件SHA256。tar 使用排序、固定mtime/uid/gid和无时间戳gzip；stream verifier逐文件哈希、拒绝路径外逸、软/硬链接、重复和额外成员，不解包不可信内容。清单或材料不匹配即拒绝。
 

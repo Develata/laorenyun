@@ -1,6 +1,6 @@
 // Runs outside image. Reuses the existing inventory owner; never reads /app/data or env.
 import {execFileSync} from 'node:child_process';
-import {readFileSync,writeFileSync,mkdirSync,readdirSync,lstatSync,copyFileSync,openSync,closeSync,unlinkSync} from 'node:fs';
+import {readFileSync,writeFileSync,mkdirSync,readdirSync,lstatSync,copyFileSync,openSync,closeSync,unlinkSync,existsSync} from 'node:fs';
 import {resolve,join,relative} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
@@ -27,13 +27,18 @@ writeFileSync(join(stage,'ffmpeg-buildconf.txt'),run('docker',['run','--rm','--n
 writeFileSync(join(stage,'ffmpeg-links.txt'),stableLinks(run('docker',['run','--rm','--network','none','--entrypoint','ldd',image,'/usr/bin/ffmpeg'])));
 writeFileSync(join(stage,'native-versions.json'),JSON.stringify(nativeVersions,null,2)+'\n');
 const lock=JSON.parse(readFileSync(join(root,'licenses/container/sources.lock.json')));
+async function fileHash(path) {
+ const h=createHash('sha256');for await(const chunk of createReadStream(path))h.update(chunk);return h.digest('hex');
+}
 // Downloads must already have a reviewed exact hash; no floating URL is accepted as evidence.
 for(const d of lock.downloads) {
  if(!/^https:\/\//.test(d.url)||!/^[a-f0-9]{64}$/.test(d.sha256)||!/^sources\/[a-zA-Z0-9_.+-]+$/.test(d.path))throw Error('Unsafe source lock entry');
  mkdirSync(join(stage,'sources'),{recursive:true});
- run('curl',['--silent','--show-error','--fail','--location','--proto','=https','--proto-redir','=https','--max-time','120','--max-filesize','1073741824','--output',join(stage,d.path),d.url]);
- const h=createHash('sha256');for await(const chunk of createReadStream(join(stage,d.path)))h.update(chunk);
- if(h.digest('hex')!==d.sha256)throw Error('Source download hash mismatch');
+ const destination=join(stage,d.path);
+ // Reuse only exact locked bytes; partial downloads never qualify as source evidence.
+ if(!existsSync(destination) || await fileHash(destination)!==d.sha256)
+  run('curl',['--silent','--show-error','--fail','--location','--proto','=https','--proto-redir','=https','--max-time','300','--max-filesize','1073741824','--output',destination,d.url],{timeout:330000});
+ if(await fileHash(destination)!==d.sha256)throw Error('Source download hash mismatch');
 }
 const files={};
 async function walk(p){for(const n of readdirSync(p).sort()){const f=join(p,n),s=lstatSync(f);if(s.isDirectory())await walk(f);else if(s.isFile()){const h=createHash('sha256');for await(const b of createReadStream(f))h.update(b);files[relative(stage,f)]=h.digest('hex');}else throw Error('Non-regular source material');}}

@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import {noticeOnlyLicense} from './license-policy.mjs';
 import {createHash} from 'node:crypto';
 export const repo = 'ghcr.io/develata/laorenyun';
 export const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -38,9 +39,12 @@ export function sourceProblems(inventory, manifest, files) {
   if (manifest.schema !== 1 || manifest.inventorySha256 !== sha256(JSON.stringify(inventory))) problems.push('INVENTORY_MISMATCH');
   if (!digestPattern.test(manifest.imageId ?? '')) problems.push('IMAGE_ID_INVALID');
   const expected = new Map();
-  // Conservative policy: deliver exact source for every Debian source package; no inferred System Library exemption.
+  // Every installed package is distributed, but source obligations depend on its
+  // reviewed license and combination, not Debian/npm/native packaging.
+  // Build tools are candidates only; actual bundled inputs need separate evidence.
+  if (inventory.bundledClosure?.status !== 'complete') problems.push('BUNDLED_CLOSURE_UNREVIEWED');
   for (const p of inventory.os) expected.set(`deb:${p.sourcePackage}@${p.sourceVersion}`, {version:p.sourceVersion});
-  for (const p of [...inventory.packages, ...inventory.buildClosure]) expected.set(`npm:${p.name}@${p.version}`, {version:p.version,license:p.license});
+  for (const p of [...inventory.packages, ...(inventory.bundledClosure?.packages ?? [])]) expected.set(`npm:${p.name}@${p.version}`, {version:p.version,license:p.license});
   for (const [name, version] of Object.entries(inventory.nativeVersions ?? {})) expected.set(`vips:${name}@${version}`, {version});
   const byId = new Map((manifest.components ?? []).map(x=>[x.id,x]));
   if (byId.size !== (manifest.components ?? []).length) problems.push('DUPLICATE_COMPONENT');
@@ -50,10 +54,12 @@ export function sourceProblems(inventory, manifest, files) {
     if (expected.get(id).license && typeof expected.get(id).license === 'string' && c.license !== expected.get(id).license) problems.push(`LICENSE_MISMATCH:${id}`);
     if (!Array.isArray(c.notices) || !c.notices.length) problems.push(`MISSING_NOTICES:${id}`);
     const required = [...(c.notices ?? [])];
+    if (!['independent', 'corresponding-source'].includes(c.combination)) problems.push(`COMBINATION_UNREVIEWED:${id}`);
+    if (c.delivery === 'notice-only' && /\bOR\b/.test(c.license) && (!c.licenseChoice || !noticeOnlyLicense(c.license, c.licenseChoice))) problems.push(`LICENSE_CHOICE_MISSING:${id}`);
     if (c.delivery === 'source') {
       if (!c.sources?.length || !c.buildMaterial?.length) problems.push(`MISSING_SOURCE_BUILD:${id}`);
       required.push(...(c.sources ?? []), ...(c.buildMaterial ?? []));
-    } else if (id.startsWith('deb:') || id.startsWith('vips:') || /GPL|MPL|CDDL|CPL|EPL|unknown|SEE LICENSE/i.test(c.license)) {
+    } else if (!noticeOnlyLicense(c.license) || c.combination === 'corresponding-source') {
       problems.push(`SOURCE_REQUIRED:${id}`);
     }
     for (const f of required) if (!files.has(f) || !/^[a-f0-9]{64}$/.test(manifest.files?.[f] ?? '')) problems.push(`MISSING_MATERIAL:${id}:${f}`);

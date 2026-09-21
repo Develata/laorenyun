@@ -6,6 +6,8 @@ Original Laorenyun documentation/code: Copyright (c) 2026 Develata, MIT, see [LI
 
 The current published product is **v0.2.0 (source release)**. Local Docker builds are supported; no public registry image has been published. Binary publication is fail-closed on actual-image corresponding-source delivery, including Debian FFmpeg and linked components, sharp/libvips and applicable native/Web dependencies. The current audit bundle is incomplete, so **GHCR publication remains disabled**.
 
+The gate distinguishes actual distributed code from build-installation candidates. Independent permissive components require their notices, not corresponding source merely because they are Debian/native packages. Applicable GPL/LGPL/MPL source, modifications and build/relink obligations remain; permissive code incorporated in a copyleft combined library is not automatically excluded. Bundled-code attribution and exact native build materials remain unresolved. See [current release policy](docs/12-release.md#容器源码交付门禁).
+
 [Release operations](docs/12-release.md) owns the live policy and workflow; [distribution audit](docs/evidence/distribution/README.md) records the latest measurements. `scripts/license-inventory.mjs` remains the artifact inventory owner. `licenses/container/sources.lock.json` records reviewed source/notice dispositions and exact source hashes, not another runtime package list. An SBOM or list of download URLs is not accompanying corresponding source.
 
 ## Historical release audits

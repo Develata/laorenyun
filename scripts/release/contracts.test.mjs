@@ -23,8 +23,8 @@ test('Compose is pull-only, digest pinned and retains security',()=>{
  assert.throws(()=>releaseCompose(text,'ghcr.io/foo:latest'));
 });
 test('source closure is exact, required and fail-closed',()=>{
- const inventory={os:[{sourcePackage:'example',sourceVersion:'1'}],packages:[],buildClosure:[],nativeVersions:{vips:'1'}};
- const manifest={schema:1,imageId:digest,inventorySha256:sha256(JSON.stringify(inventory)),nativeVersions:{vips:'1'},reviewStatus:'complete',files:{'source.tar':sha256('s'),'build.sh':sha256('b'),'COPYING':sha256('c')},components:['deb:example@1','vips:vips@1'].map(id=>({id,license:'LGPL-3.0-or-later',sourceIdentity:id,delivery:'source',review:'fixture only',notices:['COPYING'],sources:['source.tar'],buildMaterial:['build.sh']}))};
+ const inventory={os:[{sourcePackage:'example',sourceVersion:'1'}],packages:[],buildClosure:[],bundledClosure:{status:'complete',packages:[]},nativeVersions:{vips:'1'}};
+ const manifest={schema:1,imageId:digest,inventorySha256:sha256(JSON.stringify(inventory)),nativeVersions:{vips:'1'},reviewStatus:'complete',files:{'source.tar':sha256('s'),'build.sh':sha256('b'),'COPYING':sha256('c')},components:['deb:example@1','vips:vips@1'].map(id=>({id,license:'LGPL-3.0-or-later',sourceIdentity:id,delivery:'source',review:'fixture only',combination:'independent',notices:['COPYING'],sources:['source.tar'],buildMaterial:['build.sh']}))};
  const files=new Set(Object.keys(manifest.files));assert.deepEqual(sourceProblems(inventory,manifest,files),[]);
  assert.ok(sourceProblems(inventory,manifest,new Set()).some(x=>x.startsWith('MISSING_MATERIAL')));
  assert.ok(sourceProblems(inventory,{...manifest,inventorySha256:'bad'},files).includes('INVENTORY_MISMATCH'));
