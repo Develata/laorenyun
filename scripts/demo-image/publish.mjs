@@ -6,11 +6,11 @@ import assert from 'node:assert/strict';
 import {imageRepository,packagePath,digestPattern,privateVisibility,imageTag,commitInput} from './contracts.mjs';
 const [mode,sourceDirectory='source',output='delivery']=process.argv.slice(2);
 const run=(bin,args,options={})=>execFileSync(bin,args,{encoding:'utf8',timeout:600000,maxBuffer:8*1024*1024,...options}).trim();
-async function visibility(allowMissing){
+async function visibility(){
  const r=await fetch('https://api.github.com/'+packagePath,{headers:{Authorization:'Bearer '+process.env.GH_TOKEN,Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'},signal:AbortSignal.timeout(20000)});
- const body=await r.json(); privateVisibility(r.status,body,allowMissing);return r.status;
+ const body=await r.json(); privateVisibility(r.status,body);return r.status;
 }
-if(mode==='preflight'){await visibility(true);console.log('Private package preflight passed');}
+if(mode==='preflight'){await visibility();console.log('Private package preflight passed');}
 else if(mode==='publish'){
  const commit=commitInput(process.env.SOURCE_COMMIT),tag=imageTag(commit,process.env.GITHUB_RUN_ID,process.env.GITHUB_RUN_ATTEMPT);
  assert.equal(run('git',['rev-parse','HEAD'],{cwd:sourceDirectory}),commit);
@@ -18,19 +18,19 @@ else if(mode==='publish'){
  const id=run('docker',['image','inspect',image,'--format','{{.Id}}']);assert.match(id,digestPattern);
  const receipt=JSON.parse(readFileSync(resolve(output,'acceptance.json')));assert.equal(receipt.imageId,id);
  for(const key of ['coldBoot','access401','restart','nativeTypedSource'])assert.equal(receipt[key],true);
- const packageStatus=await visibility(true);
+ await visibility();
  // Fresh per-run alias; never overwrite an existing identity, even on manual reruns.
  let existing=false;
- if(packageStatus===200){
+ {
   try{run('docker',['buildx','imagetools','inspect',tag],{stdio:['ignore','pipe','pipe']});existing=true;}
   catch(e){if(!/manifest unknown|MANIFEST_UNKNOWN|not found/i.test(String(e.stderr)))throw e;}
  }
  assert.equal(existing,false,'demo alias already exists');
  run('docker',['tag',id,tag]);run('docker',['push',tag],{stdio:['ignore','pipe','pipe']});
- // GitHub documents first package publication as private. Verify persisted state,
- // including a short bounded allowance for API propagation; never change visibility.
+ // The package must already be private before any push. Verify persisted state
+ // again; absence/public/unknown are errors, never permission to create a package.
  let verified=false;
- for(let i=0;i<6;i++){try{await visibility(false);verified=true;break;}catch(e){if(i===5)throw e;await new Promise(r=>setTimeout(r,2000));}}
+ for(let i=0;i<6;i++){try{await visibility();verified=true;break;}catch(e){if(i===5)throw e;await new Promise(r=>setTimeout(r,2000));}}
  assert.ok(verified);
  const descriptor=JSON.parse(run('docker',['buildx','imagetools','inspect',tag,'--format','{{json .Manifest}}']));
  const digest=descriptor.digest;assert.match(digest,digestPattern);

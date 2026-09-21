@@ -105,7 +105,7 @@ gh workflow run demo-image.yml --repo Develata/laorenyun --ref main \
   -f commit=<已合入main的完整40位SHA>
 ```
 
-镜像只进入 `ghcr.io/develata/laorenyun-demo-private`。首次包默认私有（[GitHub 官方说明](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#pushing-container-images)）；已有包必须先读回为 private，否则停止。推送后再次读回 private，并按 registry digest 拉回核对 image ID。不会修改包可见性。
+镜像只进入 `ghcr.io/develata/laorenyun-demo-private`。**目标包必须预先存在且读回为 private；404、public 或无法核实都在构建/推送前停止。** 工作流不再允许首次创建包，不能把平台默认值当作私有性保证。推送后再次读回 private，并按 registry digest 拉回核对 image ID。不会修改包可见性。
 
 每次运行使用 `sha-<commit>-<run-id>-<attempt>`，拒绝覆盖已有别名，不写 SemVer 或 latest。构建一次 → 无云 Chromium/文字来源/重启验收 → 私有 push → digest 回执。当前仅 linux/amd64。应用和插件、DSH pins 写入回执；digest 是部署身份，不宣称重复构建得到相同字节。
 
@@ -119,3 +119,10 @@ docker pull ghcr.io/develata/laorenyun-demo-private@sha256:<回执digest>
 ```
 
 这是项目所有者的私有演示镜像，不可将包转公开或当作公共分发合规证明。公共镜像仍走前述对应源码门禁，PR #4 的审计工作独立继续。
+
+
+### 私有演示首跑纠正记录
+
+运行 35596193288 的构建和无云验收通过，但首次 push 后 API 返回 public，与原先依赖的默认私有假设不符。工作流未成功，未交付私有 digest。为撤回误公开内容，仅删除该运行唯一标签对应的 `laorenyun-demo-private` 新包；清理运行 [35596845635](https://github.com/Develata/laorenyun/actions/runs/35596845635) 成功，随后 package API=404、匿名 manifest=403。
+
+工作流已暂停；修正为必须预先验证存在的 private 包。需要所有者完成该包的私有创建和 Actions 写权限配置后再启用。未改公共 source gate、main rulesets、v0.2.0 tag/Release。不能将本次误公开称为合规公共发行或成功私有部署。
