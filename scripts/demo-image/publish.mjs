@@ -18,11 +18,13 @@ else if(mode==='publish'){
  const id=run('docker',['image','inspect',image,'--format','{{.Id}}']);assert.match(id,digestPattern);
  const receipt=JSON.parse(readFileSync(resolve(output,'acceptance.json')));assert.equal(receipt.imageId,id);
  for(const key of ['coldBoot','access401','restart','nativeTypedSource'])assert.equal(receipt[key],true);
- await visibility(true);
+ const packageStatus=await visibility(true);
  // Fresh per-run alias; never overwrite an existing identity, even on manual reruns.
  let existing=false;
- try{run('docker',['buildx','imagetools','inspect',tag],{stdio:['ignore','pipe','pipe']});existing=true;}
- catch(e){if(!/manifest unknown|MANIFEST_UNKNOWN|not found/i.test(String(e.stderr)))throw e;}
+ if(packageStatus===200){
+  try{run('docker',['buildx','imagetools','inspect',tag],{stdio:['ignore','pipe','pipe']});existing=true;}
+  catch(e){if(!/manifest unknown|MANIFEST_UNKNOWN|not found/i.test(String(e.stderr)))throw e;}
+ }
  assert.equal(existing,false,'demo alias already exists');
  run('docker',['tag',id,tag]);run('docker',['push',tag],{stdio:['ignore','pipe','pipe']});
  // GitHub documents first package publication as private. Verify persisted state,
