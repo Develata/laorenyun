@@ -6,7 +6,7 @@ Owner：本文件拥有当前发布流程、门禁和不变性政策。历史 [v
 
 已发布 v0.2.0 源码；支持本地 Docker 构建。**GHCR publication remains disabled**：实际镜像闭包的对应源码/构建材料尚未完整归档和审查。新工作流的 dry run 可执行输入、构建、浏览器、清单/归档校验，但必须在源码完整性门禁失败；不得将其描述为容器发行成功。
 
-本阶段不增加版本、不创建 tag、不回填 v0.2.0 二进制。未来首次容器发行优先新版本（例如 v0.2.1），只有全部门禁通过才创建对应发布。
+v0.2.0 tags 保持不变。首次公共容器发行优先新版本（例如 v0.2.1）；即使已授权创建新 tag，也只有全部门禁通过才创建对应发布。
 
 ## 受保护的 main
 
@@ -66,7 +66,7 @@ immutable inputs → deterministic checks
 
 `container-source-manifest.json` 记录 image ID、inventory hash、每项 identity/license/review、sources/buildMaterial/notices 和逐文件SHA256。tar 使用排序、固定mtime/uid/gid和无时间戳gzip；stream verifier逐文件哈希、拒绝路径外逸、软/硬链接、重复和额外成员，不解包不可信内容。清单或材料不匹配即拒绝。
 
-**目前生成的是不完整的 audit bundle**（`container-sources.tar.gz`），含实际许可通知、pin、FFmpeg配置/链接信息、完整同版本Debian FFmpeg源包及sharp-libvips固定版本构建仓库，但不含其他组件的完整对应源码；不是完整 corresponding-source bundle，不可作为放行凭据。具体缺口见 source-gate.json。SBOM只可作索引，不能代替这项判断。
+**目前生成的是不完整的 audit bundle**（`container-sources.tar.gz`），含实际许可通知、pin、FFmpeg配置/链接信息、完整同版本Debian FFmpeg源包及sharp-libvips固定版本构建仓库，已补入实际 Debian 源包、原生归档和 librsvg Rust vendor 材料，具体下载/哈希证据见 [分发审计](evidence/distribution-scope/README.md)。组件审查、预打包代码归属和历史 mutable patch 对应仍有缺口；不是获准交付的完整 corresponding-source bundle，不可作为放行凭据。具体缺口见 source-gate.json。SBOM只可作索引，不能代替这项判断。
 
 官方依据：[FFmpeg legal](https://www.ffmpeg.org/legal.html)、[GNU GPL FAQ](https://www.gnu.org/licenses/gpl-faq.html)、[sharp-libvips build](https://github.com/lovell/sharp-libvips/tree/v1.3.2)。本门禁是项目工程交付政策，不宣称对所有司法辖区给出法律保证。
 

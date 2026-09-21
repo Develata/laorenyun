@@ -5,7 +5,7 @@ import {readFileSync,mkdtempSync,writeFileSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {execFileSync} from 'node:child_process';
-import {releaseVersion,verifyInputs,immutableIdentity,releaseCompose,sourceProblems,sha256,stableLinks} from './contracts.mjs';
+import {releaseVersion,verifyInputs,immutableIdentity,releaseCompose,sourceProblems,sha256,stableLinks,sourcePathPattern} from './contracts.mjs';
 const sha='a'.repeat(40),digest='sha256:'+'a'.repeat(64);
 const input={tag:'v0.2.0',commit:sha,tagCommit:sha,pin:{repository:'https://github.com/Develata/dsh-laorenyun',commit:sha,version:'0.2.0'},pluginTagCommit:sha,pluginPackage:{name:'dsh-laorenyun',version:'0.2.0'},upstream:{version:'0.1.6-alpha.1',commit:'0d1f50007f9bca3f52b06e1c3074fa14d5fb0720'}};
 test('stable/prerelease input, mismatched versions and immutable commits',()=>{
@@ -71,4 +71,15 @@ test('source aggregation cannot hide another binary notice or duplicate shipped 
  assert.ok(check().includes('SHIPPED_COVERAGE_MISMATCH:deb:one@1'));assert.ok(check().includes('NOTICE_COVERAGE_MISSING:deb:one@1'));
  manifest.components[0].shipped.push('deb:second@1');manifest.components[0].notices.push('second');manifest.components[0].noticeCoverage.push({imagePath:'/second/LICENSE',material:'second'});manifest.files.second=sha256('second');assert.deepEqual(check(),[]);
  inventory.os[1].shipped[0].id=inventory.os[0].shipped[0].id;assert.ok(check().some(x=>x.startsWith('DUPLICATE_SHIPPED_IDENTITY')));
+});
+
+test('shipped runtime binary is not hidden by npm package inventory',()=>{
+ const inventory={os:[],packages:[],bundledClosure:{status:'complete',packages:[]},nativeVersions:{vips:'1'},runtimeBinaries:[{name:'node',version:'24.21.0',shipped:[{id:'binary:node@24.21.0',notices:[]}]}]};
+ const manifest={schema:1,imageId:digest,reviewStatus:'complete',nativeVersions:inventory.nativeVersions,inventorySha256:sha256(JSON.stringify(inventory)),files:{},components:[]};
+ assert.ok(sourceProblems(inventory,manifest,new Set()).includes('UNREVIEWED:binary:node@24.21.0'));
+});
+
+test('Debian source filenames permit version tildes but no traversal or URL escapes',()=>{
+ assert.ok(sourcePathPattern.test('sources/dbus_1.14.10-1~deb12u1.debian.tar.xz'));
+ for(const path of ['sources/..','sources/../a','sources/a/b','sources/%2fetc','/sources/a','sources/a?b'])assert.ok(!sourcePathPattern.test(path));
 });

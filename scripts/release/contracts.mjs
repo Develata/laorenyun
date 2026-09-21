@@ -4,6 +4,7 @@ import {noticeOnlyLicense} from './license-policy.mjs';
 import {createHash} from 'node:crypto';
 export const repo = 'ghcr.io/develata/laorenyun';
 export const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
+export const sourcePathPattern = /^sources\/[a-zA-Z0-9][a-zA-Z0-9_.+~-]*$/;
 export const digestPattern = /^sha256:[a-f0-9]{64}$/;
 export function releaseVersion(tag) {
   assert.match(tag, /^v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?$/);
@@ -52,6 +53,7 @@ export function sourceProblems(inventory, manifest, files) {
   for (const p of inventory.os) add(`deb:${p.sourcePackage}@${p.sourceVersion}`, {version:p.sourceVersion,shipped:p.shipped});
   for (const p of [...inventory.packages, ...(inventory.bundledClosure?.packages ?? [])]) add(`npm:${p.name}@${p.version}`, {version:p.version,license:p.license,shipped:p.shipped});
   for (const [name, version] of Object.entries(inventory.nativeVersions ?? {})) add(`vips:${name}@${version}`, {version,shipped:inventory.nativeShipped?.[name]});
+  for (const p of inventory.runtimeBinaries ?? []) add(`binary:${p.name}@${p.version}`, {version:p.version,shipped:p.shipped});
   const shipmentOwners=new Map();
   for(const [id,entry] of expected) for(const item of entry.shipped??[]){
     if(shipmentOwners.has(item.id))problems.push(`DUPLICATE_SHIPPED_IDENTITY:${item.id}`);

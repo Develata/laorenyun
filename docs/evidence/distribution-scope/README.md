@@ -45,3 +45,15 @@ DSH/Web 发行构建加入公开 Rollup/Rolldown `writeBundle` hook，记录实�
 ### mutable patch 的实际证据
 
 GitHub API 查得：sharp-libvips 固定提交 4da6d14 的提交时间为 2026-06-30T08:50:50Z，v1.3.2 发布于同日 09:50:15Z。libultrahdr PR 383 当前包含 e2daed8（2025-12-10）和 7af3588（2026-09-10），2026-09-18 才合并。当前 PR patch 因此不能直接充作六月构建的材料。旧提交可作为进一步核对的候选，但时间先后本身不能证明原二进制究竟用了哪些字节；未将候选冒充已确认输入。若无法闭合，首次公共容器发行应使用新版本与固定输入重建，不回填猜测的 v0.2.0 镜像。
+
+## 完整材料下载与实际 Web 产物读回
+
+[source-material-receipt.json](source-material-receipt.json) 分开记录两个镜像，不能混用身份：
+
+- 原本地审计镜像的 206 个 Debian source identities 对应 661 个 `.dsc` / orig / Debian 修改 / 签名文件（984,872,940 bytes），全部匹配由 apt 的 source 元数据取得的 SHA256。可复用的 URL/哈希进入 sources.lock.json；身份→归档索引在 licenses/container/debian-source-identities.json。它是实际运行时源包的材料超集，不把 permissive package 自动改判为 source-required。所有组件仍须分别审查。
+- sharp-libvips 构建脚本中 28 个版本的源归档已取得，另有固定 patch、构建仓库和 345-crate Rust vendor 材料。历史 mutable patch 与组合库交付审查仍未闭合。
+- 扩展后的本地审计包有 2804 个文件，1,181,539,287 bytes；完整性校验通过，但发布门禁仍拒绝：905 unreviewed component dispositions + 2 个全局问题 = 907 total gate problems。多出的 component 是新显式清点的 Node executable；旧 906 项回执保留原语境。
+- 远端 b465dcc 的 Distribution CI 成功。实际 647 个部署产物关联 312 个 DSH/Web 包；unresolved inputs = 0，missing bundled notices = 0。此前 Vite asset origin 是相对于 apps/web 的路径，现已用独立 inputRoot 修正，并补 apps/web 的上游通知。这个结果只闭合这一组归属，不等于 Corepack/Yarn 等预打包代码完成审查。
+- Node 24.21.0 完整上游 LICENSE（含其第三方通知）加入镜像，scanner 单独记录 executable version/hash，避免 npm inventory 遗漏 Node 本身。sharp 的第三方通知、GPL/LGPL 文本也纳入 notice coverage。
+
+仍没有公共镜像、没有新 tag。首次公开镜像必须在上述剩余审查完成后以新版本发行；构建成功不代替分发批准。没有产品代码、DSH、个人数据或云凭据变更。

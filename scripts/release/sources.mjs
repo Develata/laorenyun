@@ -5,7 +5,7 @@ import {resolve,join,relative} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import {createReadStream} from 'node:fs';
-import {sourceProblems,sha256,stableLinks} from './contracts.mjs';
+import {sourceProblems,sha256,stableLinks,sourcePathPattern} from './contracts.mjs';
 const root=resolve(fileURLToPath(new URL('../..',import.meta.url)));
 const [image,output,sourceRoot=root]=process.argv.slice(2), out=resolve(output), source=resolve(sourceRoot);
 mkdirSync(out,{recursive:true});const stage=join(out,'materials');mkdirSync(stage,{recursive:true});
@@ -25,7 +25,7 @@ for(const [path,name]of [['/opt/laorenyun/licenses','notices'],['/usr/share/doc'
  run('tar',['-xf',archive,'-C',join(stage,name),'--no-same-owner']);unlinkSync(archive);
 }
 // Preserve every discovered notice occurrence, including duplicate npm installs.
-const noticePaths=[...new Set([...inventory.os,...inventory.packages,...(inventory.bundledClosure?.packages??[])].flatMap(p=>(p.shipped??[]).flatMap(x=>x.notices.map(n=>n.path))))].sort();
+const noticePaths=[...new Set([...inventory.os,...inventory.packages,...(inventory.bundledClosure?.packages??[]),...(inventory.runtimeBinaries??[])].flatMap(p=>(p.shipped??[]).flatMap(x=>x.notices.map(n=>n.path))))].sort();
 if(noticePaths.some(p=>!p.startsWith('/')||p.includes('..')||/[\r\n\0]/.test(p)))throw Error('Unsafe notice path');
 const noticeArchive=join(out,'image-notices.tar'),noticeFd=openSync(noticeArchive,'w');
 try{run('docker',['run','--rm','--network','none','-i','--entrypoint','tar',image,'-C','/','--hard-dereference','-chf','-','--null','-T','-'],{input:noticePaths.map(p=>p.slice(1)).join('\0')+'\0',stdio:['pipe',noticeFd,'pipe']});}finally{closeSync(noticeFd);}
@@ -41,7 +41,7 @@ async function fileHash(path) {
 }
 // Downloads must already have a reviewed exact hash; no floating URL is accepted as evidence.
 for(const d of lock.downloads) {
- if(!/^https:\/\//.test(d.url)||!/^[a-f0-9]{64}$/.test(d.sha256)||!/^sources\/[a-zA-Z0-9_.+-]+$/.test(d.path))throw Error('Unsafe source lock entry');
+ if(!/^https:\/\//.test(d.url)||!/^[a-f0-9]{64}$/.test(d.sha256)||!sourcePathPattern.test(d.path))throw Error('Unsafe source lock entry');
  mkdirSync(join(stage,'sources'),{recursive:true});
  const destination=join(stage,d.path);
  // Reuse only exact locked bytes; partial downloads never qualify as source evidence.
@@ -50,7 +50,7 @@ for(const d of lock.downloads) {
  if(await fileHash(destination)!==d.sha256)throw Error('Source download hash mismatch');
 }
 for(const recipe of lock.generated??[]) {
- if(recipe.kind!=='librsvg-rust'||!/^sources\/[a-zA-Z0-9_.+-]+$/.test(recipe.path)||!lock.downloads.some(d=>d.path===recipe.input)||!/^[a-f0-9]{64}$/.test(recipe.sha256))throw Error('Invalid source recipe');
+ if(recipe.kind!=='librsvg-rust'||!sourcePathPattern.test(recipe.path)||!lock.downloads.some(d=>d.path===recipe.input)||!/^[a-f0-9]{64}$/.test(recipe.sha256))throw Error('Invalid source recipe');
  const destination=join(stage,recipe.path);
  if(!existsSync(destination)||await fileHash(destination)!==recipe.sha256){
   const work=join(out,'rust-material-'+Date.now());
@@ -60,6 +60,7 @@ for(const recipe of lock.generated??[]) {
  if(await fileHash(destination)!==recipe.sha256)throw Error('Generated source material differs from reviewed hash');
 }
 copyFileSync(join(root,'scripts/release/vendor-librsvg.py'),join(stage,'vendor-librsvg.py'));
+copyFileSync(join(root,'licenses/container/debian-source-identities.json'),join(stage,'debian-source-identities.json'));
 const files={};
 async function walk(p){for(const n of readdirSync(p).sort()){const f=join(p,n),s=lstatSync(f);if(s.isDirectory())await walk(f);else if(s.isFile()){const h=createHash('sha256');for await(const b of createReadStream(f))h.update(b);files[relative(stage,f)]=h.digest('hex');}else throw Error('Non-regular source material');}}
 await walk(stage);

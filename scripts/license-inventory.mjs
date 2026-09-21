@@ -35,6 +35,7 @@ for(const p of packages.values()) {
  const supplemental='/opt/laorenyun/licenses/release/supplemental/'+p.name.replaceAll('/','_')+'-'+p.version+'/LICENSE';
  if(existsSync(supplemental))p.coveringLicense=supplemental;
  if(p.name==='data-uri-to-buffer')p.coveringLicense=supplemental.replace('/LICENSE','/README.md');
+ if(p.name==='@img/sharp-libvips-linux-x64')for(const file of ['THIRD-PARTY-NOTICES.md','LGPL-3.0.txt','GPL-3.0.txt']){const path='/opt/laorenyun/licenses/sharp-libvips/'+file;if(existsSync(path))for(const occurrence of p.shipped)occurrence.notices.push(notice(path));}
  if(p.coveringLicense&&existsSync(p.coveringLicense))for(const occurrence of p.shipped)if(!occurrence.notices.some(n=>n.path===p.coveringLicense))occurrence.notices.push(notice(p.coveringLicense));
 }
 const bundlePath='/opt/laorenyun/licenses/bundle-inputs.json';
@@ -50,4 +51,6 @@ bundledClosure.packages=(bundledClosure.packages??[]).map(p=>{
  const notices=existsSync(dir)?readdirSync(dir).filter(n=>statSync(dir+'/'+n).isFile()).map(n=>notice(dir+'/'+n)):[];
  return {...p,shipped:[{id:`bundle:${p.name}@${p.version}`,notices}]};
 });
-console.log(JSON.stringify({format:'laorenyun.license-index',version:1,notSBOM:true,redistribution:'inventory only; publication decided by scripts/release/verify-bundle.mjs',packages:[...packages.values()].sort((a,b)=>(a.name+a.version).localeCompare(b.name+b.version)),buildClosure:build,bundledClosure,os},null,2));
+const nodeNotice='/opt/laorenyun/licenses/node-'+process.versions.node+'/LICENSE';
+const runtimeBinaries=[{name:'node',version:process.versions.node,path:process.execPath,sha256:notice(process.execPath).sha256,source:'https://nodejs.org/dist/v'+process.versions.node+'/',shipped:[{id:'binary:node@'+process.versions.node,notices:existsSync(nodeNotice)?[notice(nodeNotice)]:[]}]}];
+console.log(JSON.stringify({runtimeBinaries,format:'laorenyun.license-index',version:1,notSBOM:true,redistribution:'inventory only; publication decided by scripts/release/verify-bundle.mjs',packages:[...packages.values()].sort((a,b)=>(a.name+a.version).localeCompare(b.name+b.version)),buildClosure:build,bundledClosure,os},null,2));

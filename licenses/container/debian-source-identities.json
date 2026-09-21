@@ -1,0 +1,1903 @@
+{
+  "schema": 1,
+  "scope": "Actual Debian runtime source identities; material superset, not per-component obligation approval.",
+  "packages": [
+    {
+      "sourcePackage": "acl",
+      "sourceVersion": "2.3.1-3",
+      "files": [
+        "sources/acl_2.3.1-3.dsc",
+        "sources/acl_2.3.1.orig.tar.xz",
+        "sources/acl_2.3.1.orig.tar.xz.asc",
+        "sources/acl_2.3.1-3.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "adduser",
+      "sourceVersion": "3.134",
+      "files": [
+        "sources/adduser_3.134.dsc",
+        "sources/adduser_3.134.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "alsa-lib",
+      "sourceVersion": "1.2.8-1",
+      "files": [
+        "sources/alsa-lib_1.2.8-1.dsc",
+        "sources/alsa-lib_1.2.8.orig.tar.bz2",
+        "sources/alsa-lib_1.2.8.orig.tar.bz2.asc",
+        "sources/alsa-lib_1.2.8-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "aom",
+      "sourceVersion": "3.6.0-1+deb12u3",
+      "files": [
+        "sources/aom_3.6.0-1+deb12u3.dsc",
+        "sources/aom_3.6.0.orig.tar.gz",
+        "sources/aom_3.6.0-1+deb12u3.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "apt",
+      "sourceVersion": "2.6.1",
+      "files": [
+        "sources/apt_2.6.1.dsc",
+        "sources/apt_2.6.1.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "attr",
+      "sourceVersion": "1:2.5.1-4",
+      "files": [
+        "sources/attr_2.5.1-4.dsc",
+        "sources/attr_2.5.1.orig.tar.xz",
+        "sources/attr_2.5.1.orig.tar.xz.asc",
+        "sources/attr_2.5.1-4.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "audit",
+      "sourceVersion": "1:3.0.9-1",
+      "files": [
+        "sources/audit_3.0.9-1.dsc",
+        "sources/audit_3.0.9.orig.tar.gz",
+        "sources/audit_3.0.9-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "base-files",
+      "sourceVersion": "12.4+deb12u15",
+      "files": [
+        "sources/base-files_12.4+deb12u15.dsc",
+        "sources/base-files_12.4+deb12u15.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "base-passwd",
+      "sourceVersion": "3.6.1",
+      "files": [
+        "sources/base-passwd_3.6.1.dsc",
+        "sources/base-passwd_3.6.1.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "bash",
+      "sourceVersion": "5.2.15-2",
+      "files": [
+        "sources/bash_5.2.15-2.dsc",
+        "sources/bash_5.2.15.orig.tar.gz",
+        "sources/bash_5.2.15-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "brotli",
+      "sourceVersion": "1.0.9-2",
+      "files": [
+        "sources/brotli_1.0.9-2.dsc",
+        "sources/brotli_1.0.9.orig.tar.gz",
+        "sources/brotli_1.0.9-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "bzip2",
+      "sourceVersion": "1.0.8-5",
+      "files": [
+        "sources/bzip2_1.0.8-5.dsc",
+        "sources/bzip2_1.0.8.orig.tar.gz",
+        "sources/bzip2_1.0.8-5.debian.tar.bz2"
+      ]
+    },
+    {
+      "sourcePackage": "ca-certificates",
+      "sourceVersion": "20250419~deb12u1",
+      "files": [
+        "sources/ca-certificates_20250419~deb12u1.dsc",
+        "sources/ca-certificates_20250419~deb12u1.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "cairo",
+      "sourceVersion": "1.16.0-7",
+      "files": [
+        "sources/cairo_1.16.0-7.dsc",
+        "sources/cairo_1.16.0.orig.tar.xz",
+        "sources/cairo_1.16.0-7.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "cdebconf",
+      "sourceVersion": "0.270",
+      "files": [
+        "sources/cdebconf_0.270.dsc",
+        "sources/cdebconf_0.270.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "chromaprint",
+      "sourceVersion": "1.5.1-2",
+      "files": [
+        "sources/chromaprint_1.5.1-2.dsc",
+        "sources/chromaprint_1.5.1.orig.tar.gz",
+        "sources/chromaprint_1.5.1-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "cjson",
+      "sourceVersion": "1.7.15-1+deb12u4",
+      "files": [
+        "sources/cjson_1.7.15-1+deb12u4.dsc",
+        "sources/cjson_1.7.15.orig.tar.gz",
+        "sources/cjson_1.7.15-1+deb12u4.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "codec2",
+      "sourceVersion": "1.0.5-1",
+      "files": [
+        "sources/codec2_1.0.5-1.dsc",
+        "sources/codec2_1.0.5.orig-cml.tar.gz",
+        "sources/codec2_1.0.5.orig-lpcnet.tar.gz",
+        "sources/codec2_1.0.5.orig-lpcnet191005.tar.gz",
+        "sources/codec2_1.0.5.orig.tar.gz",
+        "sources/codec2_1.0.5-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "coreutils",
+      "sourceVersion": "9.1-1",
+      "files": [
+        "sources/coreutils_9.1-1.dsc",
+        "sources/coreutils_9.1.orig.tar.xz",
+        "sources/coreutils_9.1-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "dash",
+      "sourceVersion": "0.5.12-2",
+      "files": [
+        "sources/dash_0.5.12-2.dsc",
+        "sources/dash_0.5.12.orig.tar.gz",
+        "sources/dash_0.5.12-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "dav1d",
+      "sourceVersion": "1.0.0-2+deb12u1",
+      "files": [
+        "sources/dav1d_1.0.0-2+deb12u1.dsc",
+        "sources/dav1d_1.0.0.orig.tar.xz",
+        "sources/dav1d_1.0.0.orig.tar.xz.asc",
+        "sources/dav1d_1.0.0-2+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "db5.3",
+      "sourceVersion": "5.3.28+dfsg2-1",
+      "files": [
+        "sources/db5.3_5.3.28+dfsg2-1.dsc",
+        "sources/db5.3_5.3.28+dfsg2.orig.tar.xz",
+        "sources/db5.3_5.3.28+dfsg2-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "dbus",
+      "sourceVersion": "1.14.10-1~deb12u1",
+      "files": [
+        "sources/dbus_1.14.10-1~deb12u1.dsc",
+        "sources/dbus_1.14.10.orig.tar.xz",
+        "sources/dbus_1.14.10.orig.tar.xz.asc",
+        "sources/dbus_1.14.10-1~deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "debconf",
+      "sourceVersion": "1.5.82",
+      "files": [
+        "sources/debconf_1.5.82.dsc",
+        "sources/debconf_1.5.82.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "debian-archive-keyring",
+      "sourceVersion": "2023.3+deb12u2",
+      "files": [
+        "sources/debian-archive-keyring_2023.3+deb12u2.dsc",
+        "sources/debian-archive-keyring_2023.3+deb12u2.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "debianutils",
+      "sourceVersion": "5.7-0.5~deb12u1",
+      "files": [
+        "sources/debianutils_5.7-0.5~deb12u1.dsc",
+        "sources/debianutils_5.7.orig.tar.gz",
+        "sources/debianutils_5.7-0.5~deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "diffutils",
+      "sourceVersion": "1:3.8-4",
+      "files": [
+        "sources/diffutils_3.8-4.dsc",
+        "sources/diffutils_3.8.orig.tar.xz",
+        "sources/diffutils_3.8.orig.tar.xz.asc",
+        "sources/diffutils_3.8-4.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "dpkg",
+      "sourceVersion": "1.21.23",
+      "files": [
+        "sources/dpkg_1.21.23.dsc",
+        "sources/dpkg_1.21.23.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "e2fsprogs",
+      "sourceVersion": "1.47.0-2",
+      "files": [
+        "sources/e2fsprogs_1.47.0-2.dsc",
+        "sources/e2fsprogs_1.47.0.orig.tar.gz",
+        "sources/e2fsprogs_1.47.0.orig.tar.gz.asc",
+        "sources/e2fsprogs_1.47.0-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "elfutils",
+      "sourceVersion": "0.188-2.1",
+      "files": [
+        "sources/elfutils_0.188-2.1.dsc",
+        "sources/elfutils_0.188.orig.tar.bz2",
+        "sources/elfutils_0.188.orig.tar.bz2.asc",
+        "sources/elfutils_0.188-2.1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "expat",
+      "sourceVersion": "2.5.0-1+deb12u3",
+      "files": [
+        "sources/expat_2.5.0-1+deb12u3.dsc",
+        "sources/expat_2.5.0.orig.tar.gz",
+        "sources/expat_2.5.0-1+deb12u3.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "ffmpeg",
+      "sourceVersion": "7:5.1.9-0+deb12u1",
+      "files": [
+        "sources/ffmpeg_5.1.9-0+deb12u1.dsc",
+        "sources/ffmpeg_5.1.9.orig.tar.xz",
+        "sources/ffmpeg_5.1.9.orig.tar.xz.asc",
+        "sources/ffmpeg_5.1.9-0+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "findutils",
+      "sourceVersion": "4.9.0-4",
+      "files": [
+        "sources/findutils_4.9.0-4.dsc",
+        "sources/findutils_4.9.0.orig.tar.xz",
+        "sources/findutils_4.9.0.orig.tar.xz.asc",
+        "sources/findutils_4.9.0-4.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "flac",
+      "sourceVersion": "1.4.2+ds-2",
+      "files": [
+        "sources/flac_1.4.2+ds-2.dsc",
+        "sources/flac_1.4.2+ds.orig.tar.xz",
+        "sources/flac_1.4.2+ds-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "flite",
+      "sourceVersion": "2.2-5",
+      "files": [
+        "sources/flite_2.2-5.dsc",
+        "sources/flite_2.2.orig.tar.gz",
+        "sources/flite_2.2-5.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "fontconfig",
+      "sourceVersion": "2.14.1-4",
+      "files": [
+        "sources/fontconfig_2.14.1-4.dsc",
+        "sources/fontconfig_2.14.1.orig.tar.xz",
+        "sources/fontconfig_2.14.1-4.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "fonts-dejavu",
+      "sourceVersion": "2.37-6",
+      "files": [
+        "sources/fonts-dejavu_2.37-6.dsc",
+        "sources/fonts-dejavu_2.37.orig.tar.bz2",
+        "sources/fonts-dejavu_2.37-6.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "freetype",
+      "sourceVersion": "2.12.1+dfsg-5+deb12u4",
+      "files": [
+        "sources/freetype_2.12.1+dfsg-5+deb12u4.dsc",
+        "sources/freetype_2.12.1+dfsg.orig-ft2demos.tar.xz",
+        "sources/freetype_2.12.1+dfsg.orig-ft2demos.tar.xz.asc",
+        "sources/freetype_2.12.1+dfsg.orig-ft2docs.tar.xz",
+        "sources/freetype_2.12.1+dfsg.orig-ft2docs.tar.xz.asc",
+        "sources/freetype_2.12.1+dfsg.orig.tar.xz",
+        "sources/freetype_2.12.1+dfsg-5+deb12u4.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "fribidi",
+      "sourceVersion": "1.0.8-2.1",
+      "files": [
+        "sources/fribidi_1.0.8-2.1.dsc",
+        "sources/fribidi_1.0.8.orig.tar.bz2",
+        "sources/fribidi_1.0.8-2.1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "game-music-emu",
+      "sourceVersion": "0.6.3-6",
+      "files": [
+        "sources/game-music-emu_0.6.3-6.dsc",
+        "sources/game-music-emu_0.6.3.orig.tar.xz",
+        "sources/game-music-emu_0.6.3-6.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "gcc-12",
+      "sourceVersion": "12.2.0-14+deb12u1",
+      "files": [
+        "sources/gcc-12_12.2.0-14+deb12u1.dsc",
+        "sources/gcc-12_12.2.0.orig.tar.gz",
+        "sources/gcc-12_12.2.0-14+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "gdk-pixbuf",
+      "sourceVersion": "2.42.10+dfsg-1+deb12u4",
+      "files": [
+        "sources/gdk-pixbuf_2.42.10+dfsg-1+deb12u4.dsc",
+        "sources/gdk-pixbuf_2.42.10+dfsg.orig.tar.xz",
+        "sources/gdk-pixbuf_2.42.10+dfsg-1+deb12u4.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "glib2.0",
+      "sourceVersion": "2.74.6-2+deb12u9",
+      "files": [
+        "sources/glib2.0_2.74.6-2+deb12u9.dsc",
+        "sources/glib2.0_2.74.6.orig-unicode-data.tar.xz",
+        "sources/glib2.0_2.74.6.orig.tar.xz",
+        "sources/glib2.0_2.74.6-2+deb12u9.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "glibc",
+      "sourceVersion": "2.36-9+deb12u14",
+      "files": [
+        "sources/glibc_2.36-9+deb12u14.dsc",
+        "sources/glibc_2.36.orig.tar.xz",
+        "sources/glibc_2.36-9+deb12u14.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "gmp",
+      "sourceVersion": "2:6.2.1+dfsg1-1.1",
+      "files": [
+        "sources/gmp_6.2.1+dfsg1-1.1.dsc",
+        "sources/gmp_6.2.1+dfsg1.orig.tar.xz",
+        "sources/gmp_6.2.1+dfsg1-1.1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "gnupg2",
+      "sourceVersion": "2.2.40-1.1+deb12u2",
+      "files": [
+        "sources/gnupg2_2.2.40-1.1+deb12u2.dsc",
+        "sources/gnupg2_2.2.40.orig.tar.bz2",
+        "sources/gnupg2_2.2.40.orig.tar.bz2.asc",
+        "sources/gnupg2_2.2.40-1.1+deb12u2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "gnutls28",
+      "sourceVersion": "3.7.9-2+deb12u7",
+      "files": [
+        "sources/gnutls28_3.7.9-2+deb12u7.dsc",
+        "sources/gnutls28_3.7.9.orig.tar.xz",
+        "sources/gnutls28_3.7.9.orig.tar.xz.asc",
+        "sources/gnutls28_3.7.9-2+deb12u7.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "graphite2",
+      "sourceVersion": "1.3.14-1+deb12u1",
+      "files": [
+        "sources/graphite2_1.3.14-1+deb12u1.dsc",
+        "sources/graphite2_1.3.14.orig.tar.gz",
+        "sources/graphite2_1.3.14-1+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "grep",
+      "sourceVersion": "3.8-5",
+      "files": [
+        "sources/grep_3.8-5.dsc",
+        "sources/grep_3.8.orig.tar.xz",
+        "sources/grep_3.8.orig.tar.xz.asc",
+        "sources/grep_3.8-5.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "gzip",
+      "sourceVersion": "1.12-1",
+      "files": [
+        "sources/gzip_1.12-1.dsc",
+        "sources/gzip_1.12.orig.tar.xz",
+        "sources/gzip_1.12.orig.tar.xz.asc",
+        "sources/gzip_1.12-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "harfbuzz",
+      "sourceVersion": "6.0.0+dfsg-3",
+      "files": [
+        "sources/harfbuzz_6.0.0+dfsg-3.dsc",
+        "sources/harfbuzz_6.0.0+dfsg.orig.tar.xz",
+        "sources/harfbuzz_6.0.0+dfsg-3.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "highway",
+      "sourceVersion": "1.0.3-3+deb12u1",
+      "files": [
+        "sources/highway_1.0.3-3+deb12u1.dsc",
+        "sources/highway_1.0.3.orig.tar.gz",
+        "sources/highway_1.0.3-3+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "hostname",
+      "sourceVersion": "3.23+nmu1",
+      "files": [
+        "sources/hostname_3.23+nmu1.dsc",
+        "sources/hostname_3.23+nmu1.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "icu",
+      "sourceVersion": "72.1-3+deb12u1",
+      "files": [
+        "sources/icu_72.1-3+deb12u1.dsc",
+        "sources/icu_72.1.orig.tar.gz",
+        "sources/icu_72.1.orig.tar.gz.asc",
+        "sources/icu_72.1-3+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "init-system-helpers",
+      "sourceVersion": "1.65.2+deb12u1",
+      "files": [
+        "sources/init-system-helpers_1.65.2+deb12u1.dsc",
+        "sources/init-system-helpers_1.65.2+deb12u1.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "intel-mediasdk",
+      "sourceVersion": "22.5.4-1",
+      "files": [
+        "sources/intel-mediasdk_22.5.4-1.dsc",
+        "sources/intel-mediasdk_22.5.4.orig.tar.gz",
+        "sources/intel-mediasdk_22.5.4-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "jackd2",
+      "sourceVersion": "1.9.21~dfsg-3",
+      "files": [
+        "sources/jackd2_1.9.21~dfsg-3.dsc",
+        "sources/jackd2_1.9.21~dfsg.orig.tar.gz",
+        "sources/jackd2_1.9.21~dfsg-3.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "jbigkit",
+      "sourceVersion": "2.1-6.1",
+      "files": [
+        "sources/jbigkit_2.1-6.1.dsc",
+        "sources/jbigkit_2.1.orig.tar.gz",
+        "sources/jbigkit_2.1-6.1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "jpeg-xl",
+      "sourceVersion": "0.7.0-10+deb12u1",
+      "files": [
+        "sources/jpeg-xl_0.7.0-10+deb12u1.dsc",
+        "sources/jpeg-xl_0.7.0.orig.tar.gz",
+        "sources/jpeg-xl_0.7.0-10+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "keyutils",
+      "sourceVersion": "1.6.3-2",
+      "files": [
+        "sources/keyutils_1.6.3-2.dsc",
+        "sources/keyutils_1.6.3.orig.tar.gz",
+        "sources/keyutils_1.6.3-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "krb5",
+      "sourceVersion": "1.20.1-2+deb12u5",
+      "files": [
+        "sources/krb5_1.20.1-2+deb12u5.dsc",
+        "sources/krb5_1.20.1.orig.tar.gz",
+        "sources/krb5_1.20.1.orig.tar.gz.asc",
+        "sources/krb5_1.20.1-2+deb12u5.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "lame",
+      "sourceVersion": "3.100-6",
+      "files": [
+        "sources/lame_3.100-6.dsc",
+        "sources/lame_3.100.orig.tar.gz",
+        "sources/lame_3.100-6.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "lapack",
+      "sourceVersion": "3.11.0-2",
+      "files": [
+        "sources/lapack_3.11.0-2.dsc",
+        "sources/lapack_3.11.0.orig.tar.gz",
+        "sources/lapack_3.11.0-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "lcms2",
+      "sourceVersion": "2.14-2+deb12u1",
+      "files": [
+        "sources/lcms2_2.14-2+deb12u1.dsc",
+        "sources/lcms2_2.14.orig.tar.gz",
+        "sources/lcms2_2.14-2+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "lerc",
+      "sourceVersion": "4.0.0+ds-2",
+      "files": [
+        "sources/lerc_4.0.0+ds-2.dsc",
+        "sources/lerc_4.0.0+ds.orig.tar.xz",
+        "sources/lerc_4.0.0+ds-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libass",
+      "sourceVersion": "1:0.17.1-1+deb12u1",
+      "files": [
+        "sources/libass_0.17.1-1+deb12u1.dsc",
+        "sources/libass_0.17.1.orig.tar.gz",
+        "sources/libass_0.17.1-1+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libasyncns",
+      "sourceVersion": "0.8-6",
+      "files": [
+        "sources/libasyncns_0.8-6.dsc",
+        "sources/libasyncns_0.8.orig.tar.gz",
+        "sources/libasyncns_0.8-6.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libavc1394",
+      "sourceVersion": "0.5.4-5",
+      "files": [
+        "sources/libavc1394_0.5.4-5.dsc",
+        "sources/libavc1394_0.5.4.orig.tar.gz",
+        "sources/libavc1394_0.5.4-5.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libbluray",
+      "sourceVersion": "1:1.3.4-1",
+      "files": [
+        "sources/libbluray_1.3.4-1.dsc",
+        "sources/libbluray_1.3.4.orig.tar.bz2",
+        "sources/libbluray_1.3.4-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libbs2b",
+      "sourceVersion": "3.1.0+dfsg-7",
+      "files": [
+        "sources/libbs2b_3.1.0+dfsg-7.dsc",
+        "sources/libbs2b_3.1.0+dfsg.orig.tar.gz",
+        "sources/libbs2b_3.1.0+dfsg-7.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libbsd",
+      "sourceVersion": "0.11.7-2",
+      "files": [
+        "sources/libbsd_0.11.7-2.dsc",
+        "sources/libbsd_0.11.7.orig.tar.xz",
+        "sources/libbsd_0.11.7.orig.tar.xz.asc",
+        "sources/libbsd_0.11.7-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libcaca",
+      "sourceVersion": "0.99.beta20-3+deb12u1",
+      "files": [
+        "sources/libcaca_0.99.beta20-3+deb12u1.dsc",
+        "sources/libcaca_0.99.beta20.orig.tar.gz",
+        "sources/libcaca_0.99.beta20-3+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libcap-ng",
+      "sourceVersion": "0.8.3-1",
+      "files": [
+        "sources/libcap-ng_0.8.3-1.dsc",
+        "sources/libcap-ng_0.8.3.orig.tar.gz",
+        "sources/libcap-ng_0.8.3-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libcap2",
+      "sourceVersion": "1:2.66-4+deb12u3",
+      "files": [
+        "sources/libcap2_2.66-4+deb12u3.dsc",
+        "sources/libcap2_2.66.orig.tar.xz",
+        "sources/libcap2_2.66-4+deb12u3.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libcdio",
+      "sourceVersion": "2.1.0-4",
+      "files": [
+        "sources/libcdio_2.1.0-4.dsc",
+        "sources/libcdio_2.1.0.orig.tar.bz2",
+        "sources/libcdio_2.1.0-4.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libcdio-paranoia",
+      "sourceVersion": "10.2+2.0.1-1",
+      "files": [
+        "sources/libcdio-paranoia_10.2+2.0.1-1.dsc",
+        "sources/libcdio-paranoia_10.2+2.0.1.orig.tar.gz",
+        "sources/libcdio-paranoia_10.2+2.0.1-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libdatrie",
+      "sourceVersion": "0.2.13-2",
+      "files": [
+        "sources/libdatrie_0.2.13-2.dsc",
+        "sources/libdatrie_0.2.13.orig.tar.xz",
+        "sources/libdatrie_0.2.13-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libdc1394",
+      "sourceVersion": "2.2.6-4",
+      "files": [
+        "sources/libdc1394_2.2.6-4.dsc",
+        "sources/libdc1394_2.2.6.orig.tar.gz",
+        "sources/libdc1394_2.2.6-4.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libdecor-0",
+      "sourceVersion": "0.1.1-2",
+      "files": [
+        "sources/libdecor-0_0.1.1-2.dsc",
+        "sources/libdecor-0_0.1.1.orig.tar.gz",
+        "sources/libdecor-0_0.1.1-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libdeflate",
+      "sourceVersion": "1.14-1",
+      "files": [
+        "sources/libdeflate_1.14-1.dsc",
+        "sources/libdeflate_1.14.orig.tar.gz",
+        "sources/libdeflate_1.14-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libdrm",
+      "sourceVersion": "2.4.114-1",
+      "files": [
+        "sources/libdrm_2.4.114-1.dsc",
+        "sources/libdrm_2.4.114.orig.tar.xz",
+        "sources/libdrm_2.4.114.orig.tar.xz.asc",
+        "sources/libdrm_2.4.114-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libedit",
+      "sourceVersion": "3.1-20221030-2",
+      "files": [
+        "sources/libedit_3.1-20221030-2.dsc",
+        "sources/libedit_3.1-20221030.orig.tar.gz",
+        "sources/libedit_3.1-20221030-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libepoxy",
+      "sourceVersion": "1.5.10-1",
+      "files": [
+        "sources/libepoxy_1.5.10-1.dsc",
+        "sources/libepoxy_1.5.10.orig.tar.gz",
+        "sources/libepoxy_1.5.10-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libffi",
+      "sourceVersion": "3.4.4-1",
+      "files": [
+        "sources/libffi_3.4.4-1.dsc",
+        "sources/libffi_3.4.4.orig.tar.gz",
+        "sources/libffi_3.4.4-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libgcrypt20",
+      "sourceVersion": "1.10.1-3+deb12u1",
+      "files": [
+        "sources/libgcrypt20_1.10.1-3+deb12u1.dsc",
+        "sources/libgcrypt20_1.10.1.orig.tar.bz2",
+        "sources/libgcrypt20_1.10.1.orig.tar.bz2.asc",
+        "sources/libgcrypt20_1.10.1-3+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libglvnd",
+      "sourceVersion": "1.6.0-1",
+      "files": [
+        "sources/libglvnd_1.6.0-1.dsc",
+        "sources/libglvnd_1.6.0.orig.tar.gz",
+        "sources/libglvnd_1.6.0-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libgpg-error",
+      "sourceVersion": "1.46-1",
+      "files": [
+        "sources/libgpg-error_1.46-1.dsc",
+        "sources/libgpg-error_1.46.orig.tar.bz2",
+        "sources/libgpg-error_1.46.orig.tar.bz2.asc",
+        "sources/libgpg-error_1.46-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libgsm",
+      "sourceVersion": "1.0.22-1",
+      "files": [
+        "sources/libgsm_1.0.22-1.dsc",
+        "sources/libgsm_1.0.22.orig.tar.gz",
+        "sources/libgsm_1.0.22-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libidn2",
+      "sourceVersion": "2.3.3-1",
+      "files": [
+        "sources/libidn2_2.3.3-1.dsc",
+        "sources/libidn2_2.3.3.orig.tar.gz",
+        "sources/libidn2_2.3.3.orig.tar.gz.asc",
+        "sources/libidn2_2.3.3-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libiec61883",
+      "sourceVersion": "1.2.0-6",
+      "files": [
+        "sources/libiec61883_1.2.0-6.dsc",
+        "sources/libiec61883_1.2.0.orig.tar.gz",
+        "sources/libiec61883_1.2.0-6.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libjpeg-turbo",
+      "sourceVersion": "1:2.1.5-2",
+      "files": [
+        "sources/libjpeg-turbo_2.1.5-2.dsc",
+        "sources/libjpeg-turbo_2.1.5.orig.tar.gz",
+        "sources/libjpeg-turbo_2.1.5-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libmd",
+      "sourceVersion": "1.0.4-2",
+      "files": [
+        "sources/libmd_1.0.4-2.dsc",
+        "sources/libmd_1.0.4.orig.tar.xz",
+        "sources/libmd_1.0.4.orig.tar.xz.asc",
+        "sources/libmd_1.0.4-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libmysofa",
+      "sourceVersion": "1.3.1~dfsg0-1",
+      "files": [
+        "sources/libmysofa_1.3.1~dfsg0-1.dsc",
+        "sources/libmysofa_1.3.1~dfsg0.orig.tar.xz",
+        "sources/libmysofa_1.3.1~dfsg0-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libogg",
+      "sourceVersion": "1.3.5-3",
+      "files": [
+        "sources/libogg_1.3.5-3.dsc",
+        "sources/libogg_1.3.5.orig.tar.xz",
+        "sources/libogg_1.3.5-3.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libopenmpt",
+      "sourceVersion": "0.6.9-1",
+      "files": [
+        "sources/libopenmpt_0.6.9-1.dsc",
+        "sources/libopenmpt_0.6.9.orig.tar.gz",
+        "sources/libopenmpt_0.6.9-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libpciaccess",
+      "sourceVersion": "0.17-2",
+      "files": [
+        "sources/libpciaccess_0.17-2.dsc",
+        "sources/libpciaccess_0.17.orig.tar.gz",
+        "sources/libpciaccess_0.17.orig.tar.gz.asc",
+        "sources/libpciaccess_0.17-2.diff.gz"
+      ]
+    },
+    {
+      "sourcePackage": "libpgm",
+      "sourceVersion": "5.3.128~dfsg-2",
+      "files": [
+        "sources/libpgm_5.3.128~dfsg-2.dsc",
+        "sources/libpgm_5.3.128~dfsg.orig.tar.xz",
+        "sources/libpgm_5.3.128~dfsg-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libplacebo",
+      "sourceVersion": "4.208.0-3",
+      "files": [
+        "sources/libplacebo_4.208.0-3.dsc",
+        "sources/libplacebo_4.208.0.orig.tar.gz",
+        "sources/libplacebo_4.208.0-3.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libpng1.6",
+      "sourceVersion": "1.6.39-2+deb12u5",
+      "files": [
+        "sources/libpng1.6_1.6.39-2+deb12u5.dsc",
+        "sources/libpng1.6_1.6.39.orig.tar.gz",
+        "sources/libpng1.6_1.6.39-2+deb12u5.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "librabbitmq",
+      "sourceVersion": "0.11.0-1+deb12u3",
+      "files": [
+        "sources/librabbitmq_0.11.0-1+deb12u3.dsc",
+        "sources/librabbitmq_0.11.0.orig.tar.gz",
+        "sources/librabbitmq_0.11.0-1+deb12u3.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libraw1394",
+      "sourceVersion": "2.1.2-2",
+      "files": [
+        "sources/libraw1394_2.1.2-2.dsc",
+        "sources/libraw1394_2.1.2.orig.tar.gz",
+        "sources/libraw1394_2.1.2-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "librist",
+      "sourceVersion": "0.2.7+dfsg-1",
+      "files": [
+        "sources/librist_0.2.7+dfsg-1.dsc",
+        "sources/librist_0.2.7+dfsg.orig.tar.xz",
+        "sources/librist_0.2.7+dfsg-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "librsvg",
+      "sourceVersion": "2.54.7+dfsg-1~deb12u1",
+      "files": [
+        "sources/librsvg_2.54.7+dfsg-1~deb12u1.dsc",
+        "sources/librsvg_2.54.7+dfsg.orig.tar.xz",
+        "sources/librsvg_2.54.7+dfsg-1~deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libsamplerate",
+      "sourceVersion": "0.2.2-3",
+      "files": [
+        "sources/libsamplerate_0.2.2-3.dsc",
+        "sources/libsamplerate_0.2.2.orig.tar.gz",
+        "sources/libsamplerate_0.2.2-3.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libsdl2",
+      "sourceVersion": "2.26.5+dfsg-1",
+      "files": [
+        "sources/libsdl2_2.26.5+dfsg-1.dsc",
+        "sources/libsdl2_2.26.5+dfsg.orig.tar.gz",
+        "sources/libsdl2_2.26.5+dfsg-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libseccomp",
+      "sourceVersion": "2.5.4-1+deb12u1",
+      "files": [
+        "sources/libseccomp_2.5.4-1+deb12u1.dsc",
+        "sources/libseccomp_2.5.4.orig.tar.gz",
+        "sources/libseccomp_2.5.4.orig.tar.gz.asc",
+        "sources/libseccomp_2.5.4-1+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libselinux",
+      "sourceVersion": "3.4-1",
+      "files": [
+        "sources/libselinux_3.4-1.dsc",
+        "sources/libselinux_3.4.orig.tar.gz",
+        "sources/libselinux_3.4.orig.tar.gz.asc",
+        "sources/libselinux_3.4-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libsemanage",
+      "sourceVersion": "3.4-1",
+      "files": [
+        "sources/libsemanage_3.4-1.dsc",
+        "sources/libsemanage_3.4.orig.tar.gz",
+        "sources/libsemanage_3.4.orig.tar.gz.asc",
+        "sources/libsemanage_3.4-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libsepol",
+      "sourceVersion": "3.4-2.1",
+      "files": [
+        "sources/libsepol_3.4-2.1.dsc",
+        "sources/libsepol_3.4.orig.tar.gz",
+        "sources/libsepol_3.4.orig.tar.gz.asc",
+        "sources/libsepol_3.4-2.1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libsndfile",
+      "sourceVersion": "1.2.0-1+deb12u1",
+      "files": [
+        "sources/libsndfile_1.2.0-1+deb12u1.dsc",
+        "sources/libsndfile_1.2.0.orig.tar.gz",
+        "sources/libsndfile_1.2.0-1+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libsodium",
+      "sourceVersion": "1.0.18-1+deb12u1",
+      "files": [
+        "sources/libsodium_1.0.18-1+deb12u1.dsc",
+        "sources/libsodium_1.0.18.orig.tar.gz",
+        "sources/libsodium_1.0.18-1+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libsoxr",
+      "sourceVersion": "0.1.3-4",
+      "files": [
+        "sources/libsoxr_0.1.3-4.dsc",
+        "sources/libsoxr_0.1.3.orig.tar.xz",
+        "sources/libsoxr_0.1.3-4.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libssh",
+      "sourceVersion": "0.10.6-0+deb12u2",
+      "files": [
+        "sources/libssh_0.10.6-0+deb12u2.dsc",
+        "sources/libssh_0.10.6.orig.tar.xz",
+        "sources/libssh_0.10.6.orig.tar.xz.asc",
+        "sources/libssh_0.10.6-0+deb12u2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libtasn1-6",
+      "sourceVersion": "4.19.0-2+deb12u1",
+      "files": [
+        "sources/libtasn1-6_4.19.0-2+deb12u1.dsc",
+        "sources/libtasn1-6_4.19.0.orig.tar.gz",
+        "sources/libtasn1-6_4.19.0.orig.tar.gz.asc",
+        "sources/libtasn1-6_4.19.0-2+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libthai",
+      "sourceVersion": "0.1.29-1",
+      "files": [
+        "sources/libthai_0.1.29-1.dsc",
+        "sources/libthai_0.1.29.orig.tar.xz",
+        "sources/libthai_0.1.29-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libtheora",
+      "sourceVersion": "1.1.1+dfsg.1-16.1+deb12u1",
+      "files": [
+        "sources/libtheora_1.1.1+dfsg.1-16.1+deb12u1.dsc",
+        "sources/libtheora_1.1.1+dfsg.1.orig.tar.gz",
+        "sources/libtheora_1.1.1+dfsg.1-16.1+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libudfread",
+      "sourceVersion": "1.1.2-1",
+      "files": [
+        "sources/libudfread_1.1.2-1.dsc",
+        "sources/libudfread_1.1.2.orig.tar.gz",
+        "sources/libudfread_1.1.2-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libunistring",
+      "sourceVersion": "1.0-2",
+      "files": [
+        "sources/libunistring_1.0-2.dsc",
+        "sources/libunistring_1.0.orig.tar.xz",
+        "sources/libunistring_1.0.orig.tar.xz.asc",
+        "sources/libunistring_1.0-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libusb-1.0",
+      "sourceVersion": "2:1.0.26-1",
+      "files": [
+        "sources/libusb-1.0_1.0.26-1.dsc",
+        "sources/libusb-1.0_1.0.26.orig.tar.bz2",
+        "sources/libusb-1.0_1.0.26-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libva",
+      "sourceVersion": "2.17.0-1",
+      "files": [
+        "sources/libva_2.17.0-1.dsc",
+        "sources/libva_2.17.0.orig.tar.gz",
+        "sources/libva_2.17.0-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libvdpau",
+      "sourceVersion": "1.5-2",
+      "files": [
+        "sources/libvdpau_1.5-2.dsc",
+        "sources/libvdpau_1.5.orig.tar.bz2",
+        "sources/libvdpau_1.5-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libvidstab",
+      "sourceVersion": "1.1.0-2",
+      "files": [
+        "sources/libvidstab_1.1.0-2.dsc",
+        "sources/libvidstab_1.1.0.orig.tar.gz",
+        "sources/libvidstab_1.1.0-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libvorbis",
+      "sourceVersion": "1.3.7-1",
+      "files": [
+        "sources/libvorbis_1.3.7-1.dsc",
+        "sources/libvorbis_1.3.7.orig.tar.gz",
+        "sources/libvorbis_1.3.7-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libvpx",
+      "sourceVersion": "1.12.0-1+deb12u5",
+      "files": [
+        "sources/libvpx_1.12.0-1+deb12u5.dsc",
+        "sources/libvpx_1.12.0.orig.tar.gz",
+        "sources/libvpx_1.12.0-1+deb12u5.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libwebp",
+      "sourceVersion": "1.2.4-0.2+deb12u1",
+      "files": [
+        "sources/libwebp_1.2.4-0.2+deb12u1.dsc",
+        "sources/libwebp_1.2.4.orig.tar.gz",
+        "sources/libwebp_1.2.4.orig.tar.gz.asc",
+        "sources/libwebp_1.2.4-0.2+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libx11",
+      "sourceVersion": "2:1.8.4-2+deb12u2",
+      "files": [
+        "sources/libx11_1.8.4-2+deb12u2.dsc",
+        "sources/libx11_1.8.4.orig.tar.gz",
+        "sources/libx11_1.8.4.orig.tar.gz.asc",
+        "sources/libx11_1.8.4-2+deb12u2.diff.gz"
+      ]
+    },
+    {
+      "sourcePackage": "libxau",
+      "sourceVersion": "1:1.0.9-1",
+      "files": [
+        "sources/libxau_1.0.9-1.dsc",
+        "sources/libxau_1.0.9.orig.tar.gz",
+        "sources/libxau_1.0.9.orig.tar.gz.asc",
+        "sources/libxau_1.0.9-1.diff.gz"
+      ]
+    },
+    {
+      "sourcePackage": "libxcb",
+      "sourceVersion": "1.15-1",
+      "files": [
+        "sources/libxcb_1.15-1.dsc",
+        "sources/libxcb_1.15.orig.tar.gz",
+        "sources/libxcb_1.15-1.diff.gz"
+      ]
+    },
+    {
+      "sourcePackage": "libxcrypt",
+      "sourceVersion": "1:4.4.33-2",
+      "files": [
+        "sources/libxcrypt_4.4.33-2.dsc",
+        "sources/libxcrypt_4.4.33.orig.tar.xz",
+        "sources/libxcrypt_4.4.33-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libxcursor",
+      "sourceVersion": "1:1.2.1-1",
+      "files": [
+        "sources/libxcursor_1.2.1-1.dsc",
+        "sources/libxcursor_1.2.1.orig.tar.gz",
+        "sources/libxcursor_1.2.1-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libxdmcp",
+      "sourceVersion": "1:1.1.2-3",
+      "files": [
+        "sources/libxdmcp_1.1.2-3.dsc",
+        "sources/libxdmcp_1.1.2.orig.tar.gz",
+        "sources/libxdmcp_1.1.2-3.diff.gz"
+      ]
+    },
+    {
+      "sourcePackage": "libxext",
+      "sourceVersion": "2:1.3.4-1",
+      "files": [
+        "sources/libxext_1.3.4-1.dsc",
+        "sources/libxext_1.3.4.orig.tar.gz",
+        "sources/libxext_1.3.4-1.diff.gz"
+      ]
+    },
+    {
+      "sourcePackage": "libxfixes",
+      "sourceVersion": "1:6.0.0-2",
+      "files": [
+        "sources/libxfixes_6.0.0-2.dsc",
+        "sources/libxfixes_6.0.0.orig.tar.gz",
+        "sources/libxfixes_6.0.0.orig.tar.gz.asc",
+        "sources/libxfixes_6.0.0-2.diff.gz"
+      ]
+    },
+    {
+      "sourcePackage": "libxi",
+      "sourceVersion": "2:1.8-1",
+      "files": [
+        "sources/libxi_1.8-1.dsc",
+        "sources/libxi_1.8.orig.tar.gz",
+        "sources/libxi_1.8-1.diff.gz"
+      ]
+    },
+    {
+      "sourcePackage": "libxkbcommon",
+      "sourceVersion": "1.5.0-1",
+      "files": [
+        "sources/libxkbcommon_1.5.0-1.dsc",
+        "sources/libxkbcommon_1.5.0.orig.tar.xz",
+        "sources/libxkbcommon_1.5.0-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libxml2",
+      "sourceVersion": "2.9.14+dfsg-1.3~deb12u6",
+      "files": [
+        "sources/libxml2_2.9.14+dfsg-1.3~deb12u6.dsc",
+        "sources/libxml2_2.9.14+dfsg.orig.tar.xz",
+        "sources/libxml2_2.9.14+dfsg-1.3~deb12u6.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "libxrandr",
+      "sourceVersion": "2:1.5.2-2",
+      "files": [
+        "sources/libxrandr_1.5.2-2.dsc",
+        "sources/libxrandr_1.5.2.orig.tar.gz",
+        "sources/libxrandr_1.5.2-2.diff.gz"
+      ]
+    },
+    {
+      "sourcePackage": "libxrender",
+      "sourceVersion": "1:0.9.10-1.1",
+      "files": [
+        "sources/libxrender_0.9.10-1.1.dsc",
+        "sources/libxrender_0.9.10.orig.tar.gz",
+        "sources/libxrender_0.9.10-1.1.diff.gz"
+      ]
+    },
+    {
+      "sourcePackage": "libxshmfence",
+      "sourceVersion": "1.3-1",
+      "files": [
+        "sources/libxshmfence_1.3-1.dsc",
+        "sources/libxshmfence_1.3.orig.tar.gz",
+        "sources/libxshmfence_1.3-1.diff.gz"
+      ]
+    },
+    {
+      "sourcePackage": "libxss",
+      "sourceVersion": "1:1.2.3-1",
+      "files": [
+        "sources/libxss_1.2.3-1.dsc",
+        "sources/libxss_1.2.3.orig.tar.gz",
+        "sources/libxss_1.2.3.orig.tar.gz.asc",
+        "sources/libxss_1.2.3-1.diff.gz"
+      ]
+    },
+    {
+      "sourcePackage": "libxv",
+      "sourceVersion": "2:1.0.11-1.1",
+      "files": [
+        "sources/libxv_1.0.11-1.1.dsc",
+        "sources/libxv_1.0.11.orig.tar.gz",
+        "sources/libxv_1.0.11-1.1.diff.gz"
+      ]
+    },
+    {
+      "sourcePackage": "libxxf86vm",
+      "sourceVersion": "1:1.1.4-1",
+      "files": [
+        "sources/libxxf86vm_1.1.4-1.dsc",
+        "sources/libxxf86vm_1.1.4.orig.tar.gz",
+        "sources/libxxf86vm_1.1.4-1.diff.gz"
+      ]
+    },
+    {
+      "sourcePackage": "libzstd",
+      "sourceVersion": "1.5.4+dfsg2-5",
+      "files": [
+        "sources/libzstd_1.5.4+dfsg2-5.dsc",
+        "sources/libzstd_1.5.4+dfsg2.orig.tar.xz",
+        "sources/libzstd_1.5.4+dfsg2.orig.tar.xz.asc",
+        "sources/libzstd_1.5.4+dfsg2-5.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "lilv",
+      "sourceVersion": "0.24.14-1",
+      "files": [
+        "sources/lilv_0.24.14-1.dsc",
+        "sources/lilv_0.24.14.orig.tar.bz2",
+        "sources/lilv_0.24.14.orig.tar.bz2.asc",
+        "sources/lilv_0.24.14-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "llvm-toolchain-15",
+      "sourceVersion": "1:15.0.6-4",
+      "files": [
+        "sources/llvm-toolchain-15_15.0.6-4.dsc",
+        "sources/llvm-toolchain-15_15.0.6.orig.tar.xz",
+        "sources/llvm-toolchain-15_15.0.6-4.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "lm-sensors",
+      "sourceVersion": "1:3.6.0-7.1",
+      "files": [
+        "sources/lm-sensors_3.6.0-7.1.dsc",
+        "sources/lm-sensors_3.6.0.orig.tar.gz",
+        "sources/lm-sensors_3.6.0-7.1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "lz4",
+      "sourceVersion": "1.9.4-1",
+      "files": [
+        "sources/lz4_1.9.4-1.dsc",
+        "sources/lz4_1.9.4.orig.tar.gz",
+        "sources/lz4_1.9.4-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "mawk",
+      "sourceVersion": "1.3.4.20200120-3.1",
+      "files": [
+        "sources/mawk_1.3.4.20200120-3.1.dsc",
+        "sources/mawk_1.3.4.20200120.orig.tar.gz",
+        "sources/mawk_1.3.4.20200120-3.1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "mbedtls",
+      "sourceVersion": "2.28.3-1",
+      "files": [
+        "sources/mbedtls_2.28.3-1.dsc",
+        "sources/mbedtls_2.28.3.orig.tar.gz",
+        "sources/mbedtls_2.28.3-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "mesa",
+      "sourceVersion": "22.3.6-1+deb12u2",
+      "files": [
+        "sources/mesa_22.3.6-1+deb12u2.dsc",
+        "sources/mesa_22.3.6.orig.tar.gz",
+        "sources/mesa_22.3.6-1+deb12u2.diff.gz"
+      ]
+    },
+    {
+      "sourcePackage": "mpg123",
+      "sourceVersion": "1.31.2-1+deb12u1",
+      "files": [
+        "sources/mpg123_1.31.2-1+deb12u1.dsc",
+        "sources/mpg123_1.31.2.orig.tar.bz2",
+        "sources/mpg123_1.31.2.orig.tar.bz2.asc",
+        "sources/mpg123_1.31.2-1+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "ncurses",
+      "sourceVersion": "6.4-4",
+      "files": [
+        "sources/ncurses_6.4-4.dsc",
+        "sources/ncurses_6.4.orig.tar.gz",
+        "sources/ncurses_6.4.orig.tar.gz.asc",
+        "sources/ncurses_6.4-4.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "nettle",
+      "sourceVersion": "3.8.1-2",
+      "files": [
+        "sources/nettle_3.8.1-2.dsc",
+        "sources/nettle_3.8.1.orig.tar.gz",
+        "sources/nettle_3.8.1.orig.tar.gz.asc",
+        "sources/nettle_3.8.1-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "norm",
+      "sourceVersion": "1.5.9+dfsg-2",
+      "files": [
+        "sources/norm_1.5.9+dfsg-2.dsc",
+        "sources/norm_1.5.9+dfsg.orig.tar.xz",
+        "sources/norm_1.5.9+dfsg-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "numactl",
+      "sourceVersion": "2.0.16-1",
+      "files": [
+        "sources/numactl_2.0.16-1.dsc",
+        "sources/numactl_2.0.16.orig.tar.gz",
+        "sources/numactl_2.0.16-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "ocl-icd",
+      "sourceVersion": "2.3.1-1",
+      "files": [
+        "sources/ocl-icd_2.3.1-1.dsc",
+        "sources/ocl-icd_2.3.1.orig.tar.gz",
+        "sources/ocl-icd_2.3.1-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "openal-soft",
+      "sourceVersion": "1:1.19.1-2",
+      "files": [
+        "sources/openal-soft_1.19.1-2.dsc",
+        "sources/openal-soft_1.19.1.orig.tar.gz",
+        "sources/openal-soft_1.19.1-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "openjpeg2",
+      "sourceVersion": "2.5.0-2+deb12u3",
+      "files": [
+        "sources/openjpeg2_2.5.0-2+deb12u3.dsc",
+        "sources/openjpeg2_2.5.0.orig.tar.xz",
+        "sources/openjpeg2_2.5.0-2+deb12u3.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "openssl",
+      "sourceVersion": "3.0.20-1~deb12u2",
+      "files": [
+        "sources/openssl_3.0.20-1~deb12u2.dsc",
+        "sources/openssl_3.0.20.orig.tar.gz",
+        "sources/openssl_3.0.20.orig.tar.gz.asc",
+        "sources/openssl_3.0.20-1~deb12u2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "opus",
+      "sourceVersion": "1.3.1-3",
+      "files": [
+        "sources/opus_1.3.1-3.dsc",
+        "sources/opus_1.3.1.orig.tar.gz",
+        "sources/opus_1.3.1-3.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "p11-kit",
+      "sourceVersion": "0.24.1-2",
+      "files": [
+        "sources/p11-kit_0.24.1-2.dsc",
+        "sources/p11-kit_0.24.1.orig.tar.xz",
+        "sources/p11-kit_0.24.1.orig.tar.xz.asc",
+        "sources/p11-kit_0.24.1-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "pam",
+      "sourceVersion": "1.5.2-6+deb12u2",
+      "files": [
+        "sources/pam_1.5.2-6+deb12u2.dsc",
+        "sources/pam_1.5.2.orig.tar.xz",
+        "sources/pam_1.5.2-6+deb12u2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "pango1.0",
+      "sourceVersion": "1.50.12+ds-1",
+      "files": [
+        "sources/pango1.0_1.50.12+ds-1.dsc",
+        "sources/pango1.0_1.50.12+ds.orig.tar.xz",
+        "sources/pango1.0_1.50.12+ds-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "pcre2",
+      "sourceVersion": "10.42-1",
+      "files": [
+        "sources/pcre2_10.42-1.dsc",
+        "sources/pcre2_10.42.orig.tar.gz",
+        "sources/pcre2_10.42-1.diff.gz"
+      ]
+    },
+    {
+      "sourcePackage": "perl",
+      "sourceVersion": "5.36.0-7+deb12u3",
+      "files": [
+        "sources/perl_5.36.0-7+deb12u3.dsc",
+        "sources/perl_5.36.0.orig-regen-configure.tar.xz",
+        "sources/perl_5.36.0.orig.tar.xz",
+        "sources/perl_5.36.0-7+deb12u3.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "pixman",
+      "sourceVersion": "0.42.2-1",
+      "files": [
+        "sources/pixman_0.42.2-1.dsc",
+        "sources/pixman_0.42.2.orig.tar.gz",
+        "sources/pixman_0.42.2-1.diff.gz"
+      ]
+    },
+    {
+      "sourcePackage": "pocketsphinx",
+      "sourceVersion": "0.8+5prealpha+1-15",
+      "files": [
+        "sources/pocketsphinx_0.8+5prealpha+1-15.dsc",
+        "sources/pocketsphinx_0.8+5prealpha+1.orig.tar.gz",
+        "sources/pocketsphinx_0.8+5prealpha+1-15.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "pulseaudio",
+      "sourceVersion": "16.1+dfsg1-2",
+      "files": [
+        "sources/pulseaudio_16.1+dfsg1-2.dsc",
+        "sources/pulseaudio_16.1+dfsg1.orig.tar.xz",
+        "sources/pulseaudio_16.1+dfsg1-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "rubberband",
+      "sourceVersion": "3.1.2+dfsg0-1",
+      "files": [
+        "sources/rubberband_3.1.2+dfsg0-1.dsc",
+        "sources/rubberband_3.1.2+dfsg0.orig.tar.xz",
+        "sources/rubberband_3.1.2+dfsg0-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "rust-rav1e",
+      "sourceVersion": "0.5.1-6",
+      "files": [
+        "sources/rust-rav1e_0.5.1-6.dsc",
+        "sources/rust-rav1e_0.5.1.orig.tar.gz",
+        "sources/rust-rav1e_0.5.1-6.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "sed",
+      "sourceVersion": "4.9-1+deb12u1",
+      "files": [
+        "sources/sed_4.9-1+deb12u1.dsc",
+        "sources/sed_4.9.orig.tar.xz",
+        "sources/sed_4.9-1+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "serd",
+      "sourceVersion": "0.30.16-1",
+      "files": [
+        "sources/serd_0.30.16-1.dsc",
+        "sources/serd_0.30.16.orig.tar.xz",
+        "sources/serd_0.30.16.orig.tar.xz.asc",
+        "sources/serd_0.30.16-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "shadow",
+      "sourceVersion": "1:4.13+dfsg1-1+deb12u2",
+      "files": [
+        "sources/shadow_4.13+dfsg1-1+deb12u2.dsc",
+        "sources/shadow_4.13+dfsg1.orig.tar.xz",
+        "sources/shadow_4.13+dfsg1-1+deb12u2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "shared-mime-info",
+      "sourceVersion": "2.2-1",
+      "files": [
+        "sources/shared-mime-info_2.2-1.dsc",
+        "sources/shared-mime-info_2.2.orig.tar.bz2",
+        "sources/shared-mime-info_2.2-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "shine",
+      "sourceVersion": "3.1.1-2",
+      "files": [
+        "sources/shine_3.1.1-2.dsc",
+        "sources/shine_3.1.1.orig.tar.gz",
+        "sources/shine_3.1.1-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "slang2",
+      "sourceVersion": "2.3.3-3",
+      "files": [
+        "sources/slang2_2.3.3-3.dsc",
+        "sources/slang2_2.3.3.orig.tar.xz",
+        "sources/slang2_2.3.3-3.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "snappy",
+      "sourceVersion": "1.1.9-3",
+      "files": [
+        "sources/snappy_1.1.9-3.dsc",
+        "sources/snappy_1.1.9.orig.tar.gz",
+        "sources/snappy_1.1.9-3.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "sndio",
+      "sourceVersion": "1.9.0-0.3",
+      "files": [
+        "sources/sndio_1.9.0-0.3.dsc",
+        "sources/sndio_1.9.0.orig.tar.gz",
+        "sources/sndio_1.9.0-0.3.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "sord",
+      "sourceVersion": "0.16.14+git221008-1",
+      "files": [
+        "sources/sord_0.16.14+git221008-1.dsc",
+        "sources/sord_0.16.14+git221008.orig.tar.xz",
+        "sources/sord_0.16.14+git221008-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "speex",
+      "sourceVersion": "1.2.1-2",
+      "files": [
+        "sources/speex_1.2.1-2.dsc",
+        "sources/speex_1.2.1.orig.tar.gz",
+        "sources/speex_1.2.1.orig.tar.gz.asc",
+        "sources/speex_1.2.1-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "sphinxbase",
+      "sourceVersion": "0.8+5prealpha+1-16",
+      "files": [
+        "sources/sphinxbase_0.8+5prealpha+1-16.dsc",
+        "sources/sphinxbase_0.8+5prealpha+1.orig.tar.gz",
+        "sources/sphinxbase_0.8+5prealpha+1-16.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "sratom",
+      "sourceVersion": "0.6.14-1",
+      "files": [
+        "sources/sratom_0.6.14-1.dsc",
+        "sources/sratom_0.6.14.orig.tar.xz",
+        "sources/sratom_0.6.14.orig.tar.xz.asc",
+        "sources/sratom_0.6.14-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "srt",
+      "sourceVersion": "1.5.1-1+deb12u1",
+      "files": [
+        "sources/srt_1.5.1-1+deb12u1.dsc",
+        "sources/srt_1.5.1.orig.tar.gz",
+        "sources/srt_1.5.1-1+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "svt-av1",
+      "sourceVersion": "1.4.1+dfsg-1",
+      "files": [
+        "sources/svt-av1_1.4.1+dfsg-1.dsc",
+        "sources/svt-av1_1.4.1+dfsg.orig.tar.xz",
+        "sources/svt-av1_1.4.1+dfsg-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "systemd",
+      "sourceVersion": "252.39-1~deb12u2",
+      "files": [
+        "sources/systemd_252.39-1~deb12u2.dsc",
+        "sources/systemd_252.39.orig.tar.gz",
+        "sources/systemd_252.39-1~deb12u2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "sysvinit",
+      "sourceVersion": "3.06-4",
+      "files": [
+        "sources/sysvinit_3.06-4.dsc",
+        "sources/sysvinit_3.06.orig.tar.gz",
+        "sources/sysvinit_3.06-4.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "tar",
+      "sourceVersion": "1.34+dfsg-1.2+deb12u1",
+      "files": [
+        "sources/tar_1.34+dfsg-1.2+deb12u1.dsc",
+        "sources/tar_1.34+dfsg.orig.tar.xz",
+        "sources/tar_1.34+dfsg-1.2+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "tiff",
+      "sourceVersion": "4.5.0-6+deb12u4",
+      "files": [
+        "sources/tiff_4.5.0-6+deb12u4.dsc",
+        "sources/tiff_4.5.0.orig.tar.bz2",
+        "sources/tiff_4.5.0-6+deb12u4.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "twolame",
+      "sourceVersion": "0.4.0-2",
+      "files": [
+        "sources/twolame_0.4.0-2.dsc",
+        "sources/twolame_0.4.0.orig.tar.gz",
+        "sources/twolame_0.4.0-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "tzdata",
+      "sourceVersion": "2026b-0+deb12u1",
+      "files": [
+        "sources/tzdata_2026b-0+deb12u1.dsc",
+        "sources/tzdata_2026b.orig.tar.gz",
+        "sources/tzdata_2026b.orig.tar.gz.asc",
+        "sources/tzdata_2026b-0+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "usrmerge",
+      "sourceVersion": "37~deb12u1",
+      "files": [
+        "sources/usrmerge_37~deb12u1.dsc",
+        "sources/usrmerge_37~deb12u1.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "util-linux",
+      "sourceVersion": "2.38.1-5+deb12u3",
+      "files": [
+        "sources/util-linux_2.38.1-5+deb12u3.dsc",
+        "sources/util-linux_2.38.1.orig.tar.xz",
+        "sources/util-linux_2.38.1-5+deb12u3.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "vulkan-loader",
+      "sourceVersion": "1.3.239.0-1",
+      "files": [
+        "sources/vulkan-loader_1.3.239.0-1.dsc",
+        "sources/vulkan-loader_1.3.239.0.orig.tar.xz",
+        "sources/vulkan-loader_1.3.239.0-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "wayland",
+      "sourceVersion": "1.21.0-1",
+      "files": [
+        "sources/wayland_1.21.0-1.dsc",
+        "sources/wayland_1.21.0.orig.tar.gz",
+        "sources/wayland_1.21.0-1.diff.gz"
+      ]
+    },
+    {
+      "sourcePackage": "x264",
+      "sourceVersion": "2:0.164.3095+gitbaee400-3",
+      "files": [
+        "sources/x264_0.164.3095+gitbaee400-3.dsc",
+        "sources/x264_0.164.3095+gitbaee400.orig.tar.gz",
+        "sources/x264_0.164.3095+gitbaee400-3.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "x265",
+      "sourceVersion": "3.5-2",
+      "files": [
+        "sources/x265_3.5-2.dsc",
+        "sources/x265_3.5.orig.tar.gz",
+        "sources/x265_3.5-2.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "xkeyboard-config",
+      "sourceVersion": "2.35.1-1",
+      "files": [
+        "sources/xkeyboard-config_2.35.1-1.dsc",
+        "sources/xkeyboard-config_2.35.1.orig.tar.gz",
+        "sources/xkeyboard-config_2.35.1-1.diff.gz"
+      ]
+    },
+    {
+      "sourcePackage": "xorg",
+      "sourceVersion": "1:7.7+23",
+      "files": [
+        "sources/xorg_7.7+23.dsc",
+        "sources/xorg_7.7+23.tar.gz"
+      ]
+    },
+    {
+      "sourcePackage": "xvidcore",
+      "sourceVersion": "2:1.3.7-1",
+      "files": [
+        "sources/xvidcore_1.3.7-1.dsc",
+        "sources/xvidcore_1.3.7.orig.tar.bz2",
+        "sources/xvidcore_1.3.7-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "xxhash",
+      "sourceVersion": "0.8.1-1",
+      "files": [
+        "sources/xxhash_0.8.1-1.dsc",
+        "sources/xxhash_0.8.1.orig.tar.gz",
+        "sources/xxhash_0.8.1-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "xz-utils",
+      "sourceVersion": "5.4.1-1+deb12u1",
+      "files": [
+        "sources/xz-utils_5.4.1-1+deb12u1.dsc",
+        "sources/xz-utils_5.4.1.orig.tar.xz",
+        "sources/xz-utils_5.4.1.orig.tar.xz.asc",
+        "sources/xz-utils_5.4.1-1+deb12u1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "z3",
+      "sourceVersion": "4.8.12-3.1",
+      "files": [
+        "sources/z3_4.8.12-3.1.dsc",
+        "sources/z3_4.8.12.orig.tar.gz",
+        "sources/z3_4.8.12-3.1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "zeromq3",
+      "sourceVersion": "4.3.4-6",
+      "files": [
+        "sources/zeromq3_4.3.4-6.dsc",
+        "sources/zeromq3_4.3.4.orig.tar.gz",
+        "sources/zeromq3_4.3.4-6.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "zimg",
+      "sourceVersion": "3.0.4+ds1-1",
+      "files": [
+        "sources/zimg_3.0.4+ds1-1.dsc",
+        "sources/zimg_3.0.4+ds1.orig.tar.xz",
+        "sources/zimg_3.0.4+ds1-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "zlib",
+      "sourceVersion": "1:1.2.13.dfsg-1",
+      "files": [
+        "sources/zlib_1.2.13.dfsg-1.dsc",
+        "sources/zlib_1.2.13.dfsg.orig.tar.bz2",
+        "sources/zlib_1.2.13.dfsg-1.debian.tar.xz"
+      ]
+    },
+    {
+      "sourcePackage": "zvbi",
+      "sourceVersion": "0.2.41-1+deb12u1",
+      "files": [
+        "sources/zvbi_0.2.41-1+deb12u1.dsc",
+        "sources/zvbi_0.2.41.orig.tar.gz",
+        "sources/zvbi_0.2.41-1+deb12u1.debian.tar.xz"
+      ]
+    }
+  ]
+}

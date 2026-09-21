@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "publicationAllowed": false,
+  "auditImageId": "sha256:0c716892011895bc02a1c78ffeb647b00dc7e70e742e5d444376ca16c705ab0c",
+  "sourceMaterial": {
+    "debianSourceIdentities": 206,
+    "debianFiles": 661,
+    "debianBytes": 984872940,
+    "nativeArchiveVersions": 28,
+    "rustCrates": 345,
+    "bundleBytes": 1181539287,
+    "bundleSha256": "95fa631cb58f8867763fb26c328612ca384c545d4facbf223525b14a74a64762",
+    "manifestSha256": "0000a185dff6bb2497b43bff06f6e9bf274290041e0688a5f0148f90b41601ae",
+    "files": 2804,
+    "unreviewedComponents": 905,
+    "totalGateProblems": 907
+  },
+  "dshWebAttribution": {
+    "commit": "b465dccdfb3ead9ca1075ab449b52866da624bfe",
+    "ciRun": "https://github.com/Develata/laorenyun/actions/runs/35593016171",
+    "imageId": "sha256:c5fc6870ca00aca31e1c8fc0d47be3ee61672ec7f2778be3f90036ee4ca3f27b",
+    "reportSha256": "87cb298c96dec9b05441baadde4ce521a1792233d9b3eb1fdcb3751e91cd260b",
+    "artifacts": 647,
+    "packages": 312,
+    "unresolvedInputs": 0,
+    "packagesMissingNotices": 0,
+    "wholeImageClosureStatus": "incomplete"
+  }
+}
