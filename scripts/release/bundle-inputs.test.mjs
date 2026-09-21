@@ -28,3 +28,12 @@ test('deployed-byte join follows intermediate bundles and ignores unshipped buil
  const result=JSON.parse(readFileSync(output));assert.equal(result.artifacts.length,1);assert.deepEqual(result.packages.map(p=>p.name),['included','workspace']);assert.equal(result.status,'incomplete');
  }finally{rmSync(root,{recursive:true});}
 });
+
+test('relative asset origins resolve against the fixed build root',()=>{
+ const root=mkdtempSync(join(tmpdir(),'ly-bundle-asset-'));
+ try{
+ mkdirSync(join(root,'fonts'));writeFileSync(join(root,'fonts/a.woff'),'font');writeFileSync(join(root,'a.woff'),'font');writeFileSync(join(root,'package.json'),JSON.stringify({name:'font-package',version:'1',license:'MIT'}));
+ bundleInputs({root,out:join(root,'evidence')}).writeBundle({dir:root},{font:{type:'asset',fileName:'a.woff',originalFileNames:['fonts/a.woff']}});
+ const r=JSON.parse(readFileSync(join(root,'evidence',readdirSync(join(root,'evidence'))[0])));assert.equal(r.inputs[0].unresolved,undefined);assert.equal(r.inputs[0].sha256,sha256('font'));assert.equal(r.inputs[0].package.name,'font-package');
+ }finally{rmSync(root,{recursive:true});}
+});

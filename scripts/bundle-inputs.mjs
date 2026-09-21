@@ -8,8 +8,9 @@ export function bundleInputs({root,out}) {
  const normalized=path=>relative(root,path).split('\\').join('/');
  function input(id){
   if(id.startsWith('\0'))return {id,virtual:true};
-  const path=id.split('?')[0];
-  if(!isAbsolute(path)||!existsSync(path))return {id:normalized(path),unresolved:true};
+  const raw=id.split('?')[0];
+  const path=isAbsolute(raw)?raw:resolve(root,raw);
+  if(!existsSync(path))return {id:normalized(path),unresolved:true};
   let dir=dirname(path),pkg;
   while(dir!==dirname(dir)){
    const file=resolve(dir,'package.json');
