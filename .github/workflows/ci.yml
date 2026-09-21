@@ -36,9 +36,11 @@ jobs:
       - name: Preserve actual distributed bundle inputs (no image publication)
         run: |
           mkdir -p artifacts/distribution-inputs
-          docker run --rm --network none --entrypoint cat laorenyun:0.2.0 /opt/laorenyun/licenses/bundle-inputs.json > artifacts/distribution-inputs/bundle-inputs.json
-          docker run --rm --network none -i --entrypoint node laorenyun:0.2.0 --input-type=module < scripts/license-inventory.mjs > artifacts/distribution-inputs/inventory.json
-          docker image inspect laorenyun:0.2.0 --format '{{.Id}}' > artifacts/distribution-inputs/image-id.txt
+          image="$(docker compose -p laorenyun-ci images -q laorenyun)"
+          test -n "$image"
+          docker run --rm --network none --entrypoint cat "$image" /opt/laorenyun/licenses/bundle-inputs.json > artifacts/distribution-inputs/bundle-inputs.json
+          docker run --rm --network none -i --entrypoint node "$image" --input-type=module < scripts/license-inventory.mjs > artifacts/distribution-inputs/inventory.json
+          docker image inspect "$image" --format '{{.Id}}' > artifacts/distribution-inputs/image-id.txt
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: distribution-inputs
