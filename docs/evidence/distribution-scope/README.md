@@ -13,7 +13,7 @@
 
 1. DSH/Web、Corepack/Yarn 实际 bundled inputs 与输出的归属。构建候选清单不能证明全部进入输出，也不能证明全部没进入。当前 scanner 明确返回 incomplete；须补充构建到产物的证据后才能 complete。
 2. 每个实际分发组件的许可证/通知及组合方式审查。未审查项数量不是需要下载源码的数量。Debian 不能仅凭软件包名称猜测许可；按镜像 copyright 及 binary/source version 获取需要的 `.dsc`、源码和 Debian 修改。
-3. sharp-libvips 固定构建脚本会修改 librsvg 配置后执行 `cargo update --workspace`；需要匹配实际组合库的 Rust 代码与修改材料。不能把今天重新解析的依赖假称为已分发二进制的对应源码。
+3. sharp-libvips 固定构建脚本会修改 librsvg 配置后执行 `cargo update --workspace`；需要交付组合库所用的 Rust 代码与修改材料。`--workspace` 只更新 workspace 包，不等同于无锁升级所有依赖；可据发布归档自带 Cargo.lock、固定修改和实际 target 重建所需源码集合，不要求必须找回上游 CI 私有缓存，也不要求位级复现。当前尚未完成该集合的核实和 vendoring，不能把今天任意解析的依赖假称为对应源码。
 4. 构建脚本引用 libultrahdr PR 383 的可变 patch URL。应核定构建时所用内容，不能只拿当前 URL 冒充固定材料。通用编译器工具链不因使用过而全部进入对应源码交付范围。
 
 已取得 9 份新增源码归档（glib、libexif、libheif、fribidi、pango、librsvg、libvips、cairo、proxy-libintl）及 2 份固定 patch。这些材料 的 URL/SHA256 保存在 `licenses/container/sources.lock.json`；下载归档完整性经检查。原有 FFmpeg 精确 Debian source 包与 sharp-libvips 固定构建仓库继续保留。下载到一份源包不等于整个组合库义务完成，因此没有把新增材料直接标成已完成的 component disposition。
