@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import {accountingProblems} from './accounting.mjs';
 import {noticeOnlyLicense} from './license-policy.mjs';
 import {createHash} from 'node:crypto';
 export const repo = 'ghcr.io/develata/laorenyun';
@@ -43,14 +44,26 @@ export function sourceProblems(inventory, manifest, files) {
   // reviewed license and combination, not Debian/npm/native packaging.
   // Build tools are candidates only; actual bundled inputs need separate evidence.
   if (inventory.bundledClosure?.status !== 'complete') problems.push('BUNDLED_CLOSURE_UNREVIEWED');
-  for (const p of inventory.os) expected.set(`deb:${p.sourcePackage}@${p.sourceVersion}`, {version:p.sourceVersion});
-  for (const p of [...inventory.packages, ...(inventory.bundledClosure?.packages ?? [])]) expected.set(`npm:${p.name}@${p.version}`, {version:p.version,license:p.license});
-  for (const [name, version] of Object.entries(inventory.nativeVersions ?? {})) expected.set(`vips:${name}@${version}`, {version});
+  const add=(id,entry)=> {
+    const prior=expected.get(id);
+    if(prior?.license && entry.license && JSON.stringify(prior.license)!==JSON.stringify(entry.license))problems.push(`INVENTORY_LICENSE_CONFLICT:${id}`);
+    expected.set(id,{...entry,shipped:[...(prior?.shipped ?? []),...(entry.shipped ?? [])]});
+  };
+  for (const p of inventory.os) add(`deb:${p.sourcePackage}@${p.sourceVersion}`, {version:p.sourceVersion,shipped:p.shipped});
+  for (const p of [...inventory.packages, ...(inventory.bundledClosure?.packages ?? [])]) add(`npm:${p.name}@${p.version}`, {version:p.version,license:p.license,shipped:p.shipped});
+  for (const [name, version] of Object.entries(inventory.nativeVersions ?? {})) add(`vips:${name}@${version}`, {version,shipped:inventory.nativeShipped?.[name]});
+  const shipmentOwners=new Map();
+  for(const [id,entry] of expected) for(const item of entry.shipped??[]){
+    if(shipmentOwners.has(item.id))problems.push(`DUPLICATE_SHIPPED_IDENTITY:${item.id}`);
+    shipmentOwners.set(item.id,id);
+  }
   const byId = new Map((manifest.components ?? []).map(x=>[x.id,x]));
   if (byId.size !== (manifest.components ?? []).length) problems.push('DUPLICATE_COMPONENT');
+  for (const id of byId.keys()) if (!expected.has(id)) problems.push(`UNEXPECTED_COMPONENT:${id}`);
   for (const id of expected.keys()) {
     const c = byId.get(id);
     if (!c || !c.license || !c.sourceIdentity || !c.review || !['source','notice-only'].includes(c.delivery)) {problems.push(`UNREVIEWED:${id}`);continue;}
+    for (const problem of accountingProblems(expected.get(id),c,manifest,files)) problems.push(`${problem}:${id}`);
     if (expected.get(id).license && typeof expected.get(id).license === 'string' && c.license !== expected.get(id).license) problems.push(`LICENSE_MISMATCH:${id}`);
     if (!Array.isArray(c.notices) || !c.notices.length) problems.push(`MISSING_NOTICES:${id}`);
     const required = [...(c.notices ?? [])];

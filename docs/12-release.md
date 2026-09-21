@@ -61,6 +61,7 @@ immutable inputs → deterministic checks
 - GPL/LGPL/MPL 等适用组件继续交付相应范围的源码、修改及构建材料。LGPL 组合库还须满足可修改/重链接条件；MPL 按 covered files 范围审核。独立容器包的简单聚合不自动扩展为整个镜像 copyleft。
 - permissive 代码若构成需要交付的组合库源码，不因自身许可证宽松而从该库构建闭包删除。`combination: corresponding-source` 明确要求源码；独立组件记录 `independent`。不是要求交付所有通用编译工具。
 - 许可证 `OR` 可选择允许的分支，notice-only 必须记录明确的 `licenseChoice`；`AND` 同时满足两侧。未识别条款、例外或选择不能自动放行。
+- 每个 reviewed component 显式列出 `shipped` identities 与 `noticeCoverage`。聚合 source package 不能省略旗下 binary；npm 重复安装位置也必须覆盖。notice 路径绑定实际镜像文件 SHA256，并与归档中的相应材料逐字节一致；缺失、重复归属或不匹配均失败。
 - downloads 仅接受 HTTPS、预审 SHA256、固定安全路径；新增组件/版本没有 disposition、缺失 notices 或需要的源码材料仍失败。
 
 `container-source-manifest.json` 记录 image ID、inventory hash、每项 identity/license/review、sources/buildMaterial/notices 和逐文件SHA256。tar 使用排序、固定mtime/uid/gid和无时间戳gzip；stream verifier逐文件哈希、拒绝路径外逸、软/硬链接、重复和额外成员，不解包不可信内容。清单或材料不匹配即拒绝。

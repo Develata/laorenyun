@@ -15,13 +15,22 @@ const inventory=JSON.parse(run('docker',['run','--rm','--network','none','-i','-
 const nativeCode=`const fs=require('fs');const r='/opt/dsh/node_modules/.pnpm';const n=fs.readdirSync(r).find(x=>x.startsWith('@img+sharp-libvips-linux-x64@'));console.log(fs.readFileSync(r+'/'+n+'/node_modules/@img/sharp-libvips-linux-x64/versions.json','utf8'))`;
 const nativeVersions=JSON.parse(run('docker',['run','--rm','--network','none','--entrypoint','node',image,'-e',nativeCode]));
 inventory.nativeVersions=nativeVersions;
+const nativePackage=inventory.packages.find(p=>p.name==='@img/sharp-libvips-linux-x64');
+inventory.nativeShipped=Object.fromEntries(Object.entries(nativeVersions).map(([name,version])=>[name,[{id:`vips:${name}@${version}`,notices:nativePackage?.shipped.flatMap(p=>p.notices)??[]}]]));
 writeFileSync(join(out,'inventory.json'),JSON.stringify(inventory,null,2)+'\n');
 for(const [path,name]of [['/opt/laorenyun/licenses','notices'],['/usr/share/doc','debian-notices'],['/usr/share/common-licenses','common-licenses'],['/opt/dsh-laorenyun/lib/third-party','tencent-notices']]) {
  const archive=join(out,name+'.tar'), fd=openSync(archive,'w');
- try{run('docker',['run','--rm','--network','none','--entrypoint','tar',image,'-C',path,'--hard-dereference','-chf','-',...(name==='debian-notices'?inventory.os.map(p=>p.name+'/copyright'):['.'])],{stdio:['ignore',fd,'pipe']});}finally{closeSync(fd);}
+ try{run('docker',['run','--rm','--network','none','--entrypoint','tar',image,'-C',path,'--hard-dereference','-chf','-',...(name==='debian-notices'?[...new Set(inventory.os.map(p=>p.licensePath.slice('/usr/share/doc/'.length)))]:['.'])],{stdio:['ignore',fd,'pipe']});}finally{closeSync(fd);}
  mkdirSync(join(stage,name),{recursive:true});
  run('tar',['-xf',archive,'-C',join(stage,name),'--no-same-owner']);unlinkSync(archive);
 }
+// Preserve every discovered notice occurrence, including duplicate npm installs.
+const noticePaths=[...new Set([...inventory.os,...inventory.packages,...(inventory.bundledClosure?.packages??[])].flatMap(p=>(p.shipped??[]).flatMap(x=>x.notices.map(n=>n.path))))].sort();
+if(noticePaths.some(p=>!p.startsWith('/')||p.includes('..')||/[\r\n\0]/.test(p)))throw Error('Unsafe notice path');
+const noticeArchive=join(out,'image-notices.tar'),noticeFd=openSync(noticeArchive,'w');
+try{run('docker',['run','--rm','--network','none','-i','--entrypoint','tar',image,'-C','/','--hard-dereference','-chf','-','--null','-T','-'],{input:noticePaths.map(p=>p.slice(1)).join('\0')+'\0',stdio:['pipe',noticeFd,'pipe']});}finally{closeSync(noticeFd);}
+mkdirSync(join(stage,'image-notices'),{recursive:true});
+run('tar',['-xf',noticeArchive,'-C',join(stage,'image-notices'),'--no-same-owner']);unlinkSync(noticeArchive);
 for(const f of ['Dockerfile','UPSTREAM.json','PLUGIN.json','THIRD_PARTY_NOTICES.md'])copyFileSync(join(source,f),join(stage,f));
 writeFileSync(join(stage,'ffmpeg-buildconf.txt'),run('docker',['run','--rm','--network','none','--entrypoint','sh',image,'-c','ffmpeg -buildconf 2>&1']));
 writeFileSync(join(stage,'ffmpeg-links.txt'),stableLinks(run('docker',['run','--rm','--network','none','--entrypoint','ldd',image,'/usr/bin/ffmpeg'])));
@@ -40,6 +49,17 @@ for(const d of lock.downloads) {
   run('curl',['--silent','--show-error','--fail','--location','--proto','=https','--proto-redir','=https','--max-time','300','--max-filesize','1073741824','--output',destination,d.url],{timeout:330000});
  if(await fileHash(destination)!==d.sha256)throw Error('Source download hash mismatch');
 }
+for(const recipe of lock.generated??[]) {
+ if(recipe.kind!=='librsvg-rust'||!/^sources\/[a-zA-Z0-9_.+-]+$/.test(recipe.path)||!lock.downloads.some(d=>d.path===recipe.input)||!/^[a-f0-9]{64}$/.test(recipe.sha256))throw Error('Invalid source recipe');
+ const destination=join(stage,recipe.path);
+ if(!existsSync(destination)||await fileHash(destination)!==recipe.sha256){
+  const work=join(out,'rust-material-'+Date.now());
+  run('python3',[join(root,'scripts/release/vendor-librsvg.py'),join(stage,recipe.input),work],{timeout:2100000});
+  copyFileSync(join(work,'librsvg-rust-sources.tar.gz'),destination);
+ }
+ if(await fileHash(destination)!==recipe.sha256)throw Error('Generated source material differs from reviewed hash');
+}
+copyFileSync(join(root,'scripts/release/vendor-librsvg.py'),join(stage,'vendor-librsvg.py'));
 const files={};
 async function walk(p){for(const n of readdirSync(p).sort()){const f=join(p,n),s=lstatSync(f);if(s.isDirectory())await walk(f);else if(s.isFile()){const h=createHash('sha256');for await(const b of createReadStream(f))h.update(b);files[relative(stage,f)]=h.digest('hex');}else throw Error('Non-regular source material');}}
 await walk(stage);

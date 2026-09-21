@@ -27,3 +27,21 @@
 - `node --test scripts/config.test.mjs scripts/release/*.test.mjs`：14/14 通过。门禁测试覆盖构建候选排除、实际 bundled copyleft、组合库、MPL/LGPL、AND/OR、错误许可选择、材料缺失、归档路径/链接注入与 immutable publication 边界。
 
 许可证依据：镜像中保留的 GPL/LGPL 文本、[Mozilla MPL FAQ](https://www.mozilla.org/en-US/MPL/2.0/FAQ/)、[FFmpeg legal](https://www.ffmpeg.org/legal.html)、固定 [sharp-libvips 构建仓库](https://github.com/lovell/sharp-libvips/tree/4da6d14c0d59866adfb9d8cf52bcaa53846dc4f6)。构建脚本是取证来源，不是替代对应源码的链接承诺。
+
+## 后续 accounting / attribution 审计（PR #4，仍为 Draft）
+
+上面的旧回执是 **904 unreviewed component dispositions + 2 个全局问题 = 906 total gate problems**，不是 906 个待下载源包；保留旧回执不覆盖。
+
+新增机械约束：每个 component 的 `shipped` 必须精确覆盖 scanner 发现的安装身份；Debian 同一 source identity 下每个 binary package、npm 同版本每个安装位置都保留。`noticeCoverage` 将实际镜像 notice 路径逐个映射到材料路径，门禁要求 SHA256 一致、材料存在且列入 notices。遗漏、重复归属、外来身份、错用另一个 LICENSE 均失败。此约束证明已发现 notices 的覆盖；它不能替代对嵌入代码、非标准许可文件或条款的人工审查。
+
+DSH/Web 发行构建加入公开 Rollup/Rolldown `writeBundle` hook，记录实际 chunk modules、源文件哈希和最终输出哈希。部署后的文件再按字节关联这些记录，并递归追踪中间 Client bundle；不会把整个安装图当成打包输入。报告保留 incomplete：第三方预打包代码、Corepack/Yarn 内嵌依赖仍需单独证据，不由此自动宣布整个镜像 closure 完整。DSH 上游未修改。
+
+### librsvg Rust 材料
+
+原始 2.62.90 Cargo.lock 有 348 个 registry identities。应用固定 sharp 脚本的 GIF/WebP、Cairo PDF/PS feature 修改后，`cargo update --workspace --offline` 没有新增/升级外部版本，只移除 color_quant 1.1.0、gif 0.14.2、image-webp 0.2.4。345 个剩余 crate 已用 `cargo vendor --locked` 获取，并逐文件核对 `.cargo-checksum.json`。
+
+[生成脚本](../../../scripts/release/vendor-librsvg.py)保存原/新 Cargo.lock、feature patch、离线 vendor 配置和源码。它获取原锁所需 registry 材料后离线更新 workspace，拒绝外部身份变化。归档是含测试/构建源的安全超集，不声称每个 crate 都进入二进制，更不把每个 crate 都列为独立对应源码义务。生成归档 SHA256 锁在 `sources.lock.json`；材料完成不代表整个 libvips 组合库已获准分发。
+
+### mutable patch 的实际证据
+
+GitHub API 查得：sharp-libvips 固定提交 4da6d14 的提交时间为 2026-06-30T08:50:50Z，v1.3.2 发布于同日 09:50:15Z。libultrahdr PR 383 当前包含 e2daed8（2025-12-10）和 7af3588（2026-09-10），2026-09-18 才合并。当前 PR patch 因此不能直接充作六月构建的材料。旧提交可作为进一步核对的候选，但时间先后本身不能证明原二进制究竟用了哪些字节；未将候选冒充已确认输入。若无法闭合，首次公共容器发行应使用新版本与固定输入重建，不回填猜测的 v0.2.0 镜像。

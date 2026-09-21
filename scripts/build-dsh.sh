@@ -11,3 +11,5 @@ node /build/scripts/verify-packaging-lock.mjs
 cp /build/packaging/pnpm-lock.yaml ./pnpm-lock.yaml
 cp /build/packaging/pnpm-workspace.yaml ./pnpm-workspace.yaml
 pnpm --store-dir=/root/.local/share/pnpm/store --config.injectWorkspacePackages=true --filter @deepseek-ai/dsh deploy --prod --offline --frozen-lockfile --ignore-scripts /opt/dsh
+
+node /build/scripts/collect-bundle-inputs.mjs /build/bundle-inputs /opt/dsh /build/bundle-inputs.json

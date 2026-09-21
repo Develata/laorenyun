@@ -7,7 +7,7 @@ COPY upstream/deepseek-harness/ upstream/deepseek-harness/
 RUN --mount=type=cache,id=laorenyun-pnpm,target=/root/.local/share/pnpm/store cd upstream/deepseek-harness && pnpm --filter @deepseek-ai/dsh... --filter @deepseek-ai/dsh-typert-generator... --filter @deepseek-ai/dsh-web-frontend... install --frozen-lockfile --ignore-scripts
 COPY packaging/ packaging/
 COPY scripts/verify-packaging-lock.mjs scripts/verify-packaging-lock.mjs
-COPY scripts/dsh-build.config.ts scripts/build-dsh.sh scripts/compile-dsh.mjs scripts/web-build.config.ts scripts/
+COPY scripts/dsh-build.config.ts scripts/build-dsh.sh scripts/compile-dsh.mjs scripts/web-build.config.ts scripts/bundle-inputs.mjs scripts/collect-bundle-inputs.mjs scripts/
 RUN --mount=type=cache,id=laorenyun-pnpm,target=/root/.local/share/pnpm/store sh scripts/build-dsh.sh
 FROM dsh-build AS licenses-build
 COPY scripts/collect-licenses.mjs /build/scripts/collect-licenses.mjs
@@ -25,6 +25,7 @@ COPY --from=dsh-build /etc/ssl/certs/ /etc/ssl/certs/
 RUN sed -i 's|http://deb.debian.org|https://deb.debian.org|g' /etc/apt/sources.list.d/debian.sources && apt-get -o Acquire::Retries=2 -o Acquire::https::Timeout=20 update && apt-get -o Acquire::Retries=2 -o Acquire::https::Timeout=20 install -y --no-install-recommends ffmpeg=7:5.1.9-0+deb12u1 ca-certificates && rm -rf /var/lib/apt/lists/*
 RUN groupadd --gid 10001 laorenyun && useradd --uid 10001 --gid 10001 --no-create-home --home-dir /app/data laorenyun && mkdir -p /app/data && chown 10001:10001 /app/data && chmod 700 /app/data
 COPY --from=dsh-build /opt/dsh/ /opt/dsh/
+COPY --from=dsh-build /build/bundle-inputs.json /opt/laorenyun/licenses/bundle-inputs.json
 COPY --from=dsh-build /build/upstream/deepseek-harness/packages/util/time/package.json /opt/dsh/node_modules/@deepseek-ai/dsh-util-time/
 COPY --from=dsh-build /build/upstream/deepseek-harness/packages/util/time/lib/ /opt/dsh/node_modules/@deepseek-ai/dsh-util-time/lib/
 COPY --from=dsh-build /build/upstream/deepseek-harness/packages/util/output-retention/package.json /opt/dsh/node_modules/@deepseek-ai/dsh-output-retention/

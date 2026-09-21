@@ -9,7 +9,15 @@
       "delivery": "source",
       "review": "Matched exact source/version and Checksums-Sha256 from Debian HTTPS dsc. Separate linked libraries remain unreviewed; no whole-image approval.",
       "notices": [
-        "debian-notices/ffmpeg/copyright"
+        "image-notices/usr/share/doc/ffmpeg/copyright",
+        "image-notices/usr/share/doc/libavcodec59/copyright",
+        "image-notices/usr/share/doc/libavdevice59/copyright",
+        "image-notices/usr/share/doc/libavfilter8/copyright",
+        "image-notices/usr/share/doc/libavformat59/copyright",
+        "image-notices/usr/share/doc/libavutil57/copyright",
+        "image-notices/usr/share/doc/libpostproc56/copyright",
+        "image-notices/usr/share/doc/libswresample4/copyright",
+        "image-notices/usr/share/doc/libswscale6/copyright"
       ],
       "sources": [
         "sources/ffmpeg_5.1.9-0+deb12u1.dsc",
@@ -22,7 +30,56 @@
         "ffmpeg-buildconf.txt",
         "ffmpeg-links.txt"
       ],
-      "combination": "corresponding-source"
+      "combination": "corresponding-source",
+      "shipped": [
+        "deb:ffmpeg@7:5.1.9-0+deb12u1",
+        "deb:libavcodec59:amd64@7:5.1.9-0+deb12u1",
+        "deb:libavdevice59:amd64@7:5.1.9-0+deb12u1",
+        "deb:libavfilter8:amd64@7:5.1.9-0+deb12u1",
+        "deb:libavformat59:amd64@7:5.1.9-0+deb12u1",
+        "deb:libavutil57:amd64@7:5.1.9-0+deb12u1",
+        "deb:libpostproc56:amd64@7:5.1.9-0+deb12u1",
+        "deb:libswresample4:amd64@7:5.1.9-0+deb12u1",
+        "deb:libswscale6:amd64@7:5.1.9-0+deb12u1"
+      ],
+      "noticeCoverage": [
+        {
+          "imagePath": "/usr/share/doc/ffmpeg/copyright",
+          "material": "image-notices/usr/share/doc/ffmpeg/copyright"
+        },
+        {
+          "imagePath": "/usr/share/doc/libavcodec59/copyright",
+          "material": "image-notices/usr/share/doc/libavcodec59/copyright"
+        },
+        {
+          "imagePath": "/usr/share/doc/libavdevice59/copyright",
+          "material": "image-notices/usr/share/doc/libavdevice59/copyright"
+        },
+        {
+          "imagePath": "/usr/share/doc/libavfilter8/copyright",
+          "material": "image-notices/usr/share/doc/libavfilter8/copyright"
+        },
+        {
+          "imagePath": "/usr/share/doc/libavformat59/copyright",
+          "material": "image-notices/usr/share/doc/libavformat59/copyright"
+        },
+        {
+          "imagePath": "/usr/share/doc/libavutil57/copyright",
+          "material": "image-notices/usr/share/doc/libavutil57/copyright"
+        },
+        {
+          "imagePath": "/usr/share/doc/libpostproc56/copyright",
+          "material": "image-notices/usr/share/doc/libpostproc56/copyright"
+        },
+        {
+          "imagePath": "/usr/share/doc/libswresample4/copyright",
+          "material": "image-notices/usr/share/doc/libswresample4/copyright"
+        },
+        {
+          "imagePath": "/usr/share/doc/libswscale6/copyright",
+          "material": "image-notices/usr/share/doc/libswscale6/copyright"
+        }
+      ]
     }
   ],
   "downloads": [
@@ -111,5 +168,13 @@
     "Exact installed Debian copyright/license and combination dispositions remain required; permissive independent packages need notices, not blanket corresponding source. Copyleft source packages and relevant combined-code closure still require delivery.",
     "libvips combined native library: component source and fixed patches are being delivered; matching the built librsvg Cargo.lock/vendor closure and build-time mutable patches remains unresolved. Permissive code incorporated in this combined library is not automatically exempt.",
     "Actual bundled DSH/Web and globally installed Corepack/Yarn inputs need build-to-artifact attribution. buildClosure is a candidate/notice superset, not the distributed closure. Unknown coverage remains fail-closed."
+  ],
+  "generated": [
+    {
+      "kind": "librsvg-rust",
+      "input": "sources/librsvg-2.62.90.tar.xz",
+      "path": "sources/librsvg-rust-sources.tar.gz",
+      "sha256": "42a9dc6f890d5fbc7bcd328126e63de06986920f7ddba9b184bad9302ce947ee"
+    }
   ]
 }
