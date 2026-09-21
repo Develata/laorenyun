@@ -95,3 +95,27 @@ gh workflow run release-image.yml --repo Develata/laorenyun --ref main \
 保留源commit、插件/DSH SHA、镜像ID、registry digest、source bundle和release asset SHA256。当前未生成原生attestation；SBOM可由现有成熟工具独立产生，但发布job不请求不需要的id-token权限。并不声称逐字节可重复构建。
 
 回退运行时选择旧digest及与其schema兼容的数据备份，不能用旧程序写新schema。任何后续修复使用新版本（如v0.2.1），不能修改已发布tag/镜像。R2/R3硬件pending与来源/二进制发行门禁独立。
+
+## 私有演示镜像（独立操作，不是公共发行）
+
+[Private demo image](../.github/workflows/demo-image.yml) 仅手动运行，固定已合入 main 的完整应用 commit。它不调用公共 release source gate、不创建 tag、不修改 GitHub Release，也不批准公共二进制分发。
+
+```bash
+gh workflow run demo-image.yml --repo Develata/laorenyun --ref main \
+  -f commit=<已合入main的完整40位SHA>
+```
+
+镜像只进入 `ghcr.io/develata/laorenyun-demo-private`。首次包默认私有（[GitHub 官方说明](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#pushing-container-images)）；已有包必须先读回为 private，否则停止。推送后再次读回 private，并按 registry digest 拉回核对 image ID。不会修改包可见性。
+
+每次运行使用 `sha-<commit>-<run-id>-<attempt>`，拒绝覆盖已有别名，不写 SemVer 或 latest。构建一次 → 无云 Chromium/文字来源/重启验收 → 私有 push → digest 回执。当前仅 linux/amd64。应用和插件、DSH pins 写入回执；digest 是部署身份，不宣称重复构建得到相同字节。
+
+Actions Summary 和 `private-demo-receipt` artifact 提供 `image-digest.txt`、`private-image.json` 和验收回执。**不上传 Docker image archive 到公开仓库的 Actions artifacts**；工作流没有 contents-write，不能改 Release。
+
+拉取需要账号的 `read:packages` 凭据及该包的读取权限，使用终端交互登录，不在文档或命令历史写入 token：
+
+```bash
+docker login ghcr.io -u <GitHub用户名>
+docker pull ghcr.io/develata/laorenyun-demo-private@sha256:<回执digest>
+```
+
+这是项目所有者的私有演示镜像，不可将包转公开或当作公共分发合规证明。公共镜像仍走前述对应源码门禁，PR #4 的审计工作独立继续。

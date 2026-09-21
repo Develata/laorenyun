@@ -1,0 +1,102 @@
+name: Private demo image
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: Full 40-character source commit, already merged into main
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: private-demo-image
+  cancel-in-progress: false
+jobs:
+  image:
+    if: github.repository == 'Develata/laorenyun' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      digest: ${{ steps.publish.outputs.digest }}
+      reference: ${{ steps.publish.outputs.reference }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.workflow_sha }}
+          path: tooling
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.21.0'
+      - name: Validate immutable source input
+        env:
+          SOURCE_COMMIT: ${{ inputs.commit }}
+        run: node --input-type=module -e 'import {commitInput} from "./tooling/scripts/demo-image/contracts.mjs"; commitInput(process.env.SOURCE_COMMIT)'
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ inputs.commit }}
+          path: source
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Require reviewed main history and existing pins
+        env:
+          SOURCE_COMMIT: ${{ inputs.commit }}
+        working-directory: source
+        run: |
+          test "$(git rev-parse HEAD)" = "$SOURCE_COMMIT"
+          git merge-base --is-ancestor "$SOURCE_COMMIT" origin/main
+          node scripts/verify-upstream.mjs
+          node scripts/verify-release.mjs
+      - name: Refuse any existing public package
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node tooling/scripts/demo-image/publish.mjs preflight
+      - uses: docker/setup-buildx-action@37fe631027851001ddb9b187196cc803df7f5f0e
+      - uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a
+        with:
+          context: source
+          platforms: linux/amd64
+          push: false
+          load: true
+          tags: laorenyun:private-demo-candidate
+          provenance: false
+          sbom: false
+          labels: |
+            org.opencontainers.image.source=https://github.com/Develata/laorenyun
+            org.opencontainers.image.revision=${{ inputs.commit }}
+            org.opencontainers.image.description=Private presenter demo; not a public distribution release
+      - name: Install bounded acceptance browser
+        run: |
+          npm install --prefix "$RUNNER_TEMP/browser" --ignore-scripts --no-audit --no-fund playwright@1.61.1
+          "$RUNNER_TEMP/browser/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Cloud-independent exact-image acceptance
+        env:
+          RELEASE_BROWSER_RUNTIME: ${{ runner.temp }}/browser
+        run: node tooling/scripts/release/acceptance.mjs laorenyun:private-demo-candidate source delivery
+      - name: Authenticate only for private push
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ACTOR: ${{ github.actor }}
+        run: printf '%s' "$GH_TOKEN" | docker login ghcr.io -u "$ACTOR" --password-stdin
+      - name: Push tested bytes, verify private visibility and exact digest
+        id: publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_COMMIT: ${{ inputs.commit }}
+        run: node tooling/scripts/demo-image/publish.mjs publish source delivery
+      # Public repository artifacts contain receipts only, NEVER the private image.
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: private-demo-receipt
+          path: |
+            delivery/image-digest.txt
+            delivery/private-image.json
+            delivery/acceptance.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Remove registry credentials
+        if: always()
+        run: docker logout ghcr.io
