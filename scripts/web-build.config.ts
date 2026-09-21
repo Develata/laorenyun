@@ -20,6 +20,7 @@ export default {
     ...(plugins ?? []),
     bundleInputs({
       root: "/build/upstream/deepseek-harness",
+      inputRoot: fileURLToPath(new URL("../upstream/deepseek-harness/apps/web/", import.meta.url)),
       out: "/build/bundle-inputs",
     }),
   ],

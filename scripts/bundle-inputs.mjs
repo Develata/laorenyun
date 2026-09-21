@@ -4,12 +4,12 @@ import {readFileSync,existsSync,mkdirSync,writeFileSync,renameSync} from 'node:f
 import {dirname,resolve,relative,isAbsolute} from 'node:path';
 import {createHash} from 'node:crypto';
 const hash=b=>createHash('sha256').update(b).digest('hex');
-export function bundleInputs({root,out}) {
+export function bundleInputs({root,out,inputRoot=root}) {
  const normalized=path=>relative(root,path).split('\\').join('/');
  function input(id){
   if(id.startsWith('\0'))return {id,virtual:true};
   const raw=id.split('?')[0];
-  const path=isAbsolute(raw)?raw:resolve(root,raw);
+  const path=isAbsolute(raw)?raw:resolve(inputRoot,raw);
   if(!existsSync(path))return {id:normalized(path),unresolved:true};
   let dir=dirname(path),pkg;
   while(dir!==dirname(dir)){

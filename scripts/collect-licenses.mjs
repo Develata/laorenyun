@@ -68,6 +68,7 @@ for (const e of readdirSync(root, { withFileTypes: true }))
 const workspace = "/build/upstream/deepseek-harness";
 for (const dir of JSON.parse(readFileSync("/build/dsh-build-selection.json", "utf8")))
   packageDir(join(workspace, dir), dir.startsWith("vendor/") ? undefined : join(workspace, "LICENSE"));
+packageDir(join(workspace, "apps/web"), join(workspace, "LICENSE"));
 writeFileSync(
   join(out, "build-closure.json"),
   JSON.stringify(index, null, 2) + "\n",

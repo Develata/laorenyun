@@ -37,3 +37,14 @@ test('relative asset origins resolve against the fixed build root',()=>{
  const r=JSON.parse(readFileSync(join(root,'evidence',readdirSync(join(root,'evidence'))[0])));assert.equal(r.inputs[0].unresolved,undefined);assert.equal(r.inputs[0].sha256,sha256('font'));assert.equal(r.inputs[0].package.name,'font-package');
  }finally{rmSync(root,{recursive:true});}
 });
+
+ test('Vite asset origins use the app root while evidence stays monorepo relative',()=>{
+ const root=mkdtempSync(join(tmpdir(),'ly-vite-origin-'));
+ try{
+ const app=join(root,'apps/web'),font=join(root,'node_modules/katex');mkdirSync(app,{recursive:true});mkdirSync(font,{recursive:true});
+ writeFileSync(join(font,'package.json'),JSON.stringify({name:'katex',version:'1',license:'MIT'}));writeFileSync(join(font,'a.woff'),'font');writeFileSync(join(app,'a.woff'),'font');
+ bundleInputs({root,inputRoot:app,out:join(root,'evidence')}).writeBundle({dir:app},{font:{type:'asset',fileName:'a.woff',originalFileNames:['../../node_modules/katex/a.woff']}});
+ const r=JSON.parse(readFileSync(join(root,'evidence',readdirSync(join(root,'evidence'))[0])));
+ assert.equal(r.inputs[0].unresolved,undefined);assert.equal(r.inputs[0].id,'node_modules/katex/a.woff');assert.equal(r.inputs[0].package.name,'katex');
+ }finally{rmSync(root,{recursive:true});}
+ });
