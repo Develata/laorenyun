@@ -1,0 +1,24 @@
+name: Remove accidental public demo image
+on:
+  push:
+    branches: [demo/remove-accidental-public-image]
+permissions:
+  contents: read
+jobs:
+  remove:
+    if: github.repository == 'Develata/laorenyun'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Remove only the one unintended public package from run 35596193288
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api users/Develata/packages/container/laorenyun-demo-private > /tmp/package.json
+          gh api users/Develata/packages/container/laorenyun-demo-private/versions > /tmp/versions.json
+          node -e 'const fs=require("fs"),a=require("assert/strict"); const p=JSON.parse(fs.readFileSync("/tmp/package.json")),v=JSON.parse(fs.readFileSync("/tmp/versions.json")); a.equal(p.name,"laorenyun-demo-private");a.equal(p.visibility,"public");a.equal(v.length,1);a.deepEqual(v[0].metadata.container.tags,["sha-cba3943e50dea4cc80f479d9950c6c1856071493-35596193288-1"]);'
+          gh api --method DELETE users/Develata/packages/container/laorenyun-demo-private
+          echo 'Removed the unintended public demo package; no other package, release or tag touched.'
