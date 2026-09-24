@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "sourceArchiveSha256": "5d108758255c225590d862d94f2591ee1f8cc976dc7b25b06eaba74f21850f08",
+  "originalLockSha256": "e91fcc904791060c25e09078a7dd22a95fcaad9eb5f44631f6b3677f132863f7",
+  "updatedLockSha256": "39a321a47d50375109eeb75a6f50e1c43b3731be85bcd7a44661bb80c9f636b9",
+  "externalPackages": 345,
+  "added": [],
+  "removed": [
+    [
+      "color_quant",
+      "1.1.0",
+      "registry+https://github.com/rust-lang/crates.io-index",
+      "3d7b894f5411737b7867f4827955924d7c254fc9f4d91a6aad6b097804b1018b"
+    ],
+    [
+      "gif",
+      "0.14.2",
+      "registry+https://github.com/rust-lang/crates.io-index",
+      "ee8cfcc411d9adbbaba82fb72661cc1bcca13e8bba98b364e62b2dba8f960159"
+    ],
+    [
+      "image-webp",
+      "0.2.4",
+      "registry+https://github.com/rust-lang/crates.io-index",
+      "525e9ff3e1a4be2fbea1fdf0e98686a6d98b4d8f937e1bf7402245af1909e8c3"
+    ]
+  ],
+  "scope": "locked workspace source superset, including test/build sources; not a claim all crates are distributed",
+  "bundleSha256": "42a9dc6f890d5fbc7bcd328126e63de06986920f7ddba9b184bad9302ce947ee",
+  "bundleBytes": 38524862
+}

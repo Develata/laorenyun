@@ -1,0 +1,17 @@
+{
+  "imageId": "sha256:0c716892011895bc02a1c78ffeb647b00dc7e70e742e5d444376ca16c705ab0c",
+  "osBinaries": 290,
+  "npmIdentities": 671,
+  "npmOccurrences": 701,
+  "discoveredNoticePaths": 754,
+  "problemsByKind": {
+    "BUNDLED_CLOSURE_UNREVIEWED": 1,
+    "SOURCE_REVIEW_INCOMPLETE": 1,
+    "UNREVIEWED": 904
+  },
+  "totalProblems": 906,
+  "publicationAllowed": false,
+  "sourceBundleSha256": "f2443c063949c7778a1a65d910023a2bbde558decedf26c9824653f0b7f4d545",
+  "manifestSha256": "66a90a79888558a39e0440da573d5f95af25e9186d26c32a2aca50d1c3170628",
+  "rustSourceBundleSha256": "42a9dc6f890d5fbc7bcd328126e63de06986920f7ddba9b184bad9302ce947ee"
+}

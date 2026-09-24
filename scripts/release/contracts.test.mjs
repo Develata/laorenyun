@@ -1,10 +1,11 @@
+import {fixtureAccounting} from './fixture-accounting.mjs';
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,mkdtempSync,writeFileSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {execFileSync} from 'node:child_process';
-import {releaseVersion,verifyInputs,immutableIdentity,releaseCompose,sourceProblems,sha256,stableLinks} from './contracts.mjs';
+import {releaseVersion,verifyInputs,immutableIdentity,releaseCompose,sourceProblems,sha256,stableLinks,sourcePathPattern} from './contracts.mjs';
 const sha='a'.repeat(40),digest='sha256:'+'a'.repeat(64);
 const input={tag:'v0.2.0',commit:sha,tagCommit:sha,pin:{repository:'https://github.com/Develata/dsh-laorenyun',commit:sha,version:'0.2.0'},pluginTagCommit:sha,pluginPackage:{name:'dsh-laorenyun',version:'0.2.0'},upstream:{version:'0.1.6-alpha.1',commit:'0d1f50007f9bca3f52b06e1c3074fa14d5fb0720'}};
 test('stable/prerelease input, mismatched versions and immutable commits',()=>{
@@ -23,8 +24,9 @@ test('Compose is pull-only, digest pinned and retains security',()=>{
  assert.throws(()=>releaseCompose(text,'ghcr.io/foo:latest'));
 });
 test('source closure is exact, required and fail-closed',()=>{
- const inventory={os:[{sourcePackage:'example',sourceVersion:'1'}],packages:[],buildClosure:[],nativeVersions:{vips:'1'}};
- const manifest={schema:1,imageId:digest,inventorySha256:sha256(JSON.stringify(inventory)),nativeVersions:{vips:'1'},reviewStatus:'complete',files:{'source.tar':sha256('s'),'build.sh':sha256('b'),'COPYING':sha256('c')},components:['deb:example@1','vips:vips@1'].map(id=>({id,license:'LGPL-3.0-or-later',sourceIdentity:id,delivery:'source',review:'fixture only',notices:['COPYING'],sources:['source.tar'],buildMaterial:['build.sh']}))};
+ const inventory={os:[{sourcePackage:'example',sourceVersion:'1'}],packages:[],buildClosure:[],bundledClosure:{status:'complete',packages:[]},nativeVersions:{vips:'1'}};
+ const manifest={schema:1,imageId:digest,inventorySha256:sha256(JSON.stringify(inventory)),nativeVersions:{vips:'1'},reviewStatus:'complete',files:{'source.tar':sha256('s'),'build.sh':sha256('b'),'COPYING':sha256('c')},components:['deb:example@1','vips:vips@1'].map(id=>({id,license:'LGPL-3.0-or-later',sourceIdentity:id,delivery:'source',review:'fixture only',combination:'independent',notices:['COPYING'],sources:['source.tar'],buildMaterial:['build.sh']}))};
+ fixtureAccounting(inventory,manifest);
  const files=new Set(Object.keys(manifest.files));assert.deepEqual(sourceProblems(inventory,manifest,files),[]);
  assert.ok(sourceProblems(inventory,manifest,new Set()).some(x=>x.startsWith('MISSING_MATERIAL')));
  assert.ok(sourceProblems(inventory,{...manifest,inventorySha256:'bad'},files).includes('INVENTORY_MISMATCH'));
@@ -58,4 +60,34 @@ test('linked-library material is independent of process address randomization',(
  const a='libavcodec.so.59 => /lib/libavcodec.so.59 (0x0123)\n/lib/ld-linux.so.2 (0xabcd)\n';
  const b='libavcodec.so.59 => /lib/libavcodec.so.59 (0x4567)\n/lib/ld-linux.so.2 (0x5678)\n';
  assert.equal(stableLinks(a),stableLinks(b));assert.ok(stableLinks(a).includes('/lib/libavcodec.so.59'));assert.notEqual(stableLinks(a),stableLinks(b.replace('59','60')));
+});
+
+test('source aggregation cannot hide another binary notice or duplicate shipped ownership',()=>{
+ const inventory={os:[{sourcePackage:'one',sourceVersion:'1'}],packages:[],bundledClosure:{status:'complete',packages:[]},nativeVersions:{vips:'1'}};
+ const manifest={schema:1,imageId:digest,reviewStatus:'complete',nativeVersions:inventory.nativeVersions,files:{COPYING:sha256('c')},components:['deb:one@1','vips:vips@1'].map(id=>({id,license:'MIT',sourceIdentity:id,review:'fixture',combination:'independent',delivery:'notice-only',notices:['COPYING']}))};
+ fixtureAccounting(inventory,manifest);
+ inventory.os.push({sourcePackage:'one',sourceVersion:'1',shipped:[{id:'deb:second@1',notices:[{path:'/second/LICENSE',sha256:sha256('second')}]}]});
+ const check=()=>sourceProblems(inventory,{...manifest,inventorySha256:sha256(JSON.stringify(inventory))},new Set(Object.keys(manifest.files)));
+ assert.ok(check().includes('SHIPPED_COVERAGE_MISMATCH:deb:one@1'));assert.ok(check().includes('NOTICE_COVERAGE_MISSING:deb:one@1'));
+ manifest.components[0].shipped.push('deb:second@1');manifest.components[0].notices.push('second');manifest.components[0].noticeCoverage.push({imagePath:'/second/LICENSE',material:'second'});manifest.files.second=sha256('second');assert.deepEqual(check(),[]);
+ inventory.os[1].shipped[0].id=inventory.os[0].shipped[0].id;assert.ok(check().some(x=>x.startsWith('DUPLICATE_SHIPPED_IDENTITY')));
+});
+
+test('shipped runtime binary is not hidden by npm package inventory',()=>{
+ const inventory={os:[],packages:[],bundledClosure:{status:'complete',packages:[]},nativeVersions:{vips:'1'},runtimeBinaries:[{name:'node',version:'24.21.0',shipped:[{id:'binary:node@24.21.0',notices:[]}]}]};
+ const manifest={schema:1,imageId:digest,reviewStatus:'complete',nativeVersions:inventory.nativeVersions,inventorySha256:sha256(JSON.stringify(inventory)),files:{},components:[]};
+ assert.ok(sourceProblems(inventory,manifest,new Set()).includes('UNREVIEWED:binary:node@24.21.0'));
+});
+
+test('Debian source filenames permit version tildes but no traversal or URL escapes',()=>{
+ assert.ok(sourcePathPattern.test('sources/dbus_1.14.10-1~deb12u1.debian.tar.xz'));
+ for(const path of ['sources/..','sources/../a','sources/a/b','sources/%2fetc','/sources/a','sources/a?b'])assert.ok(!sourcePathPattern.test(path));
+});
+
+test('source lock covers recorded Debian materials with valid unique identities',()=>{
+ const lock=JSON.parse(readFileSync(new URL('../../licenses/container/sources.lock.json',import.meta.url)));
+ const index=JSON.parse(readFileSync(new URL('../../licenses/container/debian-source-identities.json',import.meta.url)));
+ const paths=new Set(lock.downloads.map(x=>x.path));assert.equal(paths.size,lock.downloads.length);
+ for(const d of lock.downloads){assert.ok(sourcePathPattern.test(d.path));assert.match(d.sha256,/^[a-f0-9]{64}$/);assert.ok(!d.url.includes('/debian/pool/updates/'));}
+ for(const c of index.packages){assert.ok(c.sourcePackage&&c.sourceVersion);assert.ok(c.files.length);for(const f of c.files)assert.ok(paths.has(f));}
 });

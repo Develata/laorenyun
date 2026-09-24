@@ -1,3 +1,4 @@
+import { bundleInputs } from "./bundle-inputs.mjs";
 import { fileURLToPath } from "node:url";
 import upstream from "../upstream/deepseek-harness/apps/web/vite.config.ts";
 // The published Web payload excludes the experimental in-browser Node preview.
@@ -15,7 +16,14 @@ export default {
   root: fileURLToPath(
     new URL("../upstream/deepseek-harness/apps/web/", import.meta.url),
   ),
-  plugins,
+  plugins: [
+    ...(plugins ?? []),
+    bundleInputs({
+      root: "/build/upstream/deepseek-harness",
+      inputRoot: fileURLToPath(new URL("../upstream/deepseek-harness/apps/web/", import.meta.url)),
+      out: "/build/bundle-inputs",
+    }),
+  ],
   build: {
     ...upstream.build,
     rollupOptions: {

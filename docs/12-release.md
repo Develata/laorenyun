@@ -6,7 +6,7 @@ Owner：本文件拥有当前发布流程、门禁和不变性政策。历史 [v
 
 已发布 v0.2.0 源码；支持本地 Docker 构建。**GHCR publication remains disabled**：实际镜像闭包的对应源码/构建材料尚未完整归档和审查。新工作流的 dry run 可执行输入、构建、浏览器、清单/归档校验，但必须在源码完整性门禁失败；不得将其描述为容器发行成功。
 
-本阶段不增加版本、不创建 tag、不回填 v0.2.0 二进制。未来首次容器发行优先新版本（例如 v0.2.1），只有全部门禁通过才创建对应发布。
+v0.2.0 tags 保持不变。首次公共容器发行优先新版本（例如 v0.2.1）；即使已授权创建新 tag，也只有全部门禁通过才创建对应发布。
 
 ## 受保护的 main
 
@@ -52,18 +52,21 @@ immutable inputs → deterministic checks
 
 ## 容器源码交付门禁
 
-[锁文件](../licenses/container/sources.lock.json) 是审查入口；[实际清单脚本](../scripts/license-inventory.mjs) 是包身份清单 owner，不再手写第二份运行包列表。每次从被测试镜像取 Debian binary/source package/version、npm 包、Web构建闭包及 sharp `versions.json`，记录 image ID 和 inventory SHA256。
+[锁文件](../licenses/container/sources.lock.json) 是审查入口；[实际清单脚本](../scripts/license-inventory.mjs) 是包身份清单 owner，不再手写第二份运行包列表。每次从被测试镜像取 Debian binary/source package/version、npm 包（含全局工具）、构建候选清单及 sharp `versions.json`，记录 image ID 和 inventory SHA256。
 
-项目采用保守交付政策：
+门禁以实际分发内容和许可证义务为边界：
 
-- 所有实际安装 Debian source package 都提供精确 `.dsc`、orig 和 Debian patches（不自行猜测 System Library 豁免）；源码包中的 debian/ 构建规则及对应版本记录一并交付。
-- sharp/libvips 原生闭包逐项提供实际版本源码、应用的补丁、构建脚本/平台配置；包含构建所需的 vendored Rust 等材料。只保存一个 libvips homepage 或少量脚本不够。
-- npm/打包 Web 闭包逐项审核 license、源码身份及 source/notice-only disposition。含 GPL/LGPL/MPL 或未知条款不能只提供 notice。
-- downloads 仅接受 HTTPS、预审 SHA256、固定安全路径；未知组件或新增版本没有 disposition 就失败。
+- 实际安装的 Debian、npm/Node 全局包、原生库均属分发内容；按实际 copyright/许可证逐项审核。独立 MIT/BSD/Apache 等组件交付必要 notices，不因 `deb:`/`vips:` 前缀强制源码。未知或自定义条款不自动豁免。
+- `buildClosure` 只是构建安装清单及通知材料的超集，不是分发清单。仅用于构建且未进入镜像或输出的工具不要求对应源码；打包进 DSH/Web/Corepack/Yarn 的代码仍须由实际产物证据识别。缺少此归属证据时，门禁报告 `BUNDLED_CLOSURE_UNREVIEWED`，不会把未知当不存在。
+- GPL/LGPL/MPL 等适用组件继续交付相应范围的源码、修改及构建材料。LGPL 组合库还须满足可修改/重链接条件；MPL 按 covered files 范围审核。独立容器包的简单聚合不自动扩展为整个镜像 copyleft。
+- permissive 代码若构成需要交付的组合库源码，不因自身许可证宽松而从该库构建闭包删除。`combination: corresponding-source` 明确要求源码；独立组件记录 `independent`。不是要求交付所有通用编译工具。
+- 许可证 `OR` 可选择允许的分支，notice-only 必须记录明确的 `licenseChoice`；`AND` 同时满足两侧。未识别条款、例外或选择不能自动放行。
+- 每个 reviewed component 显式列出 `shipped` identities 与 `noticeCoverage`。聚合 source package 不能省略旗下 binary；npm 重复安装位置也必须覆盖。notice 路径绑定实际镜像文件 SHA256，并与归档中的相应材料逐字节一致；缺失、重复归属或不匹配均失败。
+- downloads 仅接受 HTTPS、预审 SHA256、固定安全路径；新增组件/版本没有 disposition、缺失 notices 或需要的源码材料仍失败。
 
 `container-source-manifest.json` 记录 image ID、inventory hash、每项 identity/license/review、sources/buildMaterial/notices 和逐文件SHA256。tar 使用排序、固定mtime/uid/gid和无时间戳gzip；stream verifier逐文件哈希、拒绝路径外逸、软/硬链接、重复和额外成员，不解包不可信内容。清单或材料不匹配即拒绝。
 
-**目前生成的是不完整的 audit bundle**（`container-sources.tar.gz`），含实际许可通知、pin、FFmpeg配置/链接信息、完整同版本Debian FFmpeg源包及sharp-libvips固定版本构建仓库，但不含其他组件的完整对应源码；不是完整 corresponding-source bundle，不可作为放行凭据。具体缺口见 source-gate.json。SBOM只可作索引，不能代替这项判断。
+**目前生成的是不完整的 audit bundle**（`container-sources.tar.gz`），含实际许可通知、pin、FFmpeg配置/链接信息、完整同版本Debian FFmpeg源包及sharp-libvips固定版本构建仓库，已补入实际 Debian 源包、原生归档和 librsvg Rust vendor 材料，具体下载/哈希证据见 [分发审计](evidence/distribution-scope/README.md)。组件审查、预打包代码归属和历史 mutable patch 对应仍有缺口；不是获准交付的完整 corresponding-source bundle，不可作为放行凭据。具体缺口见 source-gate.json。SBOM只可作索引，不能代替这项判断。
 
 官方依据：[FFmpeg legal](https://www.ffmpeg.org/legal.html)、[GNU GPL FAQ](https://www.gnu.org/licenses/gpl-faq.html)、[sharp-libvips build](https://github.com/lovell/sharp-libvips/tree/v1.3.2)。本门禁是项目工程交付政策，不宣称对所有司法辖区给出法律保证。
 

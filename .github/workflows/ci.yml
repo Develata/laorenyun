@@ -33,6 +33,20 @@ jobs:
           test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:3080/)" = 401
           docker compose -p laorenyun-ci restart
           docker compose -p laorenyun-ci up -d --wait --wait-timeout 90
+      - name: Preserve actual distributed bundle inputs (no image publication)
+        run: |
+          mkdir -p artifacts/distribution-inputs
+          image="$(docker compose -p laorenyun-ci images -q laorenyun)"
+          test -n "$image"
+          docker run --rm --network none --entrypoint cat "$image" /opt/laorenyun/licenses/bundle-inputs.json > artifacts/distribution-inputs/bundle-inputs.json
+          docker run --rm --network none -i --entrypoint node "$image" --input-type=module < scripts/license-inventory.mjs > artifacts/distribution-inputs/inventory.json
+          docker image inspect "$image" --format '{{.Id}}' > artifacts/distribution-inputs/image-id.txt
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: distribution-inputs
+          path: artifacts/distribution-inputs/
+          retention-days: 7
+          if-no-files-found: error
       - name: Stop test container (keep logs private)
         if: always()
         run: docker compose -p laorenyun-ci stop || true

@@ -1,7 +1,10 @@
 import assert from 'node:assert/strict';
+import {accountingProblems} from './accounting.mjs';
+import {noticeOnlyLicense} from './license-policy.mjs';
 import {createHash} from 'node:crypto';
 export const repo = 'ghcr.io/develata/laorenyun';
 export const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
+export const sourcePathPattern = /^sources\/[a-zA-Z0-9][a-zA-Z0-9_.+~-]*$/;
 export const digestPattern = /^sha256:[a-f0-9]{64}$/;
 export function releaseVersion(tag) {
   assert.match(tag, /^v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?$/);
@@ -38,22 +41,40 @@ export function sourceProblems(inventory, manifest, files) {
   if (manifest.schema !== 1 || manifest.inventorySha256 !== sha256(JSON.stringify(inventory))) problems.push('INVENTORY_MISMATCH');
   if (!digestPattern.test(manifest.imageId ?? '')) problems.push('IMAGE_ID_INVALID');
   const expected = new Map();
-  // Conservative policy: deliver exact source for every Debian source package; no inferred System Library exemption.
-  for (const p of inventory.os) expected.set(`deb:${p.sourcePackage}@${p.sourceVersion}`, {version:p.sourceVersion});
-  for (const p of [...inventory.packages, ...inventory.buildClosure]) expected.set(`npm:${p.name}@${p.version}`, {version:p.version,license:p.license});
-  for (const [name, version] of Object.entries(inventory.nativeVersions ?? {})) expected.set(`vips:${name}@${version}`, {version});
+  // Every installed package is distributed, but source obligations depend on its
+  // reviewed license and combination, not Debian/npm/native packaging.
+  // Build tools are candidates only; actual bundled inputs need separate evidence.
+  if (inventory.bundledClosure?.status !== 'complete') problems.push('BUNDLED_CLOSURE_UNREVIEWED');
+  const add=(id,entry)=> {
+    const prior=expected.get(id);
+    if(prior?.license && entry.license && JSON.stringify(prior.license)!==JSON.stringify(entry.license))problems.push(`INVENTORY_LICENSE_CONFLICT:${id}`);
+    expected.set(id,{...entry,shipped:[...(prior?.shipped ?? []),...(entry.shipped ?? [])]});
+  };
+  for (const p of inventory.os) add(`deb:${p.sourcePackage}@${p.sourceVersion}`, {version:p.sourceVersion,shipped:p.shipped});
+  for (const p of [...inventory.packages, ...(inventory.bundledClosure?.packages ?? [])]) add(`npm:${p.name}@${p.version}`, {version:p.version,license:p.license,shipped:p.shipped});
+  for (const [name, version] of Object.entries(inventory.nativeVersions ?? {})) add(`vips:${name}@${version}`, {version,shipped:inventory.nativeShipped?.[name]});
+  for (const p of inventory.runtimeBinaries ?? []) add(`binary:${p.name}@${p.version}`, {version:p.version,shipped:p.shipped});
+  const shipmentOwners=new Map();
+  for(const [id,entry] of expected) for(const item of entry.shipped??[]){
+    if(shipmentOwners.has(item.id))problems.push(`DUPLICATE_SHIPPED_IDENTITY:${item.id}`);
+    shipmentOwners.set(item.id,id);
+  }
   const byId = new Map((manifest.components ?? []).map(x=>[x.id,x]));
   if (byId.size !== (manifest.components ?? []).length) problems.push('DUPLICATE_COMPONENT');
+  for (const id of byId.keys()) if (!expected.has(id)) problems.push(`UNEXPECTED_COMPONENT:${id}`);
   for (const id of expected.keys()) {
     const c = byId.get(id);
     if (!c || !c.license || !c.sourceIdentity || !c.review || !['source','notice-only'].includes(c.delivery)) {problems.push(`UNREVIEWED:${id}`);continue;}
+    for (const problem of accountingProblems(expected.get(id),c,manifest,files)) problems.push(`${problem}:${id}`);
     if (expected.get(id).license && typeof expected.get(id).license === 'string' && c.license !== expected.get(id).license) problems.push(`LICENSE_MISMATCH:${id}`);
     if (!Array.isArray(c.notices) || !c.notices.length) problems.push(`MISSING_NOTICES:${id}`);
     const required = [...(c.notices ?? [])];
+    if (!['independent', 'corresponding-source'].includes(c.combination)) problems.push(`COMBINATION_UNREVIEWED:${id}`);
+    if (c.delivery === 'notice-only' && /\bOR\b/.test(c.license) && (!c.licenseChoice || !noticeOnlyLicense(c.license, c.licenseChoice))) problems.push(`LICENSE_CHOICE_MISSING:${id}`);
     if (c.delivery === 'source') {
       if (!c.sources?.length || !c.buildMaterial?.length) problems.push(`MISSING_SOURCE_BUILD:${id}`);
       required.push(...(c.sources ?? []), ...(c.buildMaterial ?? []));
-    } else if (id.startsWith('deb:') || id.startsWith('vips:') || /GPL|MPL|CDDL|CPL|EPL|unknown|SEE LICENSE/i.test(c.license)) {
+    } else if (!noticeOnlyLicense(c.license) || c.combination === 'corresponding-source') {
       problems.push(`SOURCE_REQUIRED:${id}`);
     }
     for (const f of required) if (!files.has(f) || !/^[a-f0-9]{64}$/.test(manifest.files?.[f] ?? '')) problems.push(`MISSING_MATERIAL:${id}:${f}`);
